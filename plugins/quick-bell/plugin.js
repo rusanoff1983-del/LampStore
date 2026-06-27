@@ -11,11 +11,16 @@
   }
 
   function addButton() {
-    if (!window.Lampa || !Lampa.Menu || !Lampa.Menu.addButton) return false;
+    if (!window.Lampa || !window.$) return false;
     if (window.$ && !$('.menu__list').length) return false;
+    if ($('.menu__item[data-quick-bell="1"]').length) return true;
 
     try {
-      Lampa.Menu.addButton(icon, 'Колокольчик', show);
+      var item = $('<li class="menu__item selector" data-quick-bell="1"><div class="menu__ico">' + icon + '</div><div class="menu__text">Колокольчик</div></li>');
+
+      item.on('hover:enter click', show);
+
+      $('.menu__list:eq(0)').append(item);
     } catch (e) {
       return false;
     }

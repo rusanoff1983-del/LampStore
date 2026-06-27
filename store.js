@@ -435,13 +435,18 @@
   }
 
   function addMenu() {
-    if (!window.Lampa || !Lampa.Menu || !Lampa.Menu.addButton) return false;
+    if (!window.Lampa || !window.$) return false;
     if (window.$ && !$('.menu__list').length) return false;
+    if ($('.menu__item[data-hundred-store="1"]').length) return true;
 
     try {
-      Lampa.Menu.addButton(ICON, STORE_NAME, function () {
+      var item = $('<li class="menu__item selector" data-hundred-store="1"><div class="menu__ico">' + ICON + '</div><div class="menu__text">' + STORE_NAME + '</div></li>');
+
+      item.on('hover:enter click', function () {
         openStore();
       });
+
+      $('.menu__list:eq(0)').append(item);
     } catch (e) {
       return false;
     }
