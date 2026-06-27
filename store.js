@@ -276,6 +276,13 @@
       files = files || [];
 
       var pluginFile = pickFile(files, ['plugin.js', 'index.js', 'main.js']);
+      if (!pluginFile) {
+        pluginFile = (files || []).filter(function (file) {
+          return file.type === 'file' && /\.js$/i.test(file.name || '');
+        }).sort(function (a, b) {
+          return String(a.name).localeCompare(String(b.name));
+        })[0];
+      }
       var textFile = pickFile(files, ['text.txt', 'description.txt', 'readme.txt', 'README.md', 'readme.md']);
       var iconFile = pickFile(files, ['icon.png', 'icon.jpg', 'icon.jpeg', 'icon.webp']);
       var screenFile = pickFile(files, [

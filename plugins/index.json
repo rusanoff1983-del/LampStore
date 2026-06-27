@@ -1,6 +1,6 @@
 {
   "name": "100 мелочей",
-  "updated": "2026-06-27T12:57:09.031Z",
+  "updated": "2026-06-27T12:58:52.621Z",
   "plugins": [
     {
       "id": "hello",
@@ -34,6 +34,19 @@
       "version": "1.0.0",
       "icon": "",
       "screenshots": []
+    },
+    {
+      "id": "topbar",
+      "name": "Переключатель плеера в шапке",
+      "description": "Удобная кнопка смены типа плеера — встроенного или внешнего — в шапке приложения.",
+      "folder": "plugins/topbar",
+      "file": "top_bar.js",
+      "category": "Плагины",
+      "version": "1.0.0",
+      "icon": "",
+      "screenshots": [
+        "screenshot.webp"
+      ]
     }
   ]
 }

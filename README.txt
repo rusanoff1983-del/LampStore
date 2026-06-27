@@ -40,6 +40,8 @@ https://raw.githubusercontent.com/USER/REPO/main/store.js
 
 plugins/имя-папки/plugin.js
 
+Можно не называть файл plugin.js. Если в папке один JS, магазин сам возьмёт его.
+
 Желательно:
 
 plugins/имя-папки/text.txt
