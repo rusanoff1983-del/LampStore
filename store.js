@@ -12,7 +12,7 @@
     title: '100 мелочей'
   };
 
-  var STORE_KEY = 'hundred_store_installed';
+  var STORE_KEY = 'hundred_store_installed_v2';
   var SETTINGS_COMPONENT = 'hundred_store_settings';
   var STORE_NAME = CONFIG.title;
   var RAW_BASE = 'https://cdn.jsdelivr.net/gh/' + CONFIG.owner + '/' + CONFIG.repo + '@' + CONFIG.branch + '/';
@@ -175,22 +175,46 @@
   }
 
   function install(plugin, silent) {
-    var map = installedMap();
-    map[plugin.id] = true;
-    saveInstalled(map);
-
     try {
-      if (window.Lampa && Lampa.Plugins && Lampa.Plugins.add && !isInstalled(plugin)) {
-        Lampa.Plugins.add({
-          url: plugin.url,
-          status: 1,
-          name: plugin.name,
-          author: plugin.author
-        });
+      if (window.Lampa && Lampa.Plugins && Lampa.Plugins.add) {
+        var already = false;
+
+        try {
+          already = Lampa.Plugins.get && Lampa.Plugins.get().some(function (item) {
+            return item && (item.url === plugin.url || item.link === plugin.url);
+          });
+        } catch (e) {}
+
+        if (!already) {
+          Lampa.Plugins.add({
+            url: plugin.url,
+            status: 1,
+            name: plugin.name,
+            author: plugin.author
+          });
+        } else {
+          loadScript(plugin.url);
+        }
+
+        var map = installedMap();
+        map[plugin.id] = true;
+        saveInstalled(map);
+
+        if (!silent) notify((already ? 'Обновлено: ' : 'Установлено: ') + plugin.name);
+        updateCardsState();
+        return;
       }
-    } catch (e) {}
+    } catch (e) {
+      console.log('[100 мелочей] install through Lampa.Plugins failed', e);
+    }
 
     loadScript(plugin.url, function (ok) {
+      if (ok) {
+        var map = installedMap();
+        map[plugin.id] = true;
+        saveInstalled(map);
+      }
+
       if (!silent) notify(ok ? 'Установлено: ' + plugin.name : 'Не удалось загрузить: ' + plugin.name);
       updateCardsState();
     });
@@ -228,10 +252,10 @@
       '.hundred-store__sub{font-size:1.02em;color:rgba(255,255,255,.58);margin-top:.35em;}' +
       '.hundred-store__close{margin-left:auto;padding:.75em 1em;border-radius:.7em;background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);}' +
       '.hundred-store__body{height:calc(100% - 6.5em);overflow:auto;padding:0 2.4em 2.4em;}' +
-      '.hundred-store__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(18em,1fr));gap:1.25em;align-items:stretch;}' +
-      '.hundred-card{position:relative;min-height:13.4em;border-radius:1.15em;overflow:hidden;background:#202020;box-shadow:0 1em 2.8em rgba(0,0,0,.32);transform:translateZ(0);}' +
+      '.hundred-store__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(24em,1fr));grid-auto-rows:14em;gap:1.25em;align-items:start;}' +
+      '.hundred-card{position:relative;height:14em;min-height:0;border-radius:1.15em;overflow:hidden;background:#202020;box-shadow:0 1em 2.8em rgba(0,0,0,.32);transform:translateZ(0);}' +
       '.hundred-card.focus{outline:.22em solid #00d7ff;box-shadow:0 0 0 .35em rgba(0,215,255,.22),0 1em 3em rgba(0,0,0,.42);}' +
-      '.hundred-card__image{height:10.6em;background:linear-gradient(135deg,#353535,#191919);background-size:cover;background-position:center;}' +
+      '.hundred-card__image{height:100%;background:linear-gradient(135deg,#353535,#191919);background-size:cover;background-position:center;}' +
       '.hundred-card__image.empty{display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.18);font-size:4em;}' +
       '.hundred-card__shade{position:absolute;left:0;right:0;bottom:0;height:7.6em;background:linear-gradient(0deg,rgba(0,0,0,.92),rgba(0,0,0,.58) 62%,rgba(0,0,0,0));}' +
       '.hundred-card__body{position:absolute;left:0;right:0;bottom:0;padding:1em;}' +
