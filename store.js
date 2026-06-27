@@ -17,6 +17,7 @@
   var STORE_NAME = CONFIG.title;
   var RAW_BASE = 'https://cdn.jsdelivr.net/gh/' + CONFIG.owner + '/' + CONFIG.repo + '@' + CONFIG.branch + '/';
   var GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/' + CONFIG.owner + '/' + CONFIG.repo + '/' + CONFIG.branch + '/';
+  var GITHUB_API = 'https://api.github.com/repos/' + CONFIG.owner + '/' + CONFIG.repo + '/contents/';
   var ICON = '<svg width="38" height="38" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.8 2.8 1.3 4.9.2 6.5-.8 1.2-1.9 2.2-2.7 3.5-.9 1.5-.6 3.5 1.2 4.2-.2-1.4.5-2.5 1.5-3.5.6 2 2.7 2.7 2.7 5.1 0 1.6-1.3 3-3 3-3.6 0-6.4-2.7-6.4-6.3 0-3.1 2.1-5.2 4.1-7.2C11.1 5.8 12.2 4.3 12 2Zm4.2 6.2c2.1 1.7 3.3 4.1 3.3 6.9 0 3.8-2.8 6.9-6.4 7.5 2.6-.6 4.6-2.8 4.6-5.6 0-2.2-1.1-3.8-2.3-5.1.5-1.1.8-2.3.8-3.7Z"/></svg>';
 
   function notify(text) {
@@ -34,6 +35,10 @@
 
   function githubRawUrlNoCache(path) {
     return GITHUB_RAW_BASE + String(path || '').replace(/^\/+/, '') + '?t=' + Date.now();
+  }
+
+  function githubApiUrl(path) {
+    return GITHUB_API + encodeURIComponent(String(path || '').replace(/^\/+/, '')).replace(/%2F/g, '/') + '?ref=' + encodeURIComponent(CONFIG.branch) + '&t=' + Date.now();
   }
 
   function storageGet(key, fallback) {
@@ -110,6 +115,25 @@
     });
   }
 
+  function requestText(url, done, fail) {
+    if (window.$ && $.ajax) {
+      return $.ajax({
+        url: url,
+        dataType: 'text',
+        cache: false,
+        success: function (data) { done(data || ''); },
+        error: function () { if (fail) fail(); }
+      });
+    }
+
+    fetch(url).then(function (response) {
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      return response.text();
+    }).then(done).catch(function () {
+      if (fail) fail();
+    });
+  }
+
   function loadScript(url, done) {
     if (!url) return done && done(false);
 
@@ -158,19 +182,128 @@
     return item;
   }
 
-  function loadCatalog(done) {
-    function apply(index) {
-      var plugins = ((index && index.plugins) || []).map(normalizePlugin);
-      done({
-        name: (index && index.name) || STORE_NAME,
-        plugins: plugins
-      });
+  function prettyName(name) {
+    return String(name || '')
+      .replace(/[-_]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .replace(/\b\w/g, function (letter) { return letter.toUpperCase(); });
+  }
+
+  function pickFile(files, names) {
+    var lower = {};
+
+    (files || []).forEach(function (file) {
+      lower[String(file.name || '').toLowerCase()] = file;
+    });
+
+    for (var i = 0; i < names.length; i++) {
+      var found = lower[String(names[i]).toLowerCase()];
+      if (found) return found;
     }
 
-    requestJson(githubRawUrlNoCache(CONFIG.pluginsPath + '/index.json'), apply, function () {
-      requestJson(rawUrlNoCache(CONFIG.pluginsPath + '/index.json'), apply, function () {
-        done({ name: STORE_NAME, plugins: [] });
+    return null;
+  }
+
+  function firstJs(files) {
+    return (files || []).filter(function (file) {
+      return file.type === 'file' && /\.js$/i.test(file.name || '');
+    }).sort(function (a, b) {
+      return String(a.name).localeCompare(String(b.name));
+    })[0] || null;
+  }
+
+  function parseText(text, fallbackName) {
+    var lines = String(text || '').replace(/\r/g, '').split('\n').map(function (line) {
+      return line.trim();
+    }).filter(Boolean);
+
+    return {
+      name: (lines[0] || fallbackName).replace(/^#\s*/, ''),
+      description: lines.length > 1 ? lines.slice(1).join('\n') : ''
+    };
+  }
+
+  function pluginFromFolder(folder, done) {
+    requestJson(githubApiUrl(folder.path), function (files) {
+      files = files || [];
+
+      var js = pickFile(files, ['plugin.js', 'index.js', 'main.js']) || firstJs(files);
+      if (!js) return done(null);
+
+      var text = pickFile(files, ['title.txt', 'text.txt', 'description.txt', 'readme.txt', 'readme.md', 'README.md']);
+      var icon = pickFile(files, ['icon.png', 'icon.jpg', 'icon.jpeg', 'icon.webp']);
+      var screen = pickFile(files, [
+        'screenshot.webp',
+        'screenshot.png',
+        'screenshot.jpg',
+        'screenshot.jpeg',
+        'screen.webp',
+        'screen.png',
+        'screen.jpg',
+        'preview.webp',
+        'preview.png',
+        'preview.jpg'
+      ]);
+
+      var base = {
+        id: folder.name,
+        name: prettyName(folder.name),
+        author: '@100melochey',
+        description: '',
+        folder: folder.path,
+        file: js.name,
+        version: '1.0.0',
+        category: 'Плагины',
+        icon: icon ? icon.name : '',
+        screenshots: screen ? [screen.name] : []
+      };
+
+      if (!text) return done(normalizePlugin(base));
+
+      requestText(githubRawUrlNoCache(text.path), function (content) {
+        var parsed = parseText(content, base.name);
+        base.name = parsed.name;
+        base.description = parsed.description;
+        done(normalizePlugin(base));
+      }, function () {
+        done(normalizePlugin(base));
       });
+    }, function () {
+      done(null);
+    });
+  }
+
+  function loadCatalog(done) {
+    requestJson(githubApiUrl(CONFIG.pluginsPath), function (items) {
+      var folders = (items || []).filter(function (item) {
+        return item.type === 'dir';
+      });
+
+      if (!folders.length) return done({ name: STORE_NAME, plugins: [] });
+
+      var plugins = [];
+      var left = folders.length;
+
+      folders.forEach(function (folder) {
+        pluginFromFolder(folder, function (plugin) {
+          if (plugin) plugins.push(plugin);
+          left--;
+
+          if (left === 0) {
+            plugins.sort(function (a, b) {
+              return String(a.name).localeCompare(String(b.name));
+            });
+
+            done({
+              name: STORE_NAME,
+              plugins: plugins
+            });
+          }
+        });
+      });
+    }, function () {
+      done({ name: STORE_NAME, plugins: [] });
     });
   }
 
