@@ -1,0 +1,39 @@
+{
+  "name": "100 мелочей",
+  "updated": "2026-06-27T00:00:00.000Z",
+  "plugins": [
+    {
+      "id": "hello",
+      "name": "Проверка магазина",
+      "description": "Простой проверочный плагин. Если после установки появилось уведомление — магазин смог загрузить JS из папки плагина.",
+      "folder": "plugins/hello",
+      "file": "plugin.js",
+      "category": "Плагины",
+      "version": "1.0.0",
+      "icon": "",
+      "screenshots": []
+    },
+    {
+      "id": "quick-bell",
+      "name": "Быстрый колокольчик",
+      "description": "Проверочный плагин с кнопкой в правом меню Lampa. Если появилась кнопка «Колокольчик», значит магазин умеет грузить плагины, которые добавляют интерфейс.",
+      "folder": "plugins/quick-bell",
+      "file": "plugin.js",
+      "category": "Плагины",
+      "version": "1.0.0",
+      "icon": "",
+      "screenshots": []
+    },
+    {
+      "id": "soft-panel",
+      "name": "Мягкая панель",
+      "description": "Проверочный CSS-плагин. Он добавляет заметную мягкую подсветку вокруг выбранных элементов.",
+      "folder": "plugins/soft-panel",
+      "file": "plugin.js",
+      "category": "Плагины",
+      "version": "1.0.0",
+      "icon": "",
+      "screenshots": []
+    }
+  ]
+}

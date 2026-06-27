@@ -27,6 +27,7 @@
   };
 
   var STORE_KEY = 'hundred_store_installed';
+  var SETTINGS_COMPONENT = 'hundred_store_settings';
   var STORE_NAME = CONFIG.title;
   var ICON = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.8 2.8 1.3 4.9.2 6.5-.8 1.2-1.9 2.2-2.7 3.5-.9 1.5-.6 3.5 1.2 4.2-.2-1.4.5-2.5 1.5-3.5.6 2 2.7 2.7 2.7 5.1 0 1.6-1.3 3-3 3-3.6 0-6.4-2.7-6.4-6.3 0-3.1 2.1-5.2 4.1-7.2C11.1 5.8 12.2 4.3 12 2Zm4.2 6.2c2.1 1.7 3.3 4.1 3.3 6.9 0 3.8-2.8 6.9-6.4 7.5 2.6-.6 4.6-2.8 4.6-5.6 0-2.2-1.1-3.8-2.3-5.1.5-1.1.8-2.3.8-3.7Z"/></svg>';
 
@@ -166,6 +167,10 @@
     return RAW_BASE + String(path || '').replace(/^\/+/, '');
   }
 
+  function rawUrlNoCache(path) {
+    return rawUrl(path) + (String(path).indexOf('?') >= 0 ? '&' : '?') + 't=' + Date.now();
+  }
+
   function folderApiUrl(path) {
     return GITHUB_API + encodeURIComponent(path).replace(/%2F/g, '/') + '?ref=' + encodeURIComponent(CONFIG.branch) + '&t=' + Date.now();
   }
@@ -192,6 +197,37 @@
       folder: folder.path,
       url: rawUrl(folder.path + '/plugin.js')
     };
+  }
+
+  function normalizeIndexPlugin(plugin) {
+    plugin = plugin || {};
+
+    var folderName = plugin.id || plugin.folder || plugin.name || 'plugin';
+    folderName = String(folderName).split('/').pop();
+
+    var item = defaultPlugin({
+      name: plugin.id || folderName,
+      path: plugin.folder || (CONFIG.pluginsPath + '/' + folderName)
+    });
+
+    Object.keys(plugin).forEach(function (key) {
+      item[key] = plugin[key];
+    });
+
+    item.id = item.id || folderName;
+    item.name = item.name || prettyName(folderName);
+    item.file = item.file || 'plugin.js';
+    item.folder = item.folder || (CONFIG.pluginsPath + '/' + item.id);
+    item.url = item.url || rawUrl(item.folder + '/' + item.file);
+
+    if (item.icon && !/^https?:\/\//i.test(item.icon)) item.icon = rawUrl(item.folder + '/' + item.icon);
+
+    item.screenshots = item.screenshots || [];
+    item.screenshots = item.screenshots.map(function (screen) {
+      return /^https?:\/\//i.test(screen) ? screen : rawUrl(item.folder + '/' + screen);
+    });
+
+    return item;
   }
 
   function pickFile(files, names) {
@@ -278,33 +314,20 @@
   }
 
   function loadCatalog(done) {
-    if (CONFIG.owner === 'YOUR_GITHUB_LOGIN' || CONFIG.repo === 'YOUR_REPO_NAME') {
-      done({
-          name: STORE_NAME,
-          plugins: [
-          Object.assign(defaultPlugin({ name: 'hello', path: 'plugins/hello' }), {
-            name: 'Проверка магазина',
-            description: 'Локальный пример. Замени CONFIG.owner и CONFIG.repo в store.js на свой GitHub.',
-            category: 'Тест',
-            url: BASE + 'plugins/hello/plugin.js'
-          }),
-          Object.assign(defaultPlugin({ name: 'soft-panel', path: 'plugins/soft-panel' }), {
-            name: 'Мягкая панель',
-            description: 'Локальный пример CSS-плагина.',
-            category: 'Интерфейс',
-            url: BASE + 'plugins/soft-panel/plugin.js'
-          }),
-          Object.assign(defaultPlugin({ name: 'quick-bell', path: 'plugins/quick-bell' }), {
-            name: 'Быстрый колокольчик',
-            description: 'Локальный пример пункта меню.',
-            category: 'Инструменты',
-            url: BASE + 'plugins/quick-bell/plugin.js'
-          })
-        ]
-      });
-      return;
-    }
+    requestJson(rawUrlNoCache(CONFIG.pluginsPath + '/index.json'), function (index) {
+      index = index || {};
+      index.plugins = (index.plugins || []).map(normalizeIndexPlugin);
 
+      done({
+        name: index.name || STORE_NAME,
+        plugins: index.plugins
+      });
+    }, function () {
+      loadCatalogFromGithubApi(done);
+    });
+  }
+
+  function loadCatalogFromGithubApi(done) {
     requestJson(folderApiUrl(CONFIG.pluginsPath), function (items) {
       var folders = (items || []).filter(function (item) {
         return item.type === 'dir';
@@ -434,29 +457,48 @@
     });
   }
 
-  function addMenu() {
-    if (!window.Lampa || !document || !document.querySelector) return false;
+  function addSettings() {
+    if (!window.Lampa || !Lampa.SettingsApi || !Lampa.SettingsApi.addComponent || !Lampa.SettingsApi.addParam) return false;
+    if (window.__HUNDRED_STORE_SETTINGS_READY__) return true;
 
-    var menu = document.querySelector('.menu__list');
-    if (!menu) return false;
-    if (document.querySelector('.menu__item[data-hundred-store="1"]')) return true;
+    window.__HUNDRED_STORE_SETTINGS_READY__ = true;
 
     try {
-      var item = document.createElement('li');
-      item.className = 'menu__item selector';
-      item.setAttribute('data-hundred-store', '1');
-      item.innerHTML = '<div class="menu__ico">' + ICON + '</div><div class="menu__text">' + STORE_NAME + '</div>';
-
-      item.addEventListener('hover:enter', function () {
-        openStore();
+      Lampa.SettingsApi.addComponent({
+        component: SETTINGS_COMPONENT,
+        name: STORE_NAME,
+        icon: ICON
       });
 
-      item.addEventListener('click', function () {
-        openStore();
+      Lampa.SettingsApi.addParam({
+        component: SETTINGS_COMPONENT,
+        param: {
+          name: 'hundred_store_open',
+          type: 'button',
+          default: ''
+        },
+        field: {
+          name: 'Открыть магазин',
+          description: 'Каталог плагинов из GitHub'
+        },
+        onChange: function () {
+          setTimeout(openStore, 50);
+        }
       });
 
-      menu.appendChild(item);
+      Lampa.SettingsApi.addParam({
+        component: SETTINGS_COMPONENT,
+        param: {
+          name: 'hundred_store_info',
+          type: 'static'
+        },
+        field: {
+          name: 'Как добавить плагин',
+          description: 'Создай папку в plugins, положи plugin.js и text.txt. После пуша GitHub сам обновит список.'
+        }
+      });
     } catch (e) {
+      window.__HUNDRED_STORE_SETTINGS_READY__ = false;
       return false;
     }
 
@@ -465,7 +507,7 @@
 
   function init() {
     var timer = setInterval(function () {
-      if (addMenu()) {
+      if (addSettings()) {
         clearInterval(timer);
         autoload();
         notice(STORE_NAME + ': магазин подключен');

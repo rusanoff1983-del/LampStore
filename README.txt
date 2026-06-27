@@ -4,14 +4,15 @@ GitHub-магазин расширений Lampa.
 
 store.js
 
-Дальше магазин сам смотрит GitHub-папку plugins.
+Дальше магазин открывается в настройках Lampa и читает plugins/index.json.
 Каждая папка внутри plugins — это отдельный плагин.
-Добавил новую папку на GitHub — она появляется у всех пользователей магазина.
+Добавил новую папку на GitHub — GitHub Actions сам обновляет index.json, и плагин появляется у всех пользователей магазина.
 
 Структура репозитория:
 
 store.js
 plugins/
+  index.json
   hello/
     plugin.js
     text.txt
