@@ -436,10 +436,15 @@
 
   function addMenu() {
     if (!window.Lampa || !Lampa.Menu || !Lampa.Menu.addButton) return false;
+    if (window.$ && !$('.menu__list').length) return false;
 
-    Lampa.Menu.addButton(ICON, STORE_NAME, function () {
-      openStore();
-    });
+    try {
+      Lampa.Menu.addButton(ICON, STORE_NAME, function () {
+        openStore();
+      });
+    } catch (e) {
+      return false;
+    }
 
     return true;
   }

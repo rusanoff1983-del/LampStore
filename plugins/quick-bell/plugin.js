@@ -12,7 +12,14 @@
 
   function addButton() {
     if (!window.Lampa || !Lampa.Menu || !Lampa.Menu.addButton) return false;
-    Lampa.Menu.addButton(icon, 'Колокольчик', show);
+    if (window.$ && !$('.menu__list').length) return false;
+
+    try {
+      Lampa.Menu.addButton(icon, 'Колокольчик', show);
+    } catch (e) {
+      return false;
+    }
+
     return true;
   }
 
