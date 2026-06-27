@@ -435,18 +435,27 @@
   }
 
   function addMenu() {
-    if (!window.Lampa || !window.$) return false;
-    if (window.$ && !$('.menu__list').length) return false;
-    if ($('.menu__item[data-hundred-store="1"]').length) return true;
+    if (!window.Lampa || !document || !document.querySelector) return false;
+
+    var menu = document.querySelector('.menu__list');
+    if (!menu) return false;
+    if (document.querySelector('.menu__item[data-hundred-store="1"]')) return true;
 
     try {
-      var item = $('<li class="menu__item selector" data-hundred-store="1"><div class="menu__ico">' + ICON + '</div><div class="menu__text">' + STORE_NAME + '</div></li>');
+      var item = document.createElement('li');
+      item.className = 'menu__item selector';
+      item.setAttribute('data-hundred-store', '1');
+      item.innerHTML = '<div class="menu__ico">' + ICON + '</div><div class="menu__text">' + STORE_NAME + '</div>';
 
-      item.on('hover:enter click', function () {
+      item.addEventListener('hover:enter', function () {
         openStore();
       });
 
-      $('.menu__list:eq(0)').append(item);
+      item.addEventListener('click', function () {
+        openStore();
+      });
+
+      menu.appendChild(item);
     } catch (e) {
       return false;
     }
