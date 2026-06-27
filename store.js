@@ -42,7 +42,7 @@
 
   var BASE = scriptBase();
   var GITHUB_API = 'https://api.github.com/repos/' + CONFIG.owner + '/' + CONFIG.repo + '/contents/';
-  var RAW_BASE = 'https://raw.githubusercontent.com/' + CONFIG.owner + '/' + CONFIG.repo + '/' + CONFIG.branch + '/';
+  var RAW_BASE = 'https://cdn.jsdelivr.net/gh/' + CONFIG.owner + '/' + CONFIG.repo + '@' + CONFIG.branch + '/';
 
   function notice(text) {
     if (window.Lampa && Lampa.Noty && Lampa.Noty.show) return Lampa.Noty.show(text);
