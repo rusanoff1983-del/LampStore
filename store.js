@@ -237,6 +237,9 @@
       '.hundred-card__body{position:absolute;left:0;right:0;bottom:0;padding:1em;}' +
       '.hundred-card__name{font-size:1.22em;font-weight:700;line-height:1.15;text-shadow:0 .12em .2em rgba(0,0,0,.5);}' +
       '.hundred-card__meta{display:flex;gap:.5em;align-items:center;margin-top:.55em;color:rgba(255,255,255,.72);font-size:.9em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}' +
+      '.hundred-card__action{display:inline-flex;margin-top:.8em;padding:.45em .75em;border-radius:.55em;background:rgba(255,255,255,.16);font-size:.92em;font-weight:700;color:#fff;}' +
+      '.hundred-card.focus .hundred-card__action{background:#00d7ff;color:#001216;}' +
+      '.hundred-card.installed .hundred-card__action{background:rgba(0,190,120,.92);color:#fff;}' +
       '.hundred-card__badge{position:absolute;top:.75em;right:.75em;padding:.35em .6em;border-radius:.55em;background:rgba(0,190,120,.92);font-weight:700;font-size:.82em;display:none;}' +
       '.hundred-card.installed .hundred-card__badge{display:block;}' +
       '.hundred-store__empty{padding:3em;font-size:1.4em;color:rgba(255,255,255,.65);}' +
@@ -258,7 +261,13 @@
 
     activeStore.plugins.forEach(function (plugin) {
       var card = activeStore.root.querySelector('[data-plugin-id="' + plugin.id + '"]');
-      if (card) card.classList.toggle('installed', isInstalled(plugin));
+      if (card) {
+        var installed = isInstalled(plugin);
+        card.classList.toggle('installed', installed);
+
+        var action = card.querySelector('.hundred-card__action');
+        if (action) action.innerText = installed ? 'Обновить' : 'Установить';
+      }
     });
   }
 
@@ -274,54 +283,7 @@
   }
 
   function openPlugin(plugin) {
-    var installed = isInstalled(plugin);
-    var buttons = [
-      {
-        name: installed ? 'Обновить / запустить' : 'Установить',
-        onSelect: function () {
-          if (Lampa.Modal && Lampa.Modal.close) Lampa.Modal.close();
-          install(plugin);
-        }
-      }
-    ];
-
-    if (installed) {
-      buttons.push({
-        name: 'Удалить',
-        onSelect: function () {
-          if (Lampa.Modal && Lampa.Modal.close) Lampa.Modal.close();
-          remove(plugin);
-        }
-      });
-    }
-
-    buttons.push({
-      name: 'Назад',
-      onSelect: function () {
-        if (Lampa.Modal && Lampa.Modal.close) Lampa.Modal.close();
-        if (window.Lampa && Lampa.Controller) Lampa.Controller.toggle('hundred_store');
-      }
-    });
-
-    var hero = plugin.image ? '<div class="hundred-modal__hero" style="background-image:url(' + plugin.image + ')"></div>' : '';
-    var descr = plugin.description ? '<div class="hundred-modal__descr">' + escapeHtml(plugin.description) + '</div>' : '';
-    var html = '<div class="hundred-modal">' + hero + descr + '<div class="hundred-modal__url">' + escapeHtml(plugin.url) + '</div></div>';
-
-    if (window.Lampa && Lampa.Modal && Lampa.Modal.open) {
-      Lampa.Modal.open({
-        title: plugin.name,
-        html: html,
-        size: 'medium',
-        buttons: buttons,
-        onBack: function () {
-          Lampa.Modal.close();
-          if (window.Lampa && Lampa.Controller) Lampa.Controller.toggle('hundred_store');
-        }
-      });
-    } else {
-      if (installed) remove(plugin);
-      else install(plugin);
-    }
+    install(plugin);
   }
 
   function escapeHtml(value) {
@@ -346,6 +308,7 @@
         '<div class="hundred-card__body">' +
           '<div class="hundred-card__name">' + escapeHtml(plugin.name) + '</div>' +
           '<div class="hundred-card__meta"><span>' + escapeHtml(plugin.category || 'Плагин') + '</span><span>•</span><span>' + escapeHtml(plugin.version || '1.0.0') + '</span></div>' +
+          '<div class="hundred-card__action">Установить</div>' +
         '</div>' +
       '</div>';
   }
@@ -391,6 +354,8 @@
         if (!card) return;
 
         card.classList.toggle('installed', isInstalled(plugin));
+        var action = card.querySelector('.hundred-card__action');
+        if (action) action.innerText = isInstalled(plugin) ? 'Обновить' : 'Установить';
         card.addEventListener('hover:enter', function () { openPlugin(plugin); });
         card.addEventListener('click', function () { openPlugin(plugin); });
       });
@@ -407,9 +372,10 @@
         if (window.Lampa && Lampa.Controller) {
           Lampa.Controller.add('hundred_store', {
             toggle: function () {
-              Lampa.Controller.collectionSet(root);
+              var where = window.$ ? $(root) : root;
+              Lampa.Controller.collectionSet(where);
               var first = root.querySelector('.hundred-card') || close;
-              Lampa.Controller.collectionFocus(first, root);
+              Lampa.Controller.collectionFocus(first, where);
             },
             right: function () { if (window.Lampa.Navigator) Lampa.Navigator.move('right'); },
             left: function () { if (window.Lampa.Navigator) Lampa.Navigator.move('left'); },
