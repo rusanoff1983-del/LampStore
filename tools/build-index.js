@@ -53,7 +53,7 @@ function readDescription(folder, textFile, fallbackName) {
 
   return {
     name: lines[0].replace(/^#\s*/, '') || fallbackName,
-    description: lines.length > 1 ? lines.slice(1).join('\n').trim() : lines[0]
+    description: lines.length > 1 ? lines.slice(1).join('\n').trim() : ''
   };
 }
 

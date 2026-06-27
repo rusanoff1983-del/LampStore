@@ -1,22 +1,8 @@
-(function () {
+﻿(function () {
   'use strict';
 
   if (window.__HUNDRED_STORE_READY__) return;
   window.__HUNDRED_STORE_READY__ = true;
-
-  /*
-    100 мелочей — GitHub-магазин для Lampa
-
-    Как работает:
-    - пользователь ставит только этот store.js;
-    - магазин смотрит папки на GitHub в CONFIG.pluginsPath;
-    - каждая папка = один плагин;
-    - в каждой папке достаточно plugin.js;
-    - описание берётся из text.txt;
-    - скриншот берётся из screenshot.png/jpg/webp;
-    - иконка берётся из icon.png/jpg/webp;
-    - добавил новую папку на GitHub — она появилась у всех в магазине.
-  */
 
   var CONFIG = {
     owner: 'rusanoff1983-del',
@@ -29,27 +15,25 @@
   var STORE_KEY = 'hundred_store_installed';
   var SETTINGS_COMPONENT = 'hundred_store_settings';
   var STORE_NAME = CONFIG.title;
-  var ICON = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.8 2.8 1.3 4.9.2 6.5-.8 1.2-1.9 2.2-2.7 3.5-.9 1.5-.6 3.5 1.2 4.2-.2-1.4.5-2.5 1.5-3.5.6 2 2.7 2.7 2.7 5.1 0 1.6-1.3 3-3 3-3.6 0-6.4-2.7-6.4-6.3 0-3.1 2.1-5.2 4.1-7.2C11.1 5.8 12.2 4.3 12 2Zm4.2 6.2c2.1 1.7 3.3 4.1 3.3 6.9 0 3.8-2.8 6.9-6.4 7.5 2.6-.6 4.6-2.8 4.6-5.6 0-2.2-1.1-3.8-2.3-5.1.5-1.1.8-2.3.8-3.7Z"/></svg>';
-
-  function scriptBase() {
-    var scripts = document.getElementsByTagName('script');
-    var current = document.currentScript;
-
-    if (!current && scripts.length) current = scripts[scripts.length - 1];
-
-    var src = current && current.src ? current.src : '';
-    return src ? src.replace(/\/[^\/]*$/, '/') : './';
-  }
-
-  var BASE = scriptBase();
-  var GITHUB_API = 'https://api.github.com/repos/' + CONFIG.owner + '/' + CONFIG.repo + '/contents/';
   var RAW_BASE = 'https://cdn.jsdelivr.net/gh/' + CONFIG.owner + '/' + CONFIG.repo + '@' + CONFIG.branch + '/';
   var GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/' + CONFIG.owner + '/' + CONFIG.repo + '/' + CONFIG.branch + '/';
+  var ICON = '<svg width="38" height="38" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.8 2.8 1.3 4.9.2 6.5-.8 1.2-1.9 2.2-2.7 3.5-.9 1.5-.6 3.5 1.2 4.2-.2-1.4.5-2.5 1.5-3.5.6 2 2.7 2.7 2.7 5.1 0 1.6-1.3 3-3 3-3.6 0-6.4-2.7-6.4-6.3 0-3.1 2.1-5.2 4.1-7.2C11.1 5.8 12.2 4.3 12 2Zm4.2 6.2c2.1 1.7 3.3 4.1 3.3 6.9 0 3.8-2.8 6.9-6.4 7.5 2.6-.6 4.6-2.8 4.6-5.6 0-2.2-1.1-3.8-2.3-5.1.5-1.1.8-2.3.8-3.7Z"/></svg>';
 
-  function notice(text) {
+  function notify(text) {
     if (window.Lampa && Lampa.Noty && Lampa.Noty.show) return Lampa.Noty.show(text);
-    if (window.Lampa && Lampa.Bell && Lampa.Bell.push) return Lampa.Bell.push({ text: text, icon: ICON });
     console.log('[100 мелочей]', text);
+  }
+
+  function rawUrl(path) {
+    return RAW_BASE + String(path || '').replace(/^\/+/, '');
+  }
+
+  function rawUrlNoCache(path) {
+    return rawUrl(path) + '?t=' + Date.now();
+  }
+
+  function githubRawUrlNoCache(path) {
+    return GITHUB_RAW_BASE + String(path || '').replace(/^\/+/, '') + '?t=' + Date.now();
   }
 
   function storageGet(key, fallback) {
@@ -75,40 +59,58 @@
     } catch (e) {}
   }
 
-  function normalizeInstalled(value) {
+  function installedMap() {
+    var value = storageGet(STORE_KEY, {});
     if (!value) return {};
+
     if (Array.isArray(value)) {
       var map = {};
       value.forEach(function (id) { map[id] = true; });
       return map;
     }
-    return value;
-  }
 
-  function installedMap() {
-    return normalizeInstalled(storageGet(STORE_KEY, {}));
+    return value;
   }
 
   function saveInstalled(map) {
     storageSet(STORE_KEY, map || {});
   }
 
-  function isInstalled(id) {
-    return !!installedMap()[id];
+  function isInstalled(plugin) {
+    var map = installedMap();
+    if (map[plugin.id]) return true;
+
+    try {
+      if (window.Lampa && Lampa.Plugins && Lampa.Plugins.get) {
+        return Lampa.Plugins.get().some(function (item) {
+          return item && (item.url === plugin.url || item.link === plugin.url);
+        });
+      }
+    } catch (e) {}
+
+    return false;
   }
 
-  function resolveUrl(url) {
-    if (!url) return '';
-    if (/^https?:\/\//i.test(url)) return url;
-    try {
-      return new URL(url, BASE).toString();
-    } catch (e) {
-      return BASE + url.replace(/^\.\//, '');
+  function requestJson(url, done, fail) {
+    if (window.$ && $.ajax) {
+      return $.ajax({
+        url: url,
+        dataType: 'json',
+        cache: false,
+        success: function (data) { done(data); },
+        error: function () { if (fail) fail(); }
+      });
     }
+
+    fetch(url).then(function (response) {
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      return response.json();
+    }).then(done).catch(function () {
+      if (fail) fail();
+    });
   }
 
   function loadScript(url, done) {
-    url = resolveUrl(url);
     if (!url) return done && done(false);
 
     if (window.Lampa && Lampa.Utils && Lampa.Utils.putScriptAsync) {
@@ -126,250 +128,49 @@
     document.head.appendChild(script);
   }
 
-  function requestJson(url, done, fail) {
-    if (window.$ && $.ajax) {
-      return $.ajax({
-        url: url,
-        dataType: 'json',
-        cache: false,
-        success: function (data) { done(data); },
-        error: function () { if (fail) fail(); }
-      });
-    }
-
-    fetch(url).then(function (r) {
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      return r.json();
-    }).then(done).catch(function () {
-      if (fail) fail();
-    });
-  }
-
-  function requestText(url, done, fail) {
-    if (window.$ && $.ajax) {
-      return $.ajax({
-        url: url,
-        dataType: 'text',
-        cache: false,
-        success: function (data) { done(data || ''); },
-        error: function () { if (fail) fail(); }
-      });
-    }
-
-    fetch(url).then(function (r) {
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      return r.text();
-    }).then(done).catch(function () {
-      if (fail) fail();
-    });
-  }
-
-  function rawUrl(path) {
-    return RAW_BASE + String(path || '').replace(/^\/+/, '');
-  }
-
-  function rawUrlNoCache(path) {
-    return rawUrl(path) + (String(path).indexOf('?') >= 0 ? '&' : '?') + 't=' + Date.now();
-  }
-
-  function githubRawUrlNoCache(path) {
-    return GITHUB_RAW_BASE + String(path || '').replace(/^\/+/, '') + (String(path).indexOf('?') >= 0 ? '&' : '?') + 't=' + Date.now();
-  }
-
-  function folderApiUrl(path) {
-    return GITHUB_API + encodeURIComponent(path).replace(/%2F/g, '/') + '?ref=' + encodeURIComponent(CONFIG.branch) + '&t=' + Date.now();
-  }
-
-  function prettyName(name) {
-    return String(name || '')
-      .replace(/[-_]+/g, ' ')
-      .replace(/\s+/g, ' ')
-      .trim()
-      .replace(/\b\w/g, function (s) { return s.toUpperCase(); });
-  }
-
-  function defaultPlugin(folder) {
-    return {
-      id: folder.name,
-      name: prettyName(folder.name),
-      version: '1.0.0',
-      author: '',
-      category: 'Плагины',
-      description: '',
-      icon: '',
-      screenshots: [],
-      file: 'plugin.js',
-      folder: folder.path,
-      url: rawUrl(folder.path + '/plugin.js')
-    };
-  }
-
-  function normalizeIndexPlugin(plugin) {
+  function normalizePlugin(plugin) {
     plugin = plugin || {};
 
-    var folderName = plugin.id || plugin.folder || plugin.name || 'plugin';
-    folderName = String(folderName).split('/').pop();
+    var folder = plugin.folder || (CONFIG.pluginsPath + '/' + plugin.id);
+    var item = {
+      id: plugin.id || String(folder).split('/').pop(),
+      name: plugin.name || plugin.title || String(folder).split('/').pop(),
+      author: plugin.author || '@100melochey',
+      description: plugin.description || plugin.descr || '',
+      folder: folder,
+      file: plugin.file || 'plugin.js',
+      version: plugin.version || '1.0.0',
+      category: plugin.category || 'Плагины',
+      icon: plugin.icon || '',
+      screenshots: plugin.screenshots || []
+    };
 
-    var item = defaultPlugin({
-      name: plugin.id || folderName,
-      path: plugin.folder || (CONFIG.pluginsPath + '/' + folderName)
-    });
-
-    Object.keys(plugin).forEach(function (key) {
-      item[key] = plugin[key];
-    });
-
-    item.id = item.id || folderName;
-    item.name = item.name || prettyName(folderName);
-    item.file = item.file || 'plugin.js';
-    item.folder = item.folder || (CONFIG.pluginsPath + '/' + item.id);
-    item.url = item.url || rawUrl(item.folder + '/' + item.file);
+    item.url = plugin.url || rawUrl(item.folder + '/' + item.file);
 
     if (item.icon && !/^https?:\/\//i.test(item.icon)) item.icon = rawUrl(item.folder + '/' + item.icon);
 
-    item.screenshots = item.screenshots || [];
     item.screenshots = item.screenshots.map(function (screen) {
       return /^https?:\/\//i.test(screen) ? screen : rawUrl(item.folder + '/' + screen);
     });
 
+    item.image = item.screenshots[0] || item.icon || '';
+
     return item;
   }
 
-  function pickFile(files, names) {
-    var lower = {};
-    (files || []).forEach(function (file) {
-      lower[String(file.name || '').toLowerCase()] = file;
-    });
-
-    for (var i = 0; i < names.length; i++) {
-      var found = lower[String(names[i]).toLowerCase()];
-      if (found) return found;
-    }
-
-    return null;
-  }
-
-  function extractTitleAndDescription(text, fallbackName) {
-    text = String(text || '').replace(/\r/g, '').trim();
-
-    if (!text) {
-      return {
-        name: fallbackName,
-        description: ''
-      };
-    }
-
-    var lines = text.split('\n').map(function (line) {
-      return line.trim();
-    }).filter(Boolean);
-
-    if (!lines.length) {
-      return {
-        name: fallbackName,
-        description: ''
-      };
-    }
-
-    return {
-      name: lines[0].replace(/^#\s*/, '') || fallbackName,
-      description: lines.slice(1).join('\n').trim() || lines[0]
-    };
-  }
-
-  function loadPluginFolder(folder, done) {
-    requestJson(folderApiUrl(folder.path), function (files) {
-      files = files || [];
-
-      var pluginFile = pickFile(files, ['plugin.js', 'index.js', 'main.js']);
-      if (!pluginFile) {
-        pluginFile = (files || []).filter(function (file) {
-          return file.type === 'file' && /\.js$/i.test(file.name || '');
-        }).sort(function (a, b) {
-          return String(a.name).localeCompare(String(b.name));
-        })[0];
-      }
-      var textFile = pickFile(files, ['text.txt', 'description.txt', 'readme.txt', 'README.md', 'readme.md']);
-      var iconFile = pickFile(files, ['icon.png', 'icon.jpg', 'icon.jpeg', 'icon.webp']);
-      var screenFile = pickFile(files, [
-        'screenshot.png',
-        'screenshot.jpg',
-        'screenshot.jpeg',
-        'screenshot.webp',
-        'screen.png',
-        'screen.jpg',
-        'preview.png',
-        'preview.jpg'
-      ]);
-
-      if (!pluginFile) return done(null);
-
-      var plugin = defaultPlugin(folder);
-      plugin.file = pluginFile.name;
-      plugin.url = rawUrl(folder.path + '/' + pluginFile.name);
-
-      if (iconFile) plugin.icon = rawUrl(folder.path + '/' + iconFile.name);
-      if (screenFile) plugin.screenshots = [rawUrl(folder.path + '/' + screenFile.name)];
-
-      if (!textFile) return done(plugin);
-
-      requestText(rawUrl(folder.path + '/' + textFile.name) + '?t=' + Date.now(), function (text) {
-        var parsed = extractTitleAndDescription(text, plugin.name);
-        plugin.name = parsed.name;
-        plugin.description = parsed.description;
-        done(plugin);
-      }, function () {
-        done(plugin);
-      });
-    }, function () {
-      done(null);
-    });
-  }
-
   function loadCatalog(done) {
-    function applyIndex(index) {
-      index = index || {};
-      index.plugins = (index.plugins || []).map(normalizeIndexPlugin);
-
+    function apply(index) {
+      var plugins = ((index && index.plugins) || []).map(normalizePlugin);
       done({
-        name: index.name || STORE_NAME,
-        plugins: index.plugins
+        name: (index && index.name) || STORE_NAME,
+        plugins: plugins
       });
     }
 
-    requestJson(githubRawUrlNoCache(CONFIG.pluginsPath + '/index.json'), applyIndex, function () {
-      requestJson(rawUrlNoCache(CONFIG.pluginsPath + '/index.json'), applyIndex, function () {
-        loadCatalogFromGithubApi(done);
+    requestJson(githubRawUrlNoCache(CONFIG.pluginsPath + '/index.json'), apply, function () {
+      requestJson(rawUrlNoCache(CONFIG.pluginsPath + '/index.json'), apply, function () {
+        done({ name: STORE_NAME, plugins: [] });
       });
-    });
-  }
-
-  function loadCatalogFromGithubApi(done) {
-    requestJson(folderApiUrl(CONFIG.pluginsPath), function (items) {
-      var folders = (items || []).filter(function (item) {
-        return item.type === 'dir';
-      });
-
-      var plugins = [];
-      var left = folders.length;
-
-      if (!left) return done({ name: STORE_NAME, plugins: [] });
-
-      folders.forEach(function (folder) {
-        loadPluginFolder(folder, function (plugin) {
-          if (plugin) plugins.push(plugin);
-          left--;
-
-          if (left === 0) {
-            plugins.sort(function (a, b) {
-              return String(a.name).localeCompare(String(b.name));
-            });
-
-            done({ name: STORE_NAME, plugins: plugins });
-          }
-        });
-      });
-    }, function () {
-      done({ name: STORE_NAME, plugins: [] });
     });
   }
 
@@ -378,8 +179,20 @@
     map[plugin.id] = true;
     saveInstalled(map);
 
+    try {
+      if (window.Lampa && Lampa.Plugins && Lampa.Plugins.add && !isInstalled(plugin)) {
+        Lampa.Plugins.add({
+          url: plugin.url,
+          status: 1,
+          name: plugin.name,
+          author: plugin.author
+        });
+      }
+    } catch (e) {}
+
     loadScript(plugin.url, function (ok) {
-      if (!silent) notice(ok ? 'Установлено: ' + plugin.name : 'Не загрузилось: ' + plugin.name);
+      if (!silent) notify(ok ? 'Установлено: ' + plugin.name : 'Не удалось загрузить: ' + plugin.name);
+      updateCardsState();
     });
   }
 
@@ -387,80 +200,227 @@
     var map = installedMap();
     delete map[plugin.id];
     saveInstalled(map);
-    notice('Удалено из автозагрузки: ' + plugin.name + '. Полностью исчезнет после перезапуска Lampa.');
+
+    try {
+      if (window.Lampa && Lampa.Plugins && Lampa.Plugins.remove) {
+        var items = Lampa.Plugins.get ? Lampa.Plugins.get() : [];
+        items.filter(function (item) {
+          return item && (item.url === plugin.url || item.link === plugin.url);
+        }).forEach(function (item) {
+          Lampa.Plugins.remove(item);
+        });
+      }
+    } catch (e) {}
+
+    notify('Удалено из автозагрузки. Если плагин уже запущен — исчезнет после перезапуска Lampa.');
+    updateCardsState();
   }
 
-  function showPlugin(plugin) {
-    var installed = isInstalled(plugin.id);
-    var items = [
-      {
-        title: installed ? 'Переустановить / обновить' : 'Установить',
-        subtitle: plugin.url,
-        action: 'install'
-      },
-      {
-        title: installed ? 'Удалить из автозагрузки' : 'Не установлено',
-        subtitle: installed ? 'После перезапуска Lampa плагин не загрузится' : 'Сначала установи плагин',
-        action: 'remove',
-        disabled: !installed
-      },
-      {
-        title: 'Описание',
-        subtitle: plugin.description || 'Без описания',
-        action: 'info'
-      },
-      {
-        title: 'Ссылка на JS',
-        subtitle: plugin.url,
-        action: 'url'
-      }
-    ];
+  function ensureStyle() {
+    if (document.getElementById('hundred-store-style')) return;
 
-    Lampa.Select.show({
-      title: plugin.name + ' v' + (plugin.version || '1.0'),
-      items: items,
-      onSelect: function (selected) {
-        var item = selected.item || selected;
-        if (item.disabled) return;
-        if (item.action === 'install') return install(plugin);
-        if (item.action === 'remove') return remove(plugin);
-        if (item.action === 'info') return notice(plugin.description || 'Без описания');
-        if (item.action === 'url') return notice(plugin.url || 'Ссылки нет');
-      },
-      onBack: function () {
-        openStore();
-      }
+    var css = '' +
+      '.hundred-store{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#111 0%,#1b1f23 55%,#291d11 100%);color:#fff;font-family:inherit;}' +
+      '.hundred-store *{box-sizing:border-box;}' +
+      '.hundred-store__head{height:6.5em;display:flex;align-items:center;gap:1.2em;padding:1.4em 2.4em 1em;}' +
+      '.hundred-store__logo{width:3.4em;height:3.4em;border-radius:1em;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.12);color:#ffbf42;}' +
+      '.hundred-store__title{font-size:2.2em;font-weight:700;line-height:1;}' +
+      '.hundred-store__sub{font-size:1.02em;color:rgba(255,255,255,.58);margin-top:.35em;}' +
+      '.hundred-store__close{margin-left:auto;padding:.75em 1em;border-radius:.7em;background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);}' +
+      '.hundred-store__body{height:calc(100% - 6.5em);overflow:auto;padding:0 2.4em 2.4em;}' +
+      '.hundred-store__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(18em,1fr));gap:1.25em;align-items:stretch;}' +
+      '.hundred-card{position:relative;min-height:13.4em;border-radius:1.15em;overflow:hidden;background:#202020;box-shadow:0 1em 2.8em rgba(0,0,0,.32);transform:translateZ(0);}' +
+      '.hundred-card.focus{outline:.22em solid #00d7ff;box-shadow:0 0 0 .35em rgba(0,215,255,.22),0 1em 3em rgba(0,0,0,.42);}' +
+      '.hundred-card__image{height:10.6em;background:linear-gradient(135deg,#353535,#191919);background-size:cover;background-position:center;}' +
+      '.hundred-card__image.empty{display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.18);font-size:4em;}' +
+      '.hundred-card__shade{position:absolute;left:0;right:0;bottom:0;height:7.6em;background:linear-gradient(0deg,rgba(0,0,0,.92),rgba(0,0,0,.58) 62%,rgba(0,0,0,0));}' +
+      '.hundred-card__body{position:absolute;left:0;right:0;bottom:0;padding:1em;}' +
+      '.hundred-card__name{font-size:1.22em;font-weight:700;line-height:1.15;text-shadow:0 .12em .2em rgba(0,0,0,.5);}' +
+      '.hundred-card__meta{display:flex;gap:.5em;align-items:center;margin-top:.55em;color:rgba(255,255,255,.72);font-size:.9em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}' +
+      '.hundred-card__badge{position:absolute;top:.75em;right:.75em;padding:.35em .6em;border-radius:.55em;background:rgba(0,190,120,.92);font-weight:700;font-size:.82em;display:none;}' +
+      '.hundred-card.installed .hundred-card__badge{display:block;}' +
+      '.hundred-store__empty{padding:3em;font-size:1.4em;color:rgba(255,255,255,.65);}' +
+      '.hundred-modal{padding:.3em 0;}' +
+      '.hundred-modal__hero{height:15em;background-size:cover;background-position:center;border-radius:.8em;margin-bottom:1em;background-color:#222;}' +
+      '.hundred-modal__descr{color:rgba(255,255,255,.75);font-size:1.05em;line-height:1.45;margin-bottom:1em;}' +
+      '.hundred-modal__url{font-size:.78em;color:rgba(255,255,255,.42);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}';
+
+    var style = document.createElement('style');
+    style.id = 'hundred-store-style';
+    style.textContent = css;
+    document.head.appendChild(style);
+  }
+
+  var activeStore = null;
+
+  function updateCardsState() {
+    if (!activeStore) return;
+
+    activeStore.plugins.forEach(function (plugin) {
+      var card = activeStore.root.querySelector('[data-plugin-id="' + plugin.id + '"]');
+      if (card) card.classList.toggle('installed', isInstalled(plugin));
     });
   }
 
+  function closeStore() {
+    if (!activeStore) return;
+
+    try {
+      if (window.Lampa && Lampa.Controller) Lampa.Controller.toggle(activeStore.backController || 'content');
+    } catch (e) {}
+
+    activeStore.root.remove();
+    activeStore = null;
+  }
+
+  function openPlugin(plugin) {
+    var installed = isInstalled(plugin);
+    var buttons = [
+      {
+        name: installed ? 'Обновить / запустить' : 'Установить',
+        onSelect: function () {
+          if (Lampa.Modal && Lampa.Modal.close) Lampa.Modal.close();
+          install(plugin);
+        }
+      }
+    ];
+
+    if (installed) {
+      buttons.push({
+        name: 'Удалить',
+        onSelect: function () {
+          if (Lampa.Modal && Lampa.Modal.close) Lampa.Modal.close();
+          remove(plugin);
+        }
+      });
+    }
+
+    buttons.push({
+      name: 'Назад',
+      onSelect: function () {
+        if (Lampa.Modal && Lampa.Modal.close) Lampa.Modal.close();
+        if (window.Lampa && Lampa.Controller) Lampa.Controller.toggle('hundred_store');
+      }
+    });
+
+    var hero = plugin.image ? '<div class="hundred-modal__hero" style="background-image:url(' + plugin.image + ')"></div>' : '';
+    var descr = plugin.description ? '<div class="hundred-modal__descr">' + escapeHtml(plugin.description) + '</div>' : '';
+    var html = '<div class="hundred-modal">' + hero + descr + '<div class="hundred-modal__url">' + escapeHtml(plugin.url) + '</div></div>';
+
+    if (window.Lampa && Lampa.Modal && Lampa.Modal.open) {
+      Lampa.Modal.open({
+        title: plugin.name,
+        html: html,
+        size: 'medium',
+        buttons: buttons,
+        onBack: function () {
+          Lampa.Modal.close();
+          if (window.Lampa && Lampa.Controller) Lampa.Controller.toggle('hundred_store');
+        }
+      });
+    } else {
+      if (installed) remove(plugin);
+      else install(plugin);
+    }
+  }
+
+  function escapeHtml(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function cardHtml(plugin) {
+    var image = plugin.image ? ' style="background-image:url(' + plugin.image + ')"' : '';
+    var empty = plugin.image ? '' : ' empty';
+    var letter = escapeHtml((plugin.name || '?').charAt(0).toUpperCase());
+
+    return '' +
+      '<div class="hundred-card selector" data-plugin-id="' + escapeHtml(plugin.id) + '">' +
+        '<div class="hundred-card__image' + empty + '"' + image + '>' + (plugin.image ? '' : letter) + '</div>' +
+        '<div class="hundred-card__shade"></div>' +
+        '<div class="hundred-card__badge">✓</div>' +
+        '<div class="hundred-card__body">' +
+          '<div class="hundred-card__name">' + escapeHtml(plugin.name) + '</div>' +
+          '<div class="hundred-card__meta"><span>' + escapeHtml(plugin.category || 'Плагин') + '</span><span>•</span><span>' + escapeHtml(plugin.version || '1.0.0') + '</span></div>' +
+        '</div>' +
+      '</div>';
+  }
+
   function openStore() {
+    ensureStyle();
+
     loadCatalog(function (catalog) {
       var plugins = catalog.plugins || [];
 
       if (!plugins.length) {
-        notice('Каталог пустой или не загрузился');
+        notify('Каталог пустой или не загрузился');
         return;
       }
 
-      var items = plugins.map(function (plugin) {
-        var mark = isInstalled(plugin.id) ? '✓ ' : '';
-        return {
-          title: mark + plugin.name,
-          subtitle: (plugin.category || 'Плагин') + ' · ' + (plugin.description || plugin.url || ''),
-          plugin: plugin
-        };
+      if (activeStore) closeStore();
+
+      var backController = 'content';
+      try {
+        if (window.Lampa && Lampa.Controller && Lampa.Controller.enabled) backController = Lampa.Controller.enabled().name || backController;
+      } catch (e) {}
+
+      var root = document.createElement('div');
+      root.className = 'hundred-store layer--width layer--height';
+      root.innerHTML = '' +
+        '<div class="hundred-store__head">' +
+          '<div class="hundred-store__logo">' + ICON + '</div>' +
+          '<div><div class="hundred-store__title">' + escapeHtml(catalog.name || STORE_NAME) + '</div><div class="hundred-store__sub">' + plugins.length + ' плагинов · Enter — открыть · Back — назад</div></div>' +
+          '<div class="hundred-store__close selector">Закрыть</div>' +
+        '</div>' +
+        '<div class="hundred-store__body"><div class="hundred-store__grid">' + plugins.map(cardHtml).join('') + '</div></div>';
+
+      document.body.appendChild(root);
+
+      activeStore = {
+        root: root,
+        plugins: plugins,
+        backController: backController
+      };
+
+      plugins.forEach(function (plugin) {
+        var card = root.querySelector('[data-plugin-id="' + plugin.id + '"]');
+        if (!card) return;
+
+        card.classList.toggle('installed', isInstalled(plugin));
+        card.addEventListener('hover:enter', function () { openPlugin(plugin); });
+        card.addEventListener('click', function () { openPlugin(plugin); });
       });
 
-      Lampa.Select.show({
-        title: (catalog.name || STORE_NAME) + ' · магазин',
-        items: items,
-        onSelect: function (selected) {
-          showPlugin((selected.item || selected).plugin);
-        },
-        onBack: function () {
-          if (Lampa.Controller && Lampa.Controller.toggle) Lampa.Controller.toggle('content');
+      var close = root.querySelector('.hundred-store__close');
+      close.addEventListener('hover:enter', closeStore);
+      close.addEventListener('click', closeStore);
+
+      try {
+        if (window.Lampa && Lampa.Layer && Lampa.Layer.visible) Lampa.Layer.visible(root);
+      } catch (e) {}
+
+      try {
+        if (window.Lampa && Lampa.Controller) {
+          Lampa.Controller.add('hundred_store', {
+            toggle: function () {
+              Lampa.Controller.collectionSet(root);
+              var first = root.querySelector('.hundred-card') || close;
+              Lampa.Controller.collectionFocus(first, root);
+            },
+            right: function () { if (window.Lampa.Navigator) Lampa.Navigator.move('right'); },
+            left: function () { if (window.Lampa.Navigator) Lampa.Navigator.move('left'); },
+            up: function () { if (window.Lampa.Navigator) Lampa.Navigator.move('up'); },
+            down: function () { if (window.Lampa.Navigator) Lampa.Navigator.move('down'); },
+            back: closeStore
+          });
+
+          Lampa.Controller.toggle('hundred_store');
         }
-      });
+      } catch (e) {}
     });
   }
 
@@ -468,7 +428,7 @@
     loadCatalog(function (catalog) {
       var map = installedMap();
       (catalog.plugins || []).forEach(function (plugin) {
-        if (map[plugin.id]) install(plugin, true);
+        if (map[plugin.id]) loadScript(plugin.url);
       });
     });
   }
@@ -494,23 +454,11 @@
           default: ''
         },
         field: {
-          name: 'Открыть магазин',
-          description: 'Каталог плагинов из GitHub'
+          name: 'Открыть витрину',
+          description: 'Карточки плагинов с картинками'
         },
         onChange: function () {
           setTimeout(openStore, 50);
-        }
-      });
-
-      Lampa.SettingsApi.addParam({
-        component: SETTINGS_COMPONENT,
-        param: {
-          name: 'hundred_store_info',
-          type: 'static'
-        },
-        field: {
-          name: 'Как добавить плагин',
-          description: 'Создай папку в plugins, положи plugin.js и text.txt. После пуша GitHub сам обновит список.'
         }
       });
     } catch (e) {
@@ -526,7 +474,7 @@
       if (addSettings()) {
         clearInterval(timer);
         autoload();
-        notice(STORE_NAME + ': магазин подключен');
+        notify(STORE_NAME + ': подключен');
       }
     }, 500);
 
