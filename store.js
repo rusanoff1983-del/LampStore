@@ -44,6 +44,7 @@
   var BASE = scriptBase();
   var GITHUB_API = 'https://api.github.com/repos/' + CONFIG.owner + '/' + CONFIG.repo + '/contents/';
   var RAW_BASE = 'https://cdn.jsdelivr.net/gh/' + CONFIG.owner + '/' + CONFIG.repo + '@' + CONFIG.branch + '/';
+  var GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/' + CONFIG.owner + '/' + CONFIG.repo + '/' + CONFIG.branch + '/';
 
   function notice(text) {
     if (window.Lampa && Lampa.Noty && Lampa.Noty.show) return Lampa.Noty.show(text);
@@ -169,6 +170,10 @@
 
   function rawUrlNoCache(path) {
     return rawUrl(path) + (String(path).indexOf('?') >= 0 ? '&' : '?') + 't=' + Date.now();
+  }
+
+  function githubRawUrlNoCache(path) {
+    return GITHUB_RAW_BASE + String(path || '').replace(/^\/+/, '') + (String(path).indexOf('?') >= 0 ? '&' : '?') + 't=' + Date.now();
   }
 
   function folderApiUrl(path) {
@@ -321,7 +326,7 @@
   }
 
   function loadCatalog(done) {
-    requestJson(rawUrlNoCache(CONFIG.pluginsPath + '/index.json'), function (index) {
+    function applyIndex(index) {
       index = index || {};
       index.plugins = (index.plugins || []).map(normalizeIndexPlugin);
 
@@ -329,8 +334,12 @@
         name: index.name || STORE_NAME,
         plugins: index.plugins
       });
-    }, function () {
-      loadCatalogFromGithubApi(done);
+    }
+
+    requestJson(githubRawUrlNoCache(CONFIG.pluginsPath + '/index.json'), applyIndex, function () {
+      requestJson(rawUrlNoCache(CONFIG.pluginsPath + '/index.json'), applyIndex, function () {
+        loadCatalogFromGithubApi(done);
+      });
     });
   }
 

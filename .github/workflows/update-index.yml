@@ -34,3 +34,9 @@ jobs:
           git add plugins/index.json
           git commit -m "Update plugin index"
           git push
+
+      - name: Purge jsDelivr index cache
+        if: always()
+        run: |
+          curl -fsS "https://purge.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/index.json" || true
+          curl -fsS "https://purge.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/store.js" || true
