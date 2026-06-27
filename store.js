@@ -261,9 +261,12 @@
       '.hundred-card__body{position:absolute;left:0;right:0;bottom:0;padding:1em;}' +
       '.hundred-card__name{font-size:1.22em;font-weight:700;line-height:1.15;text-shadow:0 .12em .2em rgba(0,0,0,.5);}' +
       '.hundred-card__meta{display:flex;gap:.5em;align-items:center;margin-top:.55em;color:rgba(255,255,255,.72);font-size:.9em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}' +
-      '.hundred-card__action{display:inline-flex;margin-top:.8em;padding:.45em .75em;border-radius:.55em;background:rgba(255,255,255,.16);font-size:.92em;font-weight:700;color:#fff;}' +
+      '.hundred-card__actions{display:flex;gap:.55em;margin-top:.8em;align-items:center;}' +
+      '.hundred-card__action,.hundred-card__remove{display:inline-flex;padding:.45em .75em;border-radius:.55em;background:rgba(255,255,255,.16);font-size:.92em;font-weight:700;color:#fff;}' +
       '.hundred-card.focus .hundred-card__action{background:#00d7ff;color:#001216;}' +
       '.hundred-card.installed .hundred-card__action{background:rgba(0,190,120,.92);color:#fff;}' +
+      '.hundred-card__remove{display:none;background:rgba(255,75,75,.86);}' +
+      '.hundred-card.installed .hundred-card__remove{display:inline-flex;}' +
       '.hundred-card__badge{position:absolute;top:.75em;right:.75em;padding:.35em .6em;border-radius:.55em;background:rgba(0,190,120,.92);font-weight:700;font-size:.82em;display:none;}' +
       '.hundred-card.installed .hundred-card__badge{display:block;}' +
       '.hundred-store__empty{padding:3em;font-size:1.4em;color:rgba(255,255,255,.65);}' +
@@ -332,7 +335,10 @@
         '<div class="hundred-card__body">' +
           '<div class="hundred-card__name">' + escapeHtml(plugin.name) + '</div>' +
           '<div class="hundred-card__meta"><span>' + escapeHtml(plugin.category || 'Плагин') + '</span><span>•</span><span>' + escapeHtml(plugin.version || '1.0.0') + '</span></div>' +
-          '<div class="hundred-card__action">Установить</div>' +
+          '<div class="hundred-card__actions">' +
+            '<div class="hundred-card__action">Установить</div>' +
+            '<div class="hundred-card__remove">Удалить</div>' +
+          '</div>' +
         '</div>' +
       '</div>';
   }
@@ -382,6 +388,19 @@
         if (action) action.innerText = isInstalled(plugin) ? 'Обновить' : 'Установить';
         card.addEventListener('hover:enter', function () { openPlugin(plugin); });
         card.addEventListener('click', function () { openPlugin(plugin); });
+
+        var removeButton = card.querySelector('.hundred-card__remove');
+        if (removeButton) {
+          removeButton.addEventListener('hover:enter', function (event) {
+            event.stopPropagation();
+            remove(plugin);
+          });
+
+          removeButton.addEventListener('click', function (event) {
+            event.stopPropagation();
+            remove(plugin);
+          });
+        }
       });
 
       var close = root.querySelector('.hundred-store__close');
