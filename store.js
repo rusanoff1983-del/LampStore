@@ -363,7 +363,14 @@
   }
 
   function loadLinks(done) {
-    requestJson(githubApiUrl(CONFIG.linksPath), function (files) {
+    requestText(githubRawUrlNoCache(CONFIG.linksPath + '/links.txt'), function (text) {
+      requestJson(githubApiUrl(CONFIG.linksPath), function (files) {
+        done(parseLinksText(text, files || []));
+      }, function () {
+        done(parseLinksText(text, []));
+      });
+    }, function () {
+      requestJson(githubApiUrl(CONFIG.linksPath), function (files) {
       files = files || [];
 
       var list = pickFile(files, ['links.txt']);
@@ -376,6 +383,7 @@
       });
     }, function () {
       done([]);
+    });
     });
   }
 
@@ -502,7 +510,9 @@
       '.hundred-store__logo{width:3.4em;height:3.4em;border-radius:1em;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.12);color:#ffbf42;}' +
       '.hundred-store__title{font-size:2.2em;font-weight:700;line-height:1;}' +
       '.hundred-store__sub{font-size:1.02em;color:rgba(255,255,255,.58);margin-top:.35em;}' +
-      '.hundred-store__close{margin-left:auto;padding:.75em 1em;border-radius:.7em;background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);}' +
+      '.hundred-store__refresh,.hundred-store__close{padding:.75em 1em;border-radius:.7em;background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);}' +
+      '.hundred-store__refresh{margin-left:auto;}' +
+      '.hundred-store__refresh.focus,.hundred-store__close.focus{background:#00d7ff;color:#001216;}' +
       '.hundred-store__body{height:calc(100% - 6.5em);overflow:auto;padding:0 2.4em 2.4em;}' +
       '.hundred-store__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(24em,1fr));grid-auto-rows:14em;gap:1.25em;align-items:start;}' +
       '.hundred-card{position:relative;height:14em;min-height:0;border-radius:1.15em;overflow:hidden;background:#202020;box-shadow:0 1em 2.8em rgba(0,0,0,.32);transform:translateZ(0);}' +
@@ -559,6 +569,15 @@
 
     activeStore.root.remove();
     activeStore = null;
+  }
+
+  function refreshStore() {
+    if (activeStore) {
+      activeStore.root.remove();
+      activeStore = null;
+    }
+
+    openStore();
   }
 
   function openPlugin(plugin) {
@@ -619,6 +638,7 @@
         '<div class="hundred-store__head">' +
           '<div class="hundred-store__logo">' + ICON + '</div>' +
           '<div><div class="hundred-store__title">' + escapeHtml(catalog.name || STORE_NAME) + '</div><div class="hundred-store__sub">Плагины из GitHub-папок · Enter — установить · Back — назад</div></div>' +
+          '<div class="hundred-store__refresh selector">Обновить</div>' +
           '<div class="hundred-store__close selector">Закрыть</div>' +
         '</div>' +
         '<div class="hundred-store__body"><div class="hundred-store__grid">' + plugins.map(cardHtml).join('') + '</div></div>';
@@ -658,6 +678,10 @@
       var close = root.querySelector('.hundred-store__close');
       close.addEventListener('hover:enter', closeStore);
       close.addEventListener('click', closeStore);
+
+      var refresh = root.querySelector('.hundred-store__refresh');
+      refresh.addEventListener('hover:enter', refreshStore);
+      refresh.addEventListener('click', refreshStore);
 
       try {
         if (window.Lampa && Lampa.Layer && Lampa.Layer.visible) Lampa.Layer.visible(root);
