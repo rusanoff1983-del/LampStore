@@ -1,2 +1,3 @@
 Exit | https://tvigl.github.io/plugins/exit.js
 Плагин добавления логотипов фильмов | https://tvigl.github.io/plugins/logo.js
+Плагин surs | https://aviamovie.github.io/surs.js
