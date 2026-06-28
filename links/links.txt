@@ -1,3 +1,2 @@
 Exit | https://tvigl.github.io/plugins/exit.js
-No MIC | https://lampaplugins.github.io/store/no-mic.js
-Reset Subs | https://nb557.github.io/plugins/reset_subs.js
+Плагин добавления логотипов фильмов | https://tvigl.github.io/plugins/logo.js
