@@ -19,6 +19,7 @@
   var RAW_BASE = 'https://cdn.jsdelivr.net/gh/' + CONFIG.owner + '/' + CONFIG.repo + '@' + CONFIG.branch + '/';
   var GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/' + CONFIG.owner + '/' + CONFIG.repo + '/' + CONFIG.branch + '/';
   var GITHUB_API = 'https://api.github.com/repos/' + CONFIG.owner + '/' + CONFIG.repo + '/contents/';
+  var JSDELIVR_FLAT_API = 'https://data.jsdelivr.com/v1/package/gh/' + CONFIG.owner + '/' + CONFIG.repo + '@' + CONFIG.branch + '/flat';
   var ICON = '<svg width="38" height="38" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1.8 2.8 1.3 4.9.2 6.5-.8 1.2-1.9 2.2-2.7 3.5-.9 1.5-.6 3.5 1.2 4.2-.2-1.4.5-2.5 1.5-3.5.6 2 2.7 2.7 2.7 5.1 0 1.6-1.3 3-3 3-3.6 0-6.4-2.7-6.4-6.3 0-3.1 2.1-5.2 4.1-7.2C11.1 5.8 12.2 4.3 12 2Zm4.2 6.2c2.1 1.7 3.3 4.1 3.3 6.9 0 3.8-2.8 6.9-6.4 7.5 2.6-.6 4.6-2.8 4.6-5.6 0-2.2-1.1-3.8-2.3-5.1.5-1.1.8-2.3.8-3.7Z"/></svg>';
 
   function notify(text) {
@@ -214,6 +215,10 @@
     })[0] || null;
   }
 
+  function fileName(path) {
+    return String(path || '').split('/').pop();
+  }
+
   function fileBaseName(url) {
     var clean = String(url || '').split('?')[0].split('#')[0];
     var name = clean.split('/').pop() || clean;
@@ -304,6 +309,75 @@
     });
   }
 
+  function pluginFromFlatFolder(folder, files, done) {
+    files = files || [];
+
+    var js = pickFile(files, ['plugin.js', 'index.js', 'main.js']) || firstJs(files);
+    var urlFile = pickFile(files, ['url.txt', 'link.txt']);
+
+    if (!js && !urlFile) return done(null);
+
+    var text = pickFile(files, ['title.txt', 'text.txt', 'description.txt', 'readme.txt', 'readme.md', 'README.md']);
+    var icon = pickFile(files, ['icon.png', 'icon.jpg', 'icon.jpeg', 'icon.webp']);
+    var screen = pickFile(files, [
+      'screenshot.webp',
+      'screenshot.png',
+      'screenshot.jpg',
+      'screenshot.jpeg',
+      'screen.webp',
+      'screen.png',
+      'screen.jpg',
+      'preview.webp',
+      'preview.png',
+      'preview.jpg'
+    ]);
+
+    var base = {
+      id: folder.name,
+      name: prettyName(folder.name),
+      author: '@100melochey',
+      description: '',
+      folder: folder.path,
+      file: js ? js.name : '',
+      url: '',
+      version: '1.0.0',
+      category: 'Плагины',
+      icon: icon ? icon.name : '',
+      screenshots: screen ? [screen.name] : []
+    };
+
+    function finish() {
+      if (!text) return done(normalizePlugin(base));
+
+      requestText(githubRawUrlNoCache(text.path), function (content) {
+        var parsed = parseText(content, base.name);
+        base.name = parsed.name;
+        base.description = parsed.description;
+        done(normalizePlugin(base));
+      }, function () {
+        done(normalizePlugin(base));
+      });
+    }
+
+    if (urlFile) {
+      requestText(githubRawUrlNoCache(urlFile.path), function (content) {
+        var url = String(content || '').split(/\r?\n/).map(function (line) {
+          return line.trim();
+        }).filter(Boolean)[0] || '';
+
+        if (url) base.url = url;
+        finish();
+      }, function () {
+        if (js) finish();
+        else done(null);
+      });
+
+      return;
+    }
+
+    finish();
+  }
+
   function imageBySlug(files, slug) {
     var names = [
       slug + '.webp',
@@ -388,49 +462,81 @@
   }
 
   function loadCatalog(done) {
-    function loadFolders(call) {
-      requestJson(githubApiUrl(CONFIG.pluginsPath), function (items) {
-      var folders = (items || []).filter(function (item) {
-        return item.type === 'dir';
+    requestJson(JSDELIVR_FLAT_API + '?t=' + Date.now(), function (flat) {
+      var files = (flat && flat.files) || [];
+      var pluginFolders = {};
+      var linkFiles = [];
+
+      files.forEach(function (file) {
+        var path = String(file.name || '').replace(/^\/+/, '');
+
+        if (path.indexOf(CONFIG.pluginsPath + '/') === 0) {
+          var rest = path.slice(CONFIG.pluginsPath.length + 1);
+          var parts = rest.split('/');
+          if (parts.length < 2) return;
+
+          var folderName = parts[0];
+          var name = parts.slice(1).join('/');
+
+          if (!pluginFolders[folderName]) {
+            pluginFolders[folderName] = {
+              name: folderName,
+              path: CONFIG.pluginsPath + '/' + folderName,
+              files: []
+            };
+          }
+
+          pluginFolders[folderName].files.push({
+            name: fileName(name),
+            path: path,
+            type: 'file'
+          });
+        } else if (path.indexOf(CONFIG.linksPath + '/') === 0) {
+          linkFiles.push({
+            name: fileName(path),
+            path: path,
+            type: 'file'
+          });
+        }
       });
 
-      if (!folders.length) return call([]);
+      var folders = Object.keys(pluginFolders).map(function (name) {
+        return pluginFolders[name];
+      });
 
       var plugins = [];
-      var left = folders.length;
+      var left = folders.length + 1;
+
+      function complete() {
+        left--;
+
+        if (left === 0) {
+          plugins.sort(function (a, b) {
+            return String(a.name).localeCompare(String(b.name));
+          });
+
+          done({
+            name: STORE_NAME,
+            plugins: plugins
+          });
+        }
+      }
 
       folders.forEach(function (folder) {
-        pluginFromFolder(folder, function (plugin) {
+        pluginFromFlatFolder(folder, folder.files, function (plugin) {
           if (plugin) plugins.push(plugin);
-          left--;
-
-          if (left === 0) {
-            plugins.sort(function (a, b) {
-              return String(a.name).localeCompare(String(b.name));
-            });
-
-            call(plugins);
-          }
+          complete();
         });
+      });
+
+      requestText(githubRawUrlNoCache(CONFIG.linksPath + '/links.txt'), function (text) {
+        plugins = plugins.concat(parseLinksText(text, linkFiles));
+        complete();
+      }, function () {
+        complete();
       });
     }, function () {
-      call([]);
-    });
-    }
-
-    loadFolders(function (folderPlugins) {
-      loadLinks(function (linkPlugins) {
-        var plugins = folderPlugins.concat(linkPlugins);
-
-        plugins.sort(function (a, b) {
-          return String(a.name).localeCompare(String(b.name));
-        });
-
-        done({
-          name: STORE_NAME,
-          plugins: plugins
-        });
-      });
+      done({ name: STORE_NAME, plugins: [] });
     });
   }
 
