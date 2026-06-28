@@ -9,7 +9,7 @@
     repo: 'LampStore',
     branch: 'main',
     pluginsPath: 'plugins',
-    title: '100 мелочей'
+    title: 'LampStore'
   };
 
   var STORE_KEY = 'hundred_store_installed_v2';
@@ -22,7 +22,7 @@
 
   function notify(text) {
     if (window.Lampa && Lampa.Noty && Lampa.Noty.show) return Lampa.Noty.show(text);
-    console.log('[100 мелочей]', text);
+    console.log('[LampStore]', text);
   }
 
   function rawUrl(path) {
@@ -229,7 +229,9 @@
       files = files || [];
 
       var js = pickFile(files, ['plugin.js', 'index.js', 'main.js']) || firstJs(files);
-      if (!js) return done(null);
+      var urlFile = pickFile(files, ['url.txt', 'link.txt']);
+
+      if (!js && !urlFile) return done(null);
 
       var text = pickFile(files, ['title.txt', 'text.txt', 'description.txt', 'readme.txt', 'readme.md', 'README.md']);
       var icon = pickFile(files, ['icon.png', 'icon.jpg', 'icon.jpeg', 'icon.webp']);
@@ -252,23 +254,44 @@
         author: '@100melochey',
         description: '',
         folder: folder.path,
-        file: js.name,
+        file: js ? js.name : '',
+        url: '',
         version: '1.0.0',
         category: 'Плагины',
         icon: icon ? icon.name : '',
         screenshots: screen ? [screen.name] : []
       };
 
-      if (!text) return done(normalizePlugin(base));
+      function finish() {
+        if (!text) return done(normalizePlugin(base));
 
-      requestText(githubRawUrlNoCache(text.path), function (content) {
-        var parsed = parseText(content, base.name);
-        base.name = parsed.name;
-        base.description = parsed.description;
-        done(normalizePlugin(base));
-      }, function () {
-        done(normalizePlugin(base));
-      });
+        requestText(githubRawUrlNoCache(text.path), function (content) {
+          var parsed = parseText(content, base.name);
+          base.name = parsed.name;
+          base.description = parsed.description;
+          done(normalizePlugin(base));
+        }, function () {
+          done(normalizePlugin(base));
+        });
+      }
+
+      if (urlFile) {
+        requestText(githubRawUrlNoCache(urlFile.path), function (content) {
+          var url = String(content || '').split(/\r?\n/).map(function (line) {
+            return line.trim();
+          }).filter(Boolean)[0] || '';
+
+          if (url) base.url = url;
+          finish();
+        }, function () {
+          if (js) finish();
+          else done(null);
+        });
+
+        return;
+      }
+
+      finish();
     }, function () {
       done(null);
     });
@@ -499,7 +522,7 @@
       root.innerHTML = '' +
         '<div class="hundred-store__head">' +
           '<div class="hundred-store__logo">' + ICON + '</div>' +
-          '<div><div class="hundred-store__title">' + escapeHtml(catalog.name || STORE_NAME) + '</div><div class="hundred-store__sub">' + plugins.length + ' плагинов · Enter — открыть · Back — назад</div></div>' +
+          '<div><div class="hundred-store__title">' + escapeHtml(catalog.name || STORE_NAME) + '</div><div class="hundred-store__sub">Плагины из GitHub-папок · Enter — установить · Back — назад</div></div>' +
           '<div class="hundred-store__close selector">Закрыть</div>' +
         '</div>' +
         '<div class="hundred-store__body"><div class="hundred-store__grid">' + plugins.map(cardHtml).join('') + '</div></div>';

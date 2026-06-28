@@ -42,6 +42,16 @@ plugins/имя-папки/plugin.js
 
 Можно не называть файл plugin.js. Если в папке один JS, магазин сам возьмёт его.
 
+Для внешнего плагина, который не надо скачивать файлом:
+
+plugins/имя-папки/url.txt
+plugins/имя-папки/text.txt
+plugins/имя-папки/screenshot.png
+
+В url.txt должна быть одна ссылка, например:
+
+https://tvigl.github.io/plugins/exit.js
+
 Желательно:
 
 plugins/имя-папки/text.txt
