@@ -9,6 +9,7 @@
     repo: 'LampStore',
     branch: 'main',
     pluginsPath: 'plugins',
+    linksPath: 'links',
     title: 'LampStore'
   };
 
@@ -213,6 +214,12 @@
     })[0] || null;
   }
 
+  function fileBaseName(url) {
+    var clean = String(url || '').split('?')[0].split('#')[0];
+    var name = clean.split('/').pop() || clean;
+    return name.replace(/\.[^.]+$/, '');
+  }
+
   function parseText(text, fallbackName) {
     var lines = String(text || '').replace(/\r/g, '').split('\n').map(function (line) {
       return line.trim();
@@ -297,13 +304,89 @@
     });
   }
 
+  function imageBySlug(files, slug) {
+    var names = [
+      slug + '.webp',
+      slug + '.png',
+      slug + '.jpg',
+      slug + '.jpeg'
+    ];
+
+    return pickFile(files, names);
+  }
+
+  function parseLinksText(text, files) {
+    files = files || [];
+
+    return String(text || '').replace(/\r/g, '').split('\n').map(function (line) {
+      return line.trim();
+    }).filter(function (line) {
+      return line && line.indexOf('#') !== 0;
+    }).map(function (line, index) {
+      var parts = line.split('|').map(function (part) {
+        return part.trim();
+      });
+
+      var name = parts[0] || '';
+      var url = parts[1] || '';
+      var description = parts[2] || '';
+      var image = parts[3] || '';
+
+      if (!/^https?:\/\//i.test(url) && /^https?:\/\//i.test(name)) {
+        url = name;
+        name = '';
+      }
+
+      if (!url) return null;
+
+      var slug = fileBaseName(url);
+      if (!name) name = prettyName(slug);
+
+      if (!image) {
+        var imageFile = imageBySlug(files, slug);
+        if (imageFile) image = imageFile.name;
+      }
+
+      return normalizePlugin({
+        id: 'link-' + slug + '-' + index,
+        name: name,
+        author: '@external',
+        description: description,
+        folder: CONFIG.linksPath,
+        url: url,
+        file: '',
+        version: 'link',
+        category: 'Ссылки',
+        screenshots: image ? [image] : []
+      });
+    }).filter(Boolean);
+  }
+
+  function loadLinks(done) {
+    requestJson(githubApiUrl(CONFIG.linksPath), function (files) {
+      files = files || [];
+
+      var list = pickFile(files, ['links.txt']);
+      if (!list) return done([]);
+
+      requestText(githubRawUrlNoCache(list.path), function (text) {
+        done(parseLinksText(text, files));
+      }, function () {
+        done([]);
+      });
+    }, function () {
+      done([]);
+    });
+  }
+
   function loadCatalog(done) {
-    requestJson(githubApiUrl(CONFIG.pluginsPath), function (items) {
+    function loadFolders(call) {
+      requestJson(githubApiUrl(CONFIG.pluginsPath), function (items) {
       var folders = (items || []).filter(function (item) {
         return item.type === 'dir';
       });
 
-      if (!folders.length) return done({ name: STORE_NAME, plugins: [] });
+      if (!folders.length) return call([]);
 
       var plugins = [];
       var left = folders.length;
@@ -318,15 +401,28 @@
               return String(a.name).localeCompare(String(b.name));
             });
 
-            done({
-              name: STORE_NAME,
-              plugins: plugins
-            });
+            call(plugins);
           }
         });
       });
     }, function () {
-      done({ name: STORE_NAME, plugins: [] });
+      call([]);
+    });
+    }
+
+    loadFolders(function (folderPlugins) {
+      loadLinks(function (linkPlugins) {
+        var plugins = folderPlugins.concat(linkPlugins);
+
+        plugins.sort(function (a, b) {
+          return String(a.name).localeCompare(String(b.name));
+        });
+
+        done({
+          name: STORE_NAME,
+          plugins: plugins
+        });
+      });
     });
   }
 
