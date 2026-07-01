@@ -1,0 +1,35 @@
+name: Build extensions catalog
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'plugins/**'
+      - 'links/**'
+      - 'tools/build-extensions.js'
+      - '.github/workflows/build-extensions.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build extensions.json
+        run: node tools/build-extensions.js
+
+      - name: Commit updated catalog
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update extensions catalog
+          file_pattern: extensions.json
