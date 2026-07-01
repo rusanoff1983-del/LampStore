@@ -40,18 +40,6 @@
       "title": "Ссылки",
       "results": [
         {
-          "name": "Логотипы фильмов",
-          "author": "@external",
-          "link": "https://tvigl.github.io/plugins/logo.js",
-          "url": "https://tvigl.github.io/plugins/logo.js",
-          "descr": "Добавляет логотипы фильмов",
-          "instruction": "Добавляет логотипы фильмов",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
           "name": "Exit",
           "author": "@external",
           "link": "https://tvigl.github.io/plugins/exit.js",
@@ -70,6 +58,18 @@
           "url": "https://aviamovie.github.io/surs.js",
           "descr": "Плагин Surs",
           "instruction": "Плагин Surs",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Логотипы фильмов",
+          "author": "@external",
+          "link": "https://tvigl.github.io/plugins/logo.js",
+          "url": "https://tvigl.github.io/plugins/logo.js",
+          "descr": "Добавляет логотипы фильмов",
+          "instruction": "Добавляет логотипы фильмов",
           "image": "",
           "screenshot": "",
           "screenshots": [],
