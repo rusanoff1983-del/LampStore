@@ -4,7 +4,7 @@
   if (window.__LAMPSTORE_READY__) return;
   window.__LAMPSTORE_READY__ = true;
 
-  var STORE_URL = 'https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/extensions.json';
+  var STORE_URL = 'https://raw.githubusercontent.com/rusanoff1983-del/LampStore/main/extensions.json';
   var STORE_NAME = 'LampStore';
 
   var ICON = '<svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">' +
