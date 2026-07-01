@@ -1,0 +1,81 @@
+{
+  "secuses": true,
+  "name": "LampStore",
+  "results": [
+    {
+      "title": "Скриншоты",
+      "hpu": "recomend",
+      "results": [
+        {
+          "name": "Переключатель плеера в шапке",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/topbar/top_bar.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/topbar/top_bar.js",
+          "descr": "Удобная кнопка смены типа плеера — встроенного или внешнего — в шапке приложения.",
+          "instruction": "Удобная кнопка смены типа плеера — встроенного или внешнего — в шапке приложения.",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/topbar/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/topbar/screenshot.webp",
+          "screenshots": [
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/topbar/screenshot.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Стриминги на главной",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming/streamings.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming/streamings.js",
+          "descr": "Добавляет на главную Lampa ряд популярных стриминговых площадок с карточками и логотипами.",
+          "instruction": "Добавляет на главную Lampa ряд популярных стриминговых площадок с карточками и логотипами.",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming/screenshot.png",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming/screenshot.png",
+          "screenshots": [
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming/screenshot.png"
+          ],
+          "available_lampa": 1
+        }
+      ]
+    },
+    {
+      "title": "Ссылки",
+      "results": [
+        {
+          "name": "Логотипы фильмов",
+          "author": "@external",
+          "link": "https://tvigl.github.io/plugins/logo.js",
+          "url": "https://tvigl.github.io/plugins/logo.js",
+          "descr": "Добавляет логотипы фильмов",
+          "instruction": "Добавляет логотипы фильмов",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Exit",
+          "author": "@external",
+          "link": "https://tvigl.github.io/plugins/exit.js",
+          "url": "https://tvigl.github.io/plugins/exit.js",
+          "descr": "Кнопка выхода из Lampa",
+          "instruction": "Кнопка выхода из Lampa",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Surs",
+          "author": "@external",
+          "link": "https://aviamovie.github.io/surs.js",
+          "url": "https://aviamovie.github.io/surs.js",
+          "descr": "Плагин Surs",
+          "instruction": "Плагин Surs",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        }
+      ]
+    }
+  ]
+}
