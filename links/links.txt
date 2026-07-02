@@ -2,3 +2,7 @@ Exit | https://tvigl.github.io/plugins/exit.js | Кнопка выхода из 
 Логотипы фильмов | https://tvigl.github.io/plugins/logo.js | Добавляет логотипы фильмов
 Surs | https://aviamovie.github.io/surs.js | Плагин Surs
 Релизы | https://tvigl.github.io/plugins/new_released.js | Новинки на больших постерах
+Custom Favorites | https://levende.github.io/lampa-plugins/custom-favs.js
+Trash filter | https://levende.github.io/lampa-plugins/trash-filter.js
+Управление кнопками | https://mylampa1.github.io/buttons.js | Плагин для управления кнопками на странице фильма/сериала в Lampa
+Подборки от стримингов (РФ и Остальных) | https://hauryllin03.github.io/Plugins/podborki.js |  отображаются как стандартные категории в Лампе без источника Surs
