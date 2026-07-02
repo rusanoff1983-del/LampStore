@@ -40,6 +40,18 @@
       "title": "Ссылки",
       "results": [
         {
+          "name": "Custom Favorites",
+          "author": "@external",
+          "link": "https://levende.github.io/lampa-plugins/custom-favs.js",
+          "url": "https://levende.github.io/lampa-plugins/custom-favs.js",
+          "descr": "https://levende.github.io/lampa-plugins/custom-favs.js",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
           "name": "Exit",
           "author": "@external",
           "link": "https://tvigl.github.io/plugins/exit.js",
@@ -64,6 +76,18 @@
           "available_lampa": 1
         },
         {
+          "name": "Trash filter",
+          "author": "@external",
+          "link": "https://levende.github.io/lampa-plugins/trash-filter.js",
+          "url": "https://levende.github.io/lampa-plugins/trash-filter.js",
+          "descr": "https://levende.github.io/lampa-plugins/trash-filter.js",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
           "name": "Логотипы фильмов",
           "author": "@external",
           "link": "https://tvigl.github.io/plugins/logo.js",
@@ -76,12 +100,36 @@
           "available_lampa": 1
         },
         {
+          "name": "Подборки от стримингов (РФ и Остальных)",
+          "author": "@external",
+          "link": "https://hauryllin03.github.io/Plugins/podborki.js",
+          "url": "https://hauryllin03.github.io/Plugins/podborki.js",
+          "descr": "отображаются как стандартные категории в Лампе без источника Surs",
+          "instruction": "отображаются как стандартные категории в Лампе без источника Surs",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
           "name": "Релизы",
           "author": "@external",
           "link": "https://tvigl.github.io/plugins/new_released.js",
           "url": "https://tvigl.github.io/plugins/new_released.js",
           "descr": "Новинки на больших постерах",
           "instruction": "Новинки на больших постерах",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Управление кнопками",
+          "author": "@external",
+          "link": "https://mylampa1.github.io/buttons.js",
+          "url": "https://mylampa1.github.io/buttons.js",
+          "descr": "Плагин для управления кнопками на странице фильма/сериала в Lampa",
+          "instruction": "Плагин для управления кнопками на странице фильма/сериала в Lampa",
           "image": "",
           "screenshot": "",
           "screenshots": [],
