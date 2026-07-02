@@ -7,6 +7,20 @@
       "hpu": "recomend",
       "results": [
         {
+          "name": "Toppage",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/Toppage.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/Toppage.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/Toppage.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/screenshot.jpg",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/screenshot.jpg",
+          "screenshots": [
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/screenshot.jpg"
+          ],
+          "available_lampa": 1
+        },
+        {
           "name": "Переключатель плеера в шапке",
           "author": "@100melochey",
           "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/topbar/top_bar.js",
