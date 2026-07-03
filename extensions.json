@@ -35,6 +35,20 @@
           "available_lampa": 1
         },
         {
+          "name": "показывает иностранные и русские стриминги на главной;",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming2/streaming.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming2/streaming.js",
+          "descr": "можно включать/выключать русские и иностранные стриминги;\nможно выбрать отображение: на главной или отдельным пунктом меню Стриминги;\nкарточки стримингов используют свои постеры с GitHub;\nпри выборе стриминга открывается меню сортировки: новинки, рейтинг, популярные, много голосов;\nпосле выбора сортировки открывается подборка сериалов этой площадки.На основе SURS",
+          "instruction": "можно включать/выключать русские и иностранные стриминги;\nможно выбрать отображение: на главной или отдельным пунктом меню Стриминги;\nкарточки стримингов используют свои постеры с GitHub;\nпри выборе стриминга открывается меню сортировки: новинки, рейтинг, популярные, много голосов;\nпосле выбора сортировки открывается подборка сериалов этой площадки.На основе SURS",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming2/screenshot.png",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming2/screenshot.png",
+          "screenshots": [
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming2/screenshot.png"
+          ],
+          "available_lampa": 1
+        },
+        {
           "name": "Стриминги на главной",
           "author": "@100melochey",
           "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming/streamings.js",
