@@ -6,3 +6,4 @@ Custom Favorites | https://levende.github.io/lampa-plugins/custom-favs.js
 Trash filter | https://levende.github.io/lampa-plugins/trash-filter.js
 Управление кнопками | https://mylampa1.github.io/buttons.js | Плагин для управления кнопками на странице фильма/сериала в Lampa
 Подборки от стримингов (РФ и Остальных) | https://hauryllin03.github.io/Plugins/podborki.js |  отображаются как стандартные категории в Лампе без источника Surs
+Рейтинги и др на постерах | https://levende.github.io/lampa-plugins/obsidian.js 
