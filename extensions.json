@@ -92,6 +92,18 @@
           "available_lampa": 1
         },
         {
+          "name": "Play",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/Play/Play.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/Play/Play.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/Play/Play.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
           "name": "Surs",
           "author": "@external",
           "link": "https://aviamovie.github.io/surs.js",
