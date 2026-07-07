@@ -140,6 +140,18 @@
           "available_lampa": 1
         },
         {
+          "name": "Рейтинги и др на постерах",
+          "author": "@external",
+          "link": "https://levende.github.io/lampa-plugins/obsidian.js",
+          "url": "https://levende.github.io/lampa-plugins/obsidian.js",
+          "descr": "https://levende.github.io/lampa-plugins/obsidian.js",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
           "name": "Релизы",
           "author": "@external",
           "link": "https://tvigl.github.io/plugins/new_released.js",
