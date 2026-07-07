@@ -116,6 +116,18 @@
           "available_lampa": 1
         },
         {
+          "name": "ZoomPoster",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/ZoomPoster/ZoomPoster.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/ZoomPoster/ZoomPoster.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/ZoomPoster/ZoomPoster.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
           "name": "Логотипы фильмов",
           "author": "@external",
           "link": "https://tvigl.github.io/plugins/logo.js",
