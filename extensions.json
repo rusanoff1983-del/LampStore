@@ -152,6 +152,18 @@
           "available_lampa": 1
         },
         {
+          "name": "Кино эхо",
+          "author": "@external",
+          "link": "https://aidarmk-tech.github.io/ai/kinoecho.js",
+          "url": "https://aidarmk-tech.github.io/ai/kinoecho.js",
+          "descr": "https://aidarmk-tech.github.io/ai/kinoecho.js",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
           "name": "комплексное обновление интерфейса Lampa, которое делает приложение более современным, удобным и приятным в использовании",
           "author": "@external",
           "link": "https://tvigl.github.io/plugins/TemaV.js",
