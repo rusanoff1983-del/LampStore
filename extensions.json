@@ -152,6 +152,18 @@
           "available_lampa": 1
         },
         {
+          "name": "комплексное обновление интерфейса Lampa, которое делает приложение более современным, удобным и приятным в использовании",
+          "author": "@external",
+          "link": "https://tvigl.github.io/plugins/TemaV.js",
+          "url": "https://tvigl.github.io/plugins/TemaV.js",
+          "descr": "https://tvigl.github.io/plugins/TemaV.js",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
           "name": "Логотипы фильмов",
           "author": "@external",
           "link": "https://tvigl.github.io/plugins/logo.js",
