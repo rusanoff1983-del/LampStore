@@ -152,6 +152,18 @@
           "available_lampa": 1
         },
         {
+          "name": "автопоиск",
+          "author": "@external",
+          "link": "https://amikdn.github.io/nova_skin.js",
+          "url": "https://amikdn.github.io/nova_skin.js",
+          "descr": "https://amikdn.github.io/nova_skin.js",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
           "name": "Кино эхо",
           "author": "@external",
           "link": "https://aidarmk-tech.github.io/ai/kinoecho.js",
