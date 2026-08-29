@@ -2,8 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const OWNER = 'rusanoff1983-del';
-const REPO = 'LampStore';
+const [OWNER, REPO] = (process.env.GITHUB_REPOSITORY || 'rusanoff1983-del/LampStore').split('/');
 const BRANCH = 'main';
 const CDN = `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}@${BRANCH}/`;
 
