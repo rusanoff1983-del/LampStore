@@ -4,8 +4,22 @@
   if (window.__LAMPSTORE_READY__) return;
   window.__LAMPSTORE_READY__ = true;
 
-  var STORE_URL = 'https://raw.githubusercontent.com/rusanoff1983-del/LampStore/main/extensions.json';
+  var DEFAULT_STORE_URL = 'https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/extensions.json';
   var STORE_NAME = 'LampStore';
+
+  function getStoreUrl() {
+    try {
+      var script = document.currentScript;
+      var src = script && script.src ? String(script.src) : '';
+      var cdn = /^(https?:\/\/cdn\.jsdelivr\.net\/gh\/[^/]+\/[^@/]+@[^/]+)\/store\.js(?:[?#].*)?$/i.exec(src);
+
+      if (cdn) return cdn[1] + '/extensions.json';
+    } catch (e) {}
+
+    return DEFAULT_STORE_URL;
+  }
+
+  var STORE_URL = getStoreUrl();
 
   var ICON = '<svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">' +
     '<path d="M12 2c1.8 2.8 1.3 4.9.2 6.5-.8 1.2-1.9 2.2-2.7 3.5-.9 1.5-.6 3.5 1.2 4.2-.2-1.4.5-2.5 1.5-3.5.6 2 2.7 2.7 2.7 5.1 0 1.6-1.3 3-3 3-3.6 0-6.4-2.7-6.4-6.3 0-3.1 2.1-5.2 4.1-7.2C11.1 5.8 12.2 4.3 12 2Z"/>' +
