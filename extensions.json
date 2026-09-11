@@ -116,6 +116,30 @@
           "available_lampa": 1
         },
         {
+          "name": "NOVA",
+          "author": "@external",
+          "link": "https://amikdn.github.io/nova_skin.js",
+          "url": "https://amikdn.github.io/nova_skin.js",
+          "descr": "https://amikdn.github.io/nova_skin.js",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "NOVA PLUS",
+          "author": "@external",
+          "link": "https://amikdn.github.io/nova_plus.js",
+          "url": "https://amikdn.github.io/nova_plus.js",
+          "descr": "https://amikdn.github.io/nova_plus.js",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
           "name": "Play",
           "author": "@100melochey",
           "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/Play/Play.js",
@@ -158,18 +182,6 @@
           "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/ZoomPoster/ZoomPoster.js",
           "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/ZoomPoster/ZoomPoster.js",
           "instruction": "Нажми Enter и выбери установку.",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "автопоиск",
-          "author": "@external",
-          "link": "https://amikdn.github.io/nova_skin.js",
-          "url": "https://amikdn.github.io/nova_skin.js",
-          "descr": "https://amikdn.github.io/nova_skin.js",
-          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
           "image": "",
           "screenshot": "",
           "screenshots": [],
