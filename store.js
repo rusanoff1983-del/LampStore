@@ -4,7 +4,7 @@
   if (window.__LAMPSTORE_READY__) return;
   window.__LAMPSTORE_READY__ = true;
 
-  var DEFAULT_STORE_URL = 'https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/extensions.json';
+  var DEFAULT_STORE_URL = 'https://raw.githubusercontent.com/rusanoff1983-del/LampStore/main/extensions.json';
   var STORE_NAME = 'LampStore';
 
   function getStoreUrl() {
@@ -13,7 +13,7 @@
       var src = script && script.src ? String(script.src) : '';
       var cdn = /^(https?:\/\/cdn\.jsdelivr\.net\/gh\/[^/]+\/[^@/]+@[^/]+)\/store\.js(?:[?#].*)?$/i.exec(src);
 
-      if (cdn) return cdn[1] + '/extensions.json';
+      if (cdn) return 'https://raw.githubusercontent.com/' + cdn[1].replace(/https?:\/\/cdn\.jsdelivr\.net\/gh\//, '').replace(/@main$/, '/main') + '/extensions.json';
     } catch (e) {}
 
     return DEFAULT_STORE_URL;
