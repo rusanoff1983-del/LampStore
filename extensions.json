@@ -7,20 +7,6 @@
       "hpu": "recomend",
       "results": [
         {
-          "name": "Toppage",
-          "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/Toppage.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/Toppage.js",
-          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/Toppage.js",
-          "instruction": "Нажми Enter и выбери установку.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/screenshot.jpg",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/screenshot.jpg",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/screenshot.jpg"
-          ],
-          "available_lampa": 1
-        },
-        {
           "name": "Переключатель плеера в шапке",
           "author": "@100melochey",
           "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/topbar/top_bar.js",
@@ -31,6 +17,20 @@
           "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/topbar/screenshot.webp",
           "screenshots": [
             "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/topbar/screenshot.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Подборки SakhTV",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/sakhtv-podborki/sakhtv_podborki.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/sakhtv-podborki/sakhtv_podborki.js",
+          "descr": "68 готовых подборок с сайта Sakh.TV прямо в Lampa, без похода на сайт;\nкарточки-мозаики как на сайте: четыре постера, название, сколько фильмов и сериалов;\nвнутри подборки — родные карточки Lampa: рейтинг, метки качества, жанры, год;\nпросмотр фильмов и сериалов через балансеры Lampac, как в обычном каталоге;\nназвания и постеры на русском языке, кэш ускоряет повторное открытие в разы",
+          "instruction": "68 готовых подборок с сайта Sakh.TV прямо в Lampa, без похода на сайт;\nкарточки-мозаики как на сайте: четыре постера, название, сколько фильмов и сериалов;\nвнутри подборки — родные карточки Lampa: рейтинг, метки качества, жанры, год;\nпросмотр фильмов и сериалов через балансеры Lampac, как в обычном каталоге;\nназвания и постеры на русском языке, кэш ускоряет повторное открытие в разы",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/sakhtv-podborki/screenshot.png",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/sakhtv-podborki/screenshot.png",
+          "screenshots": [
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/sakhtv-podborki/screenshot.png"
           ],
           "available_lampa": 1
         },
@@ -61,12 +61,86 @@
             "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming/screenshot.png"
           ],
           "available_lampa": 1
+        },
+        {
+          "name": "Toppage",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/Toppage.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/Toppage.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/Toppage.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/screenshot.jpg",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/screenshot.jpg",
+          "screenshots": [
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/screenshot.jpg"
+          ],
+          "available_lampa": 1
         }
       ]
     },
     {
       "title": "Ссылки",
       "results": [
+        {
+          "name": "Кино эхо",
+          "author": "@external",
+          "link": "https://aidarmk-tech.github.io/ai/kinoecho.js",
+          "url": "https://aidarmk-tech.github.io/ai/kinoecho.js",
+          "descr": "https://aidarmk-tech.github.io/ai/kinoecho.js",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Логотипы фильмов",
+          "author": "@external",
+          "link": "https://tvigl.github.io/plugins/logo.js",
+          "url": "https://tvigl.github.io/plugins/logo.js",
+          "descr": "Добавляет логотипы фильмов",
+          "instruction": "Добавляет логотипы фильмов",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Подборки от стримингов (РФ и Остальных)",
+          "author": "@external",
+          "link": "https://hauryllin03.github.io/Plugins/podborki.js",
+          "url": "https://hauryllin03.github.io/Plugins/podborki.js",
+          "descr": "отображаются как стандартные категории в Лампе без источника Surs",
+          "instruction": "отображаются как стандартные категории в Лампе без источника Surs",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Релизы",
+          "author": "@external",
+          "link": "https://tvigl.github.io/plugins/new_released.js",
+          "url": "https://tvigl.github.io/plugins/new_released.js",
+          "descr": "Новинки на больших постерах",
+          "instruction": "Новинки на больших постерах",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Управление кнопками",
+          "author": "@external",
+          "link": "https://mylampa1.github.io/buttons.js",
+          "url": "https://mylampa1.github.io/buttons.js",
+          "descr": "Плагин для управления кнопками на странице фильма/сериала в Lampa",
+          "instruction": "Плагин для управления кнопками на странице фильма/сериала в Lampa",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
         {
           "name": "Custom Favorites",
           "author": "@external",
@@ -230,66 +304,6 @@
           "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/ZoomPoster/ZoomPoster.js",
           "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/ZoomPoster/ZoomPoster.js",
           "instruction": "Нажми Enter и выбери установку.",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Кино эхо",
-          "author": "@external",
-          "link": "https://aidarmk-tech.github.io/ai/kinoecho.js",
-          "url": "https://aidarmk-tech.github.io/ai/kinoecho.js",
-          "descr": "https://aidarmk-tech.github.io/ai/kinoecho.js",
-          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Логотипы фильмов",
-          "author": "@external",
-          "link": "https://tvigl.github.io/plugins/logo.js",
-          "url": "https://tvigl.github.io/plugins/logo.js",
-          "descr": "Добавляет логотипы фильмов",
-          "instruction": "Добавляет логотипы фильмов",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Подборки от стримингов (РФ и Остальных)",
-          "author": "@external",
-          "link": "https://hauryllin03.github.io/Plugins/podborki.js",
-          "url": "https://hauryllin03.github.io/Plugins/podborki.js",
-          "descr": "отображаются как стандартные категории в Лампе без источника Surs",
-          "instruction": "отображаются как стандартные категории в Лампе без источника Surs",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Релизы",
-          "author": "@external",
-          "link": "https://tvigl.github.io/plugins/new_released.js",
-          "url": "https://tvigl.github.io/plugins/new_released.js",
-          "descr": "Новинки на больших постерах",
-          "instruction": "Новинки на больших постерах",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Управление кнопками",
-          "author": "@external",
-          "link": "https://mylampa1.github.io/buttons.js",
-          "url": "https://mylampa1.github.io/buttons.js",
-          "descr": "Плагин для управления кнопками на странице фильма/сериала в Lampa",
-          "instruction": "Плагин для управления кнопками на странице фильма/сериала в Lampa",
           "image": "",
           "screenshot": "",
           "screenshots": [],
