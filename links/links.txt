@@ -11,3 +11,5 @@ TemaV | https://tvigl.github.io/plugins/TemaV.js | комплексное обн
 Кино эхо | https://aidarmk-tech.github.io/ai/kinoecho.js
 nova | https://amikdn.github.io/nova_skin.js
 novaplus | https://amikdn.github.io/nova_plus.js
+appletheme | https://tvigl.github.io/plugins/appleTV.js
+posteronline | https://lampastore.github.io/ux.js
