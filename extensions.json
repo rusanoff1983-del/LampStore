@@ -82,6 +82,18 @@
       "title": "Ссылки",
       "results": [
         {
+          "name": "appletheme",
+          "author": "@external",
+          "link": "https://tvigl.github.io/plugins/appleTV.js",
+          "url": "https://tvigl.github.io/plugins/appleTV.js",
+          "descr": "https://tvigl.github.io/plugins/appleTV.js",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
           "name": "Custom Favorites",
           "author": "@external",
           "link": "https://levende.github.io/lampa-plugins/custom-favs.js",
@@ -184,6 +196,18 @@
           "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/Play/Play.js",
           "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/Play/Play.js",
           "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "posteronline",
+          "author": "@external",
+          "link": "https://lampastore.github.io/ux.js",
+          "url": "https://lampastore.github.io/ux.js",
+          "descr": "https://lampastore.github.io/ux.js",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
           "image": "",
           "screenshot": "",
           "screenshots": [],
