@@ -1,8 +1,7 @@
 /*
  * Подборки SakhTV для Lampa (без токена)
- * Источник данных: снимок каталога подборок (api.sakh.tv/v2), снятый серверным скриптом.
- * Порядок загрузки: /plugins/sakhtv_collections.json на своём сервере, затем файл из этого репозитория.
- * Аккаунт SakhTV и токен не нужны — запросов к sakh.tv плагин не делает вообще.
+ * Источник данных: снимок /plugins/sakhtv_collections.json — серверный слепок api.sakh.tv/v2,
+ * который обновляется скриптом на сервере. Клиент в сеть к sakh.tv не ходит вообще.
  * Фильмы и постеры — родные для Lampa: TMDB через прокси Lampac.
  */
 (function () {
@@ -256,10 +255,10 @@
     var cssStyles = '<style id="sakhtv_podborki_styles">' +
         '.sakh-col-card{position:relative}' +
         '.sakh-col-card .card__view{position:relative!important;height:0!important;padding-bottom:56.25%!important;' +
-            'overflow:hidden;border-radius:.3em}' +
+            'border-radius:.3em}' +
         '.sakh-col-card .sakh-mosaic{position:absolute!important;top:0;left:0;right:0;bottom:0;' +
             'display:grid!important;grid-template-columns:50% 50%;grid-template-rows:50% 50%;' +
-            'gap:1px;background:#111}' +
+            'gap:1px;background:#111;overflow:hidden;border-radius:.3em}' +
         '.sakh-col-card .sakh-mosaic__cell{position:relative;overflow:hidden;height:100%;width:100%}' +
         '.sakh-col-card .sakh-mosaic__img{position:absolute!important;top:0!important;left:0!important;' +
             'width:100%!important;height:100%!important;object-fit:cover!important;' +
