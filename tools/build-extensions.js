@@ -4,7 +4,10 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const [OWNER, REPO] = (process.env.GITHUB_REPOSITORY || 'rusanoff1983-del/LampStore').split('/');
 const BRANCH = 'main';
-const CDN = `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}@${BRANCH}/`;
+// Ссылки в каталоге прибиваем к конкретному коммиту: иначе jsDelivr отдаёт
+// закэшированную ветку и люди ставят старую версию плагина.
+const REF = process.env.CATALOG_REF || process.env.GITHUB_SHA || BRANCH;
+const CDN = `https://cdn.jsdelivr.net/gh/${OWNER}/${REPO}@${REF}/`;
 
 const PLUGINS_DIR = path.join(ROOT, 'plugins');
 const LINKS_DIR = path.join(ROOT, 'links');
