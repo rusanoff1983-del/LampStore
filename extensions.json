@@ -346,10 +346,10 @@
           "url": "https://lampame.github.io/main/sp.js",
           "descr": "Спортивные и киберспортивные трансляции",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/393232642e85.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/393232642e85.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-01/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-01/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/393232642e85.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-01/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -360,10 +360,10 @@
           "url": "https://tvigl.github.io/plugins/rutube.js",
           "descr": "Трейлеры с Rutube",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/e8d26d417dc2.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/e8d26d417dc2.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-02/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-02/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/e8d26d417dc2.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-02/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -374,10 +374,10 @@
           "url": "https://tvigl.github.io/plugins/source_sort.js",
           "descr": "Управление онлайн-источниками",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/49a4a4cb33bb.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/49a4a4cb33bb.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-03/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-03/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/49a4a4cb33bb.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-03/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -388,10 +388,10 @@
           "url": "https://tvigl.github.io/plugins/top_bar.js",
           "descr": "Top Bar — смена плеера в шапке",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/2c387b7ee6a5.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/2c387b7ee6a5.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-04/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-04/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/2c387b7ee6a5.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-04/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -402,10 +402,10 @@
           "url": "https://hub.alcopa.cc/dl/alc_auto/v2.1.44/plugin.js",
           "descr": "Автопилот — одна кнопка «Смотреть»",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/07c56018631f.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/07c56018631f.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-05/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-05/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/07c56018631f.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-05/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -428,10 +428,10 @@
           "url": "https://hub.alcopa.cc/dl/opensubs_menu/v1.2.9/plugin.js",
           "descr": "OpenSubtitles — субтитры в плеере",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/3ad5d602ead2.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/3ad5d602ead2.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-06/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-06/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/3ad5d602ead2.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-online-06/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -520,10 +520,10 @@
           "url": "https://tvigl.github.io/plugins/rating_omdb.js",
           "descr": "Рейтинги IMDb, TMDB, Metacritic и Rotten Tomatoes",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/88d8d7898e79.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/88d8d7898e79.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-01/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-01/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/88d8d7898e79.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-01/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -534,10 +534,10 @@
           "url": "https://tvigl.github.io/plugins/vote_colour.js",
           "descr": "Цветной рейтинг на карточках",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/2621e44b3b15.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/2621e44b3b15.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-02/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-02/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/2621e44b3b15.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-02/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -548,10 +548,10 @@
           "url": "https://tvigl.github.io/plugins/collections.js",
           "descr": "Подборки стримингов: Netflix, Prime, Apple TV+, HBO, Hulu, Disney+",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/a0595c1e676d.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/a0595c1e676d.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-03/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-03/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/a0595c1e676d.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-03/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -562,10 +562,10 @@
           "url": "https://tvigl.github.io/plugins/3buttons.js",
           "descr": "Стилизованные кнопки: Онлайн, Торрент, Трейлеры",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/f4134e2bda1b.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/f4134e2bda1b.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-04/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-04/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/f4134e2bda1b.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-04/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -576,10 +576,10 @@
           "url": "https://tvigl.github.io/plugins/cache.js",
           "descr": "Цветные кнопки и кнопка «Очистить кэш» в шапке",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/69f493eac4eb.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/69f493eac4eb.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-05/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-05/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/69f493eac4eb.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-05/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -590,10 +590,10 @@
           "url": "https://tvigl.github.io/plugins/quality.js",
           "descr": "Метки максимального качества на карточках",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/d4e4ebcdd3a1.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/d4e4ebcdd3a1.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-08/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-08/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/d4e4ebcdd3a1.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-08/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -604,10 +604,10 @@
           "url": "https://tvigl.github.io/plugins/seasons.js",
           "descr": "Сезон и серия на карточках сериалов",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/d0349b97c71f.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/d0349b97c71f.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-09/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-09/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/d0349b97c71f.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-09/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -618,10 +618,10 @@
           "url": "https://tvigl.github.io/plugins/notrailers.js",
           "descr": "Убрать кнопку «Трейлеры» из карточек",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/2d311ea53271.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/2d311ea53271.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-10/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-10/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/2d311ea53271.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-10/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -632,10 +632,10 @@
           "url": "https://tvigl.github.io/plugins/maxsm_ratings.js",
           "descr": "Рейтинг в карточке от Макса",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/5b5a078f12f8.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/5b5a078f12f8.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-11/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-11/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/5b5a078f12f8.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-11/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -646,10 +646,10 @@
           "url": "https://tvigl.github.io/plugins/aloader.js",
           "descr": "Анимация загрузки (25 вариантов)",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/e7525f2e271d.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/e7525f2e271d.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-12/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-12/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/e7525f2e271d.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-12/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -660,10 +660,10 @@
           "url": "https://tvigl.github.io/plugins/ratingup.js",
           "descr": "Рейтинг в правом верхнем углу карточки",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/2c2a9fc23e27.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/2c2a9fc23e27.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-13/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-13/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/2c2a9fc23e27.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-13/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -674,10 +674,10 @@
           "url": "https://tvigl.github.io/plugins/surs_quality.js",
           "descr": "Качество внутри карточек",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/6cf8c25975f5.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/6cf8c25975f5.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-14/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-14/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/6cf8c25975f5.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-14/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -688,10 +688,10 @@
           "url": "https://tvigl.github.io/plugins/src-filter.js",
           "descr": "Балансеры в фильтре (там, где переводы и сезоны)",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/e35e07c64877.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/e35e07c64877.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-15/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-15/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/e35e07c64877.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-15/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -702,10 +702,10 @@
           "url": "https://tvigl.github.io/plugins/head_filter.js",
           "descr": "Настройка значков в шапке",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/b9ced4cd994d.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/b9ced4cd994d.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-18/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-18/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/b9ced4cd994d.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-18/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -716,10 +716,10 @@
           "url": "https://maxsmeller.github.io/lampa-plugins/rat.js",
           "descr": "Стильный рейтинг",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/91611da1cae0.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/91611da1cae0.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-19/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-19/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/91611da1cae0.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-19/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -730,10 +730,10 @@
           "url": "http://lampalampa.free.nf/ymain.js",
           "descr": "Главная страница UA",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/d901e3fdd961.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/d901e3fdd961.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-20/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-20/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/d901e3fdd961.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-20/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -744,10 +744,10 @@
           "url": "https://tvigl.github.io/plugins/Flixio.js",
           "descr": "Flixio — оформление главной и карточки",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/0d7aa9d90c12.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/0d7aa9d90c12.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-21/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-21/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/0d7aa9d90c12.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-21/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -758,10 +758,10 @@
           "url": "https://amikdn.github.io/rate.js",
           "descr": "Рейтинг с гибкими настройками",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/46a84f414c37.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/46a84f414c37.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-22/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-22/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/46a84f414c37.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-22/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -772,10 +772,10 @@
           "url": "https://tvigl.github.io/plugins/streamings.js",
           "descr": "Стриминги на главной",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/cfe59aaf9c7c.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/cfe59aaf9c7c.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-24/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-24/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/cfe59aaf9c7c.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-24/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -786,10 +786,10 @@
           "url": "https://tvigl.github.io/plugins/rating-quality.js",
           "descr": "Качество, рейтинг и год на карточке",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/d4368520bca4.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/d4368520bca4.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-25/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-25/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/d4368520bca4.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-25/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -836,10 +836,10 @@
           "url": "https://hub.alcopa.cc/dl/snack_tv/v0.8.11/plugin.js",
           "descr": "Закусь TV — Lampa в стиле Apple TV",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/a8f0bc36f051.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/a8f0bc36f051.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-26/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-26/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/a8f0bc36f051.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-oformlenie-26/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -988,10 +988,10 @@
           "url": "https://tvigl.github.io/plugins/drxaos_themes.js",
           "descr": "Тема от @DrXAOS",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/3029d2e80577.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/3029d2e80577.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-temy-01/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-temy-01/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/3029d2e80577.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-temy-01/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1002,10 +1002,10 @@
           "url": "https://llowmikee.github.io/AppleTVAGNativeNG/appletv_agnative.js",
           "descr": "Тема AppleTV",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/1a004ba9af7e.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/1a004ba9af7e.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-temy-02/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-temy-02/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/1a004ba9af7e.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-temy-02/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1034,10 +1034,10 @@
           "url": "https://tvigl.github.io/plugins/tmdb_mod.js",
           "descr": "Подборки TMDB mod",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/8ba3bd6f2fdb.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/8ba3bd6f2fdb.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-02/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-02/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/8ba3bd6f2fdb.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-02/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1048,10 +1048,10 @@
           "url": "https://levende.github.io/lampa-plugins/lnum.js",
           "descr": "Подборки от LNUM",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/1e381006ed70.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/1e381006ed70.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-03/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-03/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/1e381006ed70.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-03/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1062,10 +1062,10 @@
           "url": "https://num.jac-red.ru/plugin/nmprs.js",
           "descr": "Подборки от NUMParser",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/35c74858d968.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/35c74858d968.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-05/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-05/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/35c74858d968.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-05/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1076,10 +1076,10 @@
           "url": "https://rugaroo888.github.io/movietv-plugin/MovieTV.js",
           "descr": "Дополнительный каталог MovieTV",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/6d2700e6478d.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/6d2700e6478d.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-06/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-06/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/6d2700e6478d.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-06/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1090,10 +1090,10 @@
           "url": "https://syvyj.github.io/studios_4lampa/studios.js",
           "descr": "Студии",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/8ad822e43f1c.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/8ad822e43f1c.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-07/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-07/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/8ad822e43f1c.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-07/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1104,10 +1104,10 @@
           "url": "https://tvigl.github.io/plugins/sources.js",
           "descr": "Источники",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/ea20c32fb098.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/ea20c32fb098.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-08/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-08/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/ea20c32fb098.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-podborki-08/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1172,10 +1172,10 @@
           "url": "https://tvigl.github.io/plugins/torrents_styles.js",
           "descr": "Цветная подсветка торрент-раздач",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/471c788ebc5c.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/471c788ebc5c.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-torrenty-01/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-torrenty-01/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/471c788ebc5c.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-torrenty-01/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1186,10 +1186,10 @@
           "url": "https://arst113.github.io/log/ContinueWatching.js",
           "descr": "Продолжить просмотр с торрентов",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/eede8099eced.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/eede8099eced.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-torrenty-02/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-torrenty-02/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/eede8099eced.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-torrenty-02/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1200,10 +1200,10 @@
           "url": "https://darkestclouds.github.io/plugins/easytorrent/easytorrent.min.js",
           "descr": "EasyTorrent — умный подбор раздач",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/3589c1eb2d59.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/3589c1eb2d59.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-torrenty-03/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-torrenty-03/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/3589c1eb2d59.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-torrenty-03/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1214,10 +1214,10 @@
           "url": "https://ko31k.github.io/LMP/plugins/Parsers.js",
           "descr": "Каталог парсеров",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/301c5f81a6be.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/301c5f81a6be.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-torrenty-04/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-torrenty-04/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/301c5f81a6be.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-torrenty-04/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1228,10 +1228,10 @@
           "url": "https://hub.alcopa.cc/dl/torrent_button/v1.0.0/plugin.js",
           "descr": "Кнопка «Торренты» рядом с Play",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/aa0ca35aa4ab.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/aa0ca35aa4ab.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-torrenty-05/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-torrenty-05/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/aa0ca35aa4ab.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-torrenty-05/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1320,10 +1320,10 @@
           "url": "https://tvigl.github.io/plugins/123.js",
           "descr": "Убрать нумерацию «123» на главной",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/c686634b6246.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/c686634b6246.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-01/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-01/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/c686634b6246.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-01/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1334,10 +1334,10 @@
           "url": "https://fovway.github.io/lampacJS/ai_search/ai_search.js",
           "descr": "AI-поиск №1",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/5bcd756bb2d0.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/5bcd756bb2d0.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-03/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-03/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/5bcd756bb2d0.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-03/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1348,10 +1348,10 @@
           "url": "https://tvigl.github.io/plugins/new_year1.js",
           "descr": "Снег №1",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/fa2375f5c76d.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/fa2375f5c76d.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-05/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-05/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/fa2375f5c76d.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-05/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1362,10 +1362,10 @@
           "url": "https://tvigl.github.io/plugins/new_year2.js",
           "descr": "Снег №2",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/7fec5827739e.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/7fec5827739e.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-06/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-06/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/7fec5827739e.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-06/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1376,10 +1376,10 @@
           "url": "https://nemiroff.github.io/lampa/snow.js",
           "descr": "Снег №3",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/6d9761aa02f3.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/6d9761aa02f3.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-07/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-07/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/6d9761aa02f3.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-07/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1390,10 +1390,10 @@
           "url": "https://tvigl.github.io/plugins/new_year3.js",
           "descr": "Гирлянда",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/8bb860238d7c.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/8bb860238d7c.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-08/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-08/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/8bb860238d7c.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-08/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1416,10 +1416,10 @@
           "url": "https://mulumuu.github.io/mulumuu.githib.io/Vanta.js",
           "descr": "Туман",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/aecca3d81c7c.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/aecca3d81c7c.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-09/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-09/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/aecca3d81c7c.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-09/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1430,10 +1430,10 @@
           "url": "https://tvigl.github.io/plugins/phone_menu.js",
           "descr": "Меню для телефонов",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/d6f64b4c8342.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/d6f64b4c8342.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-10/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-10/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/d6f64b4c8342.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-10/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1444,10 +1444,10 @@
           "url": "https://tvigl.github.io/plugins/shots.js",
           "descr": "Отключить Shots",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/5b011cc3654b.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/5b011cc3654b.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-11/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-11/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/5b011cc3654b.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-11/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1458,10 +1458,10 @@
           "url": "https://tvigl.github.io/plugins/dorama.js",
           "descr": "Дорамы",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/17eb7f8adc35.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/17eb7f8adc35.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-12/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-12/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/17eb7f8adc35.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-12/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1472,10 +1472,10 @@
           "url": "https://tvigl.github.io/plugins/WikiFind.js",
           "descr": "Wiki о фильме",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/7df6934a05a5.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/7df6934a05a5.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-13/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-13/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/7df6934a05a5.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-13/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1486,10 +1486,10 @@
           "url": "https://tvigl.github.io/plugins/lampa-loader.js",
           "descr": "Загрузка при старте в стиле «Матрица»",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/72daf366e2e9.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/72daf366e2e9.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-14/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-14/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/72daf366e2e9.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-14/screenshot.webp"
           ],
           "available_lampa": 1
         },
@@ -1500,10 +1500,10 @@
           "url": "https://nikitagk22.github.io/suggest.js",
           "descr": "Поиск с подсказками",
           "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/78f7ef57b261.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/78f7ef57b261.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-15/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-15/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/screenshots/78f7ef57b261.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/tvigl-raznoye-15/screenshot.webp"
           ],
           "available_lampa": 1
         },
