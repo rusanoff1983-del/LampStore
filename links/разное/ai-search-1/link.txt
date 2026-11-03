@@ -1,0 +1,1 @@
+https://fovway.github.io/lampacJS/ai_search/ai_search.js

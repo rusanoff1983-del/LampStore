@@ -1,0 +1,1 @@
+https://ko31k.github.io/LMP/plugins/Parsers.js
