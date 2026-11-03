@@ -334,6 +334,1324 @@
           "available_lampa": 1
         }
       ]
+    },
+    {
+      "title": "Онлайн-просмотр (tvigl)",
+      "hpu": "tvigl",
+      "results": [
+        {
+          "name": "Спортивные и киберспортивные трансляции",
+          "author": "@lampame",
+          "link": "https://lampame.github.io/main/sp.js",
+          "url": "https://lampame.github.io/main/sp.js",
+          "descr": "Спортивные и киберспортивные трансляции",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-11/medium/snimok-jekrana-2025-11-10-002117.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-11/medium/snimok-jekrana-2025-11-10-002117.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-11/medium/snimok-jekrana-2025-11-10-002117.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Трейлеры с Rutube",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/rutube.js",
+          "url": "https://tvigl.github.io/plugins/rutube.js",
+          "descr": "Трейлеры с Rutube",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-12/medium/snimok-jekrana-2025-12-24-222940.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-12/medium/snimok-jekrana-2025-12-24-222940.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-12/medium/snimok-jekrana-2025-12-24-222940.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Управление онлайн-источниками",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/source_sort.js",
+          "url": "https://tvigl.github.io/plugins/source_sort.js",
+          "descr": "Управление онлайн-источниками",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-02/medium/snipaste_2026-02-05_23-50-12.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-02/medium/snipaste_2026-02-05_23-50-12.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-02/medium/snipaste_2026-02-05_23-50-12.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Top Bar — смена плеера в шапке",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/top_bar.js",
+          "url": "https://tvigl.github.io/plugins/top_bar.js",
+          "descr": "Top Bar — смена плеера в шапке",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-02/medium/1.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-02/medium/1.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-02/medium/1.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Автопилот — одна кнопка «Смотреть»",
+          "author": "@alcopa",
+          "link": "https://hub.alcopa.cc/dl/alc_auto/v2.1.44/plugin.js",
+          "url": "https://hub.alcopa.cc/dl/alc_auto/v2.1.44/plugin.js",
+          "descr": "Автопилот — одна кнопка «Смотреть»",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-10/medium/ss-1.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-10/medium/ss-1.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-10/medium/ss-1.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Пропуск заставки и титров",
+          "author": "@alcopa",
+          "link": "https://hub.alcopa.cc/dl/skip_segments/v1.0.2/plugin.js",
+          "url": "https://hub.alcopa.cc/dl/skip_segments/v1.0.2/plugin.js",
+          "descr": "Пропуск заставки и титров",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "OpenSubtitles — субтитры в плеере",
+          "author": "@alcopa",
+          "link": "https://hub.alcopa.cc/dl/opensubs_menu/v1.2.9/plugin.js",
+          "url": "https://hub.alcopa.cc/dl/opensubs_menu/v1.2.9/plugin.js",
+          "descr": "OpenSubtitles — субтитры в плеере",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-10/medium/ss-1-2.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-10/medium/ss-1-2.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-10/medium/ss-1-2.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Anti DMCA — обход блокировок DMCA",
+          "author": "@levende",
+          "link": "https://levende.github.io/lampa-plugins/anti-dmca.js",
+          "url": "https://levende.github.io/lampa-plugins/anti-dmca.js",
+          "descr": "Anti DMCA — обход блокировок DMCA",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Bandera 2.0 — онлайн-источники",
+          "author": "@lampame",
+          "link": "https://lampame.github.io/main/bo.js",
+          "url": "https://lampame.github.io/main/bo.js",
+          "descr": "Bandera 2.0 — онлайн-источники",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "IMDb Trailers — трендовые трейлеры",
+          "author": "@lampame",
+          "link": "https://lampame.github.io/main/timdb.js",
+          "url": "https://lampame.github.io/main/timdb.js",
+          "descr": "IMDb Trailers — трендовые трейлеры",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Lampac Source Filter — скрыть лишние источники",
+          "author": "@levende",
+          "link": "https://levende.github.io/lampa-plugins/lampac-src-filter.js",
+          "url": "https://levende.github.io/lampa-plugins/lampac-src-filter.js",
+          "descr": "Lampac Source Filter — скрыть лишние источники",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Balancer Sanitizer — чистые ссылки балансеров",
+          "author": "@levende",
+          "link": "https://levende.github.io/lampa-plugins/balancer-sanitizer.js",
+          "url": "https://levende.github.io/lampa-plugins/balancer-sanitizer.js",
+          "descr": "Balancer Sanitizer — чистые ссылки балансеров",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "TryzubTV — украинское ТВ",
+          "author": "@lampame",
+          "link": "https://lampame.github.io/main/ttv.js",
+          "url": "https://lampame.github.io/main/ttv.js",
+          "descr": "TryzubTV — украинское ТВ",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        }
+      ]
+    },
+    {
+      "title": "Оформление (tvigl)",
+      "hpu": "tvigl",
+      "results": [
+        {
+          "name": "Рейтинги IMDb, TMDB, Metacritic и Rotten Tomatoes",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/rating_omdb.js",
+          "url": "https://tvigl.github.io/plugins/rating_omdb.js",
+          "descr": "Рейтинги IMDb, TMDB, Metacritic и Rotten Tomatoes",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-194558.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-194558.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-194558.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Цветной рейтинг на карточках",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/vote_colour.js",
+          "url": "https://tvigl.github.io/plugins/vote_colour.js",
+          "descr": "Цветной рейтинг на карточках",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195403.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Подборки стримингов: Netflix, Prime, Apple TV+, HBO, Hulu, Disney+",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/collections.js",
+          "url": "https://tvigl.github.io/plugins/collections.js",
+          "descr": "Подборки стримингов: Netflix, Prime, Apple TV+, HBO, Hulu, Disney+",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195922.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195922.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-195922.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Стилизованные кнопки: Онлайн, Торрент, Трейлеры",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/3buttons.js",
+          "url": "https://tvigl.github.io/plugins/3buttons.js",
+          "descr": "Стилизованные кнопки: Онлайн, Торрент, Трейлеры",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202947.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202947.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202947.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Цветные кнопки и кнопка «Очистить кэш» в шапке",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/cache.js",
+          "url": "https://tvigl.github.io/plugins/cache.js",
+          "descr": "Цветные кнопки и кнопка «Очистить кэш» в шапке",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-202513.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Метки максимального качества на карточках",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/quality.js",
+          "url": "https://tvigl.github.io/plugins/quality.js",
+          "descr": "Метки максимального качества на карточках",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-211221.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-211221.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-211221.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Сезон и серия на карточках сериалов",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/seasons.js",
+          "url": "https://tvigl.github.io/plugins/seasons.js",
+          "descr": "Сезон и серия на карточках сериалов",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-211636.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-211636.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-211636.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Убрать кнопку «Трейлеры» из карточек",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/notrailers.js",
+          "url": "https://tvigl.github.io/plugins/notrailers.js",
+          "descr": "Убрать кнопку «Трейлеры» из карточек",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-212247.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-212247.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-212247.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Рейтинг в карточке от Макса",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/maxsm_ratings.js",
+          "url": "https://tvigl.github.io/plugins/maxsm_ratings.js",
+          "descr": "Рейтинг в карточке от Макса",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-000619.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-000619.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-000619.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Анимация загрузки (25 вариантов)",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/aloader.js",
+          "url": "https://tvigl.github.io/plugins/aloader.js",
+          "descr": "Анимация загрузки (25 вариантов)",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-001546.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-001546.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-001546.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Рейтинг в правом верхнем углу карточки",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/ratingup.js",
+          "url": "https://tvigl.github.io/plugins/ratingup.js",
+          "descr": "Рейтинг в правом верхнем углу карточки",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-200617.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-200617.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-200617.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Качество внутри карточек",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/surs_quality.js",
+          "url": "https://tvigl.github.io/plugins/surs_quality.js",
+          "descr": "Качество внутри карточек",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-201455.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-201455.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-201455.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Балансеры в фильтре (там, где переводы и сезоны)",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/src-filter.js",
+          "url": "https://tvigl.github.io/plugins/src-filter.js",
+          "descr": "Балансеры в фильтре (там, где переводы и сезоны)",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-203817.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-203817.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-203817.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Настройка значков в шапке",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/head_filter.js",
+          "url": "https://tvigl.github.io/plugins/head_filter.js",
+          "descr": "Настройка значков в шапке",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-01/medium/20260104-230815.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-01/medium/20260104-230815.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-01/medium/20260104-230815.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Стильный рейтинг",
+          "author": "@maxsmeller",
+          "link": "https://maxsmeller.github.io/lampa-plugins/rat.js",
+          "url": "https://maxsmeller.github.io/lampa-plugins/rat.js",
+          "descr": "Стильный рейтинг",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-02/medium/1111.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-02/medium/1111.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-02/medium/1111.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Главная страница UA",
+          "author": "@external",
+          "link": "http://lampalampa.free.nf/ymain.js",
+          "url": "http://lampalampa.free.nf/ymain.js",
+          "descr": "Главная страница UA",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-03/medium/snimok-jekrana-2026-03-13-191013.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-03/medium/snimok-jekrana-2026-03-13-191013.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-03/medium/snimok-jekrana-2026-03-13-191013.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Flixio — оформление главной и карточки",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/Flixio.js",
+          "url": "https://tvigl.github.io/plugins/Flixio.js",
+          "descr": "Flixio — оформление главной и карточки",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-15_15-08-31.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-15_15-08-31.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-15_15-08-31.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Рейтинг с гибкими настройками",
+          "author": "@external",
+          "link": "https://amikdn.github.io/rate.js",
+          "url": "https://amikdn.github.io/rate.js",
+          "descr": "Рейтинг с гибкими настройками",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-15_18-14-37.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-15_18-14-37.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-15_18-14-37.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Стриминги на главной",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/streamings.js",
+          "url": "https://tvigl.github.io/plugins/streamings.js",
+          "descr": "Стриминги на главной",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-18_22-36-31.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-18_22-36-31.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-18_22-36-31.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Качество, рейтинг и год на карточке",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/rating-quality.js",
+          "url": "https://tvigl.github.io/plugins/rating-quality.js",
+          "descr": "Качество, рейтинг и год на карточке",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-05/medium/snipaste_2026-05-08_20-02-03.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-05/medium/snipaste_2026-05-08_20-02-03.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-05/medium/snipaste_2026-05-08_20-02-03.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Favorite Refresh — свежие постеры в Избранном",
+          "author": "@anclaver",
+          "link": "https://anclaver.github.io/Lampa/plugins/favoriteRefresh.js",
+          "url": "https://anclaver.github.io/Lampa/plugins/favoriteRefresh.js",
+          "descr": "Favorite Refresh — свежие постеры в Избранном",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "UI Badge — информативные метки на карточках",
+          "author": "@anclaver",
+          "link": "https://anclaver.github.io/Lampa/plugins/interfaceBadge.js",
+          "url": "https://anclaver.github.io/Lampa/plugins/interfaceBadge.js",
+          "descr": "UI Badge — информативные метки на карточках",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "UI Style — улучшения страницы фильма и интерфейса",
+          "author": "@anclaver",
+          "link": "https://anclaver.github.io/Lampa/plugins/interfaceStyle.js",
+          "url": "https://anclaver.github.io/Lampa/plugins/interfaceStyle.js",
+          "descr": "UI Style — улучшения страницы фильма и интерфейса",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Закусь TV — Lampa в стиле Apple TV",
+          "author": "@alcopa",
+          "link": "https://hub.alcopa.cc/dl/snack_tv/v0.8.11/plugin.js",
+          "url": "https://hub.alcopa.cc/dl/snack_tv/v0.8.11/plugin.js",
+          "descr": "Закусь TV — Lampa в стиле Apple TV",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-10/medium/ss-2.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-10/medium/ss-2.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-10/medium/ss-2.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "AVGRating — рейтинги с 11 сайтов",
+          "author": "@cevamnelampaplagin",
+          "link": "https://cevamnelampaplagin.github.io/tytnemanichogodobrogo/avgrating.js",
+          "url": "https://cevamnelampaplagin.github.io/tytnemanichogodobrogo/avgrating.js",
+          "descr": "AVGRating — рейтинги с 11 сайтов",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Cardify+ — живой фон в карточке фильма",
+          "author": "@ko31k",
+          "link": "https://ko31k.github.io/LMP/plugins/cardify+.js",
+          "url": "https://ko31k.github.io/LMP/plugins/cardify+.js",
+          "descr": "Cardify+ — живой фон в карточке фильма",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Interface+ — комплексное улучшение интерфейса",
+          "author": "@ko31k",
+          "link": "https://ko31k.github.io/LMP/plugins/interface+.js",
+          "url": "https://ko31k.github.io/LMP/plugins/interface+.js",
+          "descr": "Interface+ — комплексное улучшение интерфейса",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Movie Enhancer — улучшенная карточка фильма",
+          "author": "@lampame",
+          "link": "https://lampame.github.io/main/lme.js",
+          "url": "https://lampame.github.io/main/lme.js",
+          "descr": "Movie Enhancer — улучшенная карточка фильма",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Networks — кнопки стримингов и студий",
+          "author": "@ko31k",
+          "link": "https://ko31k.github.io/LMP/plugins/Networks.js",
+          "url": "https://ko31k.github.io/LMP/plugins/Networks.js",
+          "descr": "Networks — кнопки стримингов и студий",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Nightingale — флажок украинской озвучки",
+          "author": "@lampame",
+          "link": "https://lampame.github.io/main/n.js",
+          "url": "https://lampame.github.io/main/n.js",
+          "descr": "Nightingale — флажок украинской озвучки",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "TV Status Color — цветной статус сериала",
+          "author": "@levende",
+          "link": "https://levende.github.io/lampa-plugins/tv-status-color.js",
+          "url": "https://levende.github.io/lampa-plugins/tv-status-color.js",
+          "descr": "TV Status Color — цветной статус сериала",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Yarik's Design — редизайн карточек",
+          "author": "@yarikrazor-star",
+          "link": "https://yarikrazor-star.github.io/lmp/ydes.js",
+          "url": "https://yarikrazor-star.github.io/lmp/ydes.js",
+          "descr": "Yarik's Design — редизайн карточек",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Buttons+ — редактор кнопок в карточке",
+          "author": "@ko31k",
+          "link": "https://ko31k.github.io/LMP/plugins/buttons+.js",
+          "url": "https://ko31k.github.io/LMP/plugins/buttons+.js",
+          "descr": "Buttons+ — редактор кнопок в карточке",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "RTG+ — рейтинги и награды",
+          "author": "@ko31k",
+          "link": "https://ko31k.github.io/LMP/plugins/rtg.js",
+          "url": "https://ko31k.github.io/LMP/plugins/rtg.js",
+          "descr": "RTG+ — рейтинги и награды",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "SeasonsInfo — последний сезон и прогресс серий",
+          "author": "@ko31k",
+          "link": "https://ko31k.github.io/LMP/plugins/SeasonsInfo.js",
+          "url": "https://ko31k.github.io/LMP/plugins/SeasonsInfo.js",
+          "descr": "SeasonsInfo — последний сезон и прогресс серий",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        }
+      ]
+    },
+    {
+      "title": "Темы (tvigl)",
+      "hpu": "tvigl",
+      "results": [
+        {
+          "name": "Тема от @DrXAOS",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/drxaos_themes.js",
+          "url": "https://tvigl.github.io/plugins/drxaos_themes.js",
+          "descr": "Тема от @DrXAOS",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251019-160333.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251019-160333.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251019-160333.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Тема AppleTV",
+          "author": "@external",
+          "link": "https://llowmikee.github.io/AppleTVAGNativeNG/appletv_agnative.js",
+          "url": "https://llowmikee.github.io/AppleTVAGNativeNG/appletv_agnative.js",
+          "descr": "Тема AppleTV",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-05/medium/snipaste_2026-05-03_13-24-03.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-05/medium/snipaste_2026-05-03_13-24-03.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-05/medium/snipaste_2026-05-03_13-24-03.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Netflix — главная в стиле Netflix",
+          "author": "@adambenhassen",
+          "link": "https://adambenhassen.github.io/netflix.js",
+          "url": "https://adambenhassen.github.io/netflix.js",
+          "descr": "Netflix — главная в стиле Netflix",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        }
+      ]
+    },
+    {
+      "title": "Подборки (tvigl)",
+      "hpu": "tvigl",
+      "results": [
+        {
+          "name": "Подборки TMDB mod",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/tmdb_mod.js",
+          "url": "https://tvigl.github.io/plugins/tmdb_mod.js",
+          "descr": "Подборки TMDB mod",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-161617.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-161617.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251013-161617.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Подборки от LNUM",
+          "author": "@levende",
+          "link": "https://levende.github.io/lampa-plugins/lnum.js",
+          "url": "https://levende.github.io/lampa-plugins/lnum.js",
+          "descr": "Подборки от LNUM",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-11/medium/snimok-jekrana-2025-11-15-195501.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-11/medium/snimok-jekrana-2025-11-15-195501.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-11/medium/snimok-jekrana-2025-11-15-195501.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Подборки от NUMParser",
+          "author": "@num",
+          "link": "https://num.jac-red.ru/plugin/nmprs.js",
+          "url": "https://num.jac-red.ru/plugin/nmprs.js",
+          "descr": "Подборки от NUMParser",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-12/medium/snimok-jekrana-2025-12-18-183101.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-12/medium/snimok-jekrana-2025-12-18-183101.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-12/medium/snimok-jekrana-2025-12-18-183101.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Дополнительный каталог MovieTV",
+          "author": "@rugaroo888",
+          "link": "https://rugaroo888.github.io/movietv-plugin/MovieTV.js",
+          "url": "https://rugaroo888.github.io/movietv-plugin/MovieTV.js",
+          "descr": "Дополнительный каталог MovieTV",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-01/medium/111.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-01/medium/111.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-01/medium/111.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Студии",
+          "author": "@external",
+          "link": "https://syvyj.github.io/studios_4lampa/studios.js",
+          "url": "https://syvyj.github.io/studios_4lampa/studios.js",
+          "descr": "Студии",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-01/medium/screenshot_20260113-205158.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-01/medium/screenshot_20260113-205158.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-01/medium/screenshot_20260113-205158.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Источники",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/sources.js",
+          "url": "https://tvigl.github.io/plugins/sources.js",
+          "descr": "Источники",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-05/medium/sort.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-05/medium/sort.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-05/medium/sort.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "CommunityWatches — топ недели и скрытые жемчужины",
+          "author": "@lampame",
+          "link": "https://lampame.github.io/main/cw.js",
+          "url": "https://lampame.github.io/main/cw.js",
+          "descr": "CommunityWatches — топ недели и скрытые жемчужины",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "New Category — новые категории в каталоге",
+          "author": "@lampame",
+          "link": "https://lampame.github.io/main/newcategory.js",
+          "url": "https://lampame.github.io/main/newcategory.js",
+          "descr": "New Category — новые категории в каталоге",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Random Scheduled — случайный фильм из «Позже»",
+          "author": "@levende",
+          "link": "https://levende.github.io/lampa-plugins/random-scheduled.js",
+          "url": "https://levende.github.io/lampa-plugins/random-scheduled.js",
+          "descr": "Random Scheduled — случайный фильм из «Позже»",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Siaivo Dorama — раздел дорам",
+          "author": "@Lamp1ch-chmuk",
+          "link": "https://cdn.jsdelivr.net/gh/Lamp1ch-chmuk/dorami-Siaivo@main/d.js",
+          "url": "https://cdn.jsdelivr.net/gh/Lamp1ch-chmuk/dorami-Siaivo@main/d.js",
+          "descr": "Siaivo Dorama — раздел дорам",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        }
+      ]
+    },
+    {
+      "title": "Торренты (tvigl)",
+      "hpu": "tvigl",
+      "results": [
+        {
+          "name": "Цветная подсветка торрент-раздач",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/torrents_styles.js",
+          "url": "https://tvigl.github.io/plugins/torrents_styles.js",
+          "descr": "Цветная подсветка торрент-раздач",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-212734.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-212734.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-212734.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Продолжить просмотр с торрентов",
+          "author": "@arst113",
+          "link": "https://arst113.github.io/log/ContinueWatching.js",
+          "url": "https://arst113.github.io/log/ContinueWatching.js",
+          "descr": "Продолжить просмотр с торрентов",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-12/medium/snipaste_2025-12-23_13-23-42.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-12/medium/snipaste_2025-12-23_13-23-42.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-12/medium/snipaste_2025-12-23_13-23-42.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "EasyTorrent — умный подбор раздач",
+          "author": "@darkestclouds",
+          "link": "https://darkestclouds.github.io/plugins/easytorrent/easytorrent.min.js",
+          "url": "https://darkestclouds.github.io/plugins/easytorrent/easytorrent.min.js",
+          "descr": "EasyTorrent — умный подбор раздач",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-04/medium/111.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-04/medium/111.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-04/medium/111.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Каталог парсеров",
+          "author": "@ko31k",
+          "link": "https://ko31k.github.io/LMP/plugins/Parsers.js",
+          "url": "https://ko31k.github.io/LMP/plugins/Parsers.js",
+          "descr": "Каталог парсеров",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-02/medium/parsr.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-02/medium/parsr.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-02/medium/parsr.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Кнопка «Торренты» рядом с Play",
+          "author": "@alcopa",
+          "link": "https://hub.alcopa.cc/dl/torrent_button/v1.0.0/plugin.js",
+          "url": "https://hub.alcopa.cc/dl/torrent_button/v1.0.0/plugin.js",
+          "descr": "Кнопка «Торренты» рядом с Play",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-10/medium/ss-1-1.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-10/medium/ss-1-1.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-10/medium/ss-1-1.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Concert Torr Search — поиск концертов",
+          "author": "@lampame",
+          "link": "https://lampame.github.io/main/cts.js",
+          "url": "https://lampame.github.io/main/cts.js",
+          "descr": "Concert Torr Search — поиск концертов",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Torrent Downloader — торрент-клиент в Lampa",
+          "author": "@lampame",
+          "link": "https://lampame.github.io/main/torrentmanager.js",
+          "url": "https://lampame.github.io/main/torrentmanager.js",
+          "descr": "Torrent Downloader — торрент-клиент в Lampa",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tracks Probe — информация о дорожках",
+          "author": "@lampame",
+          "link": "https://lampame.github.io/main/tracks.js",
+          "url": "https://lampame.github.io/main/tracks.js",
+          "descr": "Tracks Probe — информация о дорожках",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "TsTracks — дорожки и субтитры из TorrServer",
+          "author": "@lampame",
+          "link": "https://lampame.github.io/main/tstracks.js",
+          "url": "https://lampame.github.io/main/tstracks.js",
+          "descr": "TsTracks — дорожки и субтитры из TorrServer",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Infuse Save — отправка торрентов в Infuse",
+          "author": "@lampame",
+          "link": "https://lampame.github.io/main/infuseSave.js",
+          "url": "https://lampame.github.io/main/infuseSave.js",
+          "descr": "Infuse Save — отправка торрентов в Infuse",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        }
+      ]
+    },
+    {
+      "title": "Разное (tvigl)",
+      "hpu": "tvigl",
+      "results": [
+        {
+          "name": "Автопоказ трейлеров в карточке (Cardify)",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/cardify.js",
+          "url": "https://tvigl.github.io/plugins/cardify.js",
+          "descr": "Автопоказ трейлеров в карточке (Cardify)",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Убрать нумерацию «123» на главной",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/123.js",
+          "url": "https://tvigl.github.io/plugins/123.js",
+          "descr": "Убрать нумерацию «123» на главной",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251019-164014.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251019-164014.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251019-164014.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "AI-поиск №1",
+          "author": "@fovway",
+          "link": "https://fovway.github.io/lampacJS/ai_search/ai_search.js",
+          "url": "https://fovway.github.io/lampacJS/ai_search/ai_search.js",
+          "descr": "AI-поиск №1",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-11/medium/snipaste_2025-11-16_18-11-46.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-11/medium/snipaste_2025-11-16_18-11-46.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-11/medium/snipaste_2025-11-16_18-11-46.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Снег №1",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/new_year1.js",
+          "url": "https://tvigl.github.io/plugins/new_year1.js",
+          "descr": "Снег №1",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-12/medium/screenshot_20251221-151436.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-12/medium/screenshot_20251221-151436.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-12/medium/screenshot_20251221-151436.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Снег №2",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/new_year2.js",
+          "url": "https://tvigl.github.io/plugins/new_year2.js",
+          "descr": "Снег №2",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-12/medium/screenshot_20251221-151830.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-12/medium/screenshot_20251221-151830.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-12/medium/screenshot_20251221-151830.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Снег №3",
+          "author": "@nemiroff",
+          "link": "https://nemiroff.github.io/lampa/snow.js",
+          "url": "https://nemiroff.github.io/lampa/snow.js",
+          "descr": "Снег №3",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-12/medium/screenshot_20251221-152040.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-12/medium/screenshot_20251221-152040.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-12/medium/screenshot_20251221-152040.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Гирлянда",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/new_year3.js",
+          "url": "https://tvigl.github.io/plugins/new_year3.js",
+          "descr": "Гирлянда",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-12/medium/screenshot_20251221-174042.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-12/medium/screenshot_20251221-174042.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-12/medium/screenshot_20251221-174042.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Дождь со звуком",
+          "author": "@weritos666",
+          "link": "https://weritos666.github.io/rain_realistic_sound.js",
+          "url": "https://weritos666.github.io/rain_realistic_sound.js",
+          "descr": "Дождь со звуком",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Туман",
+          "author": "@mulumuu",
+          "link": "https://mulumuu.github.io/mulumuu.githib.io/Vanta.js",
+          "url": "https://mulumuu.github.io/mulumuu.githib.io/Vanta.js",
+          "descr": "Туман",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2025-12/medium/snipaste_2025-12-25_15-11-25.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2025-12/medium/snipaste_2025-12-25_15-11-25.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2025-12/medium/snipaste_2025-12-25_15-11-25.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Меню для телефонов",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/phone_menu.js",
+          "url": "https://tvigl.github.io/plugins/phone_menu.js",
+          "descr": "Меню для телефонов",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-01/medium/www.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-01/medium/www.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-01/medium/www.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Отключить Shots",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/shots.js",
+          "url": "https://tvigl.github.io/plugins/shots.js",
+          "descr": "Отключить Shots",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-01/medium/snimok-jekrana-2026-01-14-180301.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-01/medium/snimok-jekrana-2026-01-14-180301.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-01/medium/snimok-jekrana-2026-01-14-180301.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Дорамы",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/dorama.js",
+          "url": "https://tvigl.github.io/plugins/dorama.js",
+          "descr": "Дорамы",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-08_21-16-57.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-08_21-16-57.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-08_21-16-57.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Wiki о фильме",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/WikiFind.js",
+          "url": "https://tvigl.github.io/plugins/WikiFind.js",
+          "descr": "Wiki о фильме",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-03/medium/222.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-03/medium/222.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-03/medium/222.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Загрузка при старте в стиле «Матрица»",
+          "author": "@tvigl",
+          "link": "https://tvigl.github.io/plugins/lampa-loader.js",
+          "url": "https://tvigl.github.io/plugins/lampa-loader.js",
+          "descr": "Загрузка при старте в стиле «Матрица»",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-28_22-59-13.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-28_22-59-13.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-28_22-59-13.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Поиск с подсказками",
+          "author": "@nikitagk22",
+          "link": "https://nikitagk22.github.io/suggest.js",
+          "url": "https://nikitagk22.github.io/suggest.js",
+          "descr": "Поиск с подсказками",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "https://tvigl.info/uploads/posts/2026-10/medium/img_20261021_030955_360.webp",
+          "screenshot": "https://tvigl.info/uploads/posts/2026-10/medium/img_20261021_030955_360.webp",
+          "screenshots": [
+            "https://tvigl.info/uploads/posts/2026-10/medium/img_20261021_030955_360.webp"
+          ],
+          "available_lampa": 1
+        },
+        {
+          "name": "Фильтр ленты — убрать лишнее с главной",
+          "author": "@alcopa",
+          "link": "https://hub.alcopa.cc/dl/feed_filter/v1.0.0/plugin.js",
+          "url": "https://hub.alcopa.cc/dl/feed_filter/v1.0.0/plugin.js",
+          "descr": "Фильтр ленты — убрать лишнее с главной",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Favorite Plus — свои категории в Избранном",
+          "author": "@anclaver",
+          "link": "https://anclaver.github.io/Lampa/plugins/favoritePlus.js",
+          "url": "https://anclaver.github.io/Lampa/plugins/favoritePlus.js",
+          "descr": "Favorite Plus — свои категории в Избранном",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Profiles — профили без CUB (оригинал от @levende)",
+          "author": "@levende",
+          "link": "https://levende.github.io/lampa-plugins/profiles.js",
+          "url": "https://levende.github.io/lampa-plugins/profiles.js",
+          "descr": "Profiles — профили без CUB (оригинал от @levende)",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Bookmarks Sync — синхронизация закладок с CUB",
+          "author": "@levende",
+          "link": "https://levende.github.io/lampa-plugins/bookmarks-sync.js",
+          "url": "https://levende.github.io/lampa-plugins/bookmarks-sync.js",
+          "descr": "Bookmarks Sync — синхронизация закладок с CUB",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "History Filter — чистка истории просмотров",
+          "author": "@levende",
+          "link": "https://levende.github.io/lampa-plugins/history-filter.js",
+          "url": "https://levende.github.io/lampa-plugins/history-filter.js",
+          "descr": "History Filter — чистка истории просмотров",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "LParty — совместный просмотр с друзьями",
+          "author": "@nrsua",
+          "link": "https://nrsua.github.io/lampa-nrs/lparty.js",
+          "url": "https://nrsua.github.io/lampa-nrs/lparty.js",
+          "descr": "LParty — совместный просмотр с друзьями",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "VoBoost — громкость выше 100%",
+          "author": "@nrsua",
+          "link": "https://nrsua.github.io/lampa-nrs/voboost.js",
+          "url": "https://nrsua.github.io/lampa-nrs/voboost.js",
+          "descr": "VoBoost — громкость выше 100%",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "pipfs — видео в окне (картинка в картинке)",
+          "author": "@cevamnelampaplagin",
+          "link": "https://cevamnelampaplagin.github.io/sharewithothers/pipfs.js",
+          "url": "https://cevamnelampaplagin.github.io/sharewithothers/pipfs.js",
+          "descr": "pipfs — видео в окне (картинка в картинке)",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "TraktTV — интеграция с Trakt",
+          "author": "@lampame",
+          "link": "https://lampame.github.io/main/trakttv.js",
+          "url": "https://lampame.github.io/main/trakttv.js",
+          "descr": "TraktTV — интеграция с Trakt",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "NightingaleNotifications — уведомления о новых сериях",
+          "author": "@lampame",
+          "link": "https://lampame.github.io/main/nn.js",
+          "url": "https://lampame.github.io/main/nn.js",
+          "descr": "NightingaleNotifications — уведомления о новых сериях",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Ytranslate — перевод на украинский",
+          "author": "@yarikrazor-star",
+          "link": "https://yarikrazor-star.github.io/lmp/ytranslate.js",
+          "url": "https://yarikrazor-star.github.io/lmp/ytranslate.js",
+          "descr": "Ytranslate — перевод на украинский",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Radio — более 50 радиостанций",
+          "author": "@ne3nayskas",
+          "link": "https://ne3nayskas.github.io/plugins/radio.js",
+          "url": "https://ne3nayskas.github.io/plugins/radio.js",
+          "descr": "Radio — более 50 радиостанций",
+          "instruction": "Внешний плагин. Обновляется у автора по этой ссылке.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        }
+      ]
     }
   ]
 }
