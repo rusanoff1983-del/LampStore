@@ -9,70 +9,70 @@
         {
           "name": "Toppage",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/Toppage.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/Toppage.js",
-          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/Toppage.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/toppage/Toppage.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/toppage/Toppage.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/toppage/Toppage.js",
           "instruction": "Нажми Enter и выбери установку.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/screenshot.jpg",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/screenshot.jpg",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/toppage/screenshot.jpg",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/toppage/screenshot.jpg",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/toppage/screenshot.jpg"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/toppage/screenshot.jpg"
           ],
           "available_lampa": 1
         },
         {
           "name": "Переключатель плеера в шапке",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/topbar/top_bar.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/topbar/top_bar.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/topbar/top_bar.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/topbar/top_bar.js",
           "descr": "Удобная кнопка смены типа плеера — встроенного или внешнего — в шапке приложения.",
           "instruction": "Удобная кнопка смены типа плеера — встроенного или внешнего — в шапке приложения.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/topbar/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/topbar/screenshot.webp",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/topbar/screenshot.webp",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/topbar/screenshot.webp",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/topbar/screenshot.webp"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/topbar/screenshot.webp"
           ],
           "available_lampa": 1
         },
         {
           "name": "Подборки SakhTV",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/sakhtv-podborki/sakhtv_podborki.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/sakhtv-podborki/sakhtv_podborki.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/sakhtv-podborki/sakhtv_podborki.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/sakhtv-podborki/sakhtv_podborki.js",
           "descr": "68 готовых подборок с сайта Sakh.TV прямо в Lampa, без аккаунта, токена и похода на сайт;\nкарточки-мозаики как на сайте: четыре постера, название, сколько фильмов и сериалов;\nвнутри подборки — родные карточки Lampa: рейтинг, метки качества, жанры, год;\nпросмотр фильмов и сериалов через балансеры Lampac, как в обычном каталоге;\nназвания и постеры на русском языке, кэш ускоряет повторное открытие в разы",
           "instruction": "68 готовых подборок с сайта Sakh.TV прямо в Lampa, без аккаунта, токена и похода на сайт;\nкарточки-мозаики как на сайте: четыре постера, название, сколько фильмов и сериалов;\nвнутри подборки — родные карточки Lampa: рейтинг, метки качества, жанры, год;\nпросмотр фильмов и сериалов через балансеры Lampac, как в обычном каталоге;\nназвания и постеры на русском языке, кэш ускоряет повторное открытие в разы",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/sakhtv-podborki/screenshot.png",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/sakhtv-podborki/screenshot.png",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/sakhtv-podborki/screenshot.png",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/sakhtv-podborki/screenshot.png",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/sakhtv-podborki/screenshot.png"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/sakhtv-podborki/screenshot.png"
           ],
           "available_lampa": 1
         },
         {
           "name": "показывает иностранные и русские стриминги на главной;",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming2/streaming.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming2/streaming.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/streaming2/streaming.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/streaming2/streaming.js",
           "descr": "можно включать/выключать русские и иностранные стриминги;\nможно выбрать отображение: на главной или отдельным пунктом меню Стриминги;\nкарточки стримингов используют свои постеры с GitHub;\nпри выборе стриминга открывается меню сортировки: новинки, рейтинг, популярные, много голосов;\nпосле выбора сортировки открывается подборка сериалов этой площадки.На основе SURS",
           "instruction": "можно включать/выключать русские и иностранные стриминги;\nможно выбрать отображение: на главной или отдельным пунктом меню Стриминги;\nкарточки стримингов используют свои постеры с GitHub;\nпри выборе стриминга открывается меню сортировки: новинки, рейтинг, популярные, много голосов;\nпосле выбора сортировки открывается подборка сериалов этой площадки.На основе SURS",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming2/screenshot.png",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming2/screenshot.png",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/streaming2/screenshot.png",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/streaming2/screenshot.png",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming2/screenshot.png"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/streaming2/screenshot.png"
           ],
           "available_lampa": 1
         },
         {
           "name": "Стриминги на главной",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming/streamings.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming/streamings.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/streaming/streamings.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/streaming/streamings.js",
           "descr": "Добавляет на главную Lampa ряд популярных стриминговых площадок с карточками и логотипами.",
           "instruction": "Добавляет на главную Lampa ряд популярных стриминговых площадок с карточками и логотипами.",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming/screenshot.png",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming/screenshot.png",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/streaming/screenshot.png",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/streaming/screenshot.png",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/streaming/screenshot.png"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/streaming/screenshot.png"
           ],
           "available_lampa": 1
         }
@@ -120,9 +120,9 @@
         {
           "name": "Netflix Ui",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/netflix_ui/netflix_ui.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/netflix_ui/netflix_ui.js",
-          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/netflix_ui/netflix_ui.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/netflix_ui/netflix_ui.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/netflix_ui/netflix_ui.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/netflix_ui/netflix_ui.js",
           "instruction": "Нажми Enter и выбери установку.",
           "image": "",
           "screenshot": "",
@@ -132,9 +132,9 @@
         {
           "name": "Noshorts",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/noshorts/no-shots.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/noshorts/no-shots.js",
-          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/noshorts/no-shots.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/noshorts/no-shots.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/noshorts/no-shots.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/noshorts/no-shots.js",
           "instruction": "Нажми Enter и выбери установку.",
           "image": "",
           "screenshot": "",
@@ -180,9 +180,9 @@
         {
           "name": "Obsidiancopy",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/obsidiancopy/obsiview.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/obsidiancopy/obsiview.js",
-          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/obsidiancopy/obsiview.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/obsidiancopy/obsiview.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/obsidiancopy/obsiview.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/obsidiancopy/obsiview.js",
           "instruction": "Нажми Enter и выбери установку.",
           "image": "",
           "screenshot": "",
@@ -192,9 +192,9 @@
         {
           "name": "Play",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/Play/Play.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/Play/Play.js",
-          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/Play/Play.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/Play/Play.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/Play/Play.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/Play/Play.js",
           "instruction": "Нажми Enter и выбери установку.",
           "image": "",
           "screenshot": "",
@@ -252,8 +252,8 @@
         {
           "name": "YouTube Трейлеры",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/youtube_trailers/youtube_trailers.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/youtube_trailers/youtube_trailers.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/youtube_trailers/youtube_trailers.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/youtube_trailers/youtube_trailers.js",
           "descr": "Заменяет мусорную выдачу TMDB на живой поиск настоящих дублированных русских трейлеров прямо с YouTube. Запуск через родной YouTube-плеер Lampa или SmartTube.",
           "instruction": "Заменяет мусорную выдачу TMDB на живой поиск настоящих дублированных русских трейлеров прямо с YouTube. Запуск через родной YouTube-плеер Lampa или SmartTube.",
           "image": "",
@@ -264,9 +264,9 @@
         {
           "name": "ZoomPoster",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/ZoomPoster/ZoomPoster.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/ZoomPoster/ZoomPoster.js",
-          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@main/plugins/ZoomPoster/ZoomPoster.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/ZoomPoster/ZoomPoster.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/ZoomPoster/ZoomPoster.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b9c31a76a0e6bfa2d323090e80078ddc518e9011/plugins/ZoomPoster/ZoomPoster.js",
           "instruction": "Нажми Enter и выбери установку.",
           "image": "",
           "screenshot": "",
