@@ -9,29 +9,32 @@
   function injectCSS() {
     var scale = Lampa.Storage.get('zoom_scale', '1.20');
     var duration = Lampa.Storage.get('zoom_duration', '0.4s');
-    var radiusType = Lampa.Storage.get('zoom_radius', '10px');
+    var radiusType = Lampa.Storage.get('zoom_radius', '18px');
     var removeBorder = Lampa.Storage.get('zoom_remove_border', true);
     var borderColor = Lampa.Storage.get('zoom_border_color', '#ffffff');
 
-    var radiusIdle = '10px';
-    var radiusFocus = '15px';
+    var radiusIdle = '18px';
+    var radiusFocus = '26px';
 
     if (radiusType === '0px') {
       radiusIdle = '0px';
       radiusFocus = '0px';
-    } else if (radiusType === '6px') {
-      radiusIdle = '6px';
-      radiusFocus = '10px';
-    } else if (radiusType === '10px') {
-      radiusIdle = '10px';
-      radiusFocus = '15px';
-    } else if (radiusType === '14px') {
-      radiusIdle = '14px';
-      radiusFocus = '20px';
+    } else if (radiusType === '12px') {
+      radiusIdle = '12px';
+      radiusFocus = '18px';
+    } else if (radiusType === '18px') {
+      radiusIdle = '18px';
+      radiusFocus = '26px';
+    } else if (radiusType === '24px') {
+      radiusIdle = '24px';
+      radiusFocus = '34px';
+    } else if (radiusType === '30px') {
+      radiusIdle = '30px';
+      radiusFocus = '42px';
     } else {
       radiusIdle = radiusType;
       var num = parseInt(radiusType, 10);
-      radiusFocus = isNaN(num) ? '15px' : (Math.round(num * 1.5) + 'px');
+      radiusFocus = isNaN(num) ? '26px' : (Math.round(num * 1.45) + 'px');
     }
 
     var borderGlow = '';
@@ -40,7 +43,7 @@
     }
 
     var css = '' +
-      '/* Сама карточка в Lampa остается прозрачной, низ и название фильма НЕ трогаем */\n' +
+      '/* Сама карточка в Lampa остается прозрачной, подвал и название фильма штатные */\n' +
       '.card,\n' +
       '.poster,\n' +
       '.card--collection,\n' +
@@ -52,28 +55,30 @@
       '  border-radius: 0 !important;\n' +
       '  overflow: visible !important;\n' +
       '}\n\n' +
-      '/* Стиль Uiverse накладывается строго на ПОСТЕР (.card__view) */\n' +
+      '/* Стиль Uiverse строго на ПОСТЕР (.card__view) с выразительным скруглением */\n' +
       '.card__view,\n' +
       '.poster__view {\n' +
       '  border-radius: ' + radiusIdle + ' !important;\n' +
       '  background: rgb(45, 45, 45) !important;\n' +
-      '  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705) !important;\n' +
+      '  box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.705) !important;\n' +
       '  overflow: hidden !important;\n' +
+      '  -webkit-mask-image: -webkit-radial-gradient(white, black) !important;\n' +
       '  transition: transform ' + duration + ' cubic-bezier(0.2, 0.9, 0.2, 1),\n' +
       '              border-radius ' + duration + ' ease,\n' +
       '              background-color ' + duration + ' ease,\n' +
       '              box-shadow ' + duration + ' ease !important;\n' +
       '  transform-origin: center center !important;\n' +
       '}\n\n' +
-      '/* Картинка внутри постера идеально наследует скругление */\n' +
+      '/* Картинка и все внутренние слои четко обрезаются по углам */\n' +
       '.card__view img,\n' +
       '.card__view .card__img,\n' +
       '.card__view > div,\n' +
       '.poster__view img,\n' +
       '.poster__view .poster__img,\n' +
       '.poster__view > div {\n' +
-      '  border-radius: inherit !important;\n' +
+      '  border-radius: ' + radiusIdle + ' !important;\n' +
       '  overflow: hidden !important;\n' +
+      '  transition: border-radius ' + duration + ' ease !important;\n' +
       '}\n\n' +
       '/* Эффект Uiverse при фокусе с пульта ТВ или наведении мыши на ПК */\n' +
       '.card.focus .card__view,\n' +
@@ -90,10 +95,20 @@
       '.card-episode:hover .card__view {\n' +
       '  border-radius: ' + radiusFocus + ' !important;\n' +
       '  cursor: pointer !important;\n' +
-      '  transform: scale(' + scale + ') !important;\n' +
-      '  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705)' + borderGlow + ' !important;\n' +
+      '  transform: scale(' + scale + ') translateZ(0) !important;\n' +
+      '  box-shadow: 0px 0px 14px 7px rgba(0, 0, 0, 0.85)' + borderGlow + ' !important;\n' +
       '  background: rgb(0, 0, 0) !important;\n' +
       '  z-index: 99 !important;\n' +
+      '}\n\n' +
+      '/* При фокусе картинка получает увеличенный радиус скругления */\n' +
+      '.card.focus .card__view img,\n' +
+      '.card.focus .card__view .card__img,\n' +
+      '.card.focus .card__view > div,\n' +
+      '.poster.focus .poster__view img,\n' +
+      '.poster.focus .poster__view .poster__img,\n' +
+      '.card:hover .card__view img,\n' +
+      '.card:hover .card__view .card__img {\n' +
+      '  border-radius: ' + radiusFocus + ' !important;\n' +
       '}\n';
 
     if (removeBorder) {
@@ -151,9 +166,10 @@
         'd_05': 'Smooth (0.5s)',
         'd_08': 'Very Smooth (0.8s)',
         'r_none': 'No radius (0px)',
-        'r_small': 'Small (6px -> 10px)',
-        'r_std': 'Uiverse Standard (10px -> 15px)',
-        'r_large': 'Large (14px -> 20px)',
+        'r_small': 'Moderate (12px -> 18px)',
+        'r_std': 'Noticeable (18px -> 26px)',
+        'r_large': 'Strong (24px -> 34px)',
+        'r_xlarge': 'Ultra Round (30px -> 42px)',
         'c_white': 'White',
         'c_lgrey': 'Light Grey',
         'c_dgrey': 'Dark Grey',
@@ -193,9 +209,10 @@
         'd_05': 'Плавно (0.5s)',
         'd_08': 'Очень плавно (0.8s)',
         'r_none': 'Без скругления (0px)',
-        'r_small': 'Малое (6px → 10px)',
-        'r_std': 'Uiverse эталон (10px → 15px)',
-        'r_large': 'Большое (14px → 20px)',
+        'r_small': 'Умеренное (12px → 18px)',
+        'r_std': 'Выразительное (18px → 26px)',
+        'r_large': 'Сильное (24px → 34px)',
+        'r_xlarge': 'Ультра-круглое (30px → 42px)',
         'c_white': 'Белый',
         'c_lgrey': 'Светло-серый',
         'c_dgrey': 'Темно-серый',
@@ -235,9 +252,10 @@
         'd_05': 'Плавно (0.5s)',
         'd_08': 'Дуже плавно (0.8s)',
         'r_none': 'Без заокруглення (0px)',
-        'r_small': 'Мале (6px → 10px)',
-        'r_std': 'Uiverse еталон (10px → 15px)',
-        'r_large': 'Велике (14px → 20px)',
+        'r_small': 'Помірне (12px → 18px)',
+        'r_std': 'Виразне (18px → 26px)',
+        'r_large': 'Сильне (24px → 34px)',
+        'r_xlarge': 'Ультра-кругле (30px → 42px)',
         'c_white': 'Білий',
         'c_lgrey': 'Світло-сірий',
         'c_dgrey': 'Темно-сірий',
@@ -328,12 +346,13 @@
       param: {
         name: 'zoom_radius',
         type: 'select',
-        default: '10px',
+        default: '18px',
         values: {
           '0px': t('r_none'),
-          '6px': t('r_small'),
-          '10px': t('r_std'),
-          '14px': t('r_large')
+          '12px': t('r_small'),
+          '18px': t('r_std'),
+          '24px': t('r_large'),
+          '30px': t('r_xlarge')
         }
       },
       field: {
@@ -412,7 +431,7 @@
       });
     }
 
-    console.log('[Card Zoom Uiverse Plugin] v2.1 — Loaded');
+    console.log('[Card Zoom Uiverse Plugin] v2.2 — Loaded');
   }
 
   if (window.Lampa && Lampa.Listener) {
