@@ -3,34 +3,34 @@
   "name": "LampStore",
   "results": [
     {
-      "title": "rusanoff",
+      "title": "Скриншоты",
       "hpu": "recomend",
       "results": [
         {
           "name": "Подборки SakhTV",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/sakhtv-podborki/sakhtv_podborki.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/sakhtv-podborki/sakhtv_podborki.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/sakhtv-podborki/sakhtv_podborki.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/sakhtv-podborki/sakhtv_podborki.js",
           "descr": "68 готовых подборок с сайта Sakh.TV прямо в Lampa, без аккаунта, токена и похода на сайт;\nкарточки-мозаики как на сайте: четыре постера, название, сколько фильмов и сериалов;\nвнутри подборки — родные карточки Lampa: рейтинг, метки качества, жанры, год;\nпросмотр фильмов и сериалов через балансеры Lampac, как в обычном каталоге;\nназвания и постеры на русском языке, кэш ускоряет повторное открытие в разы",
           "instruction": "68 готовых подборок с сайта Sakh.TV прямо в Lampa, без аккаунта, токена и похода на сайт;\nкарточки-мозаики как на сайте: четыре постера, название, сколько фильмов и сериалов;\nвнутри подборки — родные карточки Lampa: рейтинг, метки качества, жанры, год;\nпросмотр фильмов и сериалов через балансеры Lampac, как в обычном каталоге;\nназвания и постеры на русском языке, кэш ускоряет повторное открытие в разы",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/sakhtv-podborki/screenshot.png",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/sakhtv-podborki/screenshot.png",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/sakhtv-podborki/screenshot.png",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/sakhtv-podborki/screenshot.png",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/sakhtv-podborki/screenshot.png"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/sakhtv-podborki/screenshot.png"
           ],
           "available_lampa": 1
         },
         {
-          "name": "Стриминги на главной",
+          "name": "показывает иностранные и русские стриминги на главной;",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/streaming2/streaming.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/streaming2/streaming.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/streaming2/streaming.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/streaming2/streaming.js",
           "descr": "можно включать/выключать русские и иностранные стриминги;\nможно выбрать отображение: на главной или отдельным пунктом меню Стриминги;\nкарточки стримингов используют свои постеры с GitHub;\nпри выборе стриминга открывается меню сортировки: новинки, рейтинг, популярные, много голосов;\nпосле выбора сортировки открывается подборка сериалов этой площадки.На основе SURS",
           "instruction": "можно включать/выключать русские и иностранные стриминги;\nможно выбрать отображение: на главной или отдельным пунктом меню Стриминги;\nкарточки стримингов используют свои постеры с GitHub;\nпри выборе стриминга открывается меню сортировки: новинки, рейтинг, популярные, много голосов;\nпосле выбора сортировки открывается подборка сериалов этой площадки.На основе SURS",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/streaming/screenshot.png",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/streaming/screenshot.png",
+          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/streaming2/screenshot.png",
+          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/streaming2/screenshot.png",
           "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/streaming/screenshot.png"
+            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/streaming2/screenshot.png"
           ],
           "available_lampa": 1
         }
@@ -78,9 +78,9 @@
         {
           "name": "Netflix Ui",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/netflix_ui/netflix_ui.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/netflix_ui/netflix_ui.js",
-          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/netflix_ui/netflix_ui.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/netflix_ui/netflix_ui.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/netflix_ui/netflix_ui.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/netflix_ui/netflix_ui.js",
           "instruction": "Нажми Enter и выбери установку.",
           "image": "",
           "screenshot": "",
@@ -90,9 +90,9 @@
         {
           "name": "Noshorts",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/noshorts/no-shots.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/noshorts/no-shots.js",
-          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/noshorts/no-shots.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/noshorts/no-shots.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/noshorts/no-shots.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/noshorts/no-shots.js",
           "instruction": "Нажми Enter и выбери установку.",
           "image": "",
           "screenshot": "",
@@ -138,9 +138,9 @@
         {
           "name": "Obsidiancopy",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/obsidiancopy/obsiview.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/obsidiancopy/obsiview.js",
-          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/obsidiancopy/obsiview.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/obsidiancopy/obsiview.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/obsidiancopy/obsiview.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/obsidiancopy/obsiview.js",
           "instruction": "Нажми Enter и выбери установку.",
           "image": "",
           "screenshot": "",
@@ -150,9 +150,9 @@
         {
           "name": "Play",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/Play/Play.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/Play/Play.js",
-          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/Play/Play.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/Play/Play.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/Play/Play.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/Play/Play.js",
           "instruction": "Нажми Enter и выбери установку.",
           "image": "",
           "screenshot": "",
@@ -208,10 +208,1162 @@
           "available_lampa": 1
         },
         {
+          "name": "Tvigl онлайн просмотр 01",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-01/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-01/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-01/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl онлайн просмотр 02",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-02/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-02/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-02/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl онлайн просмотр 03",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-03/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-03/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-03/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl онлайн просмотр 04",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-04/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-04/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-04/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl онлайн просмотр 05",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-05/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-05/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-05/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl онлайн просмотр 06",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-06/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-06/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-06/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl онлайн просмотр 07",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-07/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-07/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-07/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl онлайн просмотр 08",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-08/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-08/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-08/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl онлайн просмотр 09",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-09/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-09/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-09/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl онлайн просмотр 10",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-10/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-10/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-10/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl онлайн просмотр 11",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-11/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-11/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-11/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl онлайн просмотр 12",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-12/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-12/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-12/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl онлайн просмотр 13",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-13/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-13/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80-13/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 01",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-01/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-01/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-01/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 02",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-02/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-02/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-02/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 03",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-03/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-03/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-03/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 04",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-04/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-04/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-04/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 05",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-05/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-05/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-05/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 06",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-06/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-06/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-06/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 07",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-07/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-07/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-07/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 08",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-08/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-08/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-08/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 09",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-09/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-09/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-09/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 10",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-10/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-10/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-10/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 11",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-11/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-11/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-11/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 12",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-12/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-12/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-12/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 13",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-13/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-13/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-13/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 14",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-14/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-14/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-14/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 16",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-16/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-16/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-16/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 17",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-17/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-17/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-17/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 18",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-18/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-18/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-18/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 19",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-19/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-19/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-19/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 20",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-20/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-20/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-20/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 21",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-21/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-21/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-21/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 22",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-22/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-22/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-22/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 23",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-23/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-23/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-23/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 24",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-24/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-24/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-24/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 25",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-25/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-25/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-25/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 26",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-26/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-26/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-26/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 27",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-27/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-27/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-27/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 28",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-28/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-28/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-28/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 29",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-29/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-29/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-29/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 30",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-30/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-30/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-30/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 31",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-31/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-31/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-31/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 32",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-32/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-32/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-32/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 33",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-33/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-33/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-33/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 34",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-34/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-34/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-34/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl оформление 35",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-35/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-35/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-35/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl подборки 01",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-01/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-01/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-01/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl подборки 02",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-02/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-02/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-02/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl подборки 03",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-03/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-03/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-03/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl подборки 05",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-05/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-05/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-05/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl подборки 06",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-06/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-06/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-06/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl подборки 07",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-07/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-07/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-07/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl подборки 08",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-08/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-08/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-08/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl подборки 09",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-09/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-09/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-09/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl подборки 10",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-10/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-10/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8-10/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 01",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-01/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-01/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-01/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 02",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-02/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-02/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-02/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 03",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-03/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-03/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-03/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 04",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-04/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-04/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-04/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 05",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-05/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-05/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-05/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 06",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-06/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-06/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-06/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 07",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-07/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-07/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-07/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 08",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-08/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-08/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-08/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 09",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-09/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-09/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-09/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 10",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-10/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-10/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-10/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 11",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-11/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-11/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-11/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 12",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-12/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-12/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-12/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 13",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-13/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-13/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-13/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 14",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-14/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-14/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-14/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 15",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-15/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-15/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-15/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 16",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-16/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-16/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-16/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 17",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-17/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-17/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-17/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 18",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-18/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-18/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-18/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 19",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-19/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-19/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-19/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 20",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-20/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-20/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-20/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 21",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-21/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-21/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-21/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 22",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-22/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-22/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-22/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 23",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-23/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-23/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-23/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 24",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-24/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-24/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-24/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 25",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-25/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-25/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-25/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 26",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-26/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-26/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-26/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl разное 27",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-27/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-27/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5-27/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl темы 01",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%B5%D0%BC%D1%8B-01/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%B5%D0%BC%D1%8B-01/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%B5%D0%BC%D1%8B-01/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl темы 02",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%B5%D0%BC%D1%8B-02/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%B5%D0%BC%D1%8B-02/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%B5%D0%BC%D1%8B-02/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl темы 03",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%B5%D0%BC%D1%8B-03/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%B5%D0%BC%D1%8B-03/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%B5%D0%BC%D1%8B-03/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl торренты 01",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-01/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-01/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-01/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl торренты 02",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-02/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-02/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-02/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl торренты 03",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-03/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-03/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-03/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl торренты 04",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-04/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-04/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-04/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl торренты 05",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-05/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-05/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-05/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl торренты 06",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-06/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-06/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-06/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl торренты 07",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-07/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-07/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-07/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl торренты 08",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-08/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-08/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-08/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl торренты 09",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-09/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-09/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-09/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
+          "name": "Tvigl торренты 10",
+          "author": "@100melochey",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-10/plugin.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-10/plugin.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/tvigl-%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B-10/plugin.js",
+          "instruction": "Нажми Enter и выбери установку.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
+        },
+        {
           "name": "YouTube Трейлеры",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/youtube_trailers/youtube_trailers.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/youtube_trailers/youtube_trailers.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/youtube_trailers/youtube_trailers.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/youtube_trailers/youtube_trailers.js",
           "descr": "Заменяет мусорную выдачу TMDB на живой поиск настоящих дублированных русских трейлеров прямо с YouTube. Запуск через родной YouTube-плеер Lampa или SmartTube.",
           "instruction": "Заменяет мусорную выдачу TMDB на живой поиск настоящих дублированных русских трейлеров прямо с YouTube. Запуск через родной YouTube-плеер Lampa или SmartTube.",
           "image": "",
@@ -222,9 +1374,9 @@
         {
           "name": "ZoomPoster",
           "author": "@100melochey",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/ZoomPoster/ZoomPoster.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/ZoomPoster/ZoomPoster.js",
-          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/ZoomPoster/ZoomPoster.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/ZoomPoster/ZoomPoster.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/ZoomPoster/ZoomPoster.js",
+          "descr": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@8533658e80878cda3b5e60c501dce61df63a40ca/plugins/ZoomPoster/ZoomPoster.js",
           "instruction": "Нажми Enter и выбери установку.",
           "image": "",
           "screenshot": "",
@@ -286,1340 +1438,6 @@
           "url": "https://mylampa1.github.io/buttons.js",
           "descr": "Плагин для управления кнопками на странице фильма/сериала в Lampa",
           "instruction": "Плагин для управления кнопками на странице фильма/сериала в Lampa",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        }
-      ]
-    },
-    {
-      "title": "Онлайн-просмотр (tvigl)",
-      "hpu": "recomend",
-      "results": [
-        {
-          "name": "Anti DMCA",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/anti-dmca/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/anti-dmca/plugin.js",
-          "descr": "Обход блокировок DMCA для онлайн-источников",
-          "instruction": "Обход блокировок DMCA для онлайн-источников",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Balancer Sanitizer",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/balancer-sanitizer/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/balancer-sanitizer/plugin.js",
-          "descr": "Очистка ссылок балансеров от мусора",
-          "instruction": "Очистка ссылок балансеров от мусора",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Bandera 2.0",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/bandera-2/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/bandera-2/plugin.js",
-          "descr": "Онлайн-источники Bandera 2.0",
-          "instruction": "Онлайн-источники Bandera 2.0",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "IMDb трейлеры",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/imdb-%D1%82%D1%80%D0%B5%D0%B9%D0%BB%D0%B5%D1%80%D1%8B/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/imdb-%D1%82%D1%80%D0%B5%D0%B9%D0%BB%D0%B5%D1%80%D1%8B/plugin.js",
-          "descr": "Трендовые трейлеры с IMDb",
-          "instruction": "Трендовые трейлеры с IMDb",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "lampa-click",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/lampa-click/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/lampa-click/plugin.js",
-          "descr": "",
-          "instruction": "",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-16/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-16/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-16/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Lampac Source Filter",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/lampac-source-filter/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/lampac-source-filter/plugin.js",
-          "descr": "Скрытие лишних источников в Lampac",
-          "instruction": "Скрытие лишних источников в Lampac",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "OnlineServe",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/onlineserve/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/onlineserve/plugin.js",
-          "descr": "Онлайн-сервис контента",
-          "instruction": "Онлайн-сервис контента",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "OpenSubtitles",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/opensubtitles/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/opensubtitles/plugin.js",
-          "descr": "Субтитры в плеере из OpenSubtitles",
-          "instruction": "Субтитры в плеере из OpenSubtitles",
-          "image": "https://tvigl.info/uploads/posts/2026-10/medium/ss-1-2.webp",
-          "screenshot": "https://tvigl.info/uploads/posts/2026-10/medium/ss-1-2.webp",
-          "screenshots": [
-            "https://tvigl.info/uploads/posts/2026-10/medium/ss-1-2.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "PiP",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/pip/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/pip/plugin.js",
-          "descr": "Картинка в картинке (Picture in Picture)",
-          "instruction": "Картинка в картинке (Picture in Picture)",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "rt-tрейлеры",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/rt-t%D1%80%D0%B5%D0%B9%D0%BB%D0%B5%D1%80%D1%8B/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/rt-t%D1%80%D0%B5%D0%B9%D0%BB%D0%B5%D1%80%D1%8B/plugin.js",
-          "descr": "",
-          "instruction": "",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "RuTube трейлеры",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/rutube-%D1%82%D1%80%D0%B5%D0%B9%D0%BB%D0%B5%D1%80%D1%8B/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/rutube-%D1%82%D1%80%D0%B5%D0%B9%D0%BB%D0%B5%D1%80%D1%8B/plugin.js",
-          "descr": "Трейлеры с RuTube прямо в Lampa",
-          "instruction": "Трейлеры с RuTube прямо в Lampa",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-02/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-02/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-02/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Season Fix",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/season-fix/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/season-fix/plugin.js",
-          "descr": "Исправление отображения сезонов",
-          "instruction": "Исправление отображения сезонов",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Series Progress Fix",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/series-progress/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/series-progress/plugin.js",
-          "descr": "Исправление прогресса просмотра серий",
-          "instruction": "Исправление прогресса просмотра серий",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Спорт",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/sport/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/sport/plugin.js",
-          "descr": "Спортивные и киберспортивные трансляции с maincast.tv",
-          "instruction": "Спортивные и киберспортивные трансляции с maincast.tv",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-01/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-01/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-01/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "TMDB Networks",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/tmdb-networks/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/tmdb-networks/plugin.js",
-          "descr": "Сети и студии из TMDB",
-          "instruction": "Сети и студии из TMDB",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Top Bar",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/top-bar/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/top-bar/plugin.js",
-          "descr": "Переключатель типа плеера в шапке приложения",
-          "instruction": "Переключатель типа плеера в шапке приложения",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-04/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-04/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-04/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "TryzubTV",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/tryzubtv/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/tryzubtv/plugin.js",
-          "descr": "Украинские ТВ-каналы",
-          "instruction": "Украинские ТВ-каналы",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Автопилот",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/%D0%B0%D0%B2%D1%82%D0%BE%D0%BF%D0%B8%D0%BB%D0%BE%D1%82/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/%D0%B0%D0%B2%D1%82%D0%BE%D0%BF%D0%B8%D0%BB%D0%BE%D1%82/plugin.js",
-          "descr": "Одна кнопка «Смотреть» для быстрого старта",
-          "instruction": "Одна кнопка «Смотреть» для быстрого старта",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-05/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-05/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-05/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Нижнее меню",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/%D0%BD%D0%B8%D0%B6%D0%BD%D0%B5%D0%B5-%D0%BC%D0%B5%D0%BD%D1%8E/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/%D0%BD%D0%B8%D0%B6%D0%BD%D0%B5%D0%B5-%D0%BC%D0%B5%D0%BD%D1%8E/plugin.js",
-          "descr": "Добавляет пункты сериалы и фильмы в нижнее меню",
-          "instruction": "Добавляет пункты сериалы и фильмы в нижнее меню",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Пропуск заставки",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/%D0%BF%D1%80%D0%BE%D0%BF%D1%83%D1%81%D0%BA-%D0%B7%D0%B0%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B8/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/%D0%BF%D1%80%D0%BE%D0%BF%D1%83%D1%81%D0%BA-%D0%B7%D0%B0%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B8/plugin.js",
-          "descr": "Автоматический пропуск заставок и титров",
-          "instruction": "Автоматический пропуск заставок и титров",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-06/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-06/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-06/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Управление источниками",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%D0%BC%D0%B8/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80/%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%D0%BC%D0%B8/plugin.js",
-          "descr": "Сортировка и управление онлайн-источниками",
-          "instruction": "Сортировка и управление онлайн-источниками",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-03/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-03/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-online-03/screenshot.webp"
-          ],
-          "available_lampa": 1
-        }
-      ]
-    },
-    {
-      "title": "Оформление (tvigl)",
-      "hpu": "recomend",
-      "results": [
-        {
-          "name": "Стилизованные кнопки",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/3buttons/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/3buttons/plugin.js",
-          "descr": "Кнопки Онлайн, Торрент, Трейлеры",
-          "instruction": "Кнопки Онлайн, Торрент, Трейлеры",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-04/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-04/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-04/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Анимация загрузки",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/aloader/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/aloader/plugin.js",
-          "descr": "Анимация загрузки (25 вариантов оформления)",
-          "instruction": "Анимация загрузки (25 вариантов оформления)",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-10/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-10/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-10/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Интерфейс в стиле Apple TV",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/appleTV/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/appleTV/plugin.js",
-          "descr": "Интерфейс приложения в стиле Apple TV",
-          "instruction": "Интерфейс приложения в стиле Apple TV",
-          "image": "https://tvigl.info/uploads/posts/2026-01/medium/screenshot_20260103-144659.webp",
-          "screenshot": "https://tvigl.info/uploads/posts/2026-01/medium/screenshot_20260103-144659.webp",
-          "screenshots": [
-            "https://tvigl.info/uploads/posts/2026-01/medium/screenshot_20260103-144659.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Цветные кнопки + Очистить кэш",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/cache/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/cache/plugin.js",
-          "descr": "Цветные кнопки и кнопка очистки кэша в шапке",
-          "instruction": "Цветные кнопки и кнопка очистки кэша в шапке",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-05/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-05/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-05/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Cardify Rating",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/cardify-rating/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/cardify-rating/plugin.js",
-          "descr": "Cardify с отображением рейтинга",
-          "instruction": "Cardify с отображением рейтинга",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Кнопка «Выход»",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/exit/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/exit/plugin.js",
-          "descr": "Кнопка выхода в главном меню",
-          "instruction": "Кнопка выхода в главном меню",
-          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-203147.webp",
-          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-203147.webp",
-          "screenshots": [
-            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-203147.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Flixio",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/flixio/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/flixio/plugin.js",
-          "descr": "Оформление главной страницы и карточек фильмов",
-          "instruction": "Оформление главной страницы и карточек фильмов",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-17/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-17/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-17/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Значки в шапке",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/head-filter/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/head-filter/plugin.js",
-          "descr": "Настройка отображения значков в шапке",
-          "instruction": "Настройка отображения значков в шапке",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-14/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-14/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-14/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Интерфейс",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/interface/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/interface/plugin.js",
-          "descr": "Управление кнопками на странице фильма",
-          "instruction": "Управление кнопками на странице фильма",
-          "image": "https://tvigl.info/uploads/posts/2026-01/medium/screenshot_20260103-144659.webp",
-          "screenshot": "https://tvigl.info/uploads/posts/2026-01/medium/screenshot_20260103-144659.webp",
-          "screenshots": [
-            "https://tvigl.info/uploads/posts/2026-01/medium/screenshot_20260103-144659.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Логотипы фильмов",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/logo/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/logo/plugin.js",
-          "descr": "Логотипы фильмов и сериалов вместо названий",
-          "instruction": "Логотипы фильмов и сериалов вместо названий",
-          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-210912.webp",
-          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-210912.webp",
-          "screenshots": [
-            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-210912.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Логотипы (alt)",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/logo-alt/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/logo-alt/plugin.js",
-          "descr": "Логотипы фильмов (альтернативная версия)",
-          "instruction": "Логотипы фильмов (альтернативная версия)",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Рейтинг от Макса",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/maxsm-ratings/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/maxsm-ratings/plugin.js",
-          "descr": "Рейтинг в карточке от Макса",
-          "instruction": "Рейтинг в карточке от Макса",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-09/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-09/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-09/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Новые релизы",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/new-released/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/new-released/plugin.js",
-          "descr": "Новые релизы фильмов и сериалов",
-          "instruction": "Новые релизы фильмов и сериалов",
-          "image": "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-18_22-25-48.webp",
-          "screenshot": "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-18_22-25-48.webp",
-          "screenshots": [
-            "https://tvigl.info/uploads/posts/2026-03/medium/snipaste_2026-03-18_22-25-48.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Убрать трейлеры",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/notrailers/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/notrailers/plugin.js",
-          "descr": "Убирает кнопку «Трейлеры» из карточек фильмов",
-          "instruction": "Убирает кнопку «Трейлеры» из карточек фильмов",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-08/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-08/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-08/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Метки качества",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/quality/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/quality/plugin.js",
-          "descr": "Метки максимального качества на карточках",
-          "instruction": "Метки максимального качества на карточках",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-06/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-06/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-06/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Рейтинги IMDb/TMDB/Metacritic/Rotten Tomatoes",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/rating-omdb/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/rating-omdb/plugin.js",
-          "descr": "Рейтинги с нескольких сайтов на карточках",
-          "instruction": "Рейтинги с нескольких сайтов на карточках",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-01/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-01/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-01/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Качество, рейтинг и год",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/rating-quality/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/rating-quality/plugin.js",
-          "descr": "Качество, рейтинг и год на карточке фильма",
-          "instruction": "Качество, рейтинг и год на карточке фильма",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-20/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-20/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-20/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Рейтинг в правом углу",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/ratingup/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/ratingup/plugin.js",
-          "descr": "Рейтинг в правом верхнем углу карточки",
-          "instruction": "Рейтинг в правом верхнем углу карточки",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-11/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-11/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-11/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Сезон и серия",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/seasons/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/seasons/plugin.js",
-          "descr": "Отображение сезона и серии на карточках сериалов",
-          "instruction": "Отображение сезона и серии на карточках сериалов",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-07/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-07/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-07/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Балансеры в фильтре",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/src-filter/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/src-filter/plugin.js",
-          "descr": "Балансеры в фильтре источников",
-          "instruction": "Балансеры в фильтре источников",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-13/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-13/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-13/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Подборки стримингов",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/streamings-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/streamings-%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/plugin.js",
-          "descr": "Netflix, Prime, Apple TV+, HBO, Hulu, Disney+",
-          "instruction": "Netflix, Prime, Apple TV+, HBO, Hulu, Disney+",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-19/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-19/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-19/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Цветной рейтинг на карточках",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/vote-colour/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5/vote-colour/plugin.js",
-          "descr": "Цветное отображение рейтинга",
-          "instruction": "Цветное отображение рейтинга",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-02/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-02/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-oformlenie-02/screenshot.webp"
-          ],
-          "available_lampa": 1
-        }
-      ]
-    },
-    {
-      "title": "Подборки (tvigl)",
-      "hpu": "recomend",
-      "results": [
-        {
-          "name": "CommunityWatches",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/communitywatches/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/communitywatches/plugin.js",
-          "descr": "Топ недели и скрытые жемчужины от сообщества",
-          "instruction": "Топ недели и скрытые жемчужины от сообщества",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-07/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-07/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-07/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Подборки от Levende",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/levende/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/levende/plugin.js",
-          "descr": "Подборки от Levende (Prisma collections)",
-          "instruction": "Подборки от Levende (Prisma collections)",
-          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251014-193222.webp",
-          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251014-193222.webp",
-          "screenshots": [
-            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251014-193222.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Подборки LNUM",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/lnum/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/lnum/plugin.js",
-          "descr": "Подборки контента от LNUM",
-          "instruction": "Подборки контента от LNUM",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-02/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-02/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-02/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "MovieTV — дополнительный каталог",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/movietv/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/movietv/plugin.js",
-          "descr": "Дополнительный каталог фильмов и сериалов MovieTV",
-          "instruction": "Дополнительный каталог фильмов и сериалов MovieTV",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "New Category",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/newcategory/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/newcategory/plugin.js",
-          "descr": "Новые категории в каталоге Lampa",
-          "instruction": "Новые категории в каталоге Lampa",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-08/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-08/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-08/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Подборки NUMParser",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/numparser/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/numparser/plugin.js",
-          "descr": "Подборки от NUMParser",
-          "instruction": "Подборки от NUMParser",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-03/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-03/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-03/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Random Scheduled",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/random-scheduled/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/random-scheduled/plugin.js",
-          "descr": "Случайный фильм из раздела «Позже»",
-          "instruction": "Случайный фильм из раздела «Позже»",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Siaivo Dorama",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/siaivo-dorama/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/siaivo-dorama/plugin.js",
-          "descr": "Раздел дорам от Siaivo",
-          "instruction": "Раздел дорам от Siaivo",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Источники",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/sources/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/sources/plugin.js",
-          "descr": "Источники контента",
-          "instruction": "Источники контента",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-06/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-06/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-06/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Студии",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/studios/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/studios/plugin.js",
-          "descr": "Студии и производители контента",
-          "instruction": "Студии и производители контента",
-          "image": "https://tvigl.info/uploads/posts/2026-01/medium/screenshot_20260113-205158.webp",
-          "screenshot": "https://tvigl.info/uploads/posts/2026-01/medium/screenshot_20260113-205158.webp",
-          "screenshots": [
-            "https://tvigl.info/uploads/posts/2026-01/medium/screenshot_20260113-205158.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Подборки SURS",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/surs/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/surs/plugin.js",
-          "descr": "Подборки фильмов и сериалов от SURS",
-          "instruction": "Подборки фильмов и сериалов от SURS",
-          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251014-193222.webp",
-          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251014-193222.webp",
-          "screenshots": [
-            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251014-193222.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Подборки TMDB mod",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/tmdb-mod/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D0%BF%D0%BE%D0%B4%D0%B1%D0%BE%D1%80%D0%BA%D0%B8/tmdb-mod/plugin.js",
-          "descr": "Подборки на основе TMDB (модифицированная версия)",
-          "instruction": "Подборки на основе TMDB (модифицированная версия)",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-01/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-01/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-podborki-01/screenshot.webp"
-          ],
-          "available_lampa": 1
-        }
-      ]
-    },
-    {
-      "title": "Разное (tvigl)",
-      "hpu": "recomend",
-      "results": [
-        {
-          "name": "Убрать нумерацию «123»",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/123/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/123/plugin.js",
-          "descr": "Убирает нумерацию с главной страницы",
-          "instruction": "Убирает нумерацию с главной страницы",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-02/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-02/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-02/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "AI-поиск №1",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/ai-search-1/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/ai-search-1/plugin.js",
-          "descr": "AI-поиск для поиска контента",
-          "instruction": "AI-поиск для поиска контента",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-03/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-03/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-03/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Bookmarks Sync",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/bookmarks-sync/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/bookmarks-sync/plugin.js",
-          "descr": "Синхронизация закладок с CUB",
-          "instruction": "Синхронизация закладок с CUB",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Автопоказ трейлеров (Cardify)",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/cardify/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/cardify/plugin.js",
-          "descr": "Автоматический показ трейлеров в карточке фильма",
-          "instruction": "Автоматический показ трейлеров в карточке фильма",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-01/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-01/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-01/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Своё «Избранное»",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/custom-favs/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/custom-favs/plugin.js",
-          "descr": "Своё Избранное с пользовательскими категориями",
-          "instruction": "Своё Избранное с пользовательскими категориями",
-          "image": "https://tvigl.info/uploads/posts/2025-11/medium/snipaste_2025-11-09_08-45-58.webp",
-          "screenshot": "https://tvigl.info/uploads/posts/2025-11/medium/snipaste_2025-11-09_08-45-58.webp",
-          "screenshots": [
-            "https://tvigl.info/uploads/posts/2025-11/medium/snipaste_2025-11-09_08-45-58.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Дорамы",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/dorama/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/dorama/plugin.js",
-          "descr": "Раздел дорам в каталоге",
-          "instruction": "Раздел дорам в каталоге",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-12/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-12/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-12/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Favorite Plus",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/favorite-plus/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/favorite-plus/plugin.js",
-          "descr": "Дополнительные категории в Избранном",
-          "instruction": "Дополнительные категории в Избранном",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Фильтр ленты",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/feed-filter/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/feed-filter/plugin.js",
-          "descr": "Фильтр ленты — скрытие лишнего с главной",
-          "instruction": "Фильтр ленты — скрытие лишнего с главной",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "History Filter",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/history-filter/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/history-filter/plugin.js",
-          "descr": "Очистка и фильтрация истории просмотров",
-          "instruction": "Очистка и фильтрация истории просмотров",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Загрузка «Матрица»",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/lampa-loader/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/lampa-loader/plugin.js",
-          "descr": "Заставка загрузки в стиле «Матрицы»",
-          "instruction": "Заставка загрузки в стиле «Матрицы»",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-14/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-14/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-14/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "LParty — совместный просмотр",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/lparty/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/lparty/plugin.js",
-          "descr": "Совместный просмотр фильмов с друзьями",
-          "instruction": "Совместный просмотр фильмов с друзьями",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "NightingaleNotifications",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/nightingale-notify/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/nightingale-notify/plugin.js",
-          "descr": "Уведомления о выходе новых серий",
-          "instruction": "Уведомления о выходе новых серий",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Меню для телефонов",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/phone-menu/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/phone-menu/plugin.js",
-          "descr": "Адаптированное меню для мобильных устройств",
-          "instruction": "Адаптированное меню для мобильных устройств",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-10/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-10/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-10/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "pipfs — видео в окне",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/pipfs/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/pipfs/plugin.js",
-          "descr": "Картинка в картинке (Picture in Picture)",
-          "instruction": "Картинка в картинке (Picture in Picture)",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Profiles — профили без CUB",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/profiles/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/profiles/plugin.js",
-          "descr": "Профили пользователей без КУБ сервиса",
-          "instruction": "Профили пользователей без КУБ сервиса",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Radio — более 50 радиостанций",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/radio/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/radio/plugin.js",
-          "descr": "Интернет-радиостанции",
-          "instruction": "Интернет-радиостанции",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Отключить Shots",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/shots/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/shots/plugin.js",
-          "descr": "Отключение Shots (коротких видео)",
-          "instruction": "Отключение Shots (коротких видео)",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-11/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-11/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-11/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Поиск с подсказками",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/suggest/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/suggest/plugin.js",
-          "descr": "Поиск с автоподсказками",
-          "instruction": "Поиск с автоподсказками",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-15/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-15/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-15/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "TraktTV",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/trakt-tv/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/trakt-tv/plugin.js",
-          "descr": "Интеграция с сервисом Trakt.tv",
-          "instruction": "Интеграция с сервисом Trakt.tv",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Trash Filter",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/trash-filter/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/trash-filter/plugin.js",
-          "descr": "Фильтрация мусорных результатов в поиске",
-          "instruction": "Фильтрация мусорных результатов в поиске",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "VoBoost — громкость выше 100%",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/voboost/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/voboost/plugin.js",
-          "descr": "Громкость звука выше 100%",
-          "instruction": "Громкость звука выше 100%",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Wiki о фильме",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/wikifind/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/wikifind/plugin.js",
-          "descr": "Информация из Википедии о фильме",
-          "instruction": "Информация из Википедии о фильме",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-13/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-13/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-13/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Ytranslate — перевод на украинский",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/ytranslate/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/ytranslate/plugin.js",
-          "descr": "Перевод интерфейса на украинский язык",
-          "instruction": "Перевод интерфейса на украинский язык",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Гирлянда",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/%D0%B3%D0%B8%D1%80%D0%BB%D1%8F%D0%BD%D0%B4%D0%B0/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/%D0%B3%D0%B8%D1%80%D0%BB%D1%8F%D0%BD%D0%B4%D0%B0/plugin.js",
-          "descr": "Новогодняя гирлянда на главной странице",
-          "instruction": "Новогодняя гирлянда на главной странице",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-06/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-06/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-06/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Дождь со звуком",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/%D0%B4%D0%BE%D0%B6%D0%B4%D1%8C/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/%D0%B4%D0%BE%D0%B6%D0%B4%D1%8C/plugin.js",
-          "descr": "Эффект дождя со звуком на главной",
-          "instruction": "Эффект дождя со звуком на главной",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-08/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-08/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-08/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Снег №1",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/%D1%81%D0%BD%D0%B5%D0%B3-1/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/%D1%81%D0%BD%D0%B5%D0%B3-1/plugin.js",
-          "descr": "Эффект падающего снега №1",
-          "instruction": "Эффект падающего снега №1",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-04/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-04/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-04/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Снег №2",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/%D1%81%D0%BD%D0%B5%D0%B3-2/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/%D1%81%D0%BD%D0%B5%D0%B3-2/plugin.js",
-          "descr": "Эффект падающего снега №2",
-          "instruction": "Эффект падающего снега №2",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-05/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-05/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-05/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Снег №3",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/%D1%81%D0%BD%D0%B5%D0%B3-3/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/%D1%81%D0%BD%D0%B5%D0%B3-3/plugin.js",
-          "descr": "Эффект падающего снега №3",
-          "instruction": "Эффект падающего снега №3",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-07/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-07/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-07/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Туман",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/%D1%82%D1%83%D0%BC%D0%B0%D0%BD/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%80%D0%B0%D0%B7%D0%BD%D0%BE%D0%B5/%D1%82%D1%83%D0%BC%D0%B0%D0%BD/plugin.js",
-          "descr": "Эффект тумана на главной странице",
-          "instruction": "Эффект тумана на главной странице",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-09/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-09/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-raznoye-09/screenshot.webp"
-          ],
-          "available_lampa": 1
-        }
-      ]
-    },
-    {
-      "title": "Темы (tvigl)",
-      "hpu": "recomend",
-      "results": [
-        {
-          "name": "Тема AppleTV",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%B5%D0%BC%D1%8B/appletv-theme/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%B5%D0%BC%D1%8B/appletv-theme/plugin.js",
-          "descr": "Тема оформления в стиле Apple TV",
-          "instruction": "Тема оформления в стиле Apple TV",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-temy-02/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-temy-02/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-temy-02/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Тема @DrXAOS",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%B5%D0%BC%D1%8B/drxaos-themes/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%B5%D0%BC%D1%8B/drxaos-themes/plugin.js",
-          "descr": "Тема оформления от @DrXAOS",
-          "instruction": "Тема оформления от @DrXAOS",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-temy-01/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-temy-01/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-temy-01/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Netflix — главная в стиле Netflix",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%B5%D0%BC%D1%8B/netflix-theme/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%B5%D0%BC%D1%8B/netflix-theme/plugin.js",
-          "descr": "Главная страница в стиле Netflix",
-          "instruction": "Главная страница в стиле Netflix",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        }
-      ]
-    },
-    {
-      "title": "Торренты (tvigl)",
-      "hpu": "recomend",
-      "results": [
-        {
-          "name": "Concert Torr Search",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/concert-torr/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/concert-torr/plugin.js",
-          "descr": "Поиск концертов через TorrServer",
-          "instruction": "Поиск концертов через TorrServer",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Продолжить просмотр с торрентов",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/continue-watching/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/continue-watching/plugin.js",
-          "descr": "Продолжить просмотр с торрент-раздач",
-          "instruction": "Продолжить просмотр с торрент-раздач",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-torrenty-02/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-torrenty-02/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-torrenty-02/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "EasyTorrent",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/easytorrent/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/easytorrent/plugin.js",
-          "descr": "Умный подбор торрент-раздач для просмотра",
-          "instruction": "Умный подбор торрент-раздач для просмотра",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-torrenty-03/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-torrenty-03/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-torrenty-03/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Infuse Save",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/infuse-save/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/infuse-save/plugin.js",
-          "descr": "Отправка торрентов в приложение Infuse",
-          "instruction": "Отправка торрентов в приложение Infuse",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Каталог парсеров",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/parsers/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/parsers/plugin.js",
-          "descr": "Каталог доступных парсеров",
-          "instruction": "Каталог доступных парсеров",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-torrenty-04/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-torrenty-04/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-torrenty-04/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Torrent Styles",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/torr-styles/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/torr-styles/plugin.js",
-          "descr": "Стили оформления торрент-раздач",
-          "instruction": "Стили оформления торрент-раздач",
-          "image": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-212734.webp",
-          "screenshot": "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-212734.webp",
-          "screenshots": [
-            "https://tvigl.info/uploads/posts/2025-10/medium/screenshot_20251012-212734.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Кнопка «Торренты»",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/torrent-button/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/torrent-button/plugin.js",
-          "descr": "Кнопка «Торренты» рядом с кнопкой Play",
-          "instruction": "Кнопка «Торренты» рядом с кнопкой Play",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-torrenty-05/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-torrenty-05/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-torrenty-05/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Torrent Downloader",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/torrent-downloader/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/torrent-downloader/plugin.js",
-          "descr": "Торрент-клиент встроенный в Lampa",
-          "instruction": "Торрент-клиент встроенный в Lampa",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "Цветная подсветка торрентов",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/torrents-styles/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/torrents-styles/plugin.js",
-          "descr": "Цветная подсветка торрент-раздач",
-          "instruction": "Цветная подсветка торрент-раздач",
-          "image": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-torrenty-01/screenshot.webp",
-          "screenshot": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-torrenty-01/screenshot.webp",
-          "screenshots": [
-            "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/tvigl-torrenty-01/screenshot.webp"
-          ],
-          "available_lampa": 1
-        },
-        {
-          "name": "Tracks Probe",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/tracks-probe/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/tracks-probe/plugin.js",
-          "descr": "Информация о аудио и видео дорожках",
-          "instruction": "Информация о аудио и видео дорожках",
-          "image": "",
-          "screenshot": "",
-          "screenshots": [],
-          "available_lampa": 1
-        },
-        {
-          "name": "TsTracks",
-          "author": "@tvigl",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/tstracks/plugin.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f1c17b19e6014e4e191b522cf0d6549fd98f7f46/plugins/%D1%82%D0%BE%D1%80%D1%80%D0%B5%D0%BD%D1%82%D1%8B/tstracks/plugin.js",
-          "descr": "Дорожки и субтитры из TorrServer",
-          "instruction": "Дорожки и субтитры из TorrServer",
           "image": "",
           "screenshot": "",
           "screenshots": [],
