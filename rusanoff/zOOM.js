@@ -2,11 +2,12 @@
   'use strict';
 
   /* ================================================================
-   * Card Style, Zoom & 3D Flip Plugin for Lampa
-   * 1) Uiverse Zoom & Glow
-   * 2) Uno 3D Flip с показом второго постера/кадра на обороте
-   * + Компенсация зеркальности маркеров ("просмотрено" не переворачивается)
-   * + Качество постеров TMDB
+   * Card Animation, 3D Flip & Poster Quality Plugin for Lampa
+   * Режимы:
+   * 1) Uno 3D Flip — карточка поворачивается на 180°, и на обороте
+   *    показывается второй постер (кадр фильма backdrop_path / арт)
+   * 2) Uiverse — зум с круговой тенью и светящимся контуром
+   * + Настройка качества постеров TMDB
    * Автор: rusanoff
    * ================================================================ */
 
@@ -30,7 +31,7 @@
   function injectCSS() {
     var styleMode = Lampa.Storage.get('zoom_card_style', 'uno_flip');
     var scale = Lampa.Storage.get('zoom_scale', '1.15');
-    var duration = Lampa.Storage.get('zoom_duration', '0.45s');
+    var duration = Lampa.Storage.get('zoom_duration', '0.5s');
     var radius = Lampa.Storage.get('zoom_radius', '0.6em');
     var removeBorder = Lampa.Storage.get('zoom_remove_border', false);
     var borderColor = Lampa.Storage.get('zoom_border_color', '#ffffff');
@@ -44,10 +45,10 @@
       '/* Контейнер карточки с 3D перспективой */\n' +
       '.card,\n' +
       '.poster {\n' +
-      '  perspective: 900px !important;\n' +
+      '  perspective: 1000px !important;\n' +
       '  overflow: visible !important;\n' +
       '}\n\n' +
-      '/* Постер с поддержкой двухстороннего 3D переворота */\n' +
+      '/* Постер: 3D контейнер для двух сторон */\n' +
       '.card__view,\n' +
       '.poster__view {\n' +
       '  border-radius: ' + radius + ' !important;\n' +
@@ -58,17 +59,19 @@
       '  overflow: visible !important;\n' +
       '}\n\n' +
       '/* Лицевая сторона (основной постер) */\n' +
-      '.card__img,\n' +
-      '.card__view > img,\n' +
-      '.poster__img,\n' +
-      '.poster__view > img {\n' +
+      '.card__view > img:not(.card__view-back),\n' +
+      '.poster__view > img:not(.card__view-back),\n' +
+      '.card__img {\n' +
       '  border-radius: ' + radius + ' !important;\n' +
       '  display: block !important;\n' +
-      '  overflow: hidden !important;\n' +
+      '  width: 100% !important;\n' +
+      '  height: 100% !important;\n' +
+      '  object-fit: cover !important;\n' +
       '  backface-visibility: hidden !important;\n' +
       '  -webkit-backface-visibility: hidden !important;\n' +
+      '  transform: rotateY(0deg) !important;\n' +
       '}\n\n' +
-      '/* Обратная сторона (второй постер / кадр) */\n' +
+      '/* Оборотная сторона (второй постер / кадр) */\n' +
       '.card__view-back {\n' +
       '  position: absolute !important;\n' +
       '  top: 0 !important;\n' +
@@ -76,30 +79,27 @@
       '  width: 100% !important;\n' +
       '  height: 100% !important;\n' +
       '  border-radius: ' + radius + ' !important;\n' +
-      '  overflow: hidden !important;\n' +
       '  object-fit: cover !important;\n' +
-      '  transform: rotateY(180deg) !important;\n' +
       '  backface-visibility: hidden !important;\n' +
       '  -webkit-backface-visibility: hidden !important;\n' +
-      '  background: #191f1f !important;\n' +
-      '  display: none;\n' +
-      '}\n\n' +
-      '.card__view-back.has-back {\n' +
+      '  transform: rotateY(180deg) !important;\n' +
       '  display: block !important;\n' +
+      '  background: #191f1f !important;\n' +
+      '  z-index: 2 !important;\n' +
       '}\n\n' +
       '/* Отключаем системную рамку Lampa */\n' +
       '.card.focus .card__view::after,\n' +
       '.poster.focus .poster__view::after {\n' +
       '  display: none !important;\n' +
       '}\n\n' +
-      '/* 3D переворот карточки при фокусе без лишней тени снизу */\n' +
+      '/* 3D переворот при фокусе */\n' +
       '.card.focus .card__view,\n' +
       '.poster.focus .poster__view {\n' +
       '  transform: scale(' + scale + ') rotateY(180deg) !important;\n' +
       '  box-shadow: 0px 0px 14px 6px rgba(0, 0, 0, 0.85)' + focusBorder + ' !important;\n' +
       '  z-index: 20 !important;\n' +
       '}\n\n' +
-      '/* Исправление зеркальности: метка "просмотрено", иконки и возраст НЕ переворачиваются задом наперед */\n' +
+      '/* Исправление зеркальности: метка "просмотрено", иконки и бейджи остаются прямыми */\n' +
       '.card.focus .card__marker,\n' +
       '.card.focus .card__icons,\n' +
       '.card.focus .card__age,\n' +
@@ -109,7 +109,7 @@
       '  transform-origin: center center !important;\n' +
       '}\n';
     } else {
-      // Режим Uiverse
+      // Режим Uiverse Zoom
       css += '' +
       '.card__view,\n' +
       '.poster__view {\n' +
@@ -151,40 +151,56 @@
     }
   }
 
-  // Перехват карточки Lampa для добавления обратного постера
-  function hookCardBackdrop() {
-    if (window.__lampa_card_back_hooked) return;
-    window.__lampa_card_back_hooked = true;
+  // Прикрепление второго постера на карточку
+  function attachBackPoster(cardEl, data) {
+    if (!cardEl || !data) return;
+    try {
+      var $card = $(cardEl);
+      var view = $card.find('.card__view, .poster__view')[0];
+      if (!view) return;
 
-    if (window.Lampa && Lampa.Maker && Lampa.Maker.map) {
-      var Card = Lampa.Maker.map('Card');
-      if (Card && Card.Card && Card.Card.onVisible) {
-        var origOnVisible = Card.Card.onVisible;
-        Card.Card.onVisible = function () {
-          var res = origOnVisible.apply(this, arguments);
-          try {
-            var data = this.data;
-            var html = this.html;
-            if (data && html) {
-              var view = html.querySelector('.card__view, .poster__view');
-              if (view && !view.querySelector('.card__view-back')) {
-                var backImg = document.createElement('img');
-                backImg.className = 'card__view-back';
-                // Приоритет: backdrop_path, либо второй постер, либо арт
-                var backSrc = data.backdrop_path || data.poster_path;
-                if (backSrc) {
-                  var url = Lampa.TMDB.image(backSrc);
-                  backImg.src = url;
-                  backImg.classList.add('has-back');
-                  view.appendChild(backImg);
-                }
-              }
-            }
-          } catch (e) {}
-          return res;
-        };
+      if (!view.querySelector('.card__view-back')) {
+        // Выбираем второй постер: сначала backdrop_path (кадр фильма), если нет - poster_path
+        var backPath = data.backdrop_path || data.poster_path;
+        if (backPath) {
+          var img = document.createElement('img');
+          img.className = 'card__view-back';
+          img.alt = '';
+          img.src = Lampa.TMDB.image(backPath);
+          view.appendChild(img);
+        }
       }
+    } catch (e) {}
+  }
+
+  function initCardListener() {
+    if (window.__lampa_card_listener_active) return;
+    window.__lampa_card_listener_active = true;
+
+    // 1. Слушаем через глобальный Lampa.Listener
+    if (window.Lampa && Lampa.Listener) {
+      Lampa.Listener.follow('card', function (e) {
+        if (!e || !e.object) return;
+        var cardEl = e.object.card || e.object.html;
+        var data = e.object.data;
+        if (cardEl && data) {
+          attachBackPoster(cardEl, data);
+        }
+      });
     }
+
+    // 2. Делегированный поиск при фокусе (гарантия 100% срабатывания на ТВ)
+    document.addEventListener('focusin', function (e) {
+      var card = e.target.closest ? e.target.closest('.card, .poster') : null;
+      if (card && !card.querySelector('.card__view-back')) {
+        // Извлекаем прикрепленные данные Lampa
+        var cardObj = $(card).data('card');
+        var data = cardObj && cardObj.data ? cardObj.data : null;
+        if (data) {
+          attachBackPoster(card, data);
+        }
+      }
+    }, true);
   }
 
   function initSettings() {
@@ -235,7 +251,7 @@
         'very_fast': 'Very Fast (0.15s)',
         'fast': 'Fast (0.2s)',
         'normal': 'Normal (0.3s)',
-        'smooth': 'Smooth (0.45s)',
+        'smooth': 'Smooth (0.5s)',
         'slow': 'Slow (0.6s)',
         'very_slow': 'Very Slow (0.8s)',
         'r_none': 'Square (0)',
@@ -289,7 +305,7 @@
         'very_fast': 'Очень быстро (0.15s)',
         'fast': 'Быстро (0.2s)',
         'normal': 'Нормально (0.3s)',
-        'smooth': 'Плавно (0.45s)',
+        'smooth': 'Плавно (0.5s)',
         'slow': 'Медленно (0.6s)',
         'very_slow': 'Очень медленно (0.8s)',
         'r_none': 'Квадратные (0)',
@@ -343,7 +359,7 @@
         'very_fast': 'Дуже швидко (0.15s)',
         'fast': 'Швидко (0.2s)',
         'normal': 'Нормально (0.3s)',
-        'smooth': 'Плавно (0.45s)',
+        'smooth': 'Плавно (0.5s)',
         'slow': 'Повільно (0.6s)',
         'very_slow': 'Дуже повільно (0.8s)',
         'r_none': 'Квадратні (0)',
@@ -440,12 +456,12 @@
       param: {
         name: 'zoom_duration',
         type: 'select',
-        default: '0.45s',
+        default: '0.5s',
         values: {
           '0.15s': t('very_fast'),
           '0.2s': t('fast'),
           '0.3s': t('normal'),
-          '0.45s': t('smooth'),
+          '0.5s': t('smooth'),
           '0.6s': t('slow'),
           '0.8s': t('very_slow')
         }
@@ -539,7 +555,7 @@
     initSettings();
     injectCSS();
     applyPosterQuality();
-    hookCardBackdrop();
+    initCardListener();
 
     if (window.Lampa && Lampa.Storage && Lampa.Storage.listener) {
       Lampa.Storage.listener.follow('change', function (e) {
@@ -552,7 +568,7 @@
       });
     }
 
-    console.log('[Card 3D Flip & Zoom Plugin] v4.0 Ready');
+    console.log('[Card 3D Flip & Zoom Plugin] v4.1 Ready');
   }
 
   if (window.Lampa && Lampa.Listener) {
