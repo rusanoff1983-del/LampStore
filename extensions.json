@@ -33,6 +33,18 @@
             "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@3707eb88280e51536633a005f656c50c7f50730f/plugins/streaming2/screenshot.png"
           ],
           "available_lampa": 1
+        },
+        {
+          "name": "Карточки Uiverse (Масштаб и Тень)",
+          "author": "@rusanoff",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore/rusanoff/zOOM.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore/rusanoff/zOOM.js",
+          "descr": "Эффект карточек Lampa в стиле Uiverse.io: глубокая объемная тень rgba(0,0,0,0.705), темный фон rgb(45,45,45) -> rgb(0,0,0), скругление углов (10px -> 15px) и вариации увеличения (1.05x - 1.25x). Без лишних слоев, работает с пульта ТВ (.focus) и мыши (:hover).",
+          "instruction": "Установи плагин и настрой масштаб и скорость анимации в Настройки -> Карточки Uiverse.",
+          "image": "",
+          "screenshot": "",
+          "screenshots": [],
+          "available_lampa": 1
         }
       ]
     },
