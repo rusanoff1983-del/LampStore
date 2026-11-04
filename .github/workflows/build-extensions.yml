@@ -1,14 +1,6 @@
 name: Build extensions catalog
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'plugins/**'
-      - 'links/**'
-      - 'tools/build-extensions.js'
-      - '.github/workflows/build-extensions.yml'
   workflow_dispatch:
 
 permissions:
