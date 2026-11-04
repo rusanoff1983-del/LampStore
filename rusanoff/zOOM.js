@@ -3,49 +3,44 @@
 
   /* ================================================================
    * Card Zoom Effect Plugin for Lampa
-   * Плавное увеличение постера внутри карточки при фокусе
-   * + опция отключения белой рамки и визуальная палитра цветов
+   * Чистое и правильное увеличение постера без артефактов и теней
    * ================================================================ */
 
   function injectCSS() {
     var scale = Lampa.Storage.get('zoom_scale', '1.08');
     var duration = Lampa.Storage.get('zoom_duration', '0.3s');
-    var radius = Lampa.Storage.get('zoom_radius', '12px');
+    var radius = Lampa.Storage.get('zoom_radius', '0.6em');
     var removeBorder = Lampa.Storage.get('zoom_remove_border', false);
     var borderColor = Lampa.Storage.get('zoom_border_color', '#ffffff');
 
     var css = '' +
-    '/* Скругление строго постера и картинки (низ и название НЕ трогаем) */\n' +
-    '.card__view,\n' +
-    '.poster__view,\n' +
-    '.card__view img,\n' +
-    '.card__view .card__img,\n' +
-    '.poster__view img,\n' +
-    '.poster__view .poster__img {\n' +
-    '  border-radius: ' + radius + ' !important;\n' +
-    '}\n' +
-    '\n' +
-    '/* Базовые свойства постера для плавного зума */\n' +
+    '/* Скругление постера и вложенных картинок по стандарту Lampa (в em) */\n' +
     '.card__view,\n' +
     '.poster__view {\n' +
-    '  overflow: visible !important;\n' +
-    '  transition: transform ' + duration + ' cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow ' + duration + ' ease !important;\n' +
+    '  border-radius: ' + radius + ' !important;\n' +
+    '  overflow: hidden !important;\n' +
+    '  transition: transform ' + duration + ' cubic-bezier(0.2, 0.9, 0.2, 1) !important;\n' +
     '  transform-origin: center center !important;\n' +
     '}\n' +
     '\n' +
-    '/* При фокусе с пульта ТВ или наведении мыши на ПК */\n' +
+    '.card__img,\n' +
+    '.card__view img,\n' +
+    '.poster__img,\n' +
+    '.poster__view img {\n' +
+    '  border-radius: inherit !important;\n' +
+    '  overflow: hidden !important;\n' +
+    '}\n' +
+    '\n' +
+    '/* Увеличение постера при фокусе (низ и название фильма остаются на месте) */\n' +
     '.card.focus .card__view,\n' +
-    '.poster.focus .poster__view,\n' +
-    '.card:hover .card__view,\n' +
-    '.poster:hover .poster__view {\n' +
+    '.poster.focus .poster__view {\n' +
     '  transform: scale(' + scale + ') !important;\n' +
-    '  box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.75) !important;\n' +
     '  z-index: 10 !important;\n' +
     '}\n';
 
     if (removeBorder) {
       css += '' +
-      '/* рамка через псевдоэлементы */\n' +
+      '/* Отключение системной белой рамки */\n' +
       '.card.focus .card__view::before,\n' +
       '.card.focus .card__view::after,\n' +
       '.selector.focus .card__view::before,\n' +
@@ -56,7 +51,6 @@
       '  box-shadow: none !important;\n' +
       '}\n' +
       '\n' +
-      '/* на всякий — если где-то ещё border */\n' +
       '.card.focus .card__view,\n' +
       '.selector.focus .card__view {\n' +
       '  border: 0 !important;\n' +
@@ -117,30 +111,26 @@
         'c_purple': 'Purple',
         'c_cyan': 'Cyan',
         'c_pink': 'Pink',
-        'none': 'None (1.0x)',
+        'none': 'Disabled (1.0x)',
         'tiny': 'Tiny (1.03x)',
         'small': 'Small (1.05x)',
         'medium': 'Medium (1.08x)',
         'large': 'Large (1.12x)',
         'xlarge': 'Extra Large (1.15x)',
-        'uiverse': 'Uiverse Standard (1.20x)',
+        'uiverse': 'Uiverse (1.20x)',
         'max': 'Max (1.25x)',
         'very_fast': 'Very Fast (0.15s)',
         'fast': 'Fast (0.2s)',
         'normal': 'Normal (0.3s)',
-        'uiverse_dur': 'Uiverse Smooth (0.4s)',
+        'smooth': 'Smooth (0.4s)',
         'slow': 'Slow (0.5s)',
         'very_slow': 'Very Slow (0.8s)',
-        'ultra_slow': 'Ultra Slow (1.2s)',
-        'super_slow': 'Super Slow (1.5s)',
-        'mega_slow': 'Mega Slow (2.0s)',
-        'r_none': 'Square (0px)',
-        'r_small': 'Small (4px)',
-        'r_medium': 'Medium (8px)',
-        'r_large': 'Large (12px)',
-        'r_xlarge': 'X-Large (16px)',
-        'r_xxlarge': 'XX-Large (20px)',
-        'r_max': 'Maximum (26px)'
+        'r_none': 'Square (0)',
+        'r_small': 'Small (0.3em)',
+        'r_medium': 'Medium (0.6em)',
+        'r_large': 'Large (0.9em)',
+        'r_xlarge': 'Strong (1.3em)',
+        'r_round': 'Round (1.8em)'
       },
       'ru': {
         'zoom_title': 'Увеличение Карточек',
@@ -173,24 +163,20 @@
         'medium': 'Среднее (1.08x)',
         'large': 'Большое (1.12x)',
         'xlarge': 'Очень большое (1.15x)',
-        'uiverse': 'Uiverse эталон (1.20x)',
+        'uiverse': 'Uiverse (1.20x)',
         'max': 'Максимальное (1.25x)',
         'very_fast': 'Очень быстро (0.15s)',
         'fast': 'Быстро (0.2s)',
         'normal': 'Нормально (0.3s)',
-        'uiverse_dur': 'Uiverse плавно (0.4s)',
+        'smooth': 'Плавно (0.4s)',
         'slow': 'Медленно (0.5s)',
         'very_slow': 'Очень медленно (0.8s)',
-        'ultra_slow': 'Ультра медленно (1.2s)',
-        'super_slow': 'Супер медленно (1.5s)',
-        'mega_slow': 'Мега медленно (2.0s)',
-        'r_none': 'Квадратные (0px)',
-        'r_small': 'Малые (4px)',
-        'r_medium': 'Средние (8px)',
-        'r_large': 'Большие (12px)',
-        'r_xlarge': 'Очень большие (16px)',
-        'r_xxlarge': 'Сильные (20px)',
-        'r_max': 'Максимальные (26px)'
+        'r_none': 'Квадратные (0)',
+        'r_small': 'Малые (0.3em)',
+        'r_medium': 'Средние (0.6em)',
+        'r_large': 'Большие (0.9em)',
+        'r_xlarge': 'Сильные (1.3em)',
+        'r_round': 'Круглые (1.8em)'
       },
       'uk': {
         'zoom_title': 'Збільшення Карток',
@@ -223,24 +209,20 @@
         'medium': 'Середнє (1.08x)',
         'large': 'Велике (1.12x)',
         'xlarge': 'Дуже велике (1.15x)',
-        'uiverse': 'Uiverse еталон (1.20x)',
+        'uiverse': 'Uiverse (1.20x)',
         'max': 'Максимальне (1.25x)',
         'very_fast': 'Дуже швидко (0.15s)',
         'fast': 'Швидко (0.2s)',
         'normal': 'Нормально (0.3s)',
-        'uiverse_dur': 'Uiverse плавно (0.4s)',
+        'smooth': 'Плавно (0.4s)',
         'slow': 'Повільно (0.5s)',
         'very_slow': 'Дуже повільно (0.8s)',
-        'ultra_slow': 'Ультра повільно (1.2s)',
-        'super_slow': 'Супер повільно (1.5s)',
-        'mega_slow': 'Мега повільно (2.0s)',
-        'r_none': 'Квадратні (0px)',
-        'r_small': 'Малі (4px)',
-        'r_medium': 'Середні (8px)',
-        'r_large': 'Великі (12px)',
-        'r_xlarge': 'Дуже великі (16px)',
-        'r_xxlarge': 'Сильні (20px)',
-        'r_max': 'Максимальні (26px)'
+        'r_none': 'Квадратні (0)',
+        'r_small': 'Малі (0.3em)',
+        'r_medium': 'Середні (0.6em)',
+        'r_large': 'Великі (0.9em)',
+        'r_xlarge': 'Сильні (1.3em)',
+        'r_round': 'Круглі (1.8em)'
       }
     };
 
@@ -249,7 +231,6 @@
       return dict[key] || i18n['en'][key] || key;
     }
 
-    // Вспомогательная функция для генерации HTML-квадратика с цветом
     function cBox(hex, nameKey) {
       return '<span style="display:inline-block;width:18px;height:18px;background:' + hex + ';border-radius:4px;margin-right:10px;vertical-align:middle;border:1px solid rgba(255,255,255,0.2);"></span>' + t(nameKey);
     }
@@ -295,12 +276,9 @@
           '0.15s': t('very_fast'),
           '0.2s': t('fast'),
           '0.3s': t('normal'),
-          '0.4s': t('uiverse_dur'),
+          '0.4s': t('smooth'),
           '0.5s': t('slow'),
-          '0.8s': t('very_slow'),
-          '1.2s': t('ultra_slow'),
-          '1.5s': t('super_slow'),
-          '2.0s': t('mega_slow')
+          '0.8s': t('very_slow')
         }
       },
       field: {
@@ -316,15 +294,14 @@
       param: {
         name: 'zoom_radius',
         type: 'select',
-        default: '12px',
+        default: '0.6em',
         values: {
-          '0px': t('r_none'),
-          '4px': t('r_small'),
-          '8px': t('r_medium'),
-          '12px': t('r_large'),
-          '16px': t('r_xlarge'),
-          '20px': t('r_xxlarge'),
-          '26px': t('r_max')
+          '0': t('r_none'),
+          '0.3em': t('r_small'),
+          '0.6em': t('r_medium'),
+          '0.9em': t('r_large'),
+          '1.3em': t('r_xlarge'),
+          '1.8em': t('r_round')
         }
       },
       field: {
@@ -350,7 +327,6 @@
       }
     });
 
-    // Настройка с визуальной палитрой тональностей
     Lampa.SettingsApi.addParam({
       component: 'card_zoom_plugin',
       param: {
@@ -402,7 +378,7 @@
       });
     }
 
-    console.log('[Card Zoom Plugin] v3.0 (Clean & Robust) — Loaded');
+    console.log('[Card Zoom Plugin] Loaded');
   }
 
   if (window.Lampa && Lampa.Listener) {
