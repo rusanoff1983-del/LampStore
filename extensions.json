@@ -35,11 +35,11 @@
           "available_lampa": 1
         },
         {
-          "name": "Карточки Uiverse (Масштаб и Тень)",
+          "name": "Анимация Карточек (Uiverse + Uno 3D) и Качество",
           "author": "@rusanoff",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@e39a9d9/rusanoff/zOOM.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@e39a9d9/rusanoff/zOOM.js",
-          "descr": "Эффект карточек Lampa в стиле Uiverse.io: глубокая объемная тень rgba(0,0,0,0.705), темный фон rgb(45,45,45) -> rgb(0,0,0), скругление углов (10px -> 15px) и вариации увеличения (1.05x - 1.25x). Без лишних слоев, работает с пульта ТВ (.focus) и мыши (:hover).",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@2f902df/rusanoff/zOOM.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@2f902df/rusanoff/zOOM.js",
+          "descr": "Два стиля анимации: 1) Uiverse Zoom & Glow (мягкая круговая тень и контур), 2) Uno 3D Flip (3D переворот с перспективой и тенью на полу). Плюс выбор качества постеров TMDB (w500, w780, original 4K).",
           "instruction": "Установи плагин и настрой масштаб и скорость анимации в Настройки -> Карточки Uiverse.",
           "image": "",
           "screenshot": "",
