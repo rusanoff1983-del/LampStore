@@ -4,34 +4,34 @@
   /* ================================================================
    * Card Zoom Effect Plugin for Lampa (Uiverse.io Style Edition)
    * Автор: rusanoff
-   * Эффект карточки в стиле Uiverse.io:
-   * - Глубокая тень: box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.705)
-   * - Динамический фон: rgb(45,45,45) -> rgb(0,0,0)
-   * - Динамическое скругление углов: 10px -> 15px
-   * - Вариации масштабирования карточки: 1.05x - 1.25x (дефолт 1.2x)
-   * - Без лишних тестовых слоев/надписей (эффект прямо на карточке кино)
-   * - Поддержка ТВ-пульта (.focus) и мыши (:hover)
    * ================================================================ */
 
   function injectCSS() {
     var scale = Lampa.Storage.get('zoom_scale', '1.20');
     var duration = Lampa.Storage.get('zoom_duration', '0.4s');
-    var radiusType = Lampa.Storage.get('zoom_radius', 'standard');
+    var radiusType = Lampa.Storage.get('zoom_radius', '10px');
     var removeBorder = Lampa.Storage.get('zoom_remove_border', true);
     var borderColor = Lampa.Storage.get('zoom_border_color', '#ffffff');
 
     var radiusIdle = '10px';
     var radiusFocus = '15px';
 
-    if (radiusType === 'compact') {
+    if (radiusType === '0px') {
+      radiusIdle = '0px';
+      radiusFocus = '0px';
+    } else if (radiusType === '6px') {
       radiusIdle = '6px';
       radiusFocus = '10px';
-    } else if (radiusType === 'rounded') {
+    } else if (radiusType === '10px') {
+      radiusIdle = '10px';
+      radiusFocus = '15px';
+    } else if (radiusType === '14px') {
       radiusIdle = '14px';
       radiusFocus = '20px';
-    } else if (radiusType === 'square') {
-      radiusIdle = '0px';
-      radiusFocus = '4px';
+    } else {
+      radiusIdle = radiusType;
+      var num = parseInt(radiusType, 10);
+      radiusFocus = isNaN(num) ? '15px' : (Math.round(num * 1.5) + 'px');
     }
 
     var borderGlow = '';
@@ -40,41 +40,54 @@
     }
 
     var css = '' +
-      '/* Базовый стиль карточек Lampa в покое (стиль Uiverse.io) */\n' +
+      '/* Сама карточка в Lampa остается прозрачной, низ и название фильма НЕ трогаем */\n' +
       '.card,\n' +
       '.poster,\n' +
       '.card--collection,\n' +
       '.card--wide,\n' +
       '.card--torrent,\n' +
       '.card-episode {\n' +
+      '  background: transparent !important;\n' +
+      '  box-shadow: none !important;\n' +
+      '  border-radius: 0 !important;\n' +
+      '  overflow: visible !important;\n' +
+      '}\n\n' +
+      '/* Стиль Uiverse накладывается строго на ПОСТЕР (.card__view) */\n' +
+      '.card__view,\n' +
+      '.poster__view {\n' +
       '  border-radius: ' + radiusIdle + ' !important;\n' +
       '  background: rgb(45, 45, 45) !important;\n' +
       '  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705) !important;\n' +
+      '  overflow: hidden !important;\n' +
       '  transition: transform ' + duration + ' cubic-bezier(0.2, 0.9, 0.2, 1),\n' +
       '              border-radius ' + duration + ' ease,\n' +
       '              background-color ' + duration + ' ease,\n' +
       '              box-shadow ' + duration + ' ease !important;\n' +
       '  transform-origin: center center !important;\n' +
       '}\n\n' +
-      '.card__view,\n' +
-      '.poster__view {\n' +
+      '/* Картинка внутри постера идеально наследует скругление */\n' +
+      '.card__view img,\n' +
+      '.card__view .card__img,\n' +
+      '.card__view > div,\n' +
+      '.poster__view img,\n' +
+      '.poster__view .poster__img,\n' +
+      '.poster__view > div {\n' +
       '  border-radius: inherit !important;\n' +
       '  overflow: hidden !important;\n' +
-      '  background: transparent !important;\n' +
       '}\n\n' +
-      '/* Эффект Uiverse при фокусе с пульта/клавиатуры и ховере мыши */\n' +
-      '.card.focus,\n' +
-      '.poster.focus,\n' +
-      '.card--collection.focus,\n' +
-      '.card--wide.focus,\n' +
-      '.card--torrent.focus,\n' +
-      '.card-episode.focus,\n' +
-      '.card:hover,\n' +
-      '.poster:hover,\n' +
-      '.card--collection:hover,\n' +
-      '.card--wide:hover,\n' +
-      '.card--torrent:hover,\n' +
-      '.card-episode:hover {\n' +
+      '/* Эффект Uiverse при фокусе с пульта ТВ или наведении мыши на ПК */\n' +
+      '.card.focus .card__view,\n' +
+      '.poster.focus .poster__view,\n' +
+      '.card--collection.focus .card__view,\n' +
+      '.card--wide.focus .card__view,\n' +
+      '.card--torrent.focus .card__view,\n' +
+      '.card-episode.focus .card__view,\n' +
+      '.card:hover .card__view,\n' +
+      '.poster:hover .poster__view,\n' +
+      '.card--collection:hover .card__view,\n' +
+      '.card--wide:hover .card__view,\n' +
+      '.card--torrent:hover .card__view,\n' +
+      '.card-episode:hover .card__view {\n' +
       '  border-radius: ' + radiusFocus + ' !important;\n' +
       '  cursor: pointer !important;\n' +
       '  transform: scale(' + scale + ') !important;\n' +
@@ -87,18 +100,14 @@
       css += '\n/* Отключение системной белой обводки Lampa */\n' +
         '.card.focus .card__view::before,\n' +
         '.card.focus .card__view::after,\n' +
-        '.card.focus::before,\n' +
-        '.card.focus::after,\n' +
-        '.poster.focus::before,\n' +
-        '.poster.focus::after {\n' +
+        '.poster.focus .poster__view::before,\n' +
+        '.poster.focus .poster__view::after {\n' +
         '  display: none !important;\n' +
         '  content: none !important;\n' +
         '  border: 0 !important;\n' +
         '  box-shadow: none !important;\n' +
         '}\n\n' +
-        '.card.focus,\n' +
         '.card.focus .card__view,\n' +
-        '.poster.focus,\n' +
         '.poster.focus .poster__view {\n' +
         '  border: 0 !important;\n' +
         '  outline: 0 !important;\n' +
@@ -141,10 +150,10 @@
         'd_04': 'Uiverse Standard (0.4s)',
         'd_05': 'Smooth (0.5s)',
         'd_08': 'Very Smooth (0.8s)',
-        'r_std': 'Uiverse (10px -> 15px)',
-        'r_comp': 'Compact (6px -> 10px)',
-        'r_round': 'Rounded (14px -> 20px)',
-        'r_sq': 'Square (0px -> 4px)',
+        'r_none': 'No radius (0px)',
+        'r_small': 'Small (6px -> 10px)',
+        'r_std': 'Uiverse Standard (10px -> 15px)',
+        'r_large': 'Large (14px -> 20px)',
         'c_white': 'White',
         'c_lgrey': 'Light Grey',
         'c_dgrey': 'Dark Grey',
@@ -168,7 +177,7 @@
         'zoom_title': 'Карточки Uiverse (Масштаб и Тень)',
         'zoom_scale': 'Вариация масштаба (Scale)',
         'zoom_duration': 'Скорость анимации',
-        'zoom_radius': 'Скругление углов',
+        'zoom_radius': 'Скругление углов постера',
         'zoom_remove_border': 'Выключить системную обводку',
         'zoom_border_color': 'Цвет контура/свечения',
         's_100': 'Отключено (1.0x)',
@@ -183,10 +192,10 @@
         'd_04': 'Uiverse эталон (0.4s)',
         'd_05': 'Плавно (0.5s)',
         'd_08': 'Очень плавно (0.8s)',
+        'r_none': 'Без скругления (0px)',
+        'r_small': 'Малое (6px → 10px)',
         'r_std': 'Uiverse эталон (10px → 15px)',
-        'r_comp': 'Компактное (6px → 10px)',
-        'r_round': 'Скруглённое (14px → 20px)',
-        'r_sq': 'Прямое (0px → 4px)',
+        'r_large': 'Большое (14px → 20px)',
         'c_white': 'Белый',
         'c_lgrey': 'Светло-серый',
         'c_dgrey': 'Темно-серый',
@@ -201,7 +210,7 @@
         'c_green': 'Зеленый',
         'c_dgreen': 'Темно-зеленый',
         'c_yellow': 'Желтый',
-        'c_orange': 'Помаранчевый',
+        'c_orange': 'Оранжевый',
         'c_purple': 'Фиолетовый',
         'c_cyan': 'Голубой',
         'c_pink': 'Розовый'
@@ -210,7 +219,7 @@
         'zoom_title': 'Картки Uiverse (Масштаб і Тінь)',
         'zoom_scale': 'Варіація масштабу (Scale)',
         'zoom_duration': 'Швидкість анімації',
-        'zoom_radius': 'Заокруглення кутів',
+        'zoom_radius': 'Заокруглення кутів постера',
         'zoom_remove_border': 'Вимкнути системну обводку',
         'zoom_border_color': 'Колір контуру/світіння',
         's_100': 'Вимкнено (1.0x)',
@@ -225,10 +234,10 @@
         'd_04': 'Uiverse еталон (0.4s)',
         'd_05': 'Плавно (0.5s)',
         'd_08': 'Дуже плавно (0.8s)',
+        'r_none': 'Без заокруглення (0px)',
+        'r_small': 'Мале (6px → 10px)',
         'r_std': 'Uiverse еталон (10px → 15px)',
-        'r_comp': 'Компактне (6px → 10px)',
-        'r_round': 'Заокруглене (14px → 20px)',
-        'r_sq': 'Пряме (0px → 4px)',
+        'r_large': 'Велике (14px → 20px)',
         'c_white': 'Білий',
         'c_lgrey': 'Світло-сірий',
         'c_dgrey': 'Темно-сірий',
@@ -313,18 +322,18 @@
       }
     });
 
-    // Скругление углов
+    // Скругление углов постера
     Lampa.SettingsApi.addParam({
       component: 'card_zoom_uiverse_plugin',
       param: {
         name: 'zoom_radius',
         type: 'select',
-        default: 'standard',
+        default: '10px',
         values: {
-          'standard': t('r_std'),
-          'compact': t('r_comp'),
-          'rounded': t('r_round'),
-          'square': t('r_sq')
+          '0px': t('r_none'),
+          '6px': t('r_small'),
+          '10px': t('r_std'),
+          '14px': t('r_large')
         }
       },
       field: {
@@ -403,7 +412,7 @@
       });
     }
 
-    console.log('[Card Zoom Uiverse Plugin] v2.0 — Loaded');
+    console.log('[Card Zoom Uiverse Plugin] v2.1 — Loaded');
   }
 
   if (window.Lampa && Lampa.Listener) {
