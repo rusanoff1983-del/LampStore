@@ -2,27 +2,32 @@
   'use strict';
 
   /* ================================================================
-   * Card Zoom Effect Plugin for Lampa
-   * Чистое и правильное увеличение постера без артефактов и теней
+   * Card Zoom Effect Plugin for Lampa (Uiverse Edition)
+   * Автор: rusanoff
    * ================================================================ */
 
   function injectCSS() {
-    var scale = Lampa.Storage.get('zoom_scale', '1.08');
+    var scale = Lampa.Storage.get('zoom_scale', '1.15');
     var duration = Lampa.Storage.get('zoom_duration', '0.3s');
     var radius = Lampa.Storage.get('zoom_radius', '0.6em');
     var removeBorder = Lampa.Storage.get('zoom_remove_border', false);
     var borderColor = Lampa.Storage.get('zoom_border_color', '#ffffff');
 
+    // Формируем тень и обводку Uiverse
+    var focusBorder = removeBorder ? '' : (', 0 0 0 2.5px ' + borderColor);
+
     var css = '' +
-    '/* Скругление постера и вложенных картинок по стандарту Lampa (в em) */\n' +
+    '/* Базовый постер Uiverse: скругление + мягкая круговая тень */\n' +
     '.card__view,\n' +
     '.poster__view {\n' +
     '  border-radius: ' + radius + ' !important;\n' +
     '  overflow: hidden !important;\n' +
-    '  transition: transform ' + duration + ' cubic-bezier(0.2, 0.9, 0.2, 1) !important;\n' +
+    '  box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.6) !important;\n' +
+    '  transition: transform ' + duration + ' cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow ' + duration + ' ease !important;\n' +
     '  transform-origin: center center !important;\n' +
     '}\n' +
     '\n' +
+    '/* Картинка наследует скругление */\n' +
     '.card__img,\n' +
     '.card__view img,\n' +
     '.poster__img,\n' +
@@ -31,43 +36,23 @@
     '  overflow: hidden !important;\n' +
     '}\n' +
     '\n' +
-    '/* Увеличение постера при фокусе (низ и название фильма остаются на месте) */\n' +
+    '/* Скрываем старую прямоугольную псевдо-рамку Lampa, чтобы не двоилась */\n' +
+    '.card.focus .card__view::before,\n' +
+    '.card.focus .card__view::after,\n' +
+    '.selector.focus .card__view::before,\n' +
+    '.selector.focus .card__view::after {\n' +
+    '  display: none !important;\n' +
+    '  content: none !important;\n' +
+    '  border: 0 !important;\n' +
+    '}\n' +
+    '\n' +
+    '/* Эффект Uiverse в фокусе: зум + сочная тень + идеальная обводка по контуру */\n' +
     '.card.focus .card__view,\n' +
     '.poster.focus .poster__view {\n' +
     '  transform: scale(' + scale + ') !important;\n' +
+    '  box-shadow: 0px 0px 14px 6px rgba(0, 0, 0, 0.85)' + focusBorder + ' !important;\n' +
     '  z-index: 10 !important;\n' +
     '}\n';
-
-    if (removeBorder) {
-      css += '' +
-      '/* Отключение системной белой рамки */\n' +
-      '.card.focus .card__view::before,\n' +
-      '.card.focus .card__view::after,\n' +
-      '.selector.focus .card__view::before,\n' +
-      '.selector.focus .card__view::after {\n' +
-      '  display: none !important;\n' +
-      '  content: none !important;\n' +
-      '  border: 0 !important;\n' +
-      '  box-shadow: none !important;\n' +
-      '}\n' +
-      '\n' +
-      '.card.focus .card__view,\n' +
-      '.selector.focus .card__view {\n' +
-      '  border: 0 !important;\n' +
-      '  outline: 0 !important;\n' +
-      '  box-shadow: none !important;\n' +
-      '}\n';
-    } else if (borderColor !== '#ffffff') {
-      css += '' +
-      '.card.focus .card__view,\n' +
-      '.selector.focus .card__view,\n' +
-      '.card.focus .card__view::before,\n' +
-      '.card.focus .card__view::after,\n' +
-      '.selector.focus .card__view::before,\n' +
-      '.selector.focus .card__view::after {\n' +
-      '  border-color: ' + borderColor + ' !important;\n' +
-      '}\n';
-    }
 
     var styleId = 'card-zoom-plugin-css';
     var existingStyle = document.getElementById(styleId);
@@ -87,11 +72,11 @@
 
     var i18n = {
       'en': {
-        'zoom_title': 'Card Zoom Effect',
+        'zoom_title': 'Uiverse Card Zoom',
         'zoom_scale': 'Zoom Scale',
         'zoom_duration': 'Animation Speed',
         'zoom_radius': 'Corner Radius',
-        'zoom_remove_border': 'Remove White Border',
+        'zoom_remove_border': 'Remove Border',
         'zoom_border_color': 'Border Color',
         'c_white': 'White',
         'c_lgrey': 'Light Grey',
@@ -133,7 +118,7 @@
         'r_round': 'Round (1.8em)'
       },
       'ru': {
-        'zoom_title': 'Увеличение Карточек',
+        'zoom_title': 'Карточки Uiverse (Зум и Рамка)',
         'zoom_scale': 'Масштаб увеличения',
         'zoom_duration': 'Скорость анимации',
         'zoom_radius': 'Закругление углов',
@@ -179,7 +164,7 @@
         'r_round': 'Круглые (1.8em)'
       },
       'uk': {
-        'zoom_title': 'Збільшення Карток',
+        'zoom_title': 'Картки Uiverse (Зум та Рамка)',
         'zoom_scale': 'Масштаб збільшення',
         'zoom_duration': 'Швидкість анімації',
         'zoom_radius': 'Заокруглення кутів',
@@ -246,7 +231,7 @@
       param: {
         name: 'zoom_scale',
         type: 'select',
-        default: '1.08',
+        default: '1.15',
         values: {
           '1.0': t('none'),
           '1.03': t('tiny'),
@@ -378,7 +363,7 @@
       });
     }
 
-    console.log('[Card Zoom Plugin] Loaded');
+    console.log('[Card Zoom Plugin] Uiverse Ready');
   }
 
   if (window.Lampa && Lampa.Listener) {
