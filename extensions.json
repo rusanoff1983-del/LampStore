@@ -37,8 +37,8 @@
         {
           "name": "Анимация Карточек (Uiverse + Uno 3D) и Качество",
           "author": "@rusanoff",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@ee5e01b/rusanoff/zOOM.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@ee5e01b/rusanoff/zOOM.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@dc9a9f3/rusanoff/zOOM.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@dc9a9f3/rusanoff/zOOM.js",
           "descr": "Два стиля анимации: 1) Uiverse Zoom & Glow (мягкая круговая тень и контур), 2) Uno 3D Flip (3D переворот с перспективой и тенью на полу). Плюс выбор качества постеров TMDB (w500, w780, original 4K).",
           "instruction": "Установи плагин и настрой масштаб и скорость анимации в Настройки -> Карточки Uiverse.",
           "image": "",
