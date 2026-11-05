@@ -35,11 +35,11 @@
           "available_lampa": 1
         },
         {
-          "name": "Карточки Uiverse + Движок Obsidian (Качество и Звёзды)",
+          "name": "Карточки Uiverse + Метаданные Obsidian",
           "author": "@rusanoff",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f75c6a7/rusanoff/zOOM.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@f75c6a7/rusanoff/zOOM.js",
-          "descr": "Полный движок Obsidian (реальное качество торрентов/балансеров и рейтинги) + Uiverse Zoom, пропорциональные звёзды под цвет рамки и выбор качества TMDB.",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@9c03255/rusanoff/zOOM.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@9c03255/rusanoff/zOOM.js",
+          "descr": "На постере: звёзды рейтинга Uiverse (цвет под обводку) и реальное качество видео (4K/HD/TS через Alloha API). Под постером: жанры, год и название. Эффект Uiverse Zoom, скругление em и качество TMDB.",
           "instruction": "Установи плагин и настрой масштаб и скорость анимации в Настройки -> Карточки Uiverse.",
           "image": "",
           "screenshot": "",
