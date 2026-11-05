@@ -35,11 +35,11 @@
           "available_lampa": 1
         },
         {
-          "name": "Карточки Uiverse (Зум, Скругление и Качество)",
+          "name": "Карточки Uiverse + Инфо Obsidian",
           "author": "@rusanoff",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@0a742d6/rusanoff/zOOM.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@0a742d6/rusanoff/zOOM.js",
-          "descr": "Эффект Uiverse: плавное увеличение постера, ровные скруглённые углы в единицах em, мягкая круговая тень и настраиваемый контур. Включает выбор качества постеров TMDB (w500, w780, original).",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@70c5952/rusanoff/zOOM.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@70c5952/rusanoff/zOOM.js",
+          "descr": "Эффект Uiverse: плавный зум, скругленные углы и подсветка. Вшито оформление подписи из Obsidian: название фильма и жанры с годом (без качества и рейтинга).",
           "instruction": "Установи плагин и настрой масштаб и скорость анимации в Настройки -> Карточки Uiverse.",
           "image": "",
           "screenshot": "",
