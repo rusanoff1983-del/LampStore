@@ -1391,7 +1391,7 @@
         }
     }
 
-    function renderBadgePreview(item) {
+    function renderBadgeSelector(item) {
         var st = Lampa.Storage.get('cu_badge_style', 'badge--9');
         var labels = {
             'badge--9': '1. Боковая полоса',
@@ -1410,11 +1410,26 @@
             'badge--14': '14. Лист',
             'badge--classic': '15. Классика'
         };
-        var preview = $('<div class="cu-badge-preview" style="margin-top:12px;padding:14px;background:rgba(0,0,0,0.35);border-radius:8px;display:flex;align-items:center;gap:14px;">' +
-            '<span class="badge ' + st + ' badge--4k" style="font-size:20px;padding:12px 18px;">4K</span>' +
-            '<span style="color:#fff;font-size:17px;font-weight:600;white-space:nowrap;">' + (labels[st] || st) + '</span>' +
-            '</div>');
-        item.append(preview);
+        item.find('.settings-param__value').empty();
+        var container = $('<div class="cu-badge-selector" style="display:flex;flex-direction:column;gap:8px;"></div>');
+        var current = $('<div style="display:flex;align-items:center;gap:10px;"><span class="badge ' + st + ' badge--4k" style="font-size:18px;padding:10px 14px;">4K</span><span style="color:#fff;font-size:15px;font-weight:600;">Сейчас: ' + (labels[st] || st) + '</span></div>');
+        container.append(current);
+        var grid = $('<div style="display:flex;flex-wrap:wrap;gap:8px;"></div>');
+        Object.keys(labels).forEach(function (s) {
+            var isSelected = (s === st);
+            var option = $('<div class="cu-badge-option" style="display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:6px;border:2px solid ' + (isSelected ? '#4caf50' : 'rgba(255,255,255,0.15)') + ';cursor:pointer;background:' + (isSelected ? 'rgba(76,175,80,0.15)' : 'transparent') + ';">' +
+                '<span class="badge ' + s + ' badge--4k" style="font-size:14px;padding:6px 10px;">4K</span>' +
+                '<span style="color:#fff;font-size:12px;white-space:nowrap;">' + labels[s] + '</span>' +
+                '</div>');
+            option.on('click', function (e) {
+                e.stopPropagation();
+                Lampa.Storage.set('cu_badge_style', s);
+                refreshStyles();
+            });
+            grid.append(option);
+        });
+        container.append(grid);
+        item.find('.settings-param__value').append(container);
     }
 
     function refreshStyles() {
@@ -1529,13 +1544,9 @@
             },
             field: { name: 'Стиль бейджа качества' },
             onRender: function (item) {
-                renderBadgePreview(item);
+                renderBadgeSelector(item);
             },
-            onChange: function () {
-                refreshStyles();
-                item.find('.cu-badge-preview').remove();
-                renderBadgePreview(item);
-            }
+            onChange: refreshStyles
         });
         // 4. Масштаб зума
         Lampa.SettingsApi.addParam({
