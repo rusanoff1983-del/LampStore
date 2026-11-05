@@ -35,11 +35,11 @@
           "available_lampa": 1
         },
         {
-          "name": "Карточки Uiverse + Постеры Obsidian",
+          "name": "Card Universe",
           "author": "@rusanoff",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@c4e38d6/rusanoff/zOOM.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@c4e38d6/rusanoff/zOOM.js",
-          "descr": "На постере: шкала звёзд Uiverse (под цвет обводки) и реальное качество (4K/HD). Под постером: жанры, год и название. Эффект Uiverse Zoom, скругление em и качество TMDB.",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@7713cdb/rusanoff/zOOM.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@7713cdb/rusanoff/zOOM.js",
+          "descr": "Эффект увеличения и подсветки карточек. Шкала звёзд с авто-цветом по рейтингу, бейджи качества видео (Alloha/торренты), выбор позиций на постере или под ним, сочная палитра цветов.",
           "instruction": "Установи плагин и настрой масштаб и скорость анимации в Настройки -> Карточки Uiverse.",
           "image": "",
           "screenshot": "",
