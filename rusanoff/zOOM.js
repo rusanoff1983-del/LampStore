@@ -1475,7 +1475,7 @@
             onChange: refreshStyles
         });
 
-        // Стиль бейджа качества с живым превью в меню
+        // Стиль бейджа качества
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: {
@@ -1501,25 +1501,7 @@
                 }
             },
             field: { name: 'Стиль бейджа качества' },
-            onRender: function (item) {
-                var previewBox = $('<span class="cu-badge-preview" style="margin-left:14px;vertical-align:middle;display:inline-block;"></span>');
-                item.find('.settings-param__name').append(previewBox);
-                function renderDemo() {
-                    var st = Lampa.Storage.get('cu_badge_style', 'badge--9');
-                    previewBox.html('<span class="badge ' + st + ' badge--4k" style="display:inline-block;transform:scale(0.85);vertical-align:middle;">4K</span>');
-                }
-                renderDemo();
-                item.on('hover:focus click', function () {
-                    setTimeout(renderDemo, 250);
-                });
-            },
-            onChange: function () {
-                refreshStyles();
-                $('.cu-badge-preview').each(function () {
-                    var st = Lampa.Storage.get('cu_badge_style', 'badge--9');
-                    $(this).html('<span class="badge ' + st + ' badge--4k" style="display:inline-block;transform:scale(0.85);vertical-align:middle;">4K</span>');
-                });
-            }
+            onChange: refreshStyles
         });
         // 4. Масштаб зума
         Lampa.SettingsApi.addParam({
