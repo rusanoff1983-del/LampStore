@@ -1410,7 +1410,6 @@
             'badge--14': '14. Лист',
             'badge--classic': '15. Классика'
         };
-        item.find('.settings-param__value').empty();
         var container = $('<div class="cu-badge-selector" style="display:flex;flex-direction:column;gap:8px;"></div>');
         var current = $('<div style="display:flex;align-items:center;gap:10px;"><span class="badge ' + st + ' badge--4k" style="font-size:18px;padding:10px 14px;">4K</span><span style="color:#fff;font-size:15px;font-weight:600;">Сейчас: ' + (labels[st] || st) + '</span></div>');
         container.append(current);
@@ -1429,7 +1428,9 @@
             grid.append(option);
         });
         container.append(grid);
-        item.find('.settings-param__value').append(container);
+        var val = item.find('.settings-param__value');
+        if (!val.length) val = item;
+        val.append(container);
     }
 
     function refreshStyles() {
@@ -1448,7 +1449,6 @@
         }
 
         var all = Lampa.SettingsApi.allComponents ? Lampa.SettingsApi.allComponents() : {};
-        if (all['card_universe']) return;
 
         Lampa.SettingsApi.addComponent({
             component: 'card_universe',
