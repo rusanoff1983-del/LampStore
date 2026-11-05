@@ -35,11 +35,11 @@
           "available_lampa": 1
         },
         {
-          "name": "Карточки Uiverse + Инфо Obsidian",
+          "name": "Карточки Uiverse + Звёзды и Качество",
           "author": "@rusanoff",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@70c5952/rusanoff/zOOM.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@70c5952/rusanoff/zOOM.js",
-          "descr": "Эффект Uiverse: плавный зум, скругленные углы и подсветка. Вшито оформление подписи из Obsidian: название фильма и жанры с годом (без качества и рейтинга).",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@489ecb5/rusanoff/zOOM.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@489ecb5/rusanoff/zOOM.js",
+          "descr": "Uiverse Zoom: плавное увеличение, скругленные углы и подсветка. Шкала звёзд рейтинга (цвет под цвет обводки, точные пропорции с половинками), бейдж качества (4K/FHD) и метаданные фильма (жанры, год, название). Штатные плашки TV/рейтинга скрыты.",
           "instruction": "Установи плагин и настрой масштаб и скорость анимации в Настройки -> Карточки Uiverse.",
           "image": "",
           "screenshot": "",
