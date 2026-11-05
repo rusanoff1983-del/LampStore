@@ -1502,6 +1502,12 @@
                 }
             },
             field: { name: 'Стиль бейджа качества' },
+            onRender: function (item) {
+                var st = Lampa.Storage.get('cu_badge_style', 'badge--9');
+                var preview = $('<span class="cu-badge-preview" style="margin-left:10px;vertical-align:middle;display:inline-block;"><span class="badge ' + st + ' badge--4k" style="display:inline-block;transform:scale(0.75);vertical-align:middle;">4K</span></span>');
+                item.find('.settings-param__name').append(preview);
+            },
+            onChange: refreshStyles
         });
         // 4. Масштаб зума
         Lampa.SettingsApi.addParam({
