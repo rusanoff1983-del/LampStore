@@ -979,7 +979,7 @@
                   '<div class="ott-stars-bg">★★★★★★★★★★</div>' +
                   '<div class="ott-stars-fill">★★★★★★★★★★</div>' +
                 '</div>' +
-                '<span class="ott-rate-val"></span>' +
+                '<span class="ott-single-star" style="display:none">★</span><span class="ott-rate-val"></span>' +
                 '</div>' +
                 '<span class="metadata__quality poster-quality" style="display:none"></span>';
             view.appendChild(posterMeta);
@@ -992,7 +992,7 @@
             info.innerHTML = '<div class="ott-meta-row">' +
                 '<div class="cu-rating-block under-rate ott-under-rate" style="display:none">' +
                   '<div class="ott-stars-box"><div class="ott-stars-bg">★★★★★★★★★★</div><div class="ott-stars-fill">★★★★★★★★★★</div></div>' +
-                  '<span class="ott-rate-val"></span>' +
+                  '<span class="ott-single-star" style="display:none">★</span><span class="ott-rate-val"></span>' +
                 '</div>' +
                 '<span class="ott-genres"></span><span class="ott-year"></span>' +
                 '<span class="metadata__quality under-quality ott-under-quality" style="display:none"></span>' +
@@ -1031,43 +1031,46 @@
             var pos = Lampa.Storage.get('cu_rate_position', 'poster');
             if (!val || pos === 'none') {
                 if (posterRateWrap) {
+                    posterRateWrap.className = 'cu-rating-block poster-rate ott-hidden';
                     posterRateWrap.style.display = 'none';
-                    posterRateWrap.classList.add('ott-hidden');
                 }
                 if (underRateWrap) {
+                    underRateWrap.className = 'cu-rating-block under-rate ott-under-rate ott-hidden';
                     underRateWrap.style.display = 'none';
-                    underRateWrap.classList.add('ott-hidden');
                 }
                 return;
             }
             var num = parseFloat(val);
             var pct = Math.min(100, Math.max(0, num * 10)).toFixed(1) + '%';
             var color = resolveStarColor(val);
+            var style = Lampa.Storage.get('cu_rate_style', 'kinopoisk');
 
-            if (pos === 'poster') {
-                if (posterRateWrap) {
-                    posterStarsFill.style.width = pct;
-                    posterStarsFill.style.color = color;
-                    posterRateEl.textContent = val;
-                    posterRateWrap.classList.remove('ott-hidden');
-                    posterRateWrap.style.display = 'inline-flex';
+            var activeWrap = (pos === 'poster' ? posterRateWrap : underRateWrap);
+            var hideWrap = (pos === 'poster' ? underRateWrap : posterRateWrap);
+
+            if (hideWrap) {
+                hideWrap.className = 'cu-rating-block ' + (pos === 'poster' ? 'under-rate ott-under-rate' : 'poster-rate') + ' ott-hidden';
+                hideWrap.style.display = 'none';
+            }
+
+            if (activeWrap) {
+                activeWrap.className = 'cu-rating-block ' + (pos === 'poster' ? 'poster-rate' : 'under-rate ott-under-rate') + ' rate-style--' + style;
+                activeWrap.style.setProperty('--rate-color', color);
+
+                var sFill = activeWrap.querySelector('.ott-stars-fill');
+                if (sFill) {
+                    sFill.style.width = pct;
+                    sFill.style.color = color;
                 }
-                if (underRateWrap) {
-                    underRateWrap.style.display = 'none';
-                    underRateWrap.classList.add('ott-hidden');
+                var rVal = activeWrap.querySelector('.ott-rate-val');
+                if (rVal) {
+                    rVal.textContent = val;
                 }
-            } else if (pos === 'under') {
-                if (underRateWrap) {
-                    underStarsFill.style.width = pct;
-                    underStarsFill.style.color = color;
-                    underRateEl.textContent = val;
-                    underRateWrap.classList.remove('ott-hidden');
-                    underRateWrap.style.display = 'inline-flex';
+                var sStar = activeWrap.querySelector('.ott-single-star');
+                if (sStar) {
+                    sStar.textContent = '★';
                 }
-                if (posterRateWrap) {
-                    posterRateWrap.style.display = 'none';
-                    posterRateWrap.classList.add('ott-hidden');
-                }
+                activeWrap.style.display = (pos === 'under' ? 'inline-flex' : 'flex');
             }
         }
 
@@ -1216,11 +1219,10 @@
             '  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%) !important;',
             '  pointer-events: none !important; z-index: 5 !important;',
             '}',
-            '/* ЕДИНЫЙ БЛОК РЕЙТИНГА (Звёзды + Цифры) */',
             '.ott-hidden { display: none !important; }',
             '.cu-rating-block {',
-            '  display: inline-flex; align-items: center !important; line-height: 1 !important;',
-            '.cu-rating-block--hidden { display: none !important; }',
+            '  display: inline-flex; align-items: center; line-height: 1;',
+            '  box-sizing: border-box;',
             '}',
             '.ott-stars-box {',
             '  position: relative !important; display: inline-block !important; font-size: 0.92em !important;',
@@ -1233,7 +1235,7 @@
             '  overflow: hidden !important; white-space: nowrap !important;',
             '  text-shadow: 0 0 5px currentColor;',
             '}',
-            '/* Цифра рейтинга: чёткий, жирный, контрастный бейдж */',
+            '.ott-single-star { display: none; }',
             '.ott-rate-val {',
             '  display: inline-block !important;',
             '  font-family: inherit !important; font-size: 0.85em !important; font-weight: 800 !important;',
@@ -1244,12 +1246,60 @@
             '  font-variant-numeric: lining-nums tabular-nums !important;',
             '  text-shadow: 0 1px 2px rgba(0,0,0,0.9) !important;',
             '}',
+            '/* 1. Плашка Кинопоиск (★ 8.4) */',
+            '.rate-style--kinopoisk {',
+            '  background: rgba(18, 18, 20, 0.88);',
+            '  border: 1.5px solid var(--rate-color, #ffb300);',
+            '  border-radius: 4px; padding: 0.2em 0.45em;',
+            '  box-shadow: 0 2px 6px rgba(0,0,0,0.6);',
+            '}',
+            '.rate-style--kinopoisk .ott-stars-box { display: none !important; }',
+            '.rate-style--kinopoisk .ott-single-star {',
+            '  display: inline-block; color: var(--rate-color, #ffb300);',
+            '  margin-right: 0.25em; font-size: 0.85em;',
+            '}',
+            '.rate-style--kinopoisk .ott-rate-val {',
+            '  background: transparent !important; border: none !important; padding: 0 !important;',
+            '  color: #ffffff !important; font-size: 0.85em !important;',
+            '}',
+            '/* 2. Шкала звёзд + цифра */',
+            '.rate-style--stars_val .ott-stars-box { display: inline-block !important; }',
+            '.rate-style--stars_val .ott-single-star { display: none !important; }',
+            '.rate-style--stars_val .ott-rate-val { display: inline-block !important; }',
+            '/* 3. Только цифра (без звёзд) */',
+            '.rate-style--val_only {',
+            '  background: rgba(18, 18, 20, 0.85);',
+            '  border-left: 3px solid var(--rate-color, #ffb300);',
+            '  border-radius: 3px; padding: 0.2em 0.45em;',
+            '  box-shadow: 0 2px 6px rgba(0,0,0,0.5);',
+            '}',
+            '.rate-style--val_only .ott-stars-box, .rate-style--val_only .ott-single-star { display: none !important; }',
+            '.rate-style--val_only .ott-rate-val {',
+            '  background: transparent !important; border: none !important; padding: 0 !important;',
+            '  color: var(--rate-color, #ffffff) !important; font-size: 0.9em !important;',
+            '}',
+            '/* 4. Только звёзды (без цифры) */',
+            '.rate-style--stars_only .ott-stars-box { display: inline-block !important; margin-right: 0 !important; }',
+            '.rate-style--stars_only .ott-single-star, .rate-style--stars_only .ott-rate-val { display: none !important; }',
+            '/* 5. Сплит-бейдж (★ | 8.4) */',
+            '.rate-style--split {',
+            '  border: 1px solid var(--rate-color, #ffb300);',
+            '  border-radius: 4px; overflow: hidden;',
+            '  box-shadow: 0 2px 6px rgba(0,0,0,0.6);',
+            '}',
+            '.rate-style--split .ott-stars-box { display: none !important; }',
+            '.rate-style--split .ott-single-star {',
+            '  display: inline-flex; align-items: center; justify-content: center;',
+            '  background: var(--rate-color, #ffb300); color: #121212;',
+            '  padding: 0.2em 0.35em; font-size: 0.75em; font-weight: 900;',
+            '}',
+            '.rate-style--split .ott-rate-val {',
+            '  display: inline-flex; align-items: center;',
+            '  background: rgba(18, 18, 20, 0.9); color: #ffffff;',
+            '  padding: 0.2em 0.45em; border: none !important; border-radius: 0 !important;',
+            '  font-size: 0.85em !important;',
+            '}',
             '/* Бейджи качества: позиционирование */',
-            '.metadata__quality { pointer-events: none !important; z-index: 6 !important; }',
-            '.metadata__quality--top-right { position: absolute !important; top: 0.5em !important; right: 0.5em !important; }',
-            '.metadata__quality--top-left { position: absolute !important; top: 0.5em !important; left: 0.5em !important; }',
-            '.metadata__quality--bottom-left { position: absolute !important; bottom: 0.45em !important; left: 0.55em !important; }',
-            '.metadata__quality--bottom-right { position: static !important; }',
             '.metadata__quality { pointer-events: none !important; z-index: 6 !important; }',
             '.metadata__quality--top-right { position: absolute !important; top: 0.5em !important; right: 0.5em !important; }',
             '.metadata__quality--top-left { position: absolute !important; top: 0.5em !important; left: 0.5em !important; }',
@@ -1417,6 +1467,7 @@
         var html = event && event.html ? event.html : $('.selectbox');
         if (!html || !html.length) return;
 
+        // 1. Бейджи качества
         var isBadge = false;
         var badgeItems = null;
         if (active && active.items && active.items.length) {
@@ -1456,6 +1507,52 @@
                     $title.prepend($badge);
                 }
             });
+            return;
+        }
+
+        // 2. Стили рейтинга
+        var isRate = false;
+        var rateItems = null;
+        if (active && active.items && active.items.length) {
+            isRate = active.items.some(function (it) {
+                return it && it.value && (it.value === 'kinopoisk' || it.value === 'stars_val' || it.value === 'val_only' || it.value === 'stars_only' || it.value === 'split');
+            });
+            if (isRate) rateItems = active.items;
+        }
+        if (!isRate) {
+            var firstRateText = html.find('.selectbox-item__title').first().text();
+            if (firstRateText && (firstRateText.indexOf('Плашка Кинопоиск') !== -1 || firstRateText.indexOf('Шкала звёзд') !== -1 || firstRateText.indexOf('Сплит-бейдж') !== -1)) {
+                isRate = true;
+            }
+        }
+        if (isRate) {
+            html.find('.selectbox-item').each(function (idx) {
+                var $title = $(this).find('.selectbox-item__title');
+                if (!$title.length) $title = $(this);
+                if ($title.find('.cu-select-rate-preview').length) return;
+                var val = rateItems && rateItems[idx] ? rateItems[idx].value : '';
+                if (!val) {
+                    var textVal = $title.text().trim();
+                    if (textVal.indexOf('1.') === 0) val = 'kinopoisk';
+                    else if (textVal.indexOf('2.') === 0) val = 'stars_val';
+                    else if (textVal.indexOf('3.') === 0) val = 'val_only';
+                    else if (textVal.indexOf('4.') === 0) val = 'stars_only';
+                    else if (textVal.indexOf('5.') === 0) val = 'split';
+                }
+                var previewHtml = '';
+                if (val === 'kinopoisk') {
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--kinopoisk" style="margin-right:12px;--rate-color:#4caf50;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><span class="ott-single-star">★</span><span class="ott-rate-val">8.4</span></span>';
+                } else if (val === 'stars_val') {
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--stars_val" style="margin-right:12px;--rate-color:#4caf50;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><div class="ott-stars-box"><div class="ott-stars-bg">★★★★★</div><div class="ott-stars-fill" style="width:84%;color:#4caf50;">★★★★★</div></div><span class="ott-rate-val">8.4</span></span>';
+                } else if (val === 'val_only') {
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--val_only" style="margin-right:12px;--rate-color:#4caf50;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><span class="ott-rate-val">8.4</span></span>';
+                } else if (val === 'stars_only') {
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--stars_only" style="margin-right:12px;--rate-color:#4caf50;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><div class="ott-stars-box"><div class="ott-stars-bg">★★★★★</div><div class="ott-stars-fill" style="width:84%;color:#4caf50;">★★★★★</div></div></span>';
+                } else if (val === 'split') {
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--split" style="margin-right:12px;--rate-color:#4caf50;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><span class="ott-single-star">★</span><span class="ott-rate-val">8.4</span></span>';
+                }
+                if (previewHtml) $title.prepend($(previewHtml));
+            });
         }
     }
 
@@ -1473,6 +1570,32 @@
         $preview.html('<span class="badge ' + curStyle + ' badge--4k" style="display:inline-block;vertical-align:middle;transform:scale(0.85);pointer-events:none;">4K</span>');
     }
 
+    function setupRateParamPreview() {
+        var $item = $('.settings-param[data-name="cu_rate_style"]');
+        if (!$item.length) return;
+        var $name = $item.find('.settings-param__name');
+        if (!$name.length) return;
+        var curStyle = Lampa.Storage.get('cu_rate_style', 'kinopoisk');
+        var $preview = $name.find('.cu-rate-param-preview');
+        if (!$preview.length) {
+            $preview = $('<span class="cu-rate-param-preview" style="margin-left:12px;display:inline-block;vertical-align:middle;"></span>');
+            $name.append($preview);
+        }
+        var p = '';
+        if (curStyle === 'kinopoisk') {
+            p = '<span class="cu-rating-block rate-style--kinopoisk" style="--rate-color:#4caf50;transform:scale(0.8);vertical-align:middle;"><span class="ott-single-star">★</span><span class="ott-rate-val">8.4</span></span>';
+        } else if (curStyle === 'stars_val') {
+            p = '<span class="cu-rating-block rate-style--stars_val" style="--rate-color:#4caf50;transform:scale(0.8);vertical-align:middle;"><div class="ott-stars-box"><div class="ott-stars-bg">★★★★★</div><div class="ott-stars-fill" style="width:84%;color:#4caf50;">★★★★★</div></div><span class="ott-rate-val">8.4</span></span>';
+        } else if (curStyle === 'val_only') {
+            p = '<span class="cu-rating-block rate-style--val_only" style="--rate-color:#4caf50;transform:scale(0.8);vertical-align:middle;"><span class="ott-rate-val">8.4</span></span>';
+        } else if (curStyle === 'stars_only') {
+            p = '<span class="cu-rating-block rate-style--stars_only" style="--rate-color:#4caf50;transform:scale(0.8);vertical-align:middle;"><div class="ott-stars-box"><div class="ott-stars-bg">★★★★★</div><div class="ott-stars-fill" style="width:84%;color:#4caf50;">★★★★★</div></div></span>';
+        } else if (curStyle === 'split') {
+            p = '<span class="cu-rating-block rate-style--split" style="--rate-color:#4caf50;transform:scale(0.8);vertical-align:middle;"><span class="ott-single-star">★</span><span class="ott-rate-val">8.4</span></span>';
+        }
+        $preview.html(p);
+    }
+
     function refreshStyles() {
         var el = document.getElementById('ott-card-style');
         if (el && el.parentNode) el.parentNode.removeChild(el);
@@ -1481,15 +1604,22 @@
         applyPosterQuality();
     }
 
+    var settingsRegistered = false;
     function registerCardUniverseSettings() {
+        if (settingsRegistered) return;
         if (!window.Lampa || !Lampa.SettingsApi || !Lampa.SettingsApi.addComponent) return;
+
+        var all = Lampa.SettingsApi.allComponents ? Lampa.SettingsApi.allComponents() : {};
+        if (all['card_universe']) {
+            settingsRegistered = true;
+            return;
+        }
+
+        settingsRegistered = true;
 
         if (Lampa.Template && Lampa.Template.add) {
             Lampa.Template.add('settings_card_universe', '<div></div>');
         }
-
-        var all = Lampa.SettingsApi.allComponents ? Lampa.SettingsApi.allComponents() : {};
-        if (all['card_universe']) return;
 
         Lampa.SettingsApi.addComponent({
             component: 'card_universe',
@@ -1497,7 +1627,13 @@
             icon: '<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polygon points="12 7 13.5 10.5 17 11 14.5 13.5 15 17 12 15.5 9 17 9.5 13.5 7 11 10.5 10.5 12 7"/></svg>'
         });
 
-        // 1. Позиция рейтинга (Звёзды + Цифры)
+        // 🌟 СЕКЦИЯ 1: РЕЙТИНГ ФИЛЬМА
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe',
+            param: { type: 'title' },
+            field: { name: '🌟 РЕЙТИНГ ФИЛЬМА' }
+        });
+
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: {
@@ -1507,14 +1643,34 @@
                 values: {
                     'poster': 'На постере (внизу)',
                     'under': 'Под постером (в строке)',
-                    'none': 'Отключено'
+                    'none': 'Отключено (не показывать)'
                 }
             },
             field: { name: 'Позиция рейтинга' },
             onChange: refreshStyles
         });
 
-        // 2. Цвет звёзд
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe',
+            param: {
+                name: 'cu_rate_style',
+                type: 'select',
+                default: 'kinopoisk',
+                values: {
+                    'kinopoisk': '1. Плашка Кинопоиск (★ 8.4)',
+                    'stars_val': '2. Шкала звёзд + цифра',
+                    'val_only': '3. Только цифра (без звёзд)',
+                    'stars_only': '4. Только звёзды (без цифры)',
+                    'split': '5. Сплит-бейдж (★ | 8.4)'
+                }
+            },
+            field: { name: 'Стиль оформления рейтинга' },
+            onChange: function () {
+                refreshStyles();
+                setupRateParamPreview();
+            }
+        });
+
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: {
@@ -1522,23 +1678,26 @@
                 type: 'select',
                 default: 'auto',
                 values: {
-                    'auto': 'Автоматически (по рейтингу)',
+                    'auto': 'Автоматически (по оценке)',
                     'border': 'Как у обводки карточки',
-                    '#ffc107': 'Золотой',
-                    '#ffffff': 'Белый',
+                    '#ffc107': 'Золотистый янтарный',
+                    '#ffffff': 'Белоснежный',
                     '#4caf50': 'Изумрудный',
                     '#2196f3': 'Неоновый синий',
-                    '#f44336': 'Алый',
-                    '#e91e63': 'Малиновый',
-                    '#ff9800': 'Оранжевый',
-                    '#00bcd4': 'Бирюзовый'
+                    '#f44336': 'Насыщенный алый'
                 }
             },
-            field: { name: 'Цвет звёзд' },
+            field: { name: 'Цвет звёзд и рейтинга' },
             onChange: refreshStyles
         });
 
-        // 3. Позиция качества видео
+        // 📺 СЕКЦИЯ 2: КАЧЕСТВО ВИДЕО
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe',
+            param: { type: 'title' },
+            field: { name: '📺 КАЧЕСТВО ВИДЕО' }
+        });
+
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: {
@@ -1554,11 +1713,10 @@
                     'none': 'Отключено'
                 }
             },
-            field: { name: 'Позиция качества видео' },
+            field: { name: 'Позиция бейджа качества' },
             onChange: refreshStyles
         });
 
-        // Стиль бейджа качества
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: {
@@ -1584,9 +1742,19 @@
                 }
             },
             field: { name: 'Стиль бейджа качества' },
-            onChange: refreshStyles
+            onChange: function () {
+                refreshStyles();
+                setupBadgeParamPreview();
+            }
         });
-        // 4. Масштаб зума
+
+        // 🔍 СЕКЦИЯ 3: ЭФФЕКТ CARD UNIVERSE (ЗУМ И ПОДСВЕТКА)
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe',
+            param: { type: 'title' },
+            field: { name: '🔍 ЭФФЕКТ CARD UNIVERSE (ЗУМ И ПОДСВЕТКА)' }
+        });
+
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: {
@@ -1599,7 +1767,7 @@
                     '1.05': 'Малое (1.05x)',
                     '1.08': 'Среднее (1.08x)',
                     '1.12': 'Большое (1.12x)',
-                    '1.15': 'Очень большое (1.15x)',
+                    '1.15': 'Очень большое (1.15x) — по умолчанию',
                     '1.20': 'Universe (1.20x)',
                     '1.25': 'Максимальное (1.25x)'
                 }
@@ -1608,7 +1776,6 @@
             onChange: refreshStyles
         });
 
-        // 5. Скорость анимации
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: {
@@ -1618,7 +1785,7 @@
                 values: {
                     '0.15s': 'Мгновенно (0.15s)',
                     '0.2s': 'Быстро (0.2s)',
-                    '0.3s': 'Стандартно (0.3s)',
+                    '0.3s': 'Стандартно (0.3s) — по умолчанию',
                     '0.4s': 'Плавно (0.4s)',
                     '0.5s': 'Мягко (0.5s)',
                     '0.8s': 'Кинематографично (0.8s)'
@@ -1628,7 +1795,6 @@
             onChange: refreshStyles
         });
 
-        // 6. Закругление углов
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: {
@@ -1638,17 +1804,16 @@
                 values: {
                     '0': 'Прямые углы (0)',
                     '0.3em': 'Малое (0.3em)',
-                    '0.6em': 'Среднее (0.6em)',
+                    '0.6em': 'Среднее (0.6em) — по умолчанию',
                     '0.9em': 'Выраженное (0.9em)',
                     '1.3em': 'Сильное (1.3em)',
                     '1.8em': 'Максимально круглое (1.8em)'
                 }
             },
-            field: { name: 'Закругление углов' },
+            field: { name: 'Закругление углов постера' },
             onChange: refreshStyles
         });
 
-        // 7. Цвет обводки карточки — БОГАТАЯ ПАЛИТРА С ЧИСТЫМИ НАЗВАНИЯМИ
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: {
@@ -1656,7 +1821,7 @@
                 type: 'select',
                 default: '#ffffff',
                 values: {
-                    '#ffffff': 'Белоснежный',
+                    '#ffffff': 'Белоснежный (по умолчанию)',
                     '#e0e0e0': 'Светло-серый',
                     '#9e9e9e': 'Графитовый',
                     '#000000': 'Глубокий чёрный',
@@ -1677,11 +1842,10 @@
                     '#673ab7': 'Глубокий фиолетовый'
                 }
             },
-            field: { name: 'Цвет обводки карточки' },
+            field: { name: 'Цвет подсветки карточки' },
             onChange: refreshStyles
         });
 
-        // 8. Выключить обводку
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: {
@@ -1689,11 +1853,28 @@
                 type: 'trigger',
                 default: false
             },
-            field: { name: 'Выключить обводку' },
+            field: { name: 'Выключить рамку подсветки' },
             onChange: refreshStyles
         });
 
-        // 9. Разрешение постеров TMDB
+        // 📝 СЕКЦИЯ 4: СТРОКА ИНФОРМАЦИИ И ПОСТЕРЫ
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe',
+            param: { type: 'title' },
+            field: { name: '📝 СТРОКА ИНФОРМАЦИИ И ПОСТЕРЫ' }
+        });
+
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe',
+            param: {
+                name: 'cu_show_meta',
+                type: 'trigger',
+                default: true
+            },
+            field: { name: 'Показывать жанры и год' },
+            onChange: refreshStyles
+        });
+
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: {
@@ -1715,6 +1896,7 @@
     function ensureSettingsItem() {
         registerCardUniverseSettings();
         setupBadgeParamPreview();
+        setupRateParamPreview();
     }
 
     var initialized = false;
