@@ -35,11 +35,11 @@
           "available_lampa": 1
         },
         {
-          "name": "Карточки Uiverse (Зум и Качество)",
+          "name": "Карточки Uiverse + Постеры Obsidian",
           "author": "@rusanoff",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b7e48f9/rusanoff/zOOM.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@b7e48f9/rusanoff/zOOM.js",
-          "descr": "Стабильный чистый плагин Uiverse: плавный зум, ровные скруглённые углы в em, мягкая тень, светящийся контур и выбор качества постеров TMDB.",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@c4e38d6/rusanoff/zOOM.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@c4e38d6/rusanoff/zOOM.js",
+          "descr": "На постере: шкала звёзд Uiverse (под цвет обводки) и реальное качество (4K/HD). Под постером: жанры, год и название. Эффект Uiverse Zoom, скругление em и качество TMDB.",
           "instruction": "Установи плагин и настрой масштаб и скорость анимации в Настройки -> Карточки Uiverse.",
           "image": "",
           "screenshot": "",
