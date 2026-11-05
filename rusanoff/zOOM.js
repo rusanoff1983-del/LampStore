@@ -1391,6 +1391,32 @@
         }
     }
 
+    function renderBadgePreview(item) {
+        var st = Lampa.Storage.get('cu_badge_style', 'badge--9');
+        var labels = {
+            'badge--9': '1. Боковая полоса',
+            'badge--1': '2. Контурная рамка',
+            'badge--2': '3. Сплошная заливка',
+            'badge--3': '4. Двойная рамка',
+            'badge--4': '5. Скошенные края',
+            'badge--5': '6. Мягкая тонировка',
+            'badge--6': '7. Пилюля с точкой',
+            'badge--7': '8. Сплит-бейдж',
+            'badge--8': '9. Нижнее подчёркивание',
+            'badge--10': '10. Ретро с тенью',
+            'badge--11': '11. Терминал',
+            'badge--12': '12. Штамп',
+            'badge--13': '13. Октагон',
+            'badge--14': '14. Лист',
+            'badge--classic': '15. Классика'
+        };
+        var preview = $('<div class="cu-badge-preview" style="margin-top:12px;padding:14px;background:rgba(0,0,0,0.35);border-radius:8px;display:flex;align-items:center;gap:14px;">' +
+            '<span class="badge ' + st + ' badge--4k" style="font-size:20px;padding:12px 18px;">4K</span>' +
+            '<span style="color:#fff;font-size:17px;font-weight:600;white-space:nowrap;">' + (labels[st] || st) + '</span>' +
+            '</div>');
+        item.append(preview);
+    }
+
     function refreshStyles() {
         var el = document.getElementById('ott-card-style');
         if (el && el.parentNode) el.parentNode.removeChild(el);
@@ -1503,11 +1529,13 @@
             },
             field: { name: 'Стиль бейджа качества' },
             onRender: function (item) {
-                var st = Lampa.Storage.get('cu_badge_style', 'badge--9');
-                var preview = $('<span class="cu-badge-preview" style="margin-left:10px;vertical-align:middle;display:inline-block;"><span class="badge ' + st + ' badge--4k" style="display:inline-block;transform:scale(0.75);vertical-align:middle;">4K</span></span>');
-                item.find('.settings-param__name').append(preview);
+                renderBadgePreview(item);
             },
-            onChange: refreshStyles
+            onChange: function () {
+                refreshStyles();
+                item.find('.cu-badge-preview').remove();
+                renderBadgePreview(item);
+            }
         });
         // 4. Масштаб зума
         Lampa.SettingsApi.addParam({
