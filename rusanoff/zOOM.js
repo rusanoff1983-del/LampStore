@@ -1350,9 +1350,10 @@
     }
 
     function registerCardUniverseSettings() {
-        if (window.__card_universe_settings_registered) return;
-        if (!window.Lampa || !Lampa.SettingsApi) return;
-        window.__card_universe_settings_registered = true;
+        if (!window.Lampa || !Lampa.SettingsApi || !Lampa.SettingsApi.addComponent) return;
+        
+        var all = Lampa.SettingsApi.allComponents ? Lampa.SettingsApi.allComponents() : {};
+        if (all['card_universe']) return;
 
         var lang = Lampa.Storage.get('language', 'ru');
 
@@ -1586,6 +1587,27 @@
             onChange: applyPosterQuality
         });
     }
+
+
+    // Гарантируем присутствие пункта в меню настроек всегда
+    function ensureSettingsItem() {
+        registerCardUniverseSettings();
+    }
+
+    if (window.Lampa) {
+        if (Lampa.Settings && Lampa.Settings.listener) {
+            Lampa.Settings.listener.follow('open', ensureSettingsItem);
+        }
+        if (Lampa.Listener) {
+            Lampa.Listener.follow('activity', function (e) {
+                if (e && (e.type === 'start' || e.type === 'open')) ensureSettingsItem();
+            });
+            Lampa.Listener.follow('app', function (e) {
+                if (e && e.type === 'ready') ensureSettingsItem();
+            });
+        }
+    }
+    setInterval(ensureSettingsItem, 1500);
 
     var initialized = false;
     function init() {
