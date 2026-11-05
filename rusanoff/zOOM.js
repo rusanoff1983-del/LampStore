@@ -1064,20 +1064,21 @@
                 if (underQualityBadge) underQualityBadge.style.display = 'none';
                 return;
             }
+            var bStyle = Lampa.Storage.get('cu_badge_style', 'modern_bar') === 'classic' ? 'badge--classic' : 'badge--modern';
             var qLower = String(q).toLowerCase();
             var qText = String(q).toUpperCase();
 
             if (pos === 'under') {
                 if (posterQualityBadge) posterQualityBadge.style.display = 'none';
                 if (underQualityBadge) {
-                    underQualityBadge.className = 'metadata__quality under-quality ott-under-quality metadata__quality--' + qLower;
+                    underQualityBadge.className = 'metadata__quality under-quality ott-under-quality ' + bStyle + ' metadata__quality--' + qLower;
                     underQualityBadge.textContent = qText;
                     underQualityBadge.style.display = 'inline-block';
                 }
             } else {
                 if (underQualityBadge) underQualityBadge.style.display = 'none';
                 if (posterQualityBadge) {
-                    posterQualityBadge.className = 'metadata__quality poster-quality metadata__quality--' + qLower + ' metadata__quality--' + pos;
+                    posterQualityBadge.className = 'metadata__quality poster-quality ' + bStyle + ' metadata__quality--' + qLower + ' metadata__quality--' + pos;
                     posterQualityBadge.textContent = qText;
                     posterQualityBadge.style.display = 'inline-block';
                     if (pos.indexOf('top') !== -1) {
@@ -1218,21 +1219,37 @@
             '  font-variant-numeric: lining-nums tabular-nums !important;',
             '  text-shadow: 0 1px 2px rgba(0,0,0,0.9) !important;',
             '}',
-            '/* Бейджи качества видео (Alloha / торренты) */',
-            '.metadata__quality {',
-            '  display: inline-block !important; padding: 0.14em 0.4em !important; font-size: 0.72em !important;',
-            '  font-weight: 800 !important; letter-spacing: 0.04em !important; line-height: 1.2 !important;',
-            '  border-radius: 0.25em !important; text-transform: uppercase !important;',
-            '  background: rgba(0, 0, 0, 0.7) !important; border: 1px solid rgba(255, 255, 255, 0.25) !important;',
-            '  pointer-events: none !important; z-index: 6 !important;',
-            '}',
+            '/* Бейджи качества: позиционирование */',
+            '.metadata__quality { pointer-events: none !important; z-index: 6 !important; }',
             '.metadata__quality--top-right { position: absolute !important; top: 0.5em !important; right: 0.5em !important; }',
             '.metadata__quality--top-left { position: absolute !important; top: 0.5em !important; left: 0.5em !important; }',
             '.metadata__quality--bottom-left { position: absolute !important; bottom: 0.45em !important; left: 0.55em !important; }',
             '.metadata__quality--bottom-right { position: static !important; }',
-            '.metadata__quality--4k { color: #66bb6a !important; border-color: rgba(102, 187, 106, 0.6) !important; }',
-            '.metadata__quality--hd { color: #42a5f5 !important; border-color: rgba(66, 165, 245, 0.6) !important; }',
-            '.metadata__quality--ts { color: #ef5350 !important; border-color: rgba(239, 83, 80, 0.6) !important; }',
+            '/* СТИЛЬ 1: Новый (боковая акцентная полоса слева + легкая тонировка) */',
+            '.metadata__quality.badge--modern {',
+            '  --c: #7F77DD; display: inline-block !important; padding: 0.22em 0.55em 0.22em 0.42em !important;',
+            '  font: 700 0.75em/1 system-ui, -apple-system, "Segoe UI", sans-serif !important; letter-spacing: .06em !important;',
+            '  text-transform: uppercase !important; white-space: nowrap !important; color: var(--c) !important;',
+            '  background: rgba(0, 0, 0, 0.75) !important; border: none !important; border-left: 3.5px solid var(--c) !important;',
+            '  border-radius: 0 !important; box-shadow: 0 1px 4px rgba(0,0,0,0.6) !important;',
+            '}',
+            '.metadata__quality.badge--modern.metadata__quality--4k { --c: #7F77DD; background: rgba(127, 119, 221, .2) !important; }',
+            '.metadata__quality.badge--modern.metadata__quality--ts { --c: #888780; background: rgba(136, 135, 128, .2) !important; }',
+            '.metadata__quality.badge--modern.metadata__quality--hd, .metadata__quality.badge--modern.metadata__quality--fhd { --c: #378ADD; background: rgba(55, 138, 221, .2) !important; }',
+            '.metadata__quality.badge--modern.metadata__quality--webdl { --c: #1D9E75; background: rgba(29, 158, 117, .2) !important; }',
+            '.metadata__quality.badge--modern.metadata__quality--bdremux { --c: #D85A30; background: rgba(216, 90, 48, .2) !important; }',
+            '/* СТИЛЬ 2: Классический (в рамке со скруглением) */',
+            '.metadata__quality.badge--classic {',
+            '  display: inline-block !important; padding: 0.14em 0.4em !important; font-size: 0.72em !important;',
+            '  font-weight: 800 !important; letter-spacing: 0.04em !important; line-height: 1.2 !important;',
+            '  border-radius: 0.25em !important; text-transform: uppercase !important;',
+            '  background: rgba(0, 0, 0, 0.7) !important; border: 1px solid rgba(255, 255, 255, 0.25) !important;',
+            '}',
+            '.metadata__quality.badge--classic.metadata__quality--4k { color: #66bb6a !important; border-color: rgba(102, 187, 106, 0.6) !important; }',
+            '.metadata__quality.badge--classic.metadata__quality--hd, .metadata__quality.badge--classic.metadata__quality--fhd { color: #42a5f5 !important; border-color: rgba(66, 165, 245, 0.6) !important; }',
+            '.metadata__quality.badge--classic.metadata__quality--ts { color: #ef5350 !important; border-color: rgba(239, 83, 80, 0.6) !important; }',
+            '.metadata__quality.badge--classic.metadata__quality--webdl { color: #1D9E75 !important; border-color: rgba(29, 158, 117, 0.6) !important; }',
+            '.metadata__quality.badge--classic.metadata__quality--bdremux { color: #D85A30 !important; border-color: rgba(216, 90, 48, 0.6) !important; }',
             '/* ПОД ПОСТЕРОМ: только Название и Жанры с годом */',
             C + ' .ott-info { position: static !important; box-sizing: border-box !important; width: 100% !important; padding: 0.4em 0.15em 0 !important; color: #ffffff !important; text-align: left !important; pointer-events: none !important; }',
             C + ' .ott-meta-row { display: flex !important; align-items: center !important; min-height: 1.25em !important; margin: 0 0 0.15em !important; font-size: 0.75em !important; line-height: 1.25 !important; color: rgba(255, 255, 255, 0.6) !important; }',
@@ -1422,6 +1439,22 @@
                 }
             },
             field: { name: 'Позиция качества видео' },
+            onChange: refreshStyles
+        });
+
+        // Стиль бейджа качества
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe',
+            param: {
+                name: 'cu_badge_style',
+                type: 'select',
+                default: 'modern_bar',
+                values: {
+                    'modern_bar': 'С боковой полосой (новый)',
+                    'classic': 'В рамке со скруглением (классический)'
+                }
+            },
+            field: { name: 'Стиль бейджа качества' },
             onChange: refreshStyles
         });
 
