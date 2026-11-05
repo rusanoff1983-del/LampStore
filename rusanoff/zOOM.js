@@ -2,203 +2,9 @@
   'use strict';
 
   /* ================================================================
-   * Card Zoom (Uiverse) + True Obsidian Posters (Stars & Alloha Quality)
-   * 1) НА ПОСТЕРЕ (как в levende.github.io/lampa-plugins/obsidian.js):
-   *    - Звёзды рейтинга Uiverse (10 звёзд, заливка по рейтингу, цвет от обводки).
-   *    - Качество видео (4K, HD, TS) с авто-запросом к Alloha API + кэш Lampa.
-   *    - Градиентная подложка снизу постера.
-   *    - Штатные плашки TV, vote, age, quality полностью скрыты.
-   * 2) ПОД ПОСТЕРОМ (как в obsiview.js):
-   *    - Жанры + Год сероватым тоном.
-   *    - Название фильма в 2 строки.
-   * 3) ЭФФЕКТЫ UIVERSE:
-   *    - Плавный зум постера при фокусе.
-   *    - Скруглённые углы в единицах em.
-   *    - Мягкая круговая тень и настраиваемый контур.
-   * 4) НАСТРОЙКИ:
-   *    - Качество постеров TMDB (w500 / w780 / original 4K).
-   *    - Параметры зума, радиуса и цвета обводки/звёзд.
+   * Card Zoom & Style Plugin for Lampa (Uiverse Edition)
    * Автор: rusanoff
    * ================================================================ */
-
-  if (window.__uiverse_obsidian_plugin_active) return;
-  window.__uiverse_obsidian_plugin_active = true;
-
-  // Серверы Alloha API из оригинального плагина Obsidian
-  var ALLOHA_SERVERS = [
-    { url: 'https://api.apbugall.org', token: '8da1c9beda9545174264dc9f63a77d' },
-    { url: 'https://upn.stull.xyz', token: 'd317441359e505c343c2063edc97e7' }
-  ];
-
-  var QUALITY_CACHE_KEY = 'uiverse_obsidian_q_cache_v2';
-  var qualityMemoryCache = {};
-
-  function loadQualityCache() {
-    try {
-      var saved = Lampa.Storage.get(QUALITY_CACHE_KEY, {});
-      if (saved && typeof saved === 'object') qualityMemoryCache = saved;
-    } catch (e) {}
-  }
-
-  function saveQualityCache(key, val) {
-    try {
-      qualityMemoryCache[key] = { q: val, t: Date.now() };
-      Lampa.Storage.set(QUALITY_CACHE_KEY, qualityMemoryCache);
-    } catch (e) {}
-  }
-
-  function getCachedQuality(key) {
-    var c = qualityMemoryCache[key];
-    if (c && c.q && (Date.now() - c.t < 86400000 * 3)) { // кэш 3 дня
-      return c.q;
-    }
-    return null;
-  }
-
-  // Очередь сетевых запросов
-  var requestQueue = [];
-  var activeRequests = 0;
-  var MAX_PARALLEL = 6;
-
-  function queueRequest(task) {
-    requestQueue.push(task);
-    processQueue();
-  }
-
-  function processQueue() {
-    if (activeRequests >= MAX_PARALLEL || requestQueue.length === 0) return;
-    var task = requestQueue.shift();
-    activeRequests++;
-    task(function () {
-      activeRequests--;
-      processQueue();
-    });
-  }
-
-  // Запрос качества через Alloha API (как в obsidian.js)
-  function fetchAllohaQuality(data, callback) {
-    if (!data || !data.id) return callback(null);
-    var isTV = data.name || data.first_air_date ? true : false;
-    var cacheKey = (isTV ? 'tv_' : 'movie_') + data.id;
-
-    var cached = getCachedQuality(cacheKey);
-    if (cached) return callback(cached);
-
-    // Если в данных карточки уже есть качество (например из торрентов)
-    var nativeQ = data.quality || data.release_quality;
-    if (nativeQ && typeof nativeQ === 'string') {
-      var upper = nativeQ.toUpperCase();
-      var foundQ = null;
-      if (upper.indexOf('4K') !== -1 || upper.indexOf('2160') !== -1) foundQ = '4k';
-      else if (upper.indexOf('TS') !== -1 || upper.indexOf('CAM') !== -1) foundQ = 'ts';
-      else if (upper.indexOf('HD') !== -1 || upper.indexOf('1080') !== -1 || upper.indexOf('720') !== -1) foundQ = 'hd';
-      if (foundQ) {
-        saveQualityCache(cacheKey, foundQ);
-        return callback(foundQ);
-      }
-    }
-
-    queueRequest(function (next) {
-      var s = ALLOHA_SERVERS[0];
-      var url = s.url + '?token=' + s.token;
-      if (data.kinopoisk_id) url += '&kp=' + encodeURIComponent(data.kinopoisk_id);
-      else if (data.imdb_id) url += '&imdb=' + encodeURIComponent(data.imdb_id);
-      else url += '&tmdb=' + encodeURIComponent(data.id);
-
-      var done = false;
-      var timer = setTimeout(function () {
-        if (!done) { done = true; next(); callback(null); }
-      }, 4500);
-
-      Lampa.Network.silent(url, function (res) {
-        if (!done) {
-          done = true;
-          clearTimeout(timer);
-          next();
-          if (res && res.status === 'success' && res.data) {
-            var q = res.data.quality;
-            var finalQ = null;
-            if (q) {
-              if (res.data.uhd) finalQ = '4k';
-              else if (/(^|,\s*)ts(\s*,|$)/i.test(q)) finalQ = 'ts';
-              else finalQ = 'hd';
-            }
-            if (finalQ) saveQualityCache(cacheKey, finalQ);
-            callback(finalQ);
-          } else {
-            callback(null);
-          }
-        }
-      }, function () {
-        if (!done) { done = true; clearTimeout(timer); next(); callback(null); }
-      });
-    });
-  }
-
-  // Жанры
-  var GENRES_MAP = {
-    28: 'Боевик', 12: 'Приключения', 16: 'Мультфильм', 35: 'Комедия', 80: 'Криминал',
-    99: 'Документальный', 18: 'Драма', 10751: 'Семейный', 14: 'Фэнтези', 36: 'История',
-    27: 'Ужасы', 10402: 'Музыка', 9648: 'Детектив', 10749: 'Мелодрама', 878: 'Фантастика',
-    10770: 'Телефильм', 53: 'Триллер', 10752: 'Военный', 37: 'Вестерн', 10759: 'Боевик, Приключения',
-    10762: 'Детский', 10765: 'НФ и Фэнтези', 10766: 'Мыльная опера', 10767: 'Ток-шоу', 10768: 'Война и Политика'
-  };
-
-  function capitalizeGenre(genre) {
-    var s = String(genre || '').trim();
-    if (!s) return '';
-    return s.split(/([\s-]+)/).map(function (w) {
-      if (/^[\s-]+$/.test(w)) return w;
-      return w.toLowerCase() === 'и' ? 'и' : (w.charAt(0).toUpperCase() + w.slice(1));
-    }).join('');
-  }
-
-  function extractGenres(data) {
-    if (!data) return [];
-    var list = [];
-    var raw = data.genres || data.genre_ids || [];
-    if (Array.isArray(raw)) {
-      for (var i = 0; i < raw.length; i++) {
-        var item = raw[i];
-        var name = '';
-        if (typeof item === 'object' && item && item.name) {
-          name = item.name;
-        } else if (typeof item === 'number' || typeof item === 'string') {
-          name = GENRES_MAP[item] || (typeof item === 'string' ? item : '');
-        }
-        if (name) {
-          var parts = String(name).split(',');
-          for (var j = 0; j < parts.length; j++) {
-            var g = capitalizeGenre(parts[j].trim());
-            if (g && list.indexOf(g) === -1) list.push(g);
-          }
-        }
-      }
-    }
-    return list.slice(0, 2);
-  }
-
-  function extractYear(data) {
-    if (!data) return '';
-    var dateStr = data.release_date || data.first_air_date || data.year || data.date || '';
-    var match = String(dateStr).match(/(19|20)\d{2}/);
-    return match ? match[0] : '';
-  }
-
-  function extractRating(card, data) {
-    if (data) {
-      var v = parseFloat(data.vote_average || data.kp_rating || data.ratingKinopoisk || data.rating || data.imdb_rating);
-      if (v > 0 && isFinite(v)) return v.toFixed(1);
-    }
-    if (card) {
-      var voteEl = card.querySelector('.card__vote');
-      if (voteEl && voteEl.textContent) {
-        var parsed = parseFloat(voteEl.textContent.trim().replace(',', '.'));
-        if (parsed > 0 && isFinite(parsed)) return parsed.toFixed(1);
-      }
-    }
-    return '';
-  }
 
   function applyPosterQuality() {
     var quality = Lampa.Storage.get('zoom_poster_quality', 'default');
@@ -227,15 +33,7 @@
     var focusBorder = removeBorder ? '' : (', 0 0 0 2.5px ' + borderColor);
 
     var css = '' +
-    '/* Полное скрытие штатных плашек Lampa на карточке */\n' +
-    '.card.uiverse-card .card__title,\n' +
-    '.card.uiverse-card .card__quality,\n' +
-    '.card.uiverse-card .card__age,\n' +
-    '.card.uiverse-card .card__type,\n' +
-    '.card.uiverse-card .card__vote {\n' +
-    '  display: none !important;\n' +
-    '}\n\n' +
-    '/* Контейнер постера Uiverse */\n' +
+    '/* Базовый стиль постера: ровные скруглённые углы и мягкая тень */\n' +
     '.card__view,\n' +
     '.poster__view {\n' +
     '  border-radius: ' + radius + ' !important;\n' +
@@ -243,8 +41,8 @@
     '  box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.6) !important;\n' +
     '  transition: transform ' + duration + ' cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow ' + duration + ' ease !important;\n' +
     '  transform-origin: center center !important;\n' +
-    '  position: relative !important;\n' +
     '}\n\n' +
+    '/* Картинка внутри постера строго наследует радиус */\n' +
     '.card__img,\n' +
     '.card__view img,\n' +
     '.poster__img,\n' +
@@ -252,7 +50,7 @@
     '  border-radius: inherit !important;\n' +
     '  overflow: hidden !important;\n' +
     '}\n\n' +
-    '/* Отключение старой рамки Lampa */\n' +
+    '/* Скрываем старую прямоугольную рамку Lampa */\n' +
     '.card.focus .card__view::before,\n' +
     '.card.focus .card__view::after,\n' +
     '.selector.focus .card__view::before,\n' +
@@ -261,134 +59,15 @@
     '  content: none !important;\n' +
     '  border: 0 !important;\n' +
     '}\n\n' +
-    '/* Uiverse Zoom в фокусе */\n' +
+    '/* Эффект Uiverse в фокусе: чистый зум + равномерный контур фокуса */\n' +
     '.card.focus .card__view,\n' +
     '.poster.focus .poster__view {\n' +
     '  transform: scale(' + scale + ') !important;\n' +
     '  box-shadow: 0px 0px 14px 6px rgba(0, 0, 0, 0.85)' + focusBorder + ' !important;\n' +
     '  z-index: 10 !important;\n' +
-    '}\n\n' +
-    '/* НА ПОСТЕРЕ: плашка метаданных Obsidian с градиентом */\n' +
-    '.card__poster-meta {\n' +
-    '  position: absolute !important;\n' +
-    '  bottom: 0 !important;\n' +
-    '  left: 0 !important;\n' +
-    '  right: 0 !important;\n' +
-    '  display: flex !important;\n' +
-    '  align-items: center !important;\n' +
-    '  justify-content: space-between !important;\n' +
-    '  padding: 1.6em 0.55em 0.45em !important;\n' +
-    '  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%) !important;\n' +
-    '  pointer-events: none !important;\n' +
-    '  z-index: 5 !important;\n' +
-    '}\n\n' +
-    '/* Звёзды Uiverse на постере */\n' +
-    '.card__poster-rate {\n' +
-    '  display: inline-flex !important;\n' +
-    '  align-items: center !important;\n' +
-    '  line-height: 1 !important;\n' +
-    '}\n\n' +
-    '.ott-stars-box {\n' +
-    '  position: relative !important;\n' +
-    '  display: inline-block !important;\n' +
-    '  font-size: 0.95em !important;\n' +
-    '  line-height: 1 !important;\n' +
-    '  letter-spacing: 0.04em !important;\n' +
-    '  vertical-align: middle !important;\n' +
-    '  margin-right: 0.35em !important;\n' +
-    '  white-space: nowrap !important;\n' +
-    '}\n\n' +
-    '.ott-stars-bg {\n' +
-    '  color: rgba(255, 255, 255, 0.25) !important;\n' +
-    '}\n\n' +
-    '.ott-stars-fill {\n' +
-    '  position: absolute !important;\n' +
-    '  top: 0 !important;\n' +
-    '  left: 0 !important;\n' +
-    '  height: 100% !important;\n' +
-    '  overflow: hidden !important;\n' +
-    '  white-space: nowrap !important;\n' +
-    '  color: ' + borderColor + ' !important;\n' +
-    '  text-shadow: 0 0 5px ' + borderColor + '66 !important;\n' +
-    '}\n\n' +
-    '.ott-rate-val {\n' +
-    '  font-size: 0.85em !important;\n' +
-    '  font-weight: 700 !important;\n' +
-    '  color: #ffffff !important;\n' +
-    '  text-shadow: 0 1px 3px rgba(0,0,0,0.9) !important;\n' +
-    '}\n\n' +
-    '/* Качество видео на постере (Alloha) */\n' +
-    '.metadata__quality {\n' +
-    '  display: inline-block !important;\n' +
-    '  padding: 0.12em 0.35em !important;\n' +
-    '  font-size: 0.72em !important;\n' +
-    '  font-weight: 800 !important;\n' +
-    '  letter-spacing: 0.04em !important;\n' +
-    '  line-height: 1.2 !important;\n' +
-    '  border-radius: 0.25em !important;\n' +
-    '  text-transform: uppercase !important;\n' +
-    '  background: rgba(0, 0, 0, 0.6) !important;\n' +
-    '  border: 1px solid rgba(255, 255, 255, 0.25) !important;\n' +
-    '  text-shadow: 0 1px 2px rgba(0,0,0,0.8) !important;\n' +
-    '}\n\n' +
-    '.metadata__quality--4k {\n' +
-    '  color: #66bb6a !important;\n' +
-    '  border-color: rgba(102, 187, 106, 0.5) !important;\n' +
-    '}\n\n' +
-    '.metadata__quality--hd {\n' +
-    '  color: #42a5f5 !important;\n' +
-    '  border-color: rgba(66, 165, 245, 0.5) !important;\n' +
-    '}\n\n' +
-    '.metadata__quality--ts {\n' +
-    '  color: #ef5350 !important;\n' +
-    '  border-color: rgba(239, 83, 80, 0.5) !important;\n' +
-    '}\n\n' +
-    '/* ПОД ПОСТЕРОМ: только Название и Жанры (как в obsiview) */\n' +
-    '.card .ott-info {\n' +
-    '  position: static !important;\n' +
-    '  box-sizing: border-box !important;\n' +
-    '  width: 100% !important;\n' +
-    '  padding: 0.4em 0.15em 0 !important;\n' +
-    '  color: #ffffff !important;\n' +
-    '  text-align: left !important;\n' +
-    '  pointer-events: none !important;\n' +
-    '}\n\n' +
-    '.card .ott-meta-row {\n' +
-    '  display: flex !important;\n' +
-    '  align-items: baseline !important;\n' +
-    '  min-height: 1.25em !important;\n' +
-    '  margin: 0 0 0.15em !important;\n' +
-    '  font-size: 0.75em !important;\n' +
-    '  line-height: 1.25 !important;\n' +
-    '  color: rgba(255, 255, 255, 0.6) !important;\n' +
-    '}\n\n' +
-    '.card .ott-genres {\n' +
-    '  min-width: 0 !important;\n' +
-    '  overflow: hidden !important;\n' +
-    '  white-space: nowrap !important;\n' +
-    '  text-overflow: ellipsis !important;\n' +
-    '  flex: 0 1 auto !important;\n' +
-    '}\n\n' +
-    '.card .ott-year {\n' +
-    '  flex: 0 0 auto !important;\n' +
-    '  white-space: pre !important;\n' +
-    '}\n\n' +
-    '.card .ott-title {\n' +
-    '  position: static !important;\n' +
-    '  display: -webkit-box !important;\n' +
-    '  -webkit-line-clamp: 2 !important;\n' +
-    '  -webkit-box-orient: vertical !important;\n' +
-    '  height: 2.5em !important;\n' +
-    '  overflow: hidden !important;\n' +
-    '  overflow-wrap: break-word !important;\n' +
-    '  white-space: normal !important;\n' +
-    '  font-size: 0.95em !important;\n' +
-    '  font-weight: 600 !important;\n' +
-    '  line-height: 1.25 !important;\n' +
-    '  margin: 0 !important;\n' +
     '}\n';
 
-    var styleId = 'uiverse-obsidian-plugin-css';
+    var styleId = 'card-zoom-plugin-css';
     var existingStyle = document.getElementById(styleId);
     
     if (existingStyle) {
@@ -401,138 +80,15 @@
     }
   }
 
-  // Оформление карточки
-  function renderCard(cardEl, data) {
-    if (!cardEl || !data) return;
-    try {
-      var card = $(cardEl)[0];
-      if (!card || !card.querySelector) return;
-      var view = card.querySelector('.card__view, .poster__view');
-      if (!view) return;
-
-      var title = data.title || data.name || '';
-      if (!title && data.card) title = data.card.title || data.card.name || '';
-      if (!title) return;
-
-      card.classList.add('uiverse-card');
-
-      // 1. НА ПОСТЕРЕ: блок .card__poster-meta (звёзды слева, качество справа)
-      var posterMeta = view.querySelector('.card__poster-meta');
-      if (!posterMeta) {
-        posterMeta = document.createElement('div');
-        posterMeta.className = 'card__poster-meta';
-        posterMeta.innerHTML = '' +
-          '<div class="card__poster-rate">' +
-            '<div class="ott-stars-box">' +
-              '<div class="ott-stars-bg">★★★★★★★★★★</div>' +
-              '<div class="ott-stars-fill">★★★★★★★★★★</div>' +
-            '</div>' +
-            '<span class="ott-rate-val"></span>' +
-          '</div>' +
-          '<span class="metadata__quality" style="display:none"></span>';
-        view.appendChild(posterMeta);
-      }
-
-      // Рейтинг
-      var rating = extractRating(card, data);
-      var rateWrap = posterMeta.querySelector('.card__poster-rate');
-      var starsFill = posterMeta.querySelector('.ott-stars-fill');
-      var rateVal = posterMeta.querySelector('.ott-rate-val');
-
-      if (rating) {
-        var num = parseFloat(rating);
-        var pct = Math.min(100, Math.max(0, num * 10)).toFixed(1) + '%';
-        starsFill.style.width = pct;
-        rateVal.textContent = rating;
-        rateWrap.style.display = 'inline-flex';
-      } else {
-        rateWrap.style.display = 'none';
-      }
-
-      // Качество (через Alloha API)
-      var qualityBadge = posterMeta.querySelector('.metadata__quality');
-      fetchAllohaQuality(data, function (q) {
-        if (q) {
-          qualityBadge.className = 'metadata__quality metadata__quality--' + q.toLowerCase();
-          qualityBadge.textContent = q.toUpperCase();
-          qualityBadge.style.display = 'inline-block';
-        }
-      });
-
-      // 2. ПОД ПОСТЕРОМ: блок .ott-info (только жанры + год и название)
-      var info = card.querySelector('.ott-info');
-      if (!info) {
-        info = document.createElement('div');
-        info.className = 'ott-info';
-        info.innerHTML = '' +
-          '<div class="ott-meta-row">' +
-            '<span class="ott-genres"></span>' +
-            '<span class="ott-year"></span>' +
-          '</div>' +
-          '<div class="ott-title"></div>';
-        view.parentNode.insertBefore(info, view.nextSibling);
-      }
-
-      var genres = extractGenres(data);
-      var year = extractYear(data);
-
-      var genresEl = info.querySelector('.ott-genres');
-      var yearEl = info.querySelector('.ott-year');
-      var titleEl = info.querySelector('.ott-title');
-
-      if (titleEl) titleEl.textContent = title;
-      if (genresEl) genresEl.textContent = genres.join(', ');
-      if (yearEl) yearEl.textContent = year ? ((genres.length ? ', ' : '') + year) : '';
-
-    } catch (e) {}
-  }
-
-  function initHooks() {
-    loadQualityCache();
-
-    if (window.Lampa && Lampa.Listener) {
-      Lampa.Listener.follow('card', function (e) {
-        if (!e || !e.object) return;
-        var cardEl = e.object.card || e.object.html;
-        var data = e.object.data;
-        if (cardEl && data) {
-          renderCard(cardEl, data);
-        }
-      });
-    }
-
-    if (window.MutationObserver) {
-      var observer = new MutationObserver(function (mutations) {
-        for (var i = 0; i < mutations.length; i++) {
-          var added = mutations[i].addedNodes;
-          for (var j = 0; j < added.length; j++) {
-            var node = added[j];
-            if (node.nodeType === 1) {
-              if (node.classList && node.classList.contains('card')) {
-                var cardData = $(node).data('card');
-                if (cardData && cardData.data) renderCard(node, cardData.data);
-              } else if (node.querySelectorAll) {
-                var cards = node.querySelectorAll('.card');
-                for (var k = 0; k < cards.length; k++) {
-                  var c = cards[k];
-                  var cData = $(c).data('card');
-                  if (cData && cData.data) renderCard(c, cData.data);
-                }
-              }
-            }
-          }
-        }
-      });
-      observer.observe(document.body, { childList: true, subtree: true });
-    }
-  }
-
   function initSettings() {
+    if (window.__card_zoom_settings_added) return;
+    window.__card_zoom_settings_added = true;
+
     var lang = Lampa.Storage.get('language', 'ru');
 
     var i18n = {
       'en': {
-        'zoom_title': 'Cards Uiverse + Obsidian Posters',
+        'zoom_title': 'Uiverse Cards (Zoom & Quality)',
         'zoom_poster_quality': 'Poster Resolution (TMDB)',
         'q_def': 'Default Lampa',
         'q_w500': 'High (w500)',
@@ -542,7 +98,7 @@
         'zoom_duration': 'Animation Speed',
         'zoom_radius': 'Corner Radius',
         'zoom_remove_border': 'Remove Border',
-        'zoom_border_color': 'Border & Stars Color',
+        'zoom_border_color': 'Border Color',
         'c_white': 'White',
         'c_lgrey': 'Light Grey',
         'c_dgrey': 'Dark Grey',
@@ -583,7 +139,7 @@
         'r_round': 'Round (1.8em)'
       },
       'ru': {
-        'zoom_title': 'Карточки Uiverse + Постеры Obsidian',
+        'zoom_title': 'Карточки Uiverse (Зум и Качество)',
         'zoom_poster_quality': 'Качество постеров (TMDB)',
         'q_def': 'Штатное Lampa',
         'q_w500': 'Высокое (w500)',
@@ -593,7 +149,7 @@
         'zoom_duration': 'Скорость анимации',
         'zoom_radius': 'Закругление углов',
         'zoom_remove_border': 'Выключить обводку',
-        'zoom_border_color': 'Цвет обводки и звёзд',
+        'zoom_border_color': 'Цвет обводки',
         'c_white': 'Белый',
         'c_lgrey': 'Светло-серый',
         'c_dgrey': 'Темно-серый',
@@ -632,6 +188,57 @@
         'r_large': 'Большие (0.9em)',
         'r_xlarge': 'Сильные (1.3em)',
         'r_round': 'Круглые (1.8em)'
+      },
+      'uk': {
+        'zoom_title': 'Картки Uiverse (Зум та Якість)',
+        'zoom_poster_quality': 'Якість постерів (TMDB)',
+        'q_def': 'Штатне Lampa',
+        'q_w500': 'Висока (w500)',
+        'q_w780': 'Full HD (w780)',
+        'q_orig': 'Оригінал 4K (Ultra)',
+        'zoom_scale': 'Масштаб збільшення',
+        'zoom_duration': 'Швидкість анімації',
+        'zoom_radius': 'Заокруглення кутів',
+        'zoom_remove_border': 'Вимкнути обводку',
+        'zoom_border_color': 'Колір обводки',
+        'c_white': 'Білий',
+        'c_lgrey': 'Світло-сірий',
+        'c_dgrey': 'Темно-сірий',
+        'c_black': 'Чорний',
+        'c_lblue': 'Світло-синій',
+        'c_blue': 'Синій',
+        'c_dblue': 'Темно-синій',
+        'c_lred': 'Світло-червоний',
+        'c_red': 'Червоний',
+        'c_dred': 'Темно-червоний',
+        'c_lgreen': 'Світло-зелений',
+        'c_green': 'Зелений',
+        'c_dgreen': 'Темно-зелений',
+        'c_yellow': 'Жовтий',
+        'c_orange': 'Помаранчевий',
+        'c_purple': 'Фіолетовий',
+        'c_cyan': 'Блакитний',
+        'c_pink': 'Рожевий',
+        'none': 'Вимкнено (1.0x)',
+        'tiny': 'Мінімальне (1.03x)',
+        'small': 'Мале (1.05x)',
+        'medium': 'Середнє (1.08x)',
+        'large': 'Велике (1.12x)',
+        'xlarge': 'Дуже велике (1.15x)',
+        'uiverse': 'Uiverse (1.20x)',
+        'max': 'Максимальне (1.25x)',
+        'very_fast': 'Дуже швидко (0.15s)',
+        'fast': 'Швидко (0.2s)',
+        'normal': 'Нормально (0.3s)',
+        'smooth': 'Плавно (0.4s)',
+        'slow': 'Повільно (0.5s)',
+        'very_slow': 'Дуже повільно (0.8s)',
+        'r_none': 'Квадратні (0)',
+        'r_small': 'Малі (0.3em)',
+        'r_medium': 'Середні (0.6em)',
+        'r_large': 'Великі (0.9em)',
+        'r_xlarge': 'Сильні (1.3em)',
+        'r_round': 'Круглі (1.8em)'
       }
     };
 
@@ -650,61 +257,119 @@
       icon: '<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9l6 6m0-6l-6 6"/></svg>'
     });
 
+    // 1. Качество постеров TMDB
     Lampa.SettingsApi.addParam({
       component: 'card_zoom_plugin',
       param: {
         name: 'zoom_poster_quality',
         type: 'select',
         default: 'default',
-        values: { 'default': t('q_def'), 'w500': t('q_w500'), 'w780': t('q_w780'), 'original': t('q_orig') }
+        values: {
+          'default': t('q_def'),
+          'w500': t('q_w500'),
+          'w780': t('q_w780'),
+          'original': t('q_orig')
+        }
       },
-      field: { name: t('zoom_poster_quality') },
-      onChange: function () { applyPosterQuality(); }
+      field: {
+        name: t('zoom_poster_quality')
+      },
+      onChange: function () {
+        applyPosterQuality();
+      }
     });
 
+    // 2. Масштаб увеличения
     Lampa.SettingsApi.addParam({
       component: 'card_zoom_plugin',
       param: {
         name: 'zoom_scale',
         type: 'select',
         default: '1.15',
-        values: { '1.0': t('none'), '1.03': t('tiny'), '1.05': t('small'), '1.08': t('medium'), '1.12': t('large'), '1.15': t('xlarge'), '1.20': t('uiverse'), '1.25': t('max') }
+        values: {
+          '1.0': t('none'),
+          '1.03': t('tiny'),
+          '1.05': t('small'),
+          '1.08': t('medium'),
+          '1.12': t('large'),
+          '1.15': t('xlarge'),
+          '1.20': t('uiverse'),
+          '1.25': t('max')
+        }
       },
-      field: { name: t('zoom_scale') },
-      onChange: function () { injectCSS(); }
+      field: {
+        name: t('zoom_scale')
+      },
+      onChange: function () {
+        injectCSS();
+      }
     });
 
+    // 3. Скорость анимации
     Lampa.SettingsApi.addParam({
       component: 'card_zoom_plugin',
       param: {
         name: 'zoom_duration',
         type: 'select',
         default: '0.3s',
-        values: { '0.15s': t('very_fast'), '0.2s': t('fast'), '0.3s': t('normal'), '0.4s': t('smooth'), '0.5s': t('slow'), '0.8s': t('very_slow') }
+        values: {
+          '0.15s': t('very_fast'),
+          '0.2s': t('fast'),
+          '0.3s': t('normal'),
+          '0.4s': t('smooth'),
+          '0.5s': t('slow'),
+          '0.8s': t('very_slow')
+        }
       },
-      field: { name: t('zoom_duration') },
-      onChange: function () { injectCSS(); }
+      field: {
+        name: t('zoom_duration')
+      },
+      onChange: function () {
+        injectCSS();
+      }
     });
 
+    // 4. Закругление углов
     Lampa.SettingsApi.addParam({
       component: 'card_zoom_plugin',
       param: {
         name: 'zoom_radius',
         type: 'select',
         default: '0.6em',
-        values: { '0': t('r_none'), '0.3em': t('r_small'), '0.6em': t('r_medium'), '0.9em': t('r_large'), '1.3em': t('r_xlarge'), '1.8em': t('r_round') }
+        values: {
+          '0': t('r_none'),
+          '0.3em': t('r_small'),
+          '0.6em': t('r_medium'),
+          '0.9em': t('r_large'),
+          '1.3em': t('r_xlarge'),
+          '1.8em': t('r_round')
+        }
       },
-      field: { name: t('zoom_radius') },
-      onChange: function () { injectCSS(); }
+      field: {
+        name: t('zoom_radius')
+      },
+      onChange: function () {
+        injectCSS();
+      }
     });
 
+    // 5. Выключить обводку
     Lampa.SettingsApi.addParam({
       component: 'card_zoom_plugin',
-      param: { name: 'zoom_remove_border', type: 'trigger', default: false },
-      field: { name: t('zoom_remove_border') },
-      onChange: function () { injectCSS(); }
+      param: {
+        name: 'zoom_remove_border',
+        type: 'trigger',
+        default: false
+      },
+      field: {
+        name: t('zoom_remove_border')
+      },
+      onChange: function () {
+        injectCSS();
+      }
     });
 
+    // 6. Цвет обводки
     Lampa.SettingsApi.addParam({
       component: 'card_zoom_plugin',
       param: {
@@ -712,24 +377,42 @@
         type: 'select',
         default: '#ffffff',
         values: {
-          '#ffffff': cBox('#ffffff', 'c_white'), '#cccccc': cBox('#cccccc', 'c_lgrey'), '#666666': cBox('#666666', 'c_dgrey'), '#000000': cBox('#000000', 'c_black'),
-          '#64b5f6': cBox('#64b5f6', 'c_lblue'), '#2196f3': cBox('#2196f3', 'c_blue'), '#0d47a1': cBox('#0d47a1', 'c_dblue'),
-          '#e57373': cBox('#e57373', 'c_lred'), '#f44336': cBox('#f44336', 'c_red'), '#b71c1c': cBox('#b71c1c', 'c_dred'),
-          '#81c784': cBox('#81c784', 'c_lgreen'), '#4caf50': cBox('#4caf50', 'c_green'), '#1b5e20': cBox('#1b5e20', 'c_dgreen'),
-          '#ffeb3b': cBox('#ffeb3b', 'c_yellow'), '#ff9800': cBox('#ff9800', 'c_orange'), '#9c27b0': cBox('#9c27b0', 'c_purple'),
-          '#00bcd4': cBox('#00bcd4', 'c_cyan'), '#e91e63': cBox('#e91e63', 'c_pink')
+          '#ffffff': cBox('#ffffff', 'c_white'),
+          '#cccccc': cBox('#cccccc', 'c_lgrey'),
+          '#666666': cBox('#666666', 'c_dgrey'),
+          '#000000': cBox('#000000', 'c_black'),
+          '#64b5f6': cBox('#64b5f6', 'c_lblue'),
+          '#2196f3': cBox('#2196f3', 'c_blue'),
+          '#0d47a1': cBox('#0d47a1', 'c_dblue'),
+          '#e57373': cBox('#e57373', 'c_lred'),
+          '#f44336': cBox('#f44336', 'c_red'),
+          '#b71c1c': cBox('#b71c1c', 'c_dred'),
+          '#81c784': cBox('#81c784', 'c_lgreen'),
+          '#4caf50': cBox('#4caf50', 'c_green'),
+          '#1b5e20': cBox('#1b5e20', 'c_dgreen'),
+          '#ffeb3b': cBox('#ffeb3b', 'c_yellow'),
+          '#ff9800': cBox('#ff9800', 'c_orange'),
+          '#9c27b0': cBox('#9c27b0', 'c_purple'),
+          '#00bcd4': cBox('#00bcd4', 'c_cyan'),
+          '#e91e63': cBox('#e91e63', 'c_pink')
         }
       },
-      field: { name: t('zoom_border_color') },
-      onChange: function () { injectCSS(); }
+      field: {
+        name: t('zoom_border_color')
+      },
+      onChange: function () {
+        injectCSS();
+      }
     });
   }
 
   function bootstrap() {
+    if (window.__card_zoom_plugin_loaded) return;
+    window.__card_zoom_plugin_loaded = true;
+
     initSettings();
     injectCSS();
     applyPosterQuality();
-    initHooks();
 
     if (window.Lampa && Lampa.Storage && Lampa.Storage.listener) {
       Lampa.Storage.listener.follow('change', function (e) {
@@ -742,7 +425,7 @@
       });
     }
 
-    console.log('[Card Uiverse + True Obsidian Posters] Ready');
+    console.log('[Card Style Plugin] Uiverse Clean Ready');
   }
 
   if (window.Lampa && Lampa.Listener) {
