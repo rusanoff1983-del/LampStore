@@ -994,10 +994,11 @@
                   '<div class="ott-stars-box"><div class="ott-stars-bg">★★★★★★★★★★</div><div class="ott-stars-fill">★★★★★★★★★★</div></div>' +
                   '<span class="ott-rate-val"></span>' +
                 '</div>' +
-                '<span class="ott-genres"></span><span class="ott-year"></span>' +
+                '<span class="ott-year"></span>' +
                 '<span class="metadata__quality under-quality ott-under-quality" style="display:none"></span>' +
                 '</div>' +
-                '<div class="ott-title"></div>';
+                '<div class="ott-title"></div>' +
+                '<div class="ott-genres-row"><span class="ott-genres"></span></div>';
             view.parentNode.insertBefore(info, view.nextSibling);
         }
         var genresEl = info.querySelector('.ott-genres');
@@ -1289,6 +1290,7 @@
             C + ' .ott-genres { min-width: 0 !important; overflow: hidden !important; white-space: nowrap !important; text-overflow: ellipsis !important; flex: 0 1 auto !important; }',
             C + ' .ott-year { flex: 0 0 auto !important; white-space: pre !important; }',
             C + ' .ott-title { position: static !important; display: -webkit-box !important; -webkit-line-clamp: 2 !important; -webkit-box-orient: vertical !important; height: 2.5em !important; overflow: hidden !important; overflow-wrap: break-word !important; white-space: normal !important; font-size: 0.95em !important; font-weight: 600 !important; line-height: 1.25 !important; margin: 0 !important; }',
+            C + ' .ott-genres-row { font-size: 0.68em !important; color: rgba(255, 255, 255, 0.5) !important; margin-top: 0.1em !important; overflow: hidden !important; white-space: nowrap !important; text-overflow: ellipsis !important; }',
             C + ' .ott-under-rate { margin-right: 0.6em !important; }',
             C + ' .ott-under-quality { margin-left: auto !important; }',
             C + ' .ott-footer { display: none !important; }'
@@ -1475,7 +1477,7 @@
             onChange: refreshStyles
         });
 
-        // Стиль бейджа качества
+        // Стиль бейджа качества с превью в меню
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: {
@@ -1501,7 +1503,22 @@
                 }
             },
             field: { name: 'Стиль бейджа качества' },
-            onChange: refreshStyles
+            onRender: function (item) {
+                var box = $('<span class="cu-badge-preview" style="margin-left:14px;vertical-align:middle;display:inline-block;"></span>');
+                item.find('.settings-param__name').append(box);
+                function renderDemo() {
+                    var st = Lampa.Storage.get('cu_badge_style', 'badge--9');
+                    box.html('<span class="badge ' + st + ' badge--4k" style="display:inline-block;transform:scale(0.85);vertical-align:middle;">4K</span>');
+                }
+                renderDemo();
+            },
+            onChange: function () {
+                refreshStyles();
+                $('.cu-badge-preview').each(function () {
+                    var st = Lampa.Storage.get('cu_badge_style', 'badge--9');
+                    $(this).html('<span class="badge ' + st + ' badge--4k" style="display:inline-block;transform:scale(0.85);vertical-align:middle;">4K</span>');
+                });
+            }
         });
         // 4. Масштаб зума
         Lampa.SettingsApi.addParam({
