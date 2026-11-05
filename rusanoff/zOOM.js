@@ -1502,47 +1502,6 @@
                 }
             },
             field: { name: 'Стиль бейджа качества' },
-            onRender: function (item) {
-                var current = Lampa.Storage.get('cu_badge_style', 'badge--9');
-                var gallery = $('<div class="cu-badge-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:10px;"></div>');
-                var labels = {
-                    'badge--9': '1. Боковая полоса',
-                    'badge--1': '2. Контурная рамка',
-                    'badge--2': '3. Сплошная заливка',
-                    'badge--3': '4. Двойная рамка',
-                    'badge--4': '5. Скошенные края',
-                    'badge--5': '6. Мягкая тонировка',
-                    'badge--6': '7. Пилюля с точкой',
-                    'badge--7': '8. Сплит-бейдж',
-                    'badge--8': '9. Нижнее подчёркивание',
-                    'badge--10': '10. Ретро с тенью',
-                    'badge--11': '11. Терминал',
-                    'badge--12': '12. Штамп',
-                    'badge--13': '13. Октагон',
-                    'badge--14': '14. Лист',
-                    'badge--classic': '15. Классика'
-                };
-                Object.keys(labels).forEach(function (s) {
-                    var btn = $('<div class="cu-badge-btn" style="display:flex;flex-direction:column;align-items:center;border:2px solid ' + (s === current ? '#4caf50' : 'rgba(255,255,255,0.15)') + ';border-radius:6px;padding:8px;background:rgba(0,0,0,0.3);cursor:pointer;transition:all 0.2s;">' +
-                        '<span class="badge ' + s + ' badge--4k" style="display:inline-block;margin-bottom:6px;">4K</span>' +
-                        '<span style="font-size:0.72em;color:#fff;text-align:center;">' + labels[s] + '</span>' +
-                        '</div>');
-                    btn.on('click', function () {
-                        Lampa.Storage.set('cu_badge_style', s);
-                        refreshStyles();
-                        gallery.find('.cu-badge-btn').each(function () {
-                            var st = $(this).find('.badge').attr('class').match(/badge--\w+/);
-                            if (st && st[0] === s) {
-                                $(this).css('border-color', '#4caf50');
-                            } else {
-                                $(this).css('border-color', 'rgba(255,255,255,0.15)');
-                            }
-                        });
-                    });
-                    gallery.append(btn);
-                });
-                item.find('.settings-param__name').after(gallery);
-            }
         });
         // 4. Масштаб зума
         Lampa.SettingsApi.addParam({
