@@ -969,22 +969,19 @@
         card._ottQualityPending = true;
         function alive() { return card._ottToken === token; }
 
-        var ratePos = Lampa.Storage.get('cu_rate_position', 'poster');
-        var qualPos = Lampa.Storage.get('cu_quality_position', 'bottom-right');
-
         // НА ПОСТЕРЕ
         var posterMeta = view.querySelector('.card__poster-meta');
         if (!posterMeta) {
             posterMeta = document.createElement('div');
             posterMeta.className = 'card__poster-meta';
-            posterMeta.innerHTML = '<div class="card__poster-rate" style="display:none">' +
+            posterMeta.innerHTML = '<div class="cu-rating-block poster-rate" style="display:none">' +
                 '<div class="ott-stars-box">' +
                   '<div class="ott-stars-bg">★★★★★★★★★★</div>' +
                   '<div class="ott-stars-fill">★★★★★★★★★★</div>' +
                 '</div>' +
                 '<span class="ott-rate-val"></span>' +
                 '</div>' +
-                '<span class="metadata__quality" style="display:none"></span>';
+                '<span class="metadata__quality poster-quality" style="display:none"></span>';
             view.appendChild(posterMeta);
         }
 
@@ -993,12 +990,12 @@
             info = document.createElement('div');
             info.className = 'ott-info';
             info.innerHTML = '<div class="ott-meta-row">' +
-                '<div class="ott-under-rate" style="display:none">' +
+                '<div class="cu-rating-block under-rate ott-under-rate" style="display:none">' +
                   '<div class="ott-stars-box"><div class="ott-stars-bg">★★★★★★★★★★</div><div class="ott-stars-fill">★★★★★★★★★★</div></div>' +
                   '<span class="ott-rate-val"></span>' +
                 '</div>' +
                 '<span class="ott-genres"></span><span class="ott-year"></span>' +
-                '<span class="metadata__quality ott-under-quality" style="display:none"></span>' +
+                '<span class="metadata__quality under-quality ott-under-quality" style="display:none"></span>' +
                 '</div>' +
                 '<div class="ott-title"></div>';
             view.parentNode.insertBefore(info, view.nextSibling);
@@ -1006,22 +1003,22 @@
         var genresEl = info.querySelector('.ott-genres');
         var yearEl = info.querySelector('.ott-year');
 
-        var posterRateWrap = posterMeta.querySelector('.card__poster-rate');
-        var posterStarsFill = posterMeta.querySelector('.ott-stars-fill');
-        var posterRateEl = posterMeta.querySelector('.ott-rate-val');
-        var posterQualityBadge = posterMeta.querySelector('.metadata__quality');
+        var posterRateWrap = posterMeta.querySelector('.poster-rate');
+        var posterStarsFill = posterMeta.querySelector('.poster-rate .ott-stars-fill');
+        var posterRateEl = posterMeta.querySelector('.poster-rate .ott-rate-val');
+        var posterQualityBadge = posterMeta.querySelector('.poster-quality');
 
-        var underRateWrap = info.querySelector('.ott-under-rate');
-        var underStarsFill = info.querySelector('.ott-stars-fill');
-        var underRateEl = info.querySelector('.ott-rate-val');
-        var underQualityBadge = info.querySelector('.ott-under-quality');
+        var underRateWrap = info.querySelector('.under-rate');
+        var underStarsFill = info.querySelector('.under-rate .ott-stars-fill');
+        var underRateEl = info.querySelector('.under-rate .ott-rate-val');
+        var underQualityBadge = info.querySelector('.under-quality');
 
         function resolveStarColor(val) {
             var mode = Lampa.Storage.get('cu_stars_color', 'auto');
             if (mode === 'auto') {
                 var num = parseFloat(val);
                 if (num >= 7.0) return '#4caf50'; // Зеленый
-                if (num >= 5.0) return '#ffb300'; // Янтарно-желтый
+                if (num >= 5.0) return '#ffb300'; // Янтарный
                 return '#f44336';                 // Красный
             }
             if (mode === 'border') {
@@ -1073,14 +1070,14 @@
             if (pos === 'under') {
                 if (posterQualityBadge) posterQualityBadge.style.display = 'none';
                 if (underQualityBadge) {
-                    underQualityBadge.className = 'metadata__quality ott-under-quality metadata__quality--' + qLower;
+                    underQualityBadge.className = 'metadata__quality under-quality ott-under-quality metadata__quality--' + qLower;
                     underQualityBadge.textContent = qText;
                     underQualityBadge.style.display = 'inline-block';
                 }
             } else {
                 if (underQualityBadge) underQualityBadge.style.display = 'none';
                 if (posterQualityBadge) {
-                    posterQualityBadge.className = 'metadata__quality metadata__quality--' + qLower + ' metadata__quality--' + pos;
+                    posterQualityBadge.className = 'metadata__quality poster-quality metadata__quality--' + qLower + ' metadata__quality--' + pos;
                     posterQualityBadge.textContent = qText;
                     posterQualityBadge.style.display = 'inline-block';
                     if (pos.indexOf('top') !== -1) {
@@ -1154,20 +1151,16 @@
         ];
         
         var borderColor = Lampa.Storage.get('cu_border_color', '#ffffff');
-        var starsColorChoice = Lampa.Storage.get('cu_stars_color', 'auto');
         var scale = Lampa.Storage.get('cu_scale', '1.15');
         var duration = Lampa.Storage.get('cu_duration', '0.3s');
         var radius = Lampa.Storage.get('cu_radius', '0.6em');
         var removeBorder = Lampa.Storage.get('cu_remove_border', false);
         var focusBorder = removeBorder ? '' : (', 0 0 0 2.5px ' + borderColor);
 
-        var ratePosition = Lampa.Storage.get('cu_rate_position', 'poster');
-        var qualityPosition = Lampa.Storage.get('cu_quality_position', 'bottom-right');
-
         document.documentElement.style.setProperty('--cu-border-color', borderColor);
 
         var extraCss = [
-            '/* Скрытие штатных плашек Lampa */',
+            '/* Скрытие системных плашек Lampa */',
             C + ' > .card__title,' + C + ' .card__quality,' + C + ' .card__age,' + C + ' .card__type,' + C + ' .card__vote{display:none!important}',
             '/* Uiverse Zoom и скругление постера */',
             '.card__view, .poster__view {',
@@ -1195,16 +1188,18 @@
             '.card__poster-meta {',
             '  position: absolute !important; bottom: 0 !important; left: 0 !important; right: 0 !important;',
             '  display: flex !important; align-items: center !important; justify-content: space-between !important;',
-            '  padding: 1.5em 0.5em 0.35em !important;',
+            '  padding: 1.6em 0.55em 0.4em !important;',
             '  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%) !important;',
             '  pointer-events: none !important; z-index: 5 !important;',
             '}',
-            '.card__poster-rate { display: inline-flex !important; align-items: center !important; line-height: 1 !important; }',
-            '/* Звёзды Universe */',
+            '/* ЕДИНЫЙ БЛОК РЕЙТИНГА (Звёзды + Цифры) */',
+            '.cu-rating-block {',
+            '  display: inline-flex !important; align-items: center !important; line-height: 1 !important;',
+            '}',
             '.ott-stars-box {',
-            '  position: relative !important; display: inline-block !important; font-size: 0.95em !important;',
+            '  position: relative !important; display: inline-block !important; font-size: 0.92em !important;',
             '  line-height: 1 !important; letter-spacing: 0.04em !important; vertical-align: middle !important;',
-            '  margin-right: 0.35em !important; white-space: nowrap !important;',
+            '  margin-right: 0.4em !important; white-space: nowrap !important;',
             '}',
             '.ott-stars-bg { color: rgba(255, 255, 255, 0.25) !important; }',
             '.ott-stars-fill {',
@@ -1212,24 +1207,28 @@
             '  overflow: hidden !important; white-space: nowrap !important;',
             '  text-shadow: 0 0 5px currentColor;',
             '}',
-            '/* Цифры рейтинга как в профессиональных плагинах */',
+            '/* Цифра рейтинга: чёткий, жирный, контрастный бейдж */',
             '.ott-rate-val {',
+            '  display: inline-block !important;',
             '  font-family: inherit !important; font-size: 0.85em !important; font-weight: 800 !important;',
-            '  color: #ffffff !important; line-height: 1 !important; letter-spacing: 0.02em !important;',
+            '  color: #ffffff !important; line-height: 1 !important;',
+            '  padding: 0.15em 0.35em !important; border-radius: 0.25em !important;',
+            '  background: rgba(0, 0, 0, 0.6) !important;',
+            '  border: 1px solid rgba(255, 255, 255, 0.2) !important;',
             '  font-variant-numeric: lining-nums tabular-nums !important;',
-            '  text-shadow: 0 1px 3px rgba(0,0,0,0.9) !important;',
+            '  text-shadow: 0 1px 2px rgba(0,0,0,0.9) !important;',
             '}',
-            '/* Позиционирование качества на постере */',
+            '/* Бейджи качества видео (Alloha / торренты) */',
             '.metadata__quality {',
-            '  display: inline-block !important; padding: 0.14em 0.38em !important; font-size: 0.72em !important;',
+            '  display: inline-block !important; padding: 0.14em 0.4em !important; font-size: 0.72em !important;',
             '  font-weight: 800 !important; letter-spacing: 0.04em !important; line-height: 1.2 !important;',
             '  border-radius: 0.25em !important; text-transform: uppercase !important;',
-            '  background: rgba(0, 0, 0, 0.65) !important; border: 1px solid rgba(255, 255, 255, 0.25) !important;',
+            '  background: rgba(0, 0, 0, 0.7) !important; border: 1px solid rgba(255, 255, 255, 0.25) !important;',
             '  pointer-events: none !important; z-index: 6 !important;',
             '}',
             '.metadata__quality--top-right { position: absolute !important; top: 0.5em !important; right: 0.5em !important; }',
             '.metadata__quality--top-left { position: absolute !important; top: 0.5em !important; left: 0.5em !important; }',
-            '.metadata__quality--bottom-left { position: absolute !important; bottom: 0.4em !important; left: 0.5em !important; }',
+            '.metadata__quality--bottom-left { position: absolute !important; bottom: 0.45em !important; left: 0.55em !important; }',
             '.metadata__quality--bottom-right { position: static !important; }',
             '.metadata__quality--4k { color: #66bb6a !important; border-color: rgba(102, 187, 106, 0.6) !important; }',
             '.metadata__quality--hd { color: #42a5f5 !important; border-color: rgba(66, 165, 245, 0.6) !important; }',
@@ -1240,7 +1239,7 @@
             C + ' .ott-genres { min-width: 0 !important; overflow: hidden !important; white-space: nowrap !important; text-overflow: ellipsis !important; flex: 0 1 auto !important; }',
             C + ' .ott-year { flex: 0 0 auto !important; white-space: pre !important; }',
             C + ' .ott-title { position: static !important; display: -webkit-box !important; -webkit-line-clamp: 2 !important; -webkit-box-orient: vertical !important; height: 2.5em !important; overflow: hidden !important; overflow-wrap: break-word !important; white-space: normal !important; font-size: 0.95em !important; font-weight: 600 !important; line-height: 1.25 !important; margin: 0 !important; }',
-            C + ' .ott-under-rate { display: inline-flex !important; align-items: center !important; margin-right: 0.6em !important; }',
+            C + ' .ott-under-rate { margin-right: 0.6em !important; }',
             C + ' .ott-under-quality { margin-left: auto !important; }',
             C + ' .ott-footer { display: none !important; }'
         ];
@@ -1351,61 +1350,21 @@
 
     function registerCardUniverseSettings() {
         if (!window.Lampa || !Lampa.SettingsApi || !Lampa.SettingsApi.addComponent) return;
-        
+
+        if (Lampa.Template && Lampa.Template.add) {
+            Lampa.Template.add('settings_card_universe', '<div></div>');
+        }
+
         var all = Lampa.SettingsApi.allComponents ? Lampa.SettingsApi.allComponents() : {};
         if (all['card_universe']) return;
 
-        var lang = Lampa.Storage.get('language', 'ru');
-
-        var i18n = {
-            'ru': {
-                'title': 'Card Universe',
-                'sec_cards': 'Оформление карточек',
-                'scale': 'Масштаб увеличения (зум)',
-                'duration': 'Скорость анимации',
-                'radius': 'Закругление углов',
-                'border_color': 'Цвет обводки карточки',
-                'remove_border': 'Выключить обводку',
-                'sec_rating': 'Рейтинг и Звёзды',
-                'rate_pos': 'Позиция рейтинга',
-                'pos_poster': 'На постере (внизу)',
-                'pos_under': 'Под постером',
-                'pos_none': 'Отключено',
-                'stars_color': 'Цвет звёзд',
-                'sc_auto': 'Автоматически (по рейтингу)',
-                'sc_border': 'Как у обводки карточки',
-                'sec_quality': 'Качество видео',
-                'quality_pos': 'Позиция качества видео',
-                'qp_bright': 'Внизу справа (на постере)',
-                'qp_tright': 'Вверху справа (на постере)',
-                'qp_tleft': 'Вверху слева (на постере)',
-                'qp_bleft': 'Внизу слева (на постере)',
-                'qp_under': 'Под постером (в строке мета)',
-                'sec_tmdb': 'Постеры TMDB',
-                'poster_quality': 'Разрешение постеров TMDB',
-                'q_def': 'Штатное Lampa',
-                'q_w500': 'Высокое (w500)',
-                'q_w780': 'Full HD (w780)',
-                'q_orig': 'Оригинал 4K (Ultra)'
-            }
-        };
-
-        function t(key) {
-            var d = i18n[lang] || i18n['ru'];
-            return d[key] || key;
-        }
-
-        function cBox(hex, name) {
-            return '<span style="display:inline-block;width:18px;height:18px;background:' + hex + ';border-radius:4px;margin-right:10px;vertical-align:middle;box-shadow:0 0 4px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.2);"></span>' + name;
-        }
-
         Lampa.SettingsApi.addComponent({
             component: 'card_universe',
-            name: t('title'),
+            name: 'Card Universe',
             icon: '<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polygon points="12 7 13.5 10.5 17 11 14.5 13.5 15 17 12 15.5 9 17 9.5 13.5 7 11 10.5 10.5 12 7"/></svg>'
         });
 
-        // 1. Позиция рейтинга
+        // 1. Позиция рейтинга (Звёзды + Цифры)
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: {
@@ -1413,12 +1372,12 @@
                 type: 'select',
                 default: 'poster',
                 values: {
-                    'poster': t('pos_poster'),
-                    'under': t('pos_under'),
-                    'none': t('pos_none')
+                    'poster': 'На постере (внизу)',
+                    'under': 'Под постером (в строке)',
+                    'none': 'Отключено'
                 }
             },
-            field: { name: t('rate_pos') },
+            field: { name: 'Позиция рейтинга' },
             onChange: refreshStyles
         });
 
@@ -1430,20 +1389,19 @@
                 type: 'select',
                 default: 'auto',
                 values: {
-                    'auto': t('sc_auto'),
-                    'border': t('sc_border'),
-                    '#ffc107': cBox('#ffc107', 'Золотой'),
-                    '#ffffff': cBox('#ffffff', 'Белый'),
-                    '#4caf50': cBox('#4caf50', 'Изумрудный'),
-                    '#2196f3': cBox('#2196f3', 'Неоновый синий'),
-                    '#f44336': cBox('#f44336', 'Алый'),
-                    '#e91e63': cBox('#e91e63', 'Малиновый'),
-                    '#9c27b0': cBox('#9c27b0', 'Фиолетовый'),
-                    '#ff9800': cBox('#ff9800', 'Оранжевый'),
-                    '#00bcd4': cBox('#00bcd4', 'Бирюзовый')
+                    'auto': 'Автоматически (по рейтингу)',
+                    'border': 'Как у обводки карточки',
+                    '#ffc107': 'Золотой',
+                    '#ffffff': 'Белый',
+                    '#4caf50': 'Изумрудный',
+                    '#2196f3': 'Неоновый синий',
+                    '#f44336': 'Алый',
+                    '#e91e63': 'Малиновый',
+                    '#ff9800': 'Оранжевый',
+                    '#00bcd4': 'Бирюзовый'
                 }
             },
-            field: { name: t('stars_color') },
+            field: { name: 'Цвет звёзд' },
             onChange: refreshStyles
         });
 
@@ -1455,15 +1413,15 @@
                 type: 'select',
                 default: 'bottom-right',
                 values: {
-                    'bottom-right': t('qp_bright'),
-                    'top-right': t('qp_tright'),
-                    'top-left': t('qp_tleft'),
-                    'bottom-left': t('qp_bleft'),
-                    'under': t('qp_under'),
-                    'none': t('pos_none')
+                    'bottom-right': 'Внизу справа (на постере)',
+                    'top-right': 'Вверху справа (на постере)',
+                    'top-left': 'Вверху слева (на постере)',
+                    'bottom-left': 'Внизу слева (на постере)',
+                    'under': 'Под постером (в строке)',
+                    'none': 'Отключено'
                 }
             },
-            field: { name: t('quality_pos') },
+            field: { name: 'Позиция качества видео' },
             onChange: refreshStyles
         });
 
@@ -1485,7 +1443,7 @@
                     '1.25': 'Максимальное (1.25x)'
                 }
             },
-            field: { name: t('scale') },
+            field: { name: 'Масштаб увеличения (зум)' },
             onChange: refreshStyles
         });
 
@@ -1505,7 +1463,7 @@
                     '0.8s': 'Кинематографично (0.8s)'
                 }
             },
-            field: { name: t('duration') },
+            field: { name: 'Скорость анимации' },
             onChange: refreshStyles
         });
 
@@ -1518,18 +1476,18 @@
                 default: '0.6em',
                 values: {
                     '0': 'Прямые углы (0)',
-                    '0.3em': 'Малое скругление (0.3em)',
+                    '0.3em': 'Малое (0.3em)',
                     '0.6em': 'Среднее (0.6em)',
                     '0.9em': 'Выраженное (0.9em)',
                     '1.3em': 'Сильное (1.3em)',
                     '1.8em': 'Максимально круглое (1.8em)'
                 }
             },
-            field: { name: t('radius') },
+            field: { name: 'Закругление углов' },
             onChange: refreshStyles
         });
 
-        // 7. Цвет обводки карточки (палитра с чистыми именами без кодов)
+        // 7. Цвет обводки карточки — БОГАТАЯ ПАЛИТРА С ЧИСТЫМИ НАЗВАНИЯМИ
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: {
@@ -1537,23 +1495,28 @@
                 type: 'select',
                 default: '#ffffff',
                 values: {
-                    '#ffffff': cBox('#ffffff', 'Белоснежный'),
-                    '#e0e0e0': cBox('#e0e0e0', 'Серебристый'),
-                    '#9e9e9e': cBox('#9e9e9e', 'Графитовый'),
-                    '#2196f3': cBox('#2196f3', 'Неоновый синий'),
-                    '#64b5f6': cBox('#64b5f6', 'Лазурный'),
-                    '#00bcd4': cBox('#00bcd4', 'Бирюзовый'),
-                    '#4caf50': cBox('#4caf50', 'Изумрудный'),
-                    '#81c784': cBox('#81c784', 'Свежий салатовый'),
-                    '#ffeb3b': cBox('#ffeb3b', 'Солнечный жёлтый'),
-                    '#ffc107': cBox('#ffc107', 'Золотистый янтарный'),
-                    '#ff9800': cBox('#ff9800', 'Мандариновый'),
-                    '#f44336': cBox('#f44336', 'Насыщенный алый'),
-                    '#e91e63': cBox('#e91e63', 'Малиновый закат'),
-                    '#9c27b0': cBox('#9c27b0', 'Королевский пурпур')
+                    '#ffffff': 'Белоснежный',
+                    '#e0e0e0': 'Светло-серый',
+                    '#9e9e9e': 'Графитовый',
+                    '#000000': 'Глубокий чёрный',
+                    '#2196f3': 'Неоновый синий',
+                    '#64b5f6': 'Лазурный',
+                    '#00bcd4': 'Бирюзовый',
+                    '#009688': 'Морская волна',
+                    '#4caf50': 'Изумрудный',
+                    '#81c784': 'Свежий салатовый',
+                    '#cddc39': 'Лаймовый',
+                    '#ffeb3b': 'Солнечный жёлтый',
+                    '#ffc107': 'Золотистый янтарный',
+                    '#ff9800': 'Оранжевый',
+                    '#ff5722': 'Коралловый',
+                    '#f44336': 'Насыщенный алый',
+                    '#e91e63': 'Малиновый закат',
+                    '#9c27b0': 'Королевский пурпур',
+                    '#673ab7': 'Глубокий фиолетовый'
                 }
             },
-            field: { name: t('border_color') },
+            field: { name: 'Цвет обводки карточки' },
             onChange: refreshStyles
         });
 
@@ -1565,7 +1528,7 @@
                 type: 'trigger',
                 default: false
             },
-            field: { name: t('remove_border') },
+            field: { name: 'Выключить обводку' },
             onChange: refreshStyles
         });
 
@@ -1577,37 +1540,20 @@
                 type: 'select',
                 default: 'default',
                 values: {
-                    'default': t('q_def'),
-                    'w500': t('q_w500'),
-                    'w780': t('q_w780'),
-                    'original': t('q_orig')
+                    'default': 'Штатное Lampa',
+                    'w500': 'Высокое (w500)',
+                    'w780': 'Full HD (w780)',
+                    'original': 'Оригинал 4K (Ultra)'
                 }
             },
-            field: { name: t('poster_quality') },
+            field: { name: 'Разрешение постеров TMDB' },
             onChange: applyPosterQuality
         });
     }
 
-
-    // Гарантируем присутствие пункта в меню настроек всегда
     function ensureSettingsItem() {
         registerCardUniverseSettings();
     }
-
-    if (window.Lampa) {
-        if (Lampa.Settings && Lampa.Settings.listener) {
-            Lampa.Settings.listener.follow('open', ensureSettingsItem);
-        }
-        if (Lampa.Listener) {
-            Lampa.Listener.follow('activity', function (e) {
-                if (e && (e.type === 'start' || e.type === 'open')) ensureSettingsItem();
-            });
-            Lampa.Listener.follow('app', function (e) {
-                if (e && e.type === 'ready') ensureSettingsItem();
-            });
-        }
-    }
-    setInterval(ensureSettingsItem, 1500);
 
     var initialized = false;
     function init() {
@@ -1649,17 +1595,29 @@
         window.addEventListener('beforeunload', flushAllCaches);
         document.addEventListener('visibilitychange', function () { if (document.hidden) flushAllCaches(); });
         scheduleScan();
+        if (window.Lampa) {
+            if (Lampa.Settings && Lampa.Settings.listener) {
+                Lampa.Settings.listener.follow('open', ensureSettingsItem);
+            }
+            if (Lampa.Listener) {
+                Lampa.Listener.follow('activity', function (e) {
+                    if (e && (e.type === 'start' || e.type === 'open')) ensureSettingsItem();
+                });
+            }
+        }
+        setInterval(ensureSettingsItem, 1500);
+
     }
 
     if (window.Lampa) {
-        if (window.appready) { init(); registerCardUniverseSettings(); }
+        if (window.appready) { init(); ensureSettingsItem(); }
         else Lampa.Listener.follow('app', function (e) { if (e.type === 'ready') init(); });
     } else {
         var bootTries = 0;
         var bootTimer = setInterval(function () {
             if (window.Lampa && Lampa.Listener) {
                 clearInterval(bootTimer);
-                if (window.appready) { init(); registerCardUniverseSettings(); }
+                if (window.appready) { init(); ensureSettingsItem(); }
                 else Lampa.Listener.follow('app', function (e) { if (e.type === 'ready') init(); });
             } else if (++bootTries >= 120) clearInterval(bootTimer);
         }, 500);
