@@ -1064,21 +1064,23 @@
                 if (underQualityBadge) underQualityBadge.style.display = 'none';
                 return;
             }
-            var bStyle = Lampa.Storage.get('cu_badge_style', 'modern_bar') === 'classic' ? 'badge--classic' : 'badge--modern';
+            var bStyle = Lampa.Storage.get('cu_badge_style', 'badge--9');
             var qLower = String(q).toLowerCase();
             var qText = String(q).toUpperCase();
+
+            var fullClass = 'metadata__quality badge ' + bStyle + ' badge--' + qLower + ' metadata__quality--' + qLower;
 
             if (pos === 'under') {
                 if (posterQualityBadge) posterQualityBadge.style.display = 'none';
                 if (underQualityBadge) {
-                    underQualityBadge.className = 'metadata__quality under-quality ott-under-quality ' + bStyle + ' metadata__quality--' + qLower;
+                    underQualityBadge.className = fullClass + ' under-quality ott-under-quality';
                     underQualityBadge.textContent = qText;
                     underQualityBadge.style.display = 'inline-block';
                 }
             } else {
                 if (underQualityBadge) underQualityBadge.style.display = 'none';
                 if (posterQualityBadge) {
-                    posterQualityBadge.className = 'metadata__quality poster-quality ' + bStyle + ' metadata__quality--' + qLower + ' metadata__quality--' + pos;
+                    posterQualityBadge.className = fullClass + ' poster-quality metadata__quality--' + pos;
                     posterQualityBadge.textContent = qText;
                     posterQualityBadge.style.display = 'inline-block';
                     if (pos.indexOf('top') !== -1) {
@@ -1226,31 +1228,62 @@
             '.metadata__quality--bottom-left { position: absolute !important; bottom: 0.45em !important; left: 0.55em !important; }',
             '.metadata__quality--bottom-right { position: static !important; }',
             '/* СТИЛЬ 1: Новый (боковая акцентная полоса слева + легкая тонировка) */',
-            '.metadata__quality.badge--modern {',
-            '  --c: #7F77DD; display: inline-block !important; padding: 0.22em 0.55em 0.22em 0.42em !important;',
-            '  font: 700 0.75em/1 system-ui, -apple-system, "Segoe UI", sans-serif !important; letter-spacing: .06em !important;',
-            '  text-transform: uppercase !important; white-space: nowrap !important; color: var(--c) !important;',
-            '  background: rgba(0, 0, 0, 0.75) !important; border: none !important; border-left: 3.5px solid var(--c) !important;',
-            '  border-radius: 0 !important; box-shadow: 0 1px 4px rgba(0,0,0,0.6) !important;',
+            '.metadata__quality            '/* Бейджи качества: позиционирование */',
+            '.metadata__quality { pointer-events: none !important; z-index: 6 !important; }',
+            '.metadata__quality--top-right { position: absolute !important; top: 0.5em !important; right: 0.5em !important; }',
+            '.metadata__quality--top-left { position: absolute !important; top: 0.5em !important; left: 0.5em !important; }',
+            '.metadata__quality--bottom-left { position: absolute !important; bottom: 0.45em !important; left: 0.55em !important; }',
+            '.metadata__quality--bottom-right { position: static !important; }',
+            '/* Базовые параметры бейджа */',
+            '.badge {',
+            '  --c: #4caf50; --d: #2e7d32;',
+            '  display: inline-block !important;',
+            '  padding: 0.22em 0.55em !important;',
+            '  font: 700 0.72em/1 system-ui, -apple-system, \"Segoe UI\", sans-serif !important;',
+            '  letter-spacing: .05em !important; text-transform: uppercase !important; white-space: nowrap !important;',
+            '  box-sizing: border-box !important;',
             '}',
-            '.metadata__quality.badge--modern.metadata__quality--4k { --c: #7F77DD; background: rgba(127, 119, 221, .2) !important; }',
-            '.metadata__quality.badge--modern.metadata__quality--ts { --c: #888780; background: rgba(136, 135, 128, .2) !important; }',
-            '.metadata__quality.badge--modern.metadata__quality--hd, .metadata__quality.badge--modern.metadata__quality--fhd { --c: #378ADD; background: rgba(55, 138, 221, .2) !important; }',
-            '.metadata__quality.badge--modern.metadata__quality--webdl { --c: #1D9E75; background: rgba(29, 158, 117, .2) !important; }',
-            '.metadata__quality.badge--modern.metadata__quality--bdremux { --c: #D85A30; background: rgba(216, 90, 48, .2) !important; }',
-            '/* СТИЛЬ 2: Классический (в рамке со скруглением) */',
-            '.metadata__quality.badge--classic {',
-            '  display: inline-block !important; padding: 0.14em 0.4em !important; font-size: 0.72em !important;',
-            '  font-weight: 800 !important; letter-spacing: 0.04em !important; line-height: 1.2 !important;',
-            '  border-radius: 0.25em !important; text-transform: uppercase !important;',
-            '  background: rgba(0, 0, 0, 0.7) !important; border: 1px solid rgba(255, 255, 255, 0.25) !important;',
-            '}',
-            '.metadata__quality.badge--classic.metadata__quality--4k { color: #66bb6a !important; border-color: rgba(102, 187, 106, 0.6) !important; }',
-            '.metadata__quality.badge--classic.metadata__quality--hd, .metadata__quality.badge--classic.metadata__quality--fhd { color: #42a5f5 !important; border-color: rgba(66, 165, 245, 0.6) !important; }',
-            '.metadata__quality.badge--classic.metadata__quality--ts { color: #ef5350 !important; border-color: rgba(239, 83, 80, 0.6) !important; }',
-            '.metadata__quality.badge--classic.metadata__quality--webdl { color: #1D9E75 !important; border-color: rgba(29, 158, 117, 0.6) !important; }',
-            '.metadata__quality.badge--classic.metadata__quality--bdremux { color: #D85A30 !important; border-color: rgba(216, 90, 48, 0.6) !important; }',
-            '/* ПОД ПОСТЕРОМ: только Название и Жанры с годом */',
+            '/* ЦВЕТОВАЯ КЛАССИКА (всегда одинаковые цвета для всех стилей) */',
+            '.badge--4k { --c: #4caf50; --d: #2e7d32; color: #4caf50 !important; }',
+            '.badge--hd, .badge--fhd { --c: #2196f3; --d: #1565c0; color: #2196f3 !important; }',
+            '.badge--ts { --c: #f44336; --d: #c62828; color: #f44336 !important; }',
+            '.badge--webdl { --c: #00bcd4; --d: #00838f; color: #00bcd4 !important; }',
+            '.badge--bdremux { --c: #ff9800; --d: #e65100; color: #ff9800 !important; }',
+            '/* 1. Контур */',
+            '.badge--1 { color: var(--c) !important; border: 1.5px solid var(--c) !important; border-radius: 4px !important; background: rgba(0,0,0,0.6) !important; }',
+            '/* 2. Сплошная заливка */',
+            '.badge--2 { color: #fff !important; background: var(--d) !important; border-radius: 4px !important; text-shadow: 0 1px 2px rgba(0,0,0,0.6) !important; }',
+            '/* 3. Двойная рамка */',
+            '.badge--3 { color: var(--c) !important; border: 1.5px solid var(--c) !important; outline: 1px solid var(--c) !important; outline-offset: 1.5px !important; margin: 2px !important; border-radius: 2px !important; background: rgba(0,0,0,0.6) !important; }',
+            '/* 4. Скошенные края (трапеция) */',
+            '.badge--4 { color: #fff !important; background: var(--d) !important; padding: 0.25em 0.75em !important; clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%) !important; text-shadow: 0 1px 2px rgba(0,0,0,0.6) !important; }',
+            '/* 5. Мягкая тонировка */',
+            '.badge--5 { color: var(--c) !important; background: rgba(0,0,0,0.5) !important; box-shadow: inset 0 0 0 100px rgba(255,255,255,0.08) !important; border-radius: 5px !important; }',
+            '/* 6. Пилюля с точкой */',
+            '.badge--6 { color: var(--c) !important; border: 1.5px solid var(--c) !important; border-radius: 99px !important; padding: 0.2em 0.6em 0.2em 0.45em !important; background: rgba(0,0,0,0.6) !important; }',
+            '.badge--6::before { content: \"\"; display: inline-block !important; width: 6px !important; height: 6px !important; margin-right: 5px !important; border-radius: 50% !important; background: var(--c) !important; vertical-align: 1px !important; }',
+            '/* 7. Сплит с меткой */',
+            '.badge--7 { display: inline-flex !important; padding: 0 !important; overflow: hidden !important; color: #fff !important; background: var(--d) !important; border-radius: 4px !important; text-shadow: 0 1px 2px rgba(0,0,0,0.6) !important; }',
+            '.badge--7::before { content: \"REL\"; padding: 0.22em 0.45em !important; font-size: 0.85em !important; color: #e0e0e0 !important; background: rgba(0,0,0,0.6) !important; }',
+            '.badge--7 > span, .badge--7 { padding-right: 0.5em !important; }',
+            '/* 8. Подчёркивание */',
+            '.badge--8 { color: var(--c) !important; border-bottom: 2.5px solid var(--c) !important; padding: 0.2em 0.2em 0.15em !important; border-radius: 0 !important; background: rgba(0,0,0,0.6) !important; }',
+            '/* 9. Боковая полоса */',
+            '.badge--9 { color: var(--c) !important; background: rgba(0,0,0,0.7) !important; border-left: 3.5px solid var(--c) !important; border-radius: 0 !important; padding: 0.22em 0.55em 0.22em 0.42em !important; box-shadow: 0 1px 4px rgba(0,0,0,0.6) !important; }',
+            '/* 10. Жёсткая тень */',
+            '.badge--10 { color: #fff !important; background: var(--d) !important; border-radius: 3px !important; margin: 0 3px 3px 0 !important; box-shadow: 2.5px 2.5px 0 var(--c) !important; text-shadow: 0 1px 2px rgba(0,0,0,0.6) !important; }',
+            '/* 11. Терминал */',
+            '.badge--11 { font-family: ui-monospace, Menlo, Consolas, monospace !important; color: var(--c) !important; text-transform: none !important; letter-spacing: 0 !important; padding: 0.2em 0.2em !important; background: rgba(0,0,0,0.6) !important; border-radius: 3px !important; }',
+            '.badge--11::before { content: \"[\"; margin-right: 2px !important; opacity: 0.7 !important; }',
+            '.badge--11::after { content: \"]\"; margin-left: 2px !important; opacity: 0.7 !important; }',
+            '/* 12. Штамп с наклоном */',
+            '.badge--12 { color: var(--c) !important; border: 1.5px dashed var(--c) !important; border-radius: 4px !important; transform: rotate(-3deg) !important; background: rgba(0,0,0,0.6) !important; }',
+            '/* 13. Срезанные углы (октагон) */',
+            '.badge--13 { color: #fff !important; background: var(--d) !important; padding: 0.25em 0.8em !important; clip-path: polygon(5px 0, calc(100% - 5px) 0, 100% 5px, 100% calc(100% - 5px), calc(100% - 5px) 100%, 5px 100%, 0 calc(100% - 5px), 0 5px) !important; text-shadow: 0 1px 2px rgba(0,0,0,0.6) !important; }',
+            '/* 14. Лист со скруглением по диагонали */',
+            '.badge--14 { color: #fff !important; background: var(--d) !important; border-radius: 10px 0 10px 0 !important; padding: 0.22em 0.6em !important; text-shadow: 0 1px 2px rgba(0,0,0,0.6) !important; }',
+            '/* Классический Lampa */',
+            '.badge--classic { color: var(--c) !important; border: 1px solid var(--c) !important; border-radius: 0.25em !important; background: rgba(0,0,0,0.7) !important; padding: 0.14em 0.4em !important; font-weight: 800 !important; }',/* ПОД ПОСТЕРОМ: только Название и Жанры с годом */',
             C + ' .ott-info { position: static !important; box-sizing: border-box !important; width: 100% !important; padding: 0.4em 0.15em 0 !important; color: #ffffff !important; text-align: left !important; pointer-events: none !important; }',
             C + ' .ott-meta-row { display: flex !important; align-items: center !important; min-height: 1.25em !important; margin: 0 0 0.15em !important; font-size: 0.75em !important; line-height: 1.25 !important; color: rgba(255, 255, 255, 0.6) !important; }',
             C + ' .ott-genres { min-width: 0 !important; overflow: hidden !important; white-space: nowrap !important; text-overflow: ellipsis !important; flex: 0 1 auto !important; }',
@@ -1442,22 +1475,52 @@
             onChange: refreshStyles
         });
 
-        // Стиль бейджа качества
+        // Стиль бейджа качества с живым превью в меню
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: {
                 name: 'cu_badge_style',
                 type: 'select',
-                default: 'modern_bar',
+                default: 'badge--9',
                 values: {
-                    'modern_bar': 'С боковой полосой (новый)',
-                    'classic': 'В рамке со скруглением (классический)'
+                    'badge--9': '1. Боковая полоса (по умолчанию)',
+                    'badge--1': '2. Контурная рамка',
+                    'badge--2': '3. Сплошная заливка',
+                    'badge--3': '4. Двойная рамка',
+                    'badge--4': '5. Скошенные края (трапеция)',
+                    'badge--5': '6. Мягкая тонировка',
+                    'badge--6': '7. Пилюля с точкой',
+                    'badge--7': '8. Сплит-бейдж',
+                    'badge--8': '9. Нижнее подчёркивание',
+                    'badge--10': '10. Ретро с жёсткой тенью',
+                    'badge--11': '11. Терминал [ 4K ]',
+                    'badge--12': '12. Штамп с наклоном',
+                    'badge--13': '13. Срезанные углы (октагон)',
+                    'badge--14': '14. Асимметричный лист',
+                    'badge--classic': '15. Классический в рамке'
                 }
             },
             field: { name: 'Стиль бейджа качества' },
-            onChange: refreshStyles
+            onRender: function (item) {
+                var previewBox = $('<span class="cu-badge-preview" style="margin-left:14px;vertical-align:middle;display:inline-block;"></span>');
+                item.find('.settings-param__name').append(previewBox);
+                function renderDemo() {
+                    var st = Lampa.Storage.get('cu_badge_style', 'badge--9');
+                    previewBox.html('<span class="badge ' + st + ' badge--4k" style="display:inline-block;transform:scale(0.85);vertical-align:middle;">4K</span>');
+                }
+                renderDemo();
+                item.on('hover:focus click', function () {
+                    setTimeout(renderDemo, 250);
+                });
+            },
+            onChange: function () {
+                refreshStyles();
+                $('.cu-badge-preview').each(function () {
+                    var st = Lampa.Storage.get('cu_badge_style', 'badge--9');
+                    $(this).html('<span class="badge ' + st + ' badge--4k" style="display:inline-block;transform:scale(0.85);vertical-align:middle;">4K</span>');
+                });
+            }
         });
-
         // 4. Масштаб зума
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
