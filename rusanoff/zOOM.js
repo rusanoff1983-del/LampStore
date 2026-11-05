@@ -1391,53 +1391,83 @@
         }
     }
 
-    function renderBadgeSelector(item) {
-        var st = Lampa.Storage.get('cu_badge_style', 'badge--9');
-        var labels = {
-            'badge--9': '1. Боковая полоса',
-            'badge--1': '2. Контурная рамка',
-            'badge--2': '3. Сплошная заливка',
-            'badge--3': '4. Двойная рамка',
-            'badge--4': '5. Скошенные края',
-            'badge--5': '6. Мягкая тонировка',
-            'badge--6': '7. Пилюля с точкой',
-            'badge--7': '8. Сплит-бейдж',
-            'badge--8': '9. Нижнее подчёркивание',
-            'badge--10': '10. Ретро с тенью',
-            'badge--11': '11. Терминал',
-            'badge--12': '12. Штамп',
-            'badge--13': '13. Октагон',
-            'badge--14': '14. Лист',
-            'badge--classic': '15. Классика'
-        };
-        var container = $('<div class="cu-badge-selector" style="display:flex;flex-direction:column;gap:8px;"></div>');
-        var current = $('<div style="display:flex;align-items:center;gap:10px;"><span class="badge ' + st + ' badge--4k" style="font-size:18px;padding:10px 14px;">4K</span><span style="color:#fff;font-size:15px;font-weight:600;">Сейчас: ' + (labels[st] || st) + '</span></div>');
-        container.append(current);
-        var grid = $('<div style="display:flex;flex-wrap:wrap;gap:8px;"></div>');
-        Object.keys(labels).forEach(function (s) {
-            var isSelected = (s === st);
-            var option = $('<div class="cu-badge-option" style="display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:6px;border:2px solid ' + (isSelected ? '#4caf50' : 'rgba(255,255,255,0.15)') + ';cursor:pointer;background:' + (isSelected ? 'rgba(76,175,80,0.15)' : 'transparent') + ';">' +
-                '<span class="badge ' + s + ' badge--4k" style="font-size:14px;padding:6px 10px;">4K</span>' +
-                '<span style="color:#fff;font-size:12px;white-space:nowrap;">' + labels[s] + '</span>' +
-                '</div>');
-            option.on('click', function (e) {
-                e.stopPropagation();
-                Lampa.Storage.set('cu_badge_style', s);
-                refreshStyles();
+    function decorateBadgeSelectbox(event) {
+        var active = event && event.active ? event.active : null;
+        var html = event && event.html ? event.html : $('.selectbox');
+        if (!html || !html.length) return;
+
+        var isBadge = false;
+        var itemsData = null;
+        if (active && active.items && active.items.length) {
+            isBadge = active.items.some(function (it) {
+                return it && it.value && typeof it.value === 'string' && it.value.indexOf('badge--') === 0;
             });
-            grid.append(option);
+            if (isBadge) itemsData = active.items;
+        }
+
+        if (!isBadge) {
+            var firstText = html.find('.selectbox-item__title').first().text();
+            if (firstText && (firstText.indexOf('Боковая полоса') !== -1 || firstText.indexOf('Контурная рамка') !== -1 || firstText.indexOf('Нижнее подчёркивание') !== -1)) {
+                isBadge = true;
+            }
+        }
+        if (!isBadge) return;
+
+        var badgeMap = {
+            '1.': 'badge--9',
+            '2.': 'badge--1',
+            '3.': 'badge--2',
+            '4.': 'badge--3',
+            '5.': 'badge--4',
+            '6.': 'badge--5',
+            '7.': 'badge--6',
+            '8.': 'badge--7',
+            '9.': 'badge--8',
+            '10.': 'badge--10',
+            '11.': 'badge--11',
+            '12.': 'badge--12',
+            '13.': 'badge--13',
+            '14.': 'badge--14',
+            '15.': 'badge--classic'
+        };
+
+        html.find('.selectbox-item').each(function (idx) {
+            var $title = $(this).find('.selectbox-item__title');
+            if (!$title.length) $title = $(this);
+            if ($title.find('.cu-select-badge-preview').length) return;
+
+            var bClass = '';
+            if (itemsData && itemsData[idx] && itemsData[idx].value) {
+                bClass = itemsData[idx].value;
+            } else {
+                var t = $title.text().trim();
+                for (var prefix in badgeMap) {
+                    if (t.indexOf(prefix) === 0) {
+                        bClass = badgeMap[prefix];
+                        break;
+                    }
+                }
+            }
+            if (!bClass) return;
+
+            var $badge = $('<span class="cu-select-badge-preview badge ' + bClass + ' badge--4k" style="margin-right:12px;vertical-align:middle;display:inline-block;transform:scale(0.85);pointer-events:none;">4K</span>');
+            $title.prepend($badge);
         });
-        container.append(grid);
-        var val = item.find('.settings-param__value');
-        if (!val.length) val = item;
-        val.append(container);
     }
 
-    function setupBadgeSelectorPreview() {
+    function setupBadgeParamPreview() {
+        $('.cu-badge-selector').remove();
         var $item = $('.settings-param[data-name="cu_badge_style"]');
         if (!$item.length) return;
-        if ($item.find('.cu-badge-selector').length) return;
-        renderBadgeSelector($item);
+        var $name = $item.find('.settings-param__name');
+        if (!$name.length) return;
+        var curStyle = Lampa.Storage.get('cu_badge_style', 'badge--9');
+        var $preview = $name.find('.cu-badge-param-preview');
+        if (!$preview.length) {
+            $preview = $('<span class="cu-badge-param-preview" style="margin-left:12px;vertical-align:middle;display:inline-block;"></span>');
+            $name.append($preview);
+        }
+        $preview.html('<span class="badge ' + curStyle + ' badge--4k" style="display:inline-block;vertical-align:middle;transform:scale(0.85);pointer-events:none;">4K</span>');
     }
 
     function refreshStyles() {
@@ -1524,7 +1554,7 @@
             onChange: refreshStyles
         });
 
-        // Стиль бейджа качества с превью в меню
+        // Стиль бейджа качества с живым превью в списке выбора
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: {
@@ -1550,7 +1580,10 @@
                 }
             },
             field: { name: 'Стиль бейджа качества' },
-            onChange: refreshStyles
+            onChange: function () {
+                refreshStyles();
+                setupBadgeParamPreview();
+            }
         });
         // 4. Масштаб зума
         Lampa.SettingsApi.addParam({
@@ -1680,7 +1713,7 @@
 
     function ensureSettingsItem() {
         registerCardUniverseSettings();
-        setupBadgeSelectorPreview();
+        setupBadgeParamPreview();
     }
 
     var initialized = false;
@@ -1702,6 +1735,15 @@
             if (event && (event.type === 'append' || event.type === 'visible')) scheduleScan();
         });
         startObserver();
+        if (Lampa.Select && Lampa.Select.listener) {
+            Lampa.Select.listener.follow('fullshow', decorateBadgeSelectbox);
+            Lampa.Select.listener.follow('preshow', decorateBadgeSelectbox);
+        }
+        setInterval(function () {
+            if ($('body').hasClass('selectbox--open')) {
+                decorateBadgeSelectbox();
+            }
+        }, 300);
         // В теме касание отмечает только постеры. Дополняем его для широких
         // карточек «Продолжить просмотр», не вмешиваясь в обработку открытия.
         document.addEventListener('touchstart', function (event) {
