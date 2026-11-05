@@ -1433,6 +1433,13 @@
         val.append(container);
     }
 
+    function setupBadgeSelectorPreview() {
+        var $item = $('.settings-param[data-name="cu_badge_style"]');
+        if (!$item.length) return;
+        if ($item.find('.cu-badge-selector').length) return;
+        renderBadgeSelector($item);
+    }
+
     function refreshStyles() {
         var el = document.getElementById('ott-card-style');
         if (el && el.parentNode) el.parentNode.removeChild(el);
@@ -1543,9 +1550,6 @@
                 }
             },
             field: { name: 'Стиль бейджа качества' },
-            onRender: function (item) {
-                renderBadgeSelector(item);
-            },
             onChange: refreshStyles
         });
         // 4. Масштаб зума
@@ -1676,6 +1680,7 @@
 
     function ensureSettingsItem() {
         registerCardUniverseSettings();
+        setupBadgeSelectorPreview();
     }
 
     var initialized = false;
