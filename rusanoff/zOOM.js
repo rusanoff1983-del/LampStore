@@ -994,11 +994,10 @@
                   '<div class="ott-stars-box"><div class="ott-stars-bg">★★★★★★★★★★</div><div class="ott-stars-fill">★★★★★★★★★★</div></div>' +
                   '<span class="ott-rate-val"></span>' +
                 '</div>' +
-                '<span class="ott-year"></span>' +
                 '<span class="metadata__quality under-quality ott-under-quality" style="display:none"></span>' +
                 '</div>' +
                 '<div class="ott-title"></div>' +
-                '<div class="ott-genres-row"><span class="ott-genres"></span></div>';
+                '<div class="ott-genres-row"><span class="ott-genres"></span> <span class="ott-year"></span></div>';
             view.parentNode.insertBefore(info, view.nextSibling);
         }
         var genresEl = info.querySelector('.ott-genres');
@@ -1504,13 +1503,40 @@
             },
             field: { name: 'Стиль бейджа качества' },
             onRender: function (item) {
+                var nameDiv = item.find('.settings-param__name');
+                // Выбранный стиль рядом с названием
                 var box = $('<span class="cu-badge-preview" style="margin-left:14px;vertical-align:middle;display:inline-block;"></span>');
-                item.find('.settings-param__name').append(box);
+                nameDiv.append(box);
                 function renderDemo() {
                     var st = Lampa.Storage.get('cu_badge_style', 'badge--9');
                     box.html('<span class="badge ' + st + ' badge--4k" style="display:inline-block;transform:scale(0.85);vertical-align:middle;">4K</span>');
                 }
                 renderDemo();
+                // Галерея всех стилей под названием
+                var gallery = $('<div class="cu-badge-gallery" style="margin-top:6px;font-size:0.72em;color:#aaa;line-height:1.4;"></div>');
+                var labels = {
+                    'badge--9': '1. Боковая полоса',
+                    'badge--1': '2. Контурная рамка',
+                    'badge--2': '3. Сплошная заливка',
+                    'badge--3': '4. Двойная рамка',
+                    'badge--4': '5. Скошенные края',
+                    'badge--5': '6. Мягкая тонировка',
+                    'badge--6': '7. Пилюля с точкой',
+                    'badge--7': '8. Сплит-бейдж',
+                    'badge--8': '9. Нижнее подчёркивание',
+                    'badge--10': '10. Ретро с тенью',
+                    'badge--11': '11. Терминал',
+                    'badge--12': '12. Штамп',
+                    'badge--13': '13. Октагон',
+                    'badge--14': '14. Лист',
+                    'badge--classic': '15. Классика'
+                };
+                var styles = Object.keys(labels);
+                styles.forEach(function (s) {
+                    var example = $('<span class="badge ' + s + ' badge--4k" style="display:inline-block;margin-right:8px;transform:scale(0.8);vertical-align:middle;">4K</span> <span style="vertical-align:middle;">' + labels[s] + '</span><br>');
+                    gallery.append(example);
+                });
+                nameDiv.after(gallery);
             },
             onChange: function () {
                 refreshStyles();
