@@ -551,68 +551,84 @@
     // ───────────────────────── Рейтинг ─────────────────────────
     function getBestRating(card, data) {
         var isTV = isTVSeries(card, data);
+        var source = Lampa.Storage.get('cu_rate_source', 'cub');
 
-        // 1. Приоритет «наш» — Кинопоиск (из объекта данных)
-        if (data) {
-            var kp = parseFloat(data.kp_rating || data.ratingKinopoisk || data.rating_kp || data.kp);
-            if (kp > 0) return formatRating(kp);
+        // Для Народного CUB сразу проверяем кэш
+        if (source === 'cub' && data && data.id) {
+            var cKey = (isTV ? 'tv_' : 'movie_') + data.id;
+            var cEntry = ratingCache.get(cKey);
+            if (cEntry && cEntry.r) return cEntry.r;
         }
 
-        // 2. Проверяем кэш Кинопоиска в Lampa (куда сохраняют плагины КП и сам плеер)
-        if (data && data.id && window.Lampa && Lampa.Storage) {
-            try {
-                var kpCache = Lampa.Storage.cache('kp_rating', 500, {});
-                if (kpCache) {
-                    var keys = [data.id, String(data.id), (isTV ? 'tv_' : 'movie_') + data.id];
-                    for (var k = 0; k < keys.length; k++) {
-                        var entry = kpCache[keys[k]];
-                        if (entry) {
-                            if (typeof entry === 'number' && entry > 0) return formatRating(entry);
-                            if (typeof entry === 'string') {
-                                var sn = parseFloat(entry.replace(',', '.'));
-                                if (sn > 0) return formatRating(sn);
-                            }
-                            if (typeof entry === 'object') {
-                                var kr = parseFloat(entry.kp || entry.rating || entry.ratingKinopoisk || entry.kp_rating);
-                                if (kr > 0) return formatRating(kr);
-                                var im = parseFloat(entry.imdb || entry.ratingImdb || entry.imdb_rating);
-                                if (im > 0) return formatRating(im);
+        // Кинопоиск
+        if (source === 'kp') {
+            if (data) {
+                var kp = parseFloat(data.kp_rating || data.ratingKinopoisk || data.rating_kp || data.kp);
+                if (kp > 0) return formatRating(kp);
+            }
+            if (data && data.id && window.Lampa && Lampa.Storage) {
+                try {
+                    var kpCache = Lampa.Storage.cache('kp_rating', 500, {});
+                    if (kpCache) {
+                        var keys = [data.id, String(data.id), (isTV ? 'tv_' : 'movie_') + data.id];
+                        for (var k = 0; k < keys.length; k++) {
+                            var entry = kpCache[keys[k]];
+                            if (entry) {
+                                if (typeof entry === 'number' && entry > 0) return formatRating(entry);
+                                if (typeof entry === 'string') {
+                                    var sn = parseFloat(entry.replace(',', '.'));
+                                    if (sn > 0) return formatRating(sn);
+                                }
+                                if (typeof entry === 'object') {
+                                    var kr = parseFloat(entry.kp || entry.rating || entry.ratingKinopoisk || entry.kp_rating);
+                                    if (kr > 0) return formatRating(kr);
+                                }
                             }
                         }
                     }
-                }
-            } catch (e) {}
-        }
-
-        // 3. Штатный голос Lampa в DOM (родной .card__vote или подставленный плагином КП)
-        if (card && card.querySelector) {
-            var cv = card.querySelector('.card__vote');
-            if (cv && cv.textContent) {
-                var num = parseFloat(cv.textContent.replace(',', '.').trim());
-                if (num > 0) return formatRating(num);
+                } catch (e) {}
             }
         }
 
-        // 4. Официальный рейтинг TMDB / IMDb
-        if (data) {
-            var v = parseFloat(data.vote_average);
-            if (v > 0) return formatRating(v);
-            var imRaw = parseFloat(data.imdb_rating || data.ratingImdb);
-            if (imRaw > 0) return formatRating(imRaw);
-            var rRaw = parseFloat(data.rating);
-            if (rRaw > 0) return formatRating(rRaw);
+        // IMDb
+        if (source === 'imdb' && data) {
+            var im = parseFloat(data.imdb_rating || data.ratingImdb);
+            if (im > 0) return formatRating(im);
         }
 
-        if (data && data.id && window.Lampa && Lampa.Storage) {
-            try {
-                var tmdbCache = Lampa.Storage.cache('tmdb_rating', 500, {});
-                if (tmdbCache) {
-                    var tEntry = tmdbCache[(isTV ? 'tv_' : 'movie_') + data.id] || tmdbCache[data.id];
-                    if (tEntry && tEntry.vote_average > 0) return formatRating(tEntry.vote_average);
+        // TMDB
+        if (source === 'tmdb') {
+            if (data && data.vote_average > 0) return formatRating(data.vote_average);
+            if (card && card.querySelector) {
+                var cv = card.querySelector('.card__vote');
+                if (cv && cv.textContent) {
+                    var num = parseFloat(cv.textContent.replace(',', '.').trim());
+                    if (num > 0) return formatRating(num);
                 }
-            } catch (e) {}
+            }
         }
+
         return '';
+    }
+
+    // Народный рейтинг CUB по реакциям зрителей (без накруток и радужных оценок)
+    function fetchCubRating(data, isTV, callback, scope) {
+        if (!data || !data.id) return callback('');
+        var key = (isTV ? 'tv_' : 'movie_') + data.id;
+        httpGet('https://cubnotrip.top/api/reactions/get/' + key, 4000, null, function (res) {
+            try {
+                var reactions = (res && res.result) || [];
+                var weightedSum = 0, totalCount = 0;
+                var coef = { fire: 5, nice: 4, think: 3, bore: 2, shit: 1 };
+                for (var i = 0; i < reactions.length; i++) {
+                    var count = parseInt(reactions[i].counter, 10) || 0;
+                    weightedSum += count * (coef[reactions[i].type] || 0);
+                    totalCount += count;
+                }
+                if (totalCount > 0) callback(formatRating((weightedSum / totalCount - 1) * 2.5));
+                else callback('');
+            } catch (e) { callback(''); }
+        }, function () { callback(''); }, scope);
     }
 
     // Официальный рейтинг TMDB (тот же, что Lampa показывает в карточке)
@@ -640,29 +656,47 @@
             try {
                 var list = (res && (res.films || res.items)) || [];
                 var match = null;
-                // раньше при несовпадении года бралась первая запись — рейтинг мог быть от другого фильма
                 for (var i = 0; i < list.length; i++) {
                     if (!year || String(list[i].year || '').indexOf(year) !== -1) { match = list[i]; break; }
                 }
                 var r = match ? (parseFloat(match.rating || match.ratingKinopoisk) || 0) : 0;
-                // у не вышедших фильмов КП отдаёт процент ожидания («96%») — это не рейтинг
                 callback(r > 0 && r <= 10 ? formatRating(r) : '');
             } catch (e) { callback(''); }
         }, function () { callback(''); }, scope);
     }
 
-    // КП → TMDB, результат кэшируется (убран искажающий расчёт по смайликам CUB)
+    // Запрос внешнего рейтинга по выбранному источнику в настройках
     function fetchExternalRating(card, data, isTV, callback) {
         if (!data || !data.id) return callback('');
         var key = (isTV ? 'tv_' : 'movie_') + data.id;
+        var source = Lampa.Storage.get('cu_rate_source', 'cub');
         var cached = ratingCache.get(key);
         if (cached && (Date.now() - cached.t) < (cached.r ? TTL_RATING : TTL_RATING_EMPTY)) return callback(cached.r || '');
 
         requestOnce('rate:' + key, card, 9000, function (finish, scope) {
-            fetchKinopoiskRating(data, function (kp) {
-                if (kp) return finish(kp);
+            if (source === 'cub') {
+                // Приземлённый народный рейтинг CUB по реакциям
+                fetchCubRating(data, isTV, function (cub) {
+                    if (cub) return finish(cub);
+                    // Если в CUB пока нет реакций (новинка) — берём IMDb или TMDB
+                    var fb = parseFloat(data.imdb_rating || data.ratingImdb || data.vote_average || 0);
+                    if (fb > 0) return finish(formatRating(fb));
+                    fetchTmdbRating(data, isTV, function (tmdb) { finish(tmdb || ''); }, scope);
+                }, scope);
+            } else if (source === 'kp') {
+                fetchKinopoiskRating(data, function (kp) {
+                    if (kp) return finish(kp);
+                    var fbKp = parseFloat(data.kp_rating || data.ratingKinopoisk || data.vote_average || 0);
+                    if (fbKp > 0) return finish(formatRating(fbKp));
+                    fetchTmdbRating(data, isTV, function (tmdb) { finish(tmdb || ''); }, scope);
+                }, scope);
+            } else if (source === 'imdb') {
+                var im = parseFloat(data.imdb_rating || data.ratingImdb || 0);
+                if (im > 0) return finish(formatRating(im));
                 fetchTmdbRating(data, isTV, function (tmdb) { finish(tmdb || ''); }, scope);
-            }, scope);
+            } else {
+                fetchTmdbRating(data, isTV, function (tmdb) { finish(tmdb || ''); }, scope);
+            }
         }, function (r) {
             if (r === null) return callback('');
             ratingCache.set(key, { r: r });
@@ -1159,12 +1193,12 @@
                 }
             });
             if (title) {
-                var isKp = !!(data && (data.kp_rating || data.ratingKinopoisk || data.rating_kp || data.kp));
-                if (!rating || !isKp) {
-                    fetchExternalRating(card, data, isTV, function (r) {
-                        if (alive() && r) applyRate(r);
-                    });
-                }
+                fetchExternalRating(card, data, isTV, function (r) {
+                    if (alive() && r) {
+                        card._ottRating = r;
+                        applyRate(r);
+                    }
+                });
             }
         });
     }
@@ -1751,6 +1785,23 @@
             component: 'card_universe',
             param: { type: 'title' },
             field: { name: '🌟 РЕЙТИНГ ФИЛЬМА' }
+        });
+
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe',
+            param: {
+                name: 'cu_rate_source',
+                type: 'select',
+                default: 'cub',
+                values: {
+                    'cub': 'Народный (CUB реакции) — приземлённый',
+                    'kp': 'Кинопоиск (КП)',
+                    'imdb': 'IMDb (строгий)',
+                    'tmdb': 'TMDB (официальный Lampa)'
+                }
+            },
+            field: { name: 'Источник рейтинга' },
+            onChange: refreshStyles
         });
 
         Lampa.SettingsApi.addParam({
