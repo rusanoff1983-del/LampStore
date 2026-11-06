@@ -552,13 +552,9 @@
     function getBestRating(card, data) {
         var isTV = isTVSeries(card, data);
         var source = Lampa.Storage.get('cu_rate_source', 'cub');
-
-        // Для Народного CUB сразу проверяем кэш
-        if (source === 'cub' && data && data.id) {
-            var cKey = (isTV ? 'tv_' : 'movie_') + data.id;
-            var cEntry = ratingCache.get(cKey);
-            if (cEntry && cEntry.r) return cEntry.r;
-        }
+        var cKey = source + ':' + (isTV ? 'tv_' : 'movie_') + (data && data.id || '');
+        var cEntry = ratingCache.get(cKey);
+        if (cEntry && cEntry.r) return cEntry.r;
 
         // Кинопоиск
         if (source === 'kp') {
@@ -668,17 +664,16 @@
     // Запрос внешнего рейтинга по выбранному источнику в настройках
     function fetchExternalRating(card, data, isTV, callback) {
         if (!data || !data.id) return callback('');
-        var key = (isTV ? 'tv_' : 'movie_') + data.id;
         var source = Lampa.Storage.get('cu_rate_source', 'cub');
+        var key = source + ':' + (isTV ? 'tv_' : 'movie_') + data.id;
         var cached = ratingCache.get(key);
-        if (cached && (Date.now() - cached.t) < (cached.r ? TTL_RATING : TTL_RATING_EMPTY)) return callback(cached.r || '');
+        if (cached && (Date.now() - (cached.t || 0)) < (cached.r ? TTL_RATING : TTL_RATING_EMPTY)) return callback(cached.r || '');
 
         requestOnce('rate:' + key, card, 9000, function (finish, scope) {
             if (source === 'cub') {
                 // Приземлённый народный рейтинг CUB по реакциям
                 fetchCubRating(data, isTV, function (cub) {
                     if (cub) return finish(cub);
-                    // Если в CUB пока нет реакций (новинка) — берём IMDb или TMDB
                     var fb = parseFloat(data.imdb_rating || data.ratingImdb || data.vote_average || 0);
                     if (fb > 0) return finish(formatRating(fb));
                     fetchTmdbRating(data, isTV, function (tmdb) { finish(tmdb || ''); }, scope);
@@ -699,7 +694,7 @@
             }
         }, function (r) {
             if (r === null) return callback('');
-            ratingCache.set(key, { r: r });
+            ratingCache.set(key, { r: r, t: Date.now() });
             callback(r);
         });
     }
@@ -1053,13 +1048,15 @@
                   '<span class="ott-single-star">★</span><span class="ott-rate-val"></span>' +
                 '</div>' +
                 '<span class="metadata__quality under-quality ott-under-quality" style="display:none"></span>' +
+                '<span class="ott-genres"></span>' +
                 '<span class="ott-year"></span>' +
                 '</div>' +
-                '<div class="ott-genres-row"><span class="ott-genres"></span></div>' +
+                '<div class="ott-genres-row"><span class="ott-genres-full"></span></div>' +
                 '<div class="ott-title"></div>';
             view.parentNode.insertBefore(info, view.nextSibling);
         }
         var genresEl = info.querySelector('.ott-genres');
+        var genresFullEl = info.querySelector('.ott-genres-full');
         var yearEl = info.querySelector('.ott-year');
 
         var posterRateWrap = posterMeta.querySelector('.poster-rate');
@@ -1086,8 +1083,22 @@
             return mode;
         }
 
+        function resolveQualityColor() {
+            var mode = Lampa.Storage.get('cu_quality_color', 'auto');
+            if (mode === 'auto') return '';
+            if (mode === 'border') return Lampa.Storage.get('cu_border_color', '#ffffff');
+            return mode;
+        }
+
         function applyRate(val) {
             var pos = Lampa.Storage.get('cu_rate_position', 'poster');
+            if (pos === 'under') {
+                info.classList.add('info-rate--under');
+                info.classList.remove('info-rate--poster');
+            } else {
+                info.classList.add('info-rate--poster');
+                info.classList.remove('info-rate--under');
+            }
             if (!val || pos === 'none') {
                 if (posterRateWrap) {
                     posterRateWrap.className = 'cu-rating-block poster-rate ott-hidden';
@@ -1124,10 +1135,13 @@
                 var rVal = activeWrap.querySelector('.ott-rate-val');
                 if (rVal) {
                     rVal.textContent = val;
+                    var starColorMode = Lampa.Storage.get('cu_stars_color', 'auto');
+                    rVal.style.color = (starColorMode === 'auto' ? '#ffffff' : color);
                 }
                 var sStar = activeWrap.querySelector('.ott-single-star');
                 if (sStar) {
                     sStar.textContent = '★';
+                    sStar.style.color = color;
                 }
                 activeWrap.style.display = (pos === 'under' ? 'inline-flex' : 'flex');
             }
@@ -1145,12 +1159,29 @@
             var qText = String(q).toUpperCase();
 
             var fullClass = 'metadata__quality badge ' + bStyle + ' badge--' + qLower + ' metadata__quality--' + qLower;
+            var customQColor = resolveQualityColor();
+
+            function styleBadge(badge) {
+                if (!badge) return;
+                if (customQColor) {
+                    badge.style.setProperty('--c', customQColor);
+                    badge.style.setProperty('--d', customQColor === '#ffffff' ? 'rgba(255,255,255,0.2)' : customQColor);
+                    badge.style.color = customQColor;
+                    badge.style.borderColor = customQColor;
+                } else {
+                    badge.style.removeProperty('--c');
+                    badge.style.removeProperty('--d');
+                    badge.style.color = '';
+                    badge.style.borderColor = '';
+                }
+            }
 
             if (pos === 'under') {
                 if (posterQualityBadge) posterQualityBadge.style.display = 'none';
                 if (underQualityBadge) {
                     underQualityBadge.className = fullClass + ' under-quality ott-under-quality';
                     underQualityBadge.textContent = qText;
+                    styleBadge(underQualityBadge);
                     underQualityBadge.style.display = 'inline-block';
                 }
             } else {
@@ -1158,6 +1189,7 @@
                 if (posterQualityBadge) {
                     posterQualityBadge.className = fullClass + ' poster-quality metadata__quality--' + pos;
                     posterQualityBadge.textContent = qText;
+                    styleBadge(posterQualityBadge);
                     posterQualityBadge.style.display = 'inline-block';
                     if (pos.indexOf('top') !== -1) {
                         view.appendChild(posterQualityBadge);
@@ -1180,7 +1212,9 @@
 
         resolveGenresAndYear(card, data, isTV, function (genres, y) {
             if (!alive()) return;
-            genresEl.textContent = (genres || []).join(', ');
+            var gText = (genres || []).join(', ');
+            if (genresEl) genresEl.textContent = gText;
+            if (genresFullEl) genresFullEl.textContent = gText;
             yearEl.textContent = y ? String(y).trim() : '';
         });
         runWhenVisible(card, function () {
@@ -1469,16 +1503,19 @@
             '  --c: #4caf50; --d: #2e7d32;',
             '  display: inline-block !important;',
             '  padding: 0.22em 0.55em !important;',
-            '  font: 700 0.72em/1 system-ui, -apple-system, \"Segoe UI\", sans-serif !important;',
+            '  font-family: system-ui, -apple-system, \"Segoe UI\", sans-serif !important;',
+            '  font-weight: 700 !important;',
+            '  font-size: var(--cu-quality-size, 0.82em) !important;',
+            '  line-height: 1 !important;',
             '  letter-spacing: .05em !important; text-transform: uppercase !important; white-space: nowrap !important;',
             '  box-sizing: border-box !important;',
             '}',
             '/* ЦВЕТОВАЯ КЛАССИКА (всегда одинаковые цвета для всех стилей) */',
-            '.badge--4k { --c: #4caf50; --d: #2e7d32; color: #4caf50 !important; }',
-            '.badge--hd, .badge--fhd { --c: #2196f3; --d: #1565c0; color: #2196f3 !important; }',
-            '.badge--ts { --c: #f44336; --d: #c62828; color: #f44336 !important; }',
-            '.badge--webdl { --c: #00bcd4; --d: #00838f; color: #00bcd4 !important; }',
-            '.badge--bdremux { --c: #ff9800; --d: #e65100; color: #ff9800 !important; }',
+            '.badge--4k { --c: #4caf50; --d: #2e7d32; }',
+            '.badge--hd, .badge--fhd { --c: #2196f3; --d: #1565c0; }',
+            '.badge--ts { --c: #f44336; --d: #c62828; }',
+            '.badge--webdl { --c: #00bcd4; --d: #00838f; }',
+            '.badge--bdremux { --c: #ff9800; --d: #e65100; }',
             '/* 1. Контур */',
             '.badge--1 { color: var(--c) !important; border: 1.5px solid var(--c) !important; border-radius: 4px !important; background: rgba(0,0,0,0.6) !important; }',
             '/* 2. Сплошная заливка */',
@@ -1510,18 +1547,23 @@
             '.badge--12 { color: var(--c) !important; border: 1.5px dashed var(--c) !important; border-radius: 4px !important; transform: rotate(-3deg) !important; background: rgba(0,0,0,0.6) !important; }',
             '/* 13. Срезанные углы (октагон) */',
             '.badge--13 { color: #fff !important; background: var(--d) !important; padding: 0.25em 0.8em !important; clip-path: polygon(5px 0, calc(100% - 5px) 0, 100% 5px, 100% calc(100% - 5px), calc(100% - 5px) 100%, 5px 100%, 0 calc(100% - 5px), 0 5px) !important; text-shadow: 0 1px 2px rgba(0,0,0,0.6) !important; }',
-            '/* 14. Лист со скруглением по диагонали */',
+            '/* 14. Асимметричный лист */',
             '.badge--14 { color: #fff !important; background: var(--d) !important; border-radius: 10px 0 10px 0 !important; padding: 0.22em 0.6em !important; text-shadow: 0 1px 2px rgba(0,0,0,0.6) !important; }',
             '/* Классический Lampa */',
             '.badge--classic { color: var(--c) !important; border: 1px solid var(--c) !important; border-radius: 0.25em !important; background: rgba(0,0,0,0.7) !important; padding: 0.14em 0.4em !important; font-weight: 800 !important; }',
-            '/* ПОД ПОСТЕРОМ: мета-строка, жанры и название */',
+            '/* ПОД ПОСТЕРОМ: умная адаптация */',
             C + ' .ott-info { position: static !important; box-sizing: border-box !important; width: 100% !important; padding: 0.4em 0.15em 0 !important; color: #ffffff !important; text-align: left !important; pointer-events: none !important; }',
             C + ' .ott-meta-row { display: flex !important; align-items: center !important; min-height: 1.35em !important; margin: 0 0 0.15em !important; font-size: 0.75em !important; line-height: 1.35 !important; color: rgba(255, 255, 255, 0.6) !important; }',
-            C + ' .ott-year { margin-left: auto !important; flex: 0 0 auto !important; white-space: pre !important; }',
+            C + ' .ott-year { margin-left: auto !important; flex: 0 0 auto !important; white-space: pre !important; padding-left: 0.4em !important; }',
             C + ' .ott-under-rate { margin-right: 0.5em !important; }',
             C + ' .ott-under-quality { margin-right: 0.5em !important; }',
-            C + ' .ott-genres-row { display: block !important; width: 100% !important; min-height: 1.35em !important; line-height: 1.35 !important; margin: 0 0 0.15em !important; font-size: 0.75em !important; color: rgba(255, 255, 255, 0.6) !important; overflow: hidden !important; white-space: nowrap !important; text-overflow: ellipsis !important; }',
-            C + ' .ott-genres { display: inline !important; }',
+            '/* Если рейтинг на постере: одна строчка под постером (Жанры слева, Год справа) */',
+            C + ' .ott-info.info-rate--poster .ott-genres,' + C + ' .ott-info:not(.info-rate--under) .ott-genres { display: inline-block !important; min-width: 0 !important; overflow: hidden !important; white-space: nowrap !important; text-overflow: ellipsis !important; flex: 0 1 auto !important; }',
+            C + ' .ott-info.info-rate--poster .ott-genres-row,' + C + ' .ott-info:not(.info-rate--under) .ott-genres-row { display: none !important; }',
+            '/* Если рейтинг под постером: Строка 1 = Рейтинг + Год, Строка 2 = Жанры */',
+            C + ' .ott-info.info-rate--under .ott-meta-row .ott-genres { display: none !important; }',
+            C + ' .ott-info.info-rate--under .ott-genres-row { display: block !important; width: 100% !important; min-height: 1.35em !important; line-height: 1.35 !important; margin: 0 0 0.15em !important; font-size: 0.75em !important; color: rgba(255, 255, 255, 0.6) !important; overflow: hidden !important; white-space: nowrap !important; text-overflow: ellipsis !important; }',
+            C + ' .ott-genres-full { display: inline !important; }',
             C + ' .ott-title { position: static !important; display: -webkit-box !important; -webkit-line-clamp: 2 !important; -webkit-box-orient: vertical !important; height: 2.5em !important; overflow: hidden !important; overflow-wrap: break-word !important; white-space: normal !important; font-size: 0.95em !important; font-weight: 600 !important; line-height: 1.25 !important; margin: 0 !important; }',
             C + ' .ott-footer { display: none !important; }'
         ]);
@@ -1759,7 +1801,25 @@
     function reapplyAllCards() {
         var cards = document.querySelectorAll('.card.ott-card');
         for (var i = 0; i < cards.length; i++) {
-            if (cards[i]._ottReapply) cards[i]._ottReapply();
+            var c = cards[i];
+            var data = c._ottFallbackData;
+            if (data && data.id) {
+                var isTV = isTVSeries(c, data);
+                var newRating = getBestRating(c, data);
+                c._ottRating = newRating;
+                if (c._ottReapply) c._ottReapply();
+                if (!newRating) {
+                    (function (cardEl, d, tv) {
+                        fetchExternalRating(cardEl, d, tv, function (r) {
+                            if (!r) return;
+                            cardEl._ottRating = r;
+                            if (cardEl._ottReapply) cardEl._ottReapply();
+                        });
+                    })(c, data, isTV);
+                }
+            } else if (c._ottReapply) {
+                c._ottReapply();
+            }
         }
     }
 
@@ -1816,7 +1876,10 @@
                 }
             },
             field: { name: 'Источник рейтинга' },
-            onChange: refreshStyles
+            onChange: function () {
+                ratingCache.clear();
+                refreshStyles();
+            }
         });
 
         Lampa.SettingsApi.addParam({
@@ -1864,12 +1927,13 @@
                 default: 'auto',
                 values: {
                     'auto': 'Автоматически (по оценке)',
+                    '#ffffff': 'Штатный простой белый',
                     'border': 'Как у обводки карточки',
                     '#ffc107': 'Золотистый янтарный',
-                    '#ffffff': 'Белоснежный',
                     '#4caf50': 'Изумрудный',
                     '#2196f3': 'Неоновый синий',
-                    '#f44336': 'Насыщенный алый'
+                    '#f44336': 'Насыщенный алый',
+                    '#9c27b0': 'Королевский пурпур'
                 }
             },
             field: { name: 'Цвет звёзд и рейтинга' },
@@ -1933,6 +1997,30 @@
             },
             field: { name: 'Отступ плашки от угла' },
             onChange: refreshStyles
+        });
+
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe',
+            param: {
+                name: 'cu_quality_color',
+                type: 'select',
+                default: 'auto',
+                values: {
+                    'auto': 'Автоматически по качеству (штатный)',
+                    '#ffffff': 'Штатный простой белый',
+                    'border': 'Как у обводки карточки',
+                    '#ffc107': 'Золотистый янтарный',
+                    '#4caf50': 'Изумрудный зелёный',
+                    '#2196f3': 'Неоновый синий',
+                    '#f44336': 'Насыщенный алый',
+                    '#9c27b0': 'Королевский пурпур'
+                }
+            },
+            field: { name: 'Цвет плашек качества' },
+            onChange: function () {
+                refreshStyles();
+                setupBadgeParamPreview();
+            }
         });
 
         Lampa.SettingsApi.addParam({
