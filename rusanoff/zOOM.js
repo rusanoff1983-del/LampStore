@@ -169,6 +169,15 @@
             } catch (e) {}
         }
 
+        function clear() {
+            if (timer) { clearTimeout(timer); timer = 0; }
+            data = {};
+            dirty = false;
+            try {
+                Lampa.Storage.set(storageKey, {});
+            } catch (e) {}
+        }
+
         return {
             get: function (key) {
                 var e = load()[key];
@@ -180,7 +189,8 @@
                 dirty = true;
                 if (!timer) timer = setTimeout(function () { timer = 0; flush(); }, 2000);
             },
-            flush: flush
+            flush: flush,
+            clear: clear
         };
     }
 
@@ -1229,10 +1239,20 @@
 
         resolveGenresAndYear(card, data, isTV, function (genres, y) {
             if (!alive()) return;
-            var gText = (genres || []).join(', ');
+            var parts = [];
+            if (genres && genres.length) {
+                for (var gi = 0; gi < genres.length; gi++) {
+                    if (genres[gi]) parts.push(genres[gi]);
+                }
+            }
+            if (y) {
+                var yStr = String(y).trim();
+                if (yStr) parts.push(yStr);
+            }
+            var gText = parts.join(', ');
             if (genresEl) genresEl.textContent = gText;
             if (genresFullEl) genresFullEl.textContent = gText;
-            yearEl.textContent = y ? String(y).trim() : '';
+            if (yearEl) yearEl.textContent = '';
         });
         runWhenVisible(card, function () {
             if (!alive()) return;
@@ -1772,17 +1792,12 @@
             '.badge--classic { color: var(--c) !important; border: 1px solid var(--c) !important; border-radius: 0.25em !important; background: rgba(0,0,0,0.7) !important; padding: 0.14em 0.4em !important; font-weight: 800 !important; }',
             '/* ПОД ПОСТЕРОМ: умная адаптация */',
             C + ' .ott-info { position: static !important; box-sizing: border-box !important; width: 100% !important; padding: 0.4em 0.15em 0 !important; color: #ffffff !important; text-align: left !important; pointer-events: none !important; }',
-            C + ' .ott-meta-row { display: flex !important; align-items: center !important; min-height: 1.35em !important; margin: 0 0 0.15em !important; font-size: 0.75em !important; line-height: 1.35 !important; color: rgba(255, 255, 255, 0.6) !important; }',
-            C + ' .ott-year { margin-left: auto !important; flex: 0 0 auto !important; white-space: pre !important; padding-left: 0.4em !important; }',
-            C + ' .ott-under-rate { margin-right: 0.5em !important; }',
-            C + ' .ott-under-quality { margin-right: 0.5em !important; }',
-            '/* Если рейтинг на постере: одна строчка под постером (Жанры слева, Год справа) */',
-            C + ' .ott-info.info-rate--poster .ott-genres,' + C + ' .ott-info:not(.info-rate--under) .ott-genres { display: inline-block !important; min-width: 0 !important; overflow: hidden !important; white-space: nowrap !important; text-overflow: ellipsis !important; flex: 0 1 auto !important; }',
-            C + ' .ott-info.info-rate--poster .ott-genres-row,' + C + ' .ott-info:not(.info-rate--under) .ott-genres-row { display: none !important; }',
-            '/* Если рейтинг под постером: Строка 1 = Рейтинг + Год, Строка 2 = Жанры */',
-            C + ' .ott-info.info-rate--under .ott-meta-row .ott-genres { display: none !important; }',
-            C + ' .ott-info.info-rate--under .ott-genres-row { display: block !important; width: 100% !important; min-height: 1.35em !important; line-height: 1.35 !important; margin: 0 0 0.15em !important; font-size: 0.75em !important; color: rgba(255, 255, 255, 0.6) !important; overflow: hidden !important; white-space: nowrap !important; text-overflow: ellipsis !important; }',
-            C + ' .ott-genres-full { display: inline !important; }',
+            C + ' .ott-meta-row { display: flex !important; align-items: center !important; min-height: 1.35em !important; margin: 0 0 0.15em !important; font-size: 0.75em !important; line-height: 1.35 !important; color: rgba(255, 255, 255, 0.6) !important; overflow: hidden !important; }',
+            C + ' .ott-under-rate { margin-right: 0.5em !important; flex: 0 0 auto !important; }',
+            C + ' .ott-under-quality { margin-right: 0.5em !important; flex: 0 0 auto !important; }',
+            C + ' .ott-genres { display: block !important; flex: 1 1 auto !important; min-width: 0 !important; overflow: hidden !important; white-space: nowrap !important; text-overflow: ellipsis !important; }',
+            C + ' .ott-year { display: none !important; }',
+            C + ' .ott-genres-row { display: none !important; }',
             C + ' .ott-title { position: static !important; display: -webkit-box !important; -webkit-line-clamp: 2 !important; -webkit-box-orient: vertical !important; height: 2.5em !important; overflow: hidden !important; overflow-wrap: break-word !important; white-space: normal !important; font-size: 0.95em !important; font-weight: 600 !important; line-height: 1.25 !important; margin: 0 !important; }',
             C + ' .ott-footer { display: none !important; }'
         ]);
