@@ -1182,35 +1182,125 @@
         var duration = Lampa.Storage.get('cu_duration', '0.3s');
         var radius = Lampa.Storage.get('cu_radius', '0.6em');
         var removeBorder = Lampa.Storage.get('cu_remove_border', false);
-        var focusBorder = removeBorder ? '' : (', 0 0 0 2.5px ' + borderColor);
+        var effect = Lampa.Storage.get('cu_effect', 'universe');
+        var focusBorder = removeBorder ? 'none' : ('0 0 0 2.5px ' + borderColor);
 
         document.documentElement.style.setProperty('--cu-border-color', borderColor);
 
+        var effectCss = [];
+        if (effect === 'zoom_img') {
+            effectCss = [
+                '/* Зум только картинки (постер на месте) */',
+                '.card__view, .poster__view {',
+                '  border-radius: ' + radius + ' !important;',
+                '  overflow: hidden !important;',
+                '  box-shadow: none !important;',
+                '  position: relative !important;',
+                '  transform: none !important;',
+                '}',
+                '.card__img, .card__view img, .poster__img, .poster__view img {',
+                '  border-radius: inherit !important;',
+                '  overflow: hidden !important;',
+                '  transition: transform ' + duration + ' cubic-bezier(0.2, 0.9, 0.2, 1) !important;',
+                '  transform-origin: center center !important;',
+                '  will-change: transform !important;',
+                '}',
+                '.card.focus .card__view::before, .card.focus .card__view::after,',
+                '.selector.focus .card__view::before, .selector.focus .card__view::after {',
+                '  display: none !important; border: 0 !important;',
+                '}',
+                '.card.focus .card__img, .card.focus .card__view img, .poster.focus .poster__img, .poster.focus .poster__view img {',
+                '  transform: scale(' + scale + ') !important;',
+                '}',
+                '.card.focus .card__view, .poster.focus .poster__view {',
+                '  transform: none !important;',
+                '  box-shadow: ' + focusBorder + ' !important;',
+                '  z-index: 10 !important;',
+                '}'
+            ];
+        } else if (effect === 'shift') {
+            effectCss = [
+                '/* Всплытие постера вверх (без зума) */',
+                '.card__view, .poster__view {',
+                '  border-radius: ' + radius + ' !important;',
+                '  overflow: hidden !important;',
+                '  box-shadow: none !important;',
+                '  transition: transform ' + duration + ' cubic-bezier(0.2, 0.9, 0.2, 1) !important;',
+                '  transform-origin: center center !important;',
+                '  position: relative !important;',
+                '  will-change: transform !important;',
+                '}',
+                '.card__img, .card__view img, .poster__img, .poster__view img {',
+                '  border-radius: inherit !important;',
+                '  overflow: hidden !important;',
+                '}',
+                '.card.focus .card__view::before, .card.focus .card__view::after,',
+                '.selector.focus .card__view::before, .selector.focus .card__view::after {',
+                '  display: none !important; border: 0 !important;',
+                '}',
+                '.card.focus .card__view, .poster.focus .poster__view {',
+                '  transform: translateY(-8px) !important;',
+                '  box-shadow: ' + focusBorder + ' !important;',
+                '  z-index: 10 !important;',
+                '}'
+            ];
+        } else if (effect === 'none') {
+            effectCss = [
+                '/* Без движения (только рамка) */',
+                '.card__view, .poster__view {',
+                '  border-radius: ' + radius + ' !important;',
+                '  overflow: hidden !important;',
+                '  box-shadow: none !important;',
+                '  position: relative !important;',
+                '  transform: none !important;',
+                '}',
+                '.card__img, .card__view img, .poster__img, .poster__view img {',
+                '  border-radius: inherit !important;',
+                '  overflow: hidden !important;',
+                '  transform: none !important;',
+                '}',
+                '.card.focus .card__view::before, .card.focus .card__view::after,',
+                '.selector.focus .card__view::before, .selector.focus .card__view::after {',
+                '  display: none !important; border: 0 !important;',
+                '}',
+                '.card.focus .card__view, .poster.focus .poster__view {',
+                '  transform: none !important;',
+                '  box-shadow: ' + focusBorder + ' !important;',
+                '  z-index: 10 !important;',
+                '}'
+            ];
+        } else {
+            effectCss = [
+                '/* Universe Zoom и скругление постера (без размытых теней) */',
+                '.card__view, .poster__view {',
+                '  border-radius: ' + radius + ' !important;',
+                '  overflow: hidden !important;',
+                '  box-shadow: none !important;',
+                '  transition: transform ' + duration + ' cubic-bezier(0.2, 0.9, 0.2, 1) !important;',
+                '  transform-origin: center center !important;',
+                '  position: relative !important;',
+                '  will-change: transform !important;',
+                '}',
+                '.card__img, .card__view img, .poster__img, .poster__view img {',
+                '  border-radius: inherit !important;',
+                '  overflow: hidden !important;',
+                '}',
+                '.card.focus .card__view::before, .card.focus .card__view::after,',
+                '.selector.focus .card__view::before, .selector.focus .card__view::after {',
+                '  display: none !important; border: 0 !important;',
+                '}',
+                '.card.focus .card__view, .poster.focus .poster__view {',
+                '  transform: scale(' + scale + ') !important;',
+                '  box-shadow: ' + focusBorder + ' !important;',
+                '  z-index: 10 !important;',
+                '}'
+            ];
+        }
+
         var extraCss = [
             '/* Скрытие системных плашек Lampa */',
-            C + ' > .card__title,' + C + ' .card__quality,' + C + ' .card__age,' + C + ' .card__type,' + C + ' .card__vote{display:none!important}',
-            '/* Uiverse Zoom и скругление постера */',
-            '.card__view, .poster__view {',
-            '  border-radius: ' + radius + ' !important;',
-            '  overflow: hidden !important;',
-            '  box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.6) !important;',
-            '  transition: transform ' + duration + ' cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow ' + duration + ' ease !important;',
-            '  transform-origin: center center !important;',
-            '  position: relative !important;',
-            '}',
-            '.card__img, .card__view img, .poster__img, .poster__view img {',
-            '  border-radius: inherit !important;',
-            '  overflow: hidden !important;',
-            '}',
-            '.card.focus .card__view::before, .card.focus .card__view::after,',
-            '.selector.focus .card__view::before, .selector.focus .card__view::after {',
-            '  display: none !important; border: 0 !important;',
-            '}',
-            '.card.focus .card__view, .poster.focus .poster__view {',
-            '  transform: scale(' + scale + ') !important;',
-            '  box-shadow: 0px 0px 14px 6px rgba(0, 0, 0, 0.85)' + focusBorder + ' !important;',
-            '  z-index: 10 !important;',
-            '}',
+            C + ' > .card__title,' + C + ' .card__quality,' + C + ' .card__age,' + C + ' .card__type,' + C + ' .card__vote{display:none!important}'
+        ].concat(effectCss).concat([
             '/* Подложка на постере */',
             '.card__poster-meta {',
             '  position: absolute !important; bottom: 0 !important; left: 0 !important; right: 0 !important;',
@@ -1233,7 +1323,7 @@
             '.ott-stars-fill {',
             '  position: absolute !important; top: 0 !important; left: 0 !important; height: 100% !important;',
             '  overflow: hidden !important; white-space: nowrap !important;',
-            '  text-shadow: 0 0 5px currentColor;',
+            '  text-shadow: none !important;',
             '}',
             '.ott-single-star { display: none; }',
             '.ott-rate-val {',
@@ -1251,7 +1341,7 @@
             '  background: rgba(18, 18, 20, 0.88);',
             '  border: 1.5px solid var(--rate-color, #ffb300);',
             '  border-radius: 4px; padding: 0.2em 0.45em;',
-            '  box-shadow: 0 2px 6px rgba(0,0,0,0.6);',
+            '  box-shadow: none;',
             '}',
             '.rate-style--kinopoisk .ott-stars-box { display: none !important; }',
             '.rate-style--kinopoisk .ott-single-star {',
@@ -1271,7 +1361,7 @@
             '  background: rgba(18, 18, 20, 0.85);',
             '  border-left: 3px solid var(--rate-color, #ffb300);',
             '  border-radius: 3px; padding: 0.2em 0.45em;',
-            '  box-shadow: 0 2px 6px rgba(0,0,0,0.5);',
+            '  box-shadow: none;',
             '}',
             '.rate-style--val_only .ott-stars-box, .rate-style--val_only .ott-single-star { display: none !important; }',
             '.rate-style--val_only .ott-rate-val {',
@@ -1285,7 +1375,7 @@
             '.rate-style--split {',
             '  border: 1px solid var(--rate-color, #ffb300);',
             '  border-radius: 4px; overflow: hidden;',
-            '  box-shadow: 0 2px 6px rgba(0,0,0,0.6);',
+            '  box-shadow: none;',
             '}',
             '.rate-style--split .ott-stars-box { display: none !important; }',
             '.rate-style--split .ott-single-star {',
@@ -1340,7 +1430,7 @@
             '/* 8. Подчёркивание */',
             '.badge--8 { color: var(--c) !important; border-bottom: 2.5px solid var(--c) !important; padding: 0.2em 0.2em 0.15em !important; border-radius: 0 !important; background: rgba(0,0,0,0.6) !important; }',
             '/* 9. Боковая полоса */',
-            '.badge--9 { color: var(--c) !important; background: rgba(0,0,0,0.7) !important; border-left: 3.5px solid var(--c) !important; border-radius: 0 !important; padding: 0.22em 0.55em 0.22em 0.42em !important; box-shadow: 0 1px 4px rgba(0,0,0,0.6) !important; }',
+            '.badge--9 { color: var(--c) !important; background: rgba(0,0,0,0.7) !important; border-left: 3.5px solid var(--c) !important; border-radius: 0 !important; padding: 0.22em 0.55em 0.22em 0.42em !important; box-shadow: none !important; }',
             '/* 10. Жёсткая тень */',
             '.badge--10 { color: #fff !important; background: var(--d) !important; border-radius: 3px !important; margin: 0 3px 3px 0 !important; box-shadow: 2.5px 2.5px 0 var(--c) !important; text-shadow: 0 1px 2px rgba(0,0,0,0.6) !important; }',
             '/* 11. Терминал */',
@@ -1364,7 +1454,7 @@
             C + ' .ott-under-rate { margin-right: 0.6em !important; }',
             C + ' .ott-under-quality { margin-left: auto !important; }',
             C + ' .ott-footer { display: none !important; }'
-        ];
+        ]);
 
         css = css.concat(extraCss);
         var style = document.createElement('style');
@@ -1753,6 +1843,23 @@
             component: 'card_universe',
             param: { type: 'title' },
             field: { name: '🔍 ЭФФЕКТ CARD UNIVERSE (ЗУМ И ПОДСВЕТКА)' }
+        });
+
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe',
+            param: {
+                name: 'cu_effect',
+                type: 'select',
+                default: 'universe',
+                values: {
+                    'universe': 'Universe (увеличение постера)',
+                    'zoom_img': 'Зум картинки (постер на месте)',
+                    'shift': 'Всплытие вверх (без зума)',
+                    'none': 'Без эффекта (только рамка)'
+                }
+            },
+            field: { name: 'Эффект при наведении' },
+            onChange: refreshStyles
         });
 
         Lampa.SettingsApi.addParam({
