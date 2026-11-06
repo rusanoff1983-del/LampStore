@@ -1028,6 +1028,8 @@
             posterMeta = document.createElement('div');
             posterMeta.className = 'card__poster-meta';
             posterMeta.innerHTML = '<div class="cu-rating-block poster-rate" style="display:none">' +
+                '<span class="ott-rate-prefix"></span>' +
+                '<span class="ott-rate-icon"></span>' +
                 '<div class="ott-stars-box">' +
                   '<div class="ott-stars-bg">★★★★★</div>' +
                   '<div class="ott-stars-fill">★★★★★</div>' +
@@ -1044,6 +1046,8 @@
             info.className = 'ott-info';
             info.innerHTML = '<div class="ott-meta-row">' +
                 '<div class="cu-rating-block under-rate ott-under-rate" style="display:none">' +
+                  '<span class="ott-rate-prefix"></span>' +
+                  '<span class="ott-rate-icon"></span>' +
                   '<div class="ott-stars-box"><div class="ott-stars-bg">★★★★★</div><div class="ott-stars-fill">★★★★★</div></div>' +
                   '<span class="ott-single-star">★</span><span class="ott-rate-val"></span>' +
                 '</div>' +
@@ -1077,16 +1081,12 @@
                 if (num >= 5.0) return '#ffb300'; // Янтарный
                 return '#f44336';                 // Красный
             }
-            if (mode === 'border') {
-                return Lampa.Storage.get('cu_border_color', '#ffffff');
-            }
             return mode;
         }
 
         function resolveQualityColor() {
             var mode = Lampa.Storage.get('cu_quality_color', 'auto');
             if (mode === 'auto') return '';
-            if (mode === 'border') return Lampa.Storage.get('cu_border_color', '#ffffff');
             return mode;
         }
 
@@ -1142,6 +1142,23 @@
                 if (sStar) {
                     sStar.textContent = '★';
                     sStar.style.color = color;
+                }
+                var rPrefix = activeWrap.querySelector('.ott-rate-prefix');
+                if (rPrefix) {
+                    if (style === 'imdb_gold') rPrefix.textContent = 'IMDb';
+                    else if (style === 'cyber_badge') rPrefix.textContent = 'RATE';
+                    else rPrefix.textContent = '';
+                }
+                var rIcon = activeWrap.querySelector('.ott-rate-icon');
+                if (rIcon) {
+                    if (style === 'tomato') {
+                        rIcon.textContent = (num >= 6.0 ? '🍅' : '🍿');
+                    } else if (style === 'minimal_clean') {
+                        rIcon.textContent = '•';
+                        rIcon.style.color = color;
+                    } else {
+                        rIcon.textContent = '';
+                    }
                 }
                 activeWrap.style.display = (pos === 'under' ? 'inline-flex' : 'flex');
             }
@@ -1322,6 +1339,107 @@
                 '  z-index: 10 !important;',
                 '}'
             ];
+        } else if (effect === 'card_scale') {
+            effectCss = [
+                '/* Зум всей карточки целиком (Apple TV стиль) */',
+                '.card, .poster {',
+                '  transition: transform ' + duration + ' cubic-bezier(0.2, 0.9, 0.2, 1) !important;',
+                '  transform-origin: center center !important;',
+                '  position: relative !important;',
+                '  will-change: transform !important;',
+                '}',
+                '.card__view, .poster__view {',
+                '  border-radius: ' + radius + ' !important;',
+                '  overflow: hidden !important;',
+                '  box-shadow: none !important;',
+                '}',
+                '.card.focus, .poster.focus {',
+                '  transform: scale(' + scale + ') !important;',
+                '  z-index: 12 !important;',
+                '}',
+                '.card.focus .card__view, .poster.focus .poster__view {',
+                '  box-shadow: ' + focusBorder + ' !important;',
+                '}'
+            ];
+        } else if (effect === 'zoom_tilt') {
+            effectCss = [
+                '/* 3D наклон + зум картинки */',
+                '.card__view, .poster__view {',
+                '  border-radius: ' + radius + ' !important;',
+                '  overflow: hidden !important;',
+                '  perspective: 1000px !important;',
+                '  transition: transform ' + duration + ' cubic-bezier(0.2, 0.9, 0.2, 1) !important;',
+                '  will-change: transform !important;',
+                '}',
+                '.card__img, .card__view img, .poster__img, .poster__view img {',
+                '  border-radius: inherit !important;',
+                '  overflow: hidden !important;',
+                '  transition: transform ' + duration + ' cubic-bezier(0.2, 0.9, 0.2, 1) !important;',
+                '}',
+                '.card.focus .card__view, .poster.focus .poster__view {',
+                '  transform: perspective(800px) rotateX(4deg) translateY(-4px) !important;',
+                '  box-shadow: ' + focusBorder + ' !important;',
+                '  z-index: 10 !important;',
+                '}',
+                '.card.focus .card__img, .card.focus .card__view img, .poster.focus .poster__img, .poster.focus .poster__view img {',
+                '  transform: scale(' + scale + ') !important;',
+                '}'
+            ];
+        } else if (effect === 'bounce') {
+            effectCss = [
+                '/* Эластичная пружина (Pop Bounce) */',
+                '.card__view, .poster__view {',
+                '  border-radius: ' + radius + ' !important;',
+                '  overflow: hidden !important;',
+                '  box-shadow: none !important;',
+                '  transition: transform ' + duration + ' cubic-bezier(0.34, 1.56, 0.64, 1) !important;',
+                '  transform-origin: center center !important;',
+                '  position: relative !important;',
+                '  will-change: transform !important;',
+                '}',
+                '.card__img, .card__view img, .poster__img, .poster__view img {',
+                '  border-radius: inherit !important;',
+                '  overflow: hidden !important;',
+                '}',
+                '.card.focus .card__view, .poster.focus .poster__view {',
+                '  transform: scale(' + scale + ') !important;',
+                '  box-shadow: ' + focusBorder + ' !important;',
+                '  z-index: 10 !important;',
+                '}'
+            ];
+        } else if (effect === 'glow_shimmer') {
+            effectCss = [
+                '/* Зум картинки + кинематографический блик */',
+                '.card__view, .poster__view {',
+                '  border-radius: ' + radius + ' !important;',
+                '  overflow: hidden !important;',
+                '  box-shadow: none !important;',
+                '  position: relative !important;',
+                '  transform: none !important;',
+                '}',
+                '.card__img, .card__view img, .poster__img, .poster__view img {',
+                '  border-radius: inherit !important;',
+                '  overflow: hidden !important;',
+                '  transition: transform ' + duration + ' cubic-bezier(0.2, 0.9, 0.2, 1) !important;',
+                '  transform-origin: center center !important;',
+                '}',
+                '.card.focus .card__img, .card.focus .card__view img, .poster.focus .poster__img, .poster.focus .poster__view img {',
+                '  transform: scale(' + scale + ') !important;',
+                '}',
+                '.card.focus .card__view, .poster.focus .poster__view {',
+                '  transform: none !important;',
+                '  box-shadow: ' + focusBorder + ' !important;',
+                '  z-index: 10 !important;',
+                '}',
+                '.card.focus .card__view::after, .poster.focus .poster__view::after {',
+                '  content: "" !important; position: absolute !important; top: 0 !important; left: -120% !important;',
+                '  width: 60% !important; height: 100% !important;',
+                '  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent) !important;',
+                '  transform: skewX(-25deg) !important;',
+                '  animation: cu-shimmer 0.65s ease-out forwards !important; pointer-events: none !important; z-index: 7 !important;',
+                '}',
+                '@keyframes cu-shimmer { 0% { left: -120%; } 100% { left: 160%; } }'
+            ];
         } else if (effect === 'shift') {
             effectCss = [
                 '/* Всплытие постера вверх (без зума) */',
@@ -1429,7 +1547,7 @@
             '  overflow: hidden !important; white-space: nowrap !important;',
             '  text-shadow: none !important;',
             '}',
-            '.cu-rating-block .ott-single-star, .cu-rating-block .ott-stars-box, .cu-rating-block .ott-rate-val { display: none !important; }',
+            '.cu-rating-block .ott-single-star, .cu-rating-block .ott-stars-box, .cu-rating-block .ott-rate-val, .cu-rating-block .ott-rate-prefix, .cu-rating-block .ott-rate-icon { display: none !important; }',
             '.ott-rate-val {',
             '  font-family: inherit !important; font-size: 0.85em !important; font-weight: 800 !important;',
             '  color: #ffffff !important; line-height: 1 !important;',
@@ -1491,6 +1609,107 @@
             '  background: rgba(18, 18, 20, 0.9) !important; color: #ffffff !important;',
             '  padding: 0.2em 0.45em !important; border: none !important; border-radius: 0 !important;',
             '  font-size: 0.85em !important; line-height: 1 !important;',
+            '}',
+            '/* 6. Круговой бейдж (Pro Кольцо) */',
+            '.rate-style--ring {',
+            '  display: inline-flex !important; align-items: center !important; justify-content: center !important;',
+            '  width: 2.2em !important; height: 2.2em !important; border-radius: 50% !important;',
+            '  background: rgba(14, 14, 16, 0.9) !important; border: 2.5px solid var(--rate-color, #ffb300) !important;',
+            '  box-shadow: 0 2px 6px rgba(0,0,0,0.6) !important; padding: 0 !important;',
+            '}',
+            '.rate-style--ring .ott-rate-val {',
+            '  display: inline-block !important; background: transparent !important; border: none !important; padding: 0 !important;',
+            '  font-size: 0.88em !important; font-weight: 900 !important; color: var(--rate-color, #ffffff) !important; line-height: 1 !important;',
+            '}',
+            '/* 7. Золотой IMDb бейдж */',
+            '.rate-style--imdb_gold {',
+            '  display: inline-flex !important; align-items: center !important;',
+            '  border-radius: 4px !important; overflow: hidden !important;',
+            '  background: rgba(18, 18, 20, 0.92) !important; border: 1.5px solid #f5c518 !important; padding: 0 !important;',
+            '}',
+            '.rate-style--imdb_gold .ott-rate-prefix {',
+            '  display: inline-block !important; background: #f5c518 !important; color: #000000 !important;',
+            '  font-weight: 900 !important; font-size: 0.78em !important; padding: 0.22em 0.42em !important; letter-spacing: 0.04em !important;',
+            '}',
+            '.rate-style--imdb_gold .ott-rate-val {',
+            '  display: inline-block !important; background: transparent !important; border: none !important; color: #ffffff !important;',
+            '  padding: 0.2em 0.42em !important; font-size: 0.85em !important;',
+            '}',
+            '/* 8. Rotten Томатометр (🍅 8.4) */',
+            '.rate-style--tomato {',
+            '  display: inline-flex !important; align-items: center !important;',
+            '  background: rgba(18, 18, 20, 0.88) !important; border-radius: 99px !important;',
+            '  padding: 0.2em 0.55em 0.2em 0.4em !important; border: 1.5px solid var(--rate-color, #f44336) !important;',
+            '}',
+            '.rate-style--tomato .ott-rate-icon {',
+            '  display: inline-block !important; font-size: 0.95em !important; margin-right: 0.35em !important; line-height: 1 !important;',
+            '}',
+            '.rate-style--tomato .ott-rate-val {',
+            '  display: inline-block !important; background: transparent !important; border: none !important; padding: 0 !important;',
+            '  color: #ffffff !important; font-size: 0.88em !important;',
+            '}',
+            '/* 9. Metacritic Квадрат */',
+            '.rate-style--metacritic {',
+            '  display: inline-flex !important; align-items: center !important; justify-content: center !important;',
+            '  min-width: 2.1em !important; height: 1.8em !important; border-radius: 4px !important;',
+            '  background: var(--rate-color, #4caf50) !important; box-shadow: 0 2px 5px rgba(0,0,0,0.5) !important; padding: 0 0.35em !important;',
+            '}',
+            '.rate-style--metacritic .ott-rate-val {',
+            '  display: inline-block !important; background: transparent !important; border: none !important; padding: 0 !important;',
+            '  color: #121212 !important; font-weight: 900 !important; font-size: 0.92em !important; text-shadow: none !important;',
+            '}',
+            '/* 10. Неоновая капсула со светодиодом */',
+            '.rate-style--neon_pill {',
+            '  display: inline-flex !important; align-items: center !important;',
+            '  border-radius: 99px !important; padding: 0.2em 0.6em 0.2em 0.45em !important;',
+            '  background: rgba(14, 14, 18, 0.92) !important; border: 1.5px solid var(--rate-color, #00e5ff) !important;',
+            '}',
+            '.rate-style--neon_pill .ott-rate-icon {',
+            '  display: inline-block !important; width: 7px !important; height: 7px !important; border-radius: 50% !important;',
+            '  background: var(--rate-color, #00e5ff) !important; margin-right: 0.38em !important;',
+            '  box-shadow: 0 0 6px var(--rate-color, #00e5ff) !important;',
+            '}',
+            '.rate-style--neon_pill .ott-rate-val {',
+            '  display: inline-block !important; background: transparent !important; border: none !important; padding: 0 !important;',
+            '  color: #ffffff !important; font-size: 0.88em !important;',
+            '}',
+            '/* 11. Кибер-плашка со срезанными углами */',
+            '.rate-style--cyber_badge {',
+            '  display: inline-flex !important; align-items: center !important;',
+            '  background: rgba(12, 14, 20, 0.92) !important; border: 1.5px solid var(--rate-color, #2196f3) !important;',
+            '  clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px) !important;',
+            '  padding: 0.22em 0.6em !important;',
+            '}',
+            '.rate-style--cyber_badge .ott-rate-prefix {',
+            '  display: inline-block !important; font-size: 0.72em !important; font-weight: 800 !important;',
+            '  color: var(--rate-color, #2196f3) !important; margin-right: 0.35em !important; letter-spacing: 0.05em !important;',
+            '}',
+            '.rate-style--cyber_badge .ott-rate-val {',
+            '  display: inline-block !important; background: transparent !important; border: none !important; padding: 0 !important;',
+            '  color: #ffffff !important; font-size: 0.88em !important;',
+            '}',
+            '/* 12. Флаг-лента с акцентной полосой */',
+            '.rate-style--flag_tape {',
+            '  display: inline-flex !important; align-items: center !important;',
+            '  background: rgba(18, 18, 20, 0.88) !important; border-bottom: 3px solid var(--rate-color, #ffb300) !important;',
+            '  border-radius: 2px 2px 0 0 !important; padding: 0.2em 0.5em 0.15em !important;',
+            '}',
+            '.rate-style--flag_tape .ott-rate-val {',
+            '  display: inline-block !important; background: transparent !important; border: none !important; padding: 0 !important;',
+            '  color: #ffffff !important; font-size: 0.9em !important; font-weight: 800 !important;',
+            '}',
+            '/* 13. Минимал Ультра */',
+            '.rate-style--minimal_clean {',
+            '  display: inline-flex !important; align-items: center !important;',
+            '  background: rgba(0, 0, 0, 0.65) !important; border-radius: 3px !important; padding: 0.18em 0.45em !important;',
+            '}',
+            '.rate-style--minimal_clean .ott-rate-icon {',
+            '  display: inline-block !important; color: var(--rate-color, #ffb300) !important;',
+            '  font-size: 0.8em !important; margin-right: 0.25em !important;',
+            '}',
+            '.rate-style--minimal_clean .ott-rate-val {',
+            '  display: inline-block !important; background: transparent !important; border: none !important; padding: 0 !important;',
+            '  color: #ffffff !important; font-size: 0.88em !important;',
             '}',
             '/* Бейджи качества: позиционирование и отступ */',
             '.metadata__quality { pointer-events: none !important; z-index: 6 !important; font-size: var(--cu-quality-size, 0.82em) !important; }',
@@ -1717,17 +1936,22 @@
         var rateItems = null;
         if (active && active.items && active.items.length) {
             isRate = active.items.some(function (it) {
-                return it && it.value && (it.value === 'kinopoisk' || it.value === 'stars_val' || it.value === 'val_only' || it.value === 'stars_only' || it.value === 'split');
+                return it && it.value && (it.value === 'kinopoisk' || it.value === 'stars_val' || it.value === 'val_only' || it.value === 'stars_only' || it.value === 'split' || it.value === 'ring' || it.value === 'imdb_gold' || it.value === 'tomato' || it.value === 'metacritic' || it.value === 'neon_pill' || it.value === 'cyber_badge' || it.value === 'flag_tape' || it.value === 'minimal_clean');
             });
             if (isRate) rateItems = active.items;
         }
         if (!isRate) {
             var firstRateText = html.find('.selectbox-item__title').first().text();
-            if (firstRateText && (firstRateText.indexOf('Плашка Кинопоиск') !== -1 || firstRateText.indexOf('Шкала звёзд') !== -1 || firstRateText.indexOf('Сплит-бейдж') !== -1)) {
+            if (firstRateText && (firstRateText.indexOf('Плашка Кинопоиск') !== -1 || firstRateText.indexOf('Шкала звёзд') !== -1 || firstRateText.indexOf('Томатометр') !== -1 || firstRateText.indexOf('IMDb') !== -1)) {
                 isRate = true;
             }
         }
         if (isRate) {
+            var rateMap = {
+                '1.': 'kinopoisk', '2.': 'stars_val', '3.': 'val_only', '4.': 'stars_only', '5.': 'split',
+                '6.': 'ring', '7.': 'imdb_gold', '8.': 'tomato', '9.': 'metacritic', '10.': 'neon_pill',
+                '11.': 'cyber_badge', '12.': 'flag_tape', '13.': 'minimal_clean'
+            };
             html.find('.selectbox-item').each(function (idx) {
                 var $title = $(this).find('.selectbox-item__title');
                 if (!$title.length) $title = $(this);
@@ -1735,25 +1959,69 @@
                 var val = rateItems && rateItems[idx] ? rateItems[idx].value : '';
                 if (!val) {
                     var textVal = $title.text().trim();
-                    if (textVal.indexOf('1.') === 0) val = 'kinopoisk';
-                    else if (textVal.indexOf('2.') === 0) val = 'stars_val';
-                    else if (textVal.indexOf('3.') === 0) val = 'val_only';
-                    else if (textVal.indexOf('4.') === 0) val = 'stars_only';
-                    else if (textVal.indexOf('5.') === 0) val = 'split';
+                    for (var rPrefix in rateMap) {
+                        if (textVal.indexOf(rPrefix) === 0) { val = rateMap[rPrefix]; break; }
+                    }
                 }
                 var previewHtml = '';
                 if (val === 'kinopoisk') {
-                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--kinopoisk" style="margin-right:12px;--rate-color:#4caf50;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><span class="ott-single-star">★</span><span class="ott-rate-val">8.4</span></span>';
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--kinopoisk" style="margin-right:12px;--rate-color:#ffb300;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><span class="ott-single-star">★</span><span class="ott-rate-val">8.4</span></span>';
                 } else if (val === 'stars_val') {
-                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--stars_val" style="margin-right:12px;--rate-color:#4caf50;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><div class="ott-stars-box"><div class="ott-stars-bg">★★★★★</div><div class="ott-stars-fill" style="width:84%;color:#4caf50;">★★★★★</div></div><span class="ott-rate-val">8.4</span></span>';
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--stars_val" style="margin-right:12px;--rate-color:#ffb300;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><div class="ott-stars-box"><div class="ott-stars-bg">★★★★★</div><div class="ott-stars-fill" style="width:84%;color:#ffb300;">★★★★★</div></div><span class="ott-rate-val">8.4</span></span>';
                 } else if (val === 'val_only') {
-                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--val_only" style="margin-right:12px;--rate-color:#4caf50;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><span class="ott-rate-val">8.4</span></span>';
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--val_only" style="margin-right:12px;--rate-color:#ffb300;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><span class="ott-rate-val">8.4</span></span>';
                 } else if (val === 'stars_only') {
-                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--stars_only" style="margin-right:12px;--rate-color:#4caf50;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><div class="ott-stars-box"><div class="ott-stars-bg">★★★★★</div><div class="ott-stars-fill" style="width:84%;color:#4caf50;">★★★★★</div></div></span>';
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--stars_only" style="margin-right:12px;--rate-color:#ffb300;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><div class="ott-stars-box"><div class="ott-stars-bg">★★★★★</div><div class="ott-stars-fill" style="width:84%;color:#ffb300;">★★★★★</div></div></span>';
                 } else if (val === 'split') {
-                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--split" style="margin-right:12px;--rate-color:#4caf50;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><span class="ott-single-star">★</span><span class="ott-rate-val">8.4</span></span>';
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--split" style="margin-right:12px;--rate-color:#ffb300;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><span class="ott-single-star">★</span><span class="ott-rate-val">8.4</span></span>';
+                } else if (val === 'ring') {
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--ring" style="margin-right:12px;--rate-color:#4caf50;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><span class="ott-rate-val">8.4</span></span>';
+                } else if (val === 'imdb_gold') {
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--imdb_gold" style="margin-right:12px;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><span class="ott-rate-prefix">IMDb</span><span class="ott-rate-val">8.4</span></span>';
+                } else if (val === 'tomato') {
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--tomato" style="margin-right:12px;--rate-color:#f44336;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><span class="ott-rate-icon">🍅</span><span class="ott-rate-val">8.4</span></span>';
+                } else if (val === 'metacritic') {
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--metacritic" style="margin-right:12px;--rate-color:#4caf50;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><span class="ott-rate-val">8.4</span></span>';
+                } else if (val === 'neon_pill') {
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--neon_pill" style="margin-right:12px;--rate-color:#00e5ff;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><span class="ott-rate-icon"></span><span class="ott-rate-val">8.4</span></span>';
+                } else if (val === 'cyber_badge') {
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--cyber_badge" style="margin-right:12px;--rate-color:#2196f3;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><span class="ott-rate-prefix">RATE</span><span class="ott-rate-val">8.4</span></span>';
+                } else if (val === 'flag_tape') {
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--flag_tape" style="margin-right:12px;--rate-color:#ffb300;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><span class="ott-rate-val">8.4</span></span>';
+                } else if (val === 'minimal_clean') {
+                    previewHtml = '<span class="cu-select-rate-preview cu-rating-block rate-style--minimal_clean" style="margin-right:12px;--rate-color:#ffb300;transform:scale(0.85);vertical-align:middle;pointer-events:none;"><span class="ott-rate-icon" style="color:#ffb300">•</span><span class="ott-rate-val">8.4</span></span>';
                 }
                 if (previewHtml) $title.prepend($(previewHtml));
+            });
+            return;
+        }
+
+        // 3. Выбор цвета (палитра с цветными кружочками)
+        var isColor = false;
+        var colorItems = null;
+        if (active && active.items && active.items.length) {
+            isColor = active.items.some(function (it) {
+                return it && it.value && typeof it.value === 'string' && (it.value.charAt(0) === '#' || it.value === 'auto');
+            });
+            if (isColor) colorItems = active.items;
+        }
+        if (isColor) {
+            html.find('.selectbox-item').each(function (idx) {
+                var $title = $(this).find('.selectbox-item__title');
+                if (!$title.length) $title = $(this);
+                if ($title.find('.cu-select-color-dot').length) return;
+                var val = colorItems && colorItems[idx] ? colorItems[idx].value : '';
+                if (!val) {
+                    var m = $title.text().match(/#[0-9a-fA-F]{6}/);
+                    if (m) val = m[0];
+                }
+                var dotHtml = '';
+                if (val === 'auto') {
+                    dotHtml = '<span class="cu-select-color-dot" style="display:inline-block;width:15px;height:15px;border-radius:50%;background:conic-gradient(#4caf50,#ffb300,#f44336,#2196f3,#4caf50);margin-right:12px;vertical-align:middle;box-shadow:0 0 5px rgba(0,0,0,0.5);border:1.5px solid rgba(255,255,255,0.4);pointer-events:none;"></span>';
+                } else if (val && val.charAt(0) === '#') {
+                    dotHtml = '<span class="cu-select-color-dot" style="display:inline-block;width:15px;height:15px;border-radius:50%;background:' + val + ';margin-right:12px;vertical-align:middle;box-shadow:0 0 5px rgba(0,0,0,0.5);border:1.5px solid rgba(255,255,255,0.4);pointer-events:none;"></span>';
+                }
+                if (dotHtml) $title.prepend($(dotHtml));
             });
         }
     }
@@ -1785,15 +2053,31 @@
         }
         var p = '';
         if (curStyle === 'kinopoisk') {
-            p = '<span class="cu-rating-block rate-style--kinopoisk" style="--rate-color:#4caf50;transform:scale(0.8);vertical-align:middle;"><span class="ott-single-star">★</span><span class="ott-rate-val">8.4</span></span>';
+            p = '<span class="cu-rating-block rate-style--kinopoisk" style="--rate-color:#ffb300;transform:scale(0.85);vertical-align:middle;"><span class="ott-single-star">★</span><span class="ott-rate-val">8.4</span></span>';
         } else if (curStyle === 'stars_val') {
-            p = '<span class="cu-rating-block rate-style--stars_val" style="--rate-color:#4caf50;transform:scale(0.8);vertical-align:middle;"><div class="ott-stars-box"><div class="ott-stars-bg">★★★★★</div><div class="ott-stars-fill" style="width:84%;color:#4caf50;">★★★★★</div></div><span class="ott-rate-val">8.4</span></span>';
+            p = '<span class="cu-rating-block rate-style--stars_val" style="--rate-color:#ffb300;transform:scale(0.85);vertical-align:middle;"><div class="ott-stars-box"><div class="ott-stars-bg">★★★★★</div><div class="ott-stars-fill" style="width:84%;color:#ffb300;">★★★★★</div></div><span class="ott-rate-val">8.4</span></span>';
         } else if (curStyle === 'val_only') {
-            p = '<span class="cu-rating-block rate-style--val_only" style="--rate-color:#4caf50;transform:scale(0.8);vertical-align:middle;"><span class="ott-rate-val">8.4</span></span>';
+            p = '<span class="cu-rating-block rate-style--val_only" style="--rate-color:#ffb300;transform:scale(0.85);vertical-align:middle;"><span class="ott-rate-val">8.4</span></span>';
         } else if (curStyle === 'stars_only') {
-            p = '<span class="cu-rating-block rate-style--stars_only" style="--rate-color:#4caf50;transform:scale(0.8);vertical-align:middle;"><div class="ott-stars-box"><div class="ott-stars-bg">★★★★★</div><div class="ott-stars-fill" style="width:84%;color:#4caf50;">★★★★★</div></div></span>';
+            p = '<span class="cu-rating-block rate-style--stars_only" style="--rate-color:#ffb300;transform:scale(0.85);vertical-align:middle;"><div class="ott-stars-box"><div class="ott-stars-bg">★★★★★</div><div class="ott-stars-fill" style="width:84%;color:#ffb300;">★★★★★</div></div></span>';
         } else if (curStyle === 'split') {
-            p = '<span class="cu-rating-block rate-style--split" style="--rate-color:#4caf50;transform:scale(0.8);vertical-align:middle;"><span class="ott-single-star">★</span><span class="ott-rate-val">8.4</span></span>';
+            p = '<span class="cu-rating-block rate-style--split" style="--rate-color:#ffb300;transform:scale(0.85);vertical-align:middle;"><span class="ott-single-star">★</span><span class="ott-rate-val">8.4</span></span>';
+        } else if (curStyle === 'ring') {
+            p = '<span class="cu-rating-block rate-style--ring" style="--rate-color:#4caf50;transform:scale(0.85);vertical-align:middle;"><span class="ott-rate-val">8.4</span></span>';
+        } else if (curStyle === 'imdb_gold') {
+            p = '<span class="cu-rating-block rate-style--imdb_gold" style="transform:scale(0.85);vertical-align:middle;"><span class="ott-rate-prefix">IMDb</span><span class="ott-rate-val">8.4</span></span>';
+        } else if (curStyle === 'tomato') {
+            p = '<span class="cu-rating-block rate-style--tomato" style="--rate-color:#f44336;transform:scale(0.85);vertical-align:middle;"><span class="ott-rate-icon">🍅</span><span class="ott-rate-val">8.4</span></span>';
+        } else if (curStyle === 'metacritic') {
+            p = '<span class="cu-rating-block rate-style--metacritic" style="--rate-color:#4caf50;transform:scale(0.85);vertical-align:middle;"><span class="ott-rate-val">8.4</span></span>';
+        } else if (curStyle === 'neon_pill') {
+            p = '<span class="cu-rating-block rate-style--neon_pill" style="--rate-color:#00e5ff;transform:scale(0.85);vertical-align:middle;"><span class="ott-rate-icon"></span><span class="ott-rate-val">8.4</span></span>';
+        } else if (curStyle === 'cyber_badge') {
+            p = '<span class="cu-rating-block rate-style--cyber_badge" style="--rate-color:#2196f3;transform:scale(0.85);vertical-align:middle;"><span class="ott-rate-prefix">RATE</span><span class="ott-rate-val">8.4</span></span>';
+        } else if (curStyle === 'flag_tape') {
+            p = '<span class="cu-rating-block rate-style--flag_tape" style="--rate-color:#ffb300;transform:scale(0.85);vertical-align:middle;"><span class="ott-rate-val">8.4</span></span>';
+        } else if (curStyle === 'minimal_clean') {
+            p = '<span class="cu-rating-block rate-style--minimal_clean" style="--rate-color:#ffb300;transform:scale(0.85);vertical-align:middle;"><span class="ott-rate-icon" style="color:#ffb300">•</span><span class="ott-rate-val">8.4</span></span>';
         }
         $preview.html(p);
     }
@@ -1855,11 +2139,11 @@
             icon: '<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polygon points="12 7 13.5 10.5 17 11 14.5 13.5 15 17 12 15.5 9 17 9.5 13.5 7 11 10.5 10.5 12 7"/></svg>'
         });
 
-        // 🌟 СЕКЦИЯ 1: РЕЙТИНГ ФИЛЬМА
+        // ⭐ СЕКЦИЯ 1: ОФОРМЛЕНИЕ И ИСТОЧНИК РЕЙТИНГА
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: { type: 'title' },
-            field: { name: '🌟 РЕЙТИНГ ФИЛЬМА' }
+            field: { name: '⭐ ОФОРМЛЕНИЕ И ИСТОЧНИК РЕЙТИНГА' }
         });
 
         Lampa.SettingsApi.addParam({
@@ -1909,7 +2193,15 @@
                     'stars_val': '2. Шкала звёзд + цифра',
                     'val_only': '3. Только цифра (без звёзд)',
                     'stars_only': '4. Только звёзды (без цифры)',
-                    'split': '5. Сплит-бейдж (★ | 8.4)'
+                    'split': '5. Сплит-бейдж (★ | 8.4)',
+                    'ring': '6. Круговой Pro-индикатор (Кольцо)',
+                    'imdb_gold': '7. Фирменный золотой IMDb',
+                    'tomato': '8. Rotten Томатометр (🍅 8.4)',
+                    'metacritic': '9. Metacritic Квадрат',
+                    'neon_pill': '10. Неоновая капсула со светодиодом',
+                    'cyber_badge': '11. Кибер-плашка со срезанными углами',
+                    'flag_tape': '12. Флаг-лента с акцентной полосой',
+                    'minimal_clean': '13. Минимал Ультра'
                 }
             },
             field: { name: 'Стиль оформления рейтинга' },
@@ -1926,25 +2218,27 @@
                 type: 'select',
                 default: 'auto',
                 values: {
-                    'auto': 'Автоматически (по оценке)',
-                    '#ffffff': 'Штатный простой белый',
-                    'border': 'Как у обводки карточки',
-                    '#ffc107': 'Золотистый янтарный',
-                    '#4caf50': 'Изумрудный',
-                    '#2196f3': 'Неоновый синий',
-                    '#f44336': 'Насыщенный алый',
-                    '#9c27b0': 'Королевский пурпур'
+                    'auto': '⭐ По рейтингу (авто по оценке)',
+                    '#ffffff': '⚪ Штатный простой белый',
+                    '#ffc107': '🟡 Золотистый янтарный',
+                    '#4caf50': '🟢 Изумрудный зелёный',
+                    '#2196f3': '🔵 Неоновый синий',
+                    '#00e5ff': '🩵 Бирюзовый (Cyan)',
+                    '#f44336': '🔴 Насыщенный алый',
+                    '#ff7043': '🟠 Коралловый оранжевый',
+                    '#9c27b0': '🟣 Королевский пурпур',
+                    '#e91e63': '🌸 Неоновый розовый'
                 }
             },
-            field: { name: 'Цвет звёзд и рейтинга' },
+            field: { name: 'Цвет рейтинга и звёзд' },
             onChange: refreshStyles
         });
 
-        // 📺 СЕКЦИЯ 2: КАЧЕСТВО ВИДЕО
+        // 🎬 СЕКЦИЯ 2: ПЛАШКИ КАЧЕСТВА (4K / FHD / HDR)
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: { type: 'title' },
-            field: { name: '📺 КАЧЕСТВО ВИДЕО' }
+            field: { name: '🎬 ПЛАШКИ КАЧЕСТВА (4K / FHD / HDR)' }
         });
 
         Lampa.SettingsApi.addParam({
@@ -2006,14 +2300,16 @@
                 type: 'select',
                 default: 'auto',
                 values: {
-                    'auto': 'Автоматически по качеству (штатный)',
-                    '#ffffff': 'Штатный простой белый',
-                    'border': 'Как у обводки карточки',
-                    '#ffc107': 'Золотистый янтарный',
-                    '#4caf50': 'Изумрудный зелёный',
-                    '#2196f3': 'Неоновый синий',
-                    '#f44336': 'Насыщенный алый',
-                    '#9c27b0': 'Королевский пурпур'
+                    'auto': '🎬 По качеству (штатный: 4K зеленый...)',
+                    '#ffffff': '⚪ Штатный простой белый',
+                    '#ffc107': '🟡 Золотистый янтарный',
+                    '#4caf50': '🟢 Изумрудный зелёный',
+                    '#2196f3': '🔵 Неоновый синий',
+                    '#00e5ff': '🩵 Бирюзовый (Cyan)',
+                    '#f44336': '🔴 Насыщенный алый',
+                    '#ff7043': '🟠 Коралловый оранжевый',
+                    '#9c27b0': '🟣 Королевский пурпур',
+                    '#e91e63': '🌸 Неоновый розовый'
                 }
             },
             field: { name: 'Цвет плашек качества' },
@@ -2054,11 +2350,11 @@
             }
         });
 
-        // 🔍 СЕКЦИЯ 3: ЭФФЕКТ CARD UNIVERSE (ЗУМ И ПОДСВЕТКА)
+        // ✨ СЕКЦИЯ 3: ЭФФЕКТЫ И АНИМАЦИЯ КАРТОЧЕК
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
             param: { type: 'title' },
-            field: { name: '🔍 ЭФФЕКТ CARD UNIVERSE (ЗУМ И ПОДСВЕТКА)' }
+            field: { name: '✨ ЭФФЕКТЫ И АНИМАЦИЯ КАРТОЧЕК' }
         });
 
         Lampa.SettingsApi.addParam({
@@ -2068,10 +2364,14 @@
                 type: 'select',
                 default: 'universe',
                 values: {
-                    'universe': 'Universe (увеличение постера)',
-                    'zoom_img': 'Зум картинки (постер на месте)',
-                    'shift': 'Всплытие вверх (без зума)',
-                    'none': 'Без эффекта (только рамка)'
+                    'universe': '1. Universe (увеличение постера)',
+                    'zoom_img': '2. Зум картинки (постер на месте)',
+                    'card_scale': '3. Зум всей карточки (Apple TV: постер + инфо)',
+                    'zoom_tilt': '4. 3D Наклон + Зум картинки (перспектива)',
+                    'bounce': '5. Эластичная пружина (Pop Bounce)',
+                    'glow_shimmer': '6. Зум картинки + световой блик',
+                    'shift': '7. Всплытие постера вверх (без зума)',
+                    'none': '8. Без эффекта (только рамка)'
                 }
             },
             field: { name: 'Эффект при наведении' },
@@ -2144,25 +2444,17 @@
                 type: 'select',
                 default: '#ffffff',
                 values: {
-                    '#ffffff': 'Белоснежный (по умолчанию)',
+                    '#ffffff': '⚪ Штатный простой белый (по умолчанию)',
+                    '#ffc107': '🟡 Золотистый янтарный',
+                    '#4caf50': '🟢 Изумрудный зелёный',
+                    '#2196f3': '🔵 Неоновый синий',
+                    '#00e5ff': '🩵 Бирюзовый (Cyan)',
+                    '#f44336': '🔴 Насыщенный алый',
+                    '#ff7043': '🟠 Коралловый оранжевый',
+                    '#9c27b0': '🟣 Королевский пурпур',
+                    '#e91e63': '🌸 Неоновый розовый',
                     '#e0e0e0': 'Светло-серый',
-                    '#9e9e9e': 'Графитовый',
-                    '#000000': 'Глубокий чёрный',
-                    '#2196f3': 'Неоновый синий',
-                    '#64b5f6': 'Лазурный',
-                    '#00bcd4': 'Бирюзовый',
-                    '#009688': 'Морская волна',
-                    '#4caf50': 'Изумрудный',
-                    '#81c784': 'Свежий салатовый',
-                    '#cddc39': 'Лаймовый',
-                    '#ffeb3b': 'Солнечный жёлтый',
-                    '#ffc107': 'Золотистый янтарный',
-                    '#ff9800': 'Оранжевый',
-                    '#ff5722': 'Коралловый',
-                    '#f44336': 'Насыщенный алый',
-                    '#e91e63': 'Малиновый закат',
-                    '#9c27b0': 'Королевский пурпур',
-                    '#673ab7': 'Глубокий фиолетовый'
+                    '#000000': 'Глубокий чёрный'
                 }
             },
             field: { name: 'Цвет подсветки карточки' },
