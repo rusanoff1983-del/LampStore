@@ -1034,10 +1034,10 @@
             posterMeta.className = 'card__poster-meta';
             posterMeta.innerHTML = '<div class="cu-rating-block poster-rate" style="display:none">' +
                 '<div class="ott-stars-box">' +
-                  '<div class="ott-stars-bg">★★★★★★★★★★</div>' +
-                  '<div class="ott-stars-fill">★★★★★★★★★★</div>' +
+                  '<div class="ott-stars-bg">★★★★★</div>' +
+                  '<div class="ott-stars-fill">★★★★★</div>' +
                 '</div>' +
-                '<span class="ott-single-star" style="display:none">★</span><span class="ott-rate-val"></span>' +
+                '<span class="ott-single-star">★</span><span class="ott-rate-val"></span>' +
                 '</div>' +
                 '<span class="metadata__quality poster-quality" style="display:none"></span>';
             view.appendChild(posterMeta);
@@ -1049,12 +1049,13 @@
             info.className = 'ott-info';
             info.innerHTML = '<div class="ott-meta-row">' +
                 '<div class="cu-rating-block under-rate ott-under-rate" style="display:none">' +
-                  '<div class="ott-stars-box"><div class="ott-stars-bg">★★★★★★★★★★</div><div class="ott-stars-fill">★★★★★★★★★★</div></div>' +
-                  '<span class="ott-single-star" style="display:none">★</span><span class="ott-rate-val"></span>' +
+                  '<div class="ott-stars-box"><div class="ott-stars-bg">★★★★★</div><div class="ott-stars-fill">★★★★★</div></div>' +
+                  '<span class="ott-single-star">★</span><span class="ott-rate-val"></span>' +
                 '</div>' +
-                '<span class="ott-genres"></span><span class="ott-year"></span>' +
                 '<span class="metadata__quality under-quality ott-under-quality" style="display:none"></span>' +
+                '<span class="ott-year"></span>' +
                 '</div>' +
+                '<div class="ott-genres-row"><span class="ott-genres"></span></div>' +
                 '<div class="ott-title"></div>';
             view.parentNode.insertBefore(info, view.nextSibling);
         }
@@ -1180,7 +1181,7 @@
         resolveGenresAndYear(card, data, isTV, function (genres, y) {
             if (!alive()) return;
             genresEl.textContent = (genres || []).join(', ');
-            yearEl.textContent = y ? ((genres && genres.length ? ', ' : '') + y) : '';
+            yearEl.textContent = y ? String(y).trim() : '';
         });
         runWhenVisible(card, function () {
             if (!alive()) return;
@@ -1248,7 +1249,13 @@
         var effect = Lampa.Storage.get('cu_effect', 'universe');
         var focusBorder = removeBorder ? 'none' : ('0 0 0 2.5px ' + borderColor);
 
+        var qualitySize = Lampa.Storage.get('cu_quality_size', '0.82em');
+        var qualityOffsetPref = Lampa.Storage.get('cu_quality_offset', 'inset');
+        var qualityOffsetVal = (qualityOffsetPref === 'corner' ? '0.25em' : (qualityOffsetPref === 'deep' ? '1.15em' : '0.85em'));
+
         document.documentElement.style.setProperty('--cu-border-color', borderColor);
+        document.documentElement.style.setProperty('--cu-quality-size', qualitySize);
+        document.documentElement.style.setProperty('--cu-quality-offset', qualityOffsetVal);
 
         var effectCss = [];
         if (effect === 'zoom_img') {
@@ -1388,9 +1395,8 @@
             '  overflow: hidden !important; white-space: nowrap !important;',
             '  text-shadow: none !important;',
             '}',
-            '.ott-single-star { display: none; }',
+            '.cu-rating-block .ott-single-star, .cu-rating-block .ott-stars-box, .cu-rating-block .ott-rate-val { display: none !important; }',
             '.ott-rate-val {',
-            '  display: inline-block !important;',
             '  font-family: inherit !important; font-size: 0.85em !important; font-weight: 800 !important;',
             '  color: #ffffff !important; line-height: 1 !important;',
             '  padding: 0.15em 0.35em !important; border-radius: 0.25em !important;',
@@ -1401,62 +1407,62 @@
             '}',
             '/* 1. Плашка Кинопоиск (★ 8.4) */',
             '.rate-style--kinopoisk {',
-            '  background: rgba(18, 18, 20, 0.88);',
-            '  border: 1.5px solid var(--rate-color, #ffb300);',
-            '  border-radius: 4px; padding: 0.2em 0.45em;',
-            '  box-shadow: none;',
+            '  display: inline-flex !important; align-items: center !important;',
+            '  background: rgba(18, 18, 20, 0.88) !important;',
+            '  border: 1.5px solid var(--rate-color, #ffb300) !important;',
+            '  border-radius: 4px !important; padding: 0.2em 0.45em !important;',
+            '  box-shadow: none !important;',
             '}',
-            '.rate-style--kinopoisk .ott-stars-box { display: none !important; }',
             '.rate-style--kinopoisk .ott-single-star {',
-            '  display: inline-block; color: var(--rate-color, #ffb300);',
-            '  margin-right: 0.25em; font-size: 0.85em;',
+            '  display: inline-block !important; color: var(--rate-color, #ffb300) !important;',
+            '  margin-right: 0.28em !important; font-size: 0.85em !important; line-height: 1 !important;',
             '}',
             '.rate-style--kinopoisk .ott-rate-val {',
-            '  background: transparent !important; border: none !important; padding: 0 !important;',
-            '  color: #ffffff !important; font-size: 0.85em !important;',
+            '  display: inline-block !important; background: transparent !important; border: none !important; padding: 0 !important;',
+            '  color: #ffffff !important; font-size: 0.88em !important; line-height: 1 !important;',
             '}',
             '/* 2. Шкала звёзд + цифра */',
+            '.rate-style--stars_val { display: inline-flex !important; align-items: center !important; }',
             '.rate-style--stars_val .ott-stars-box { display: inline-block !important; }',
-            '.rate-style--stars_val .ott-single-star { display: none !important; }',
             '.rate-style--stars_val .ott-rate-val { display: inline-block !important; }',
             '/* 3. Только цифра (без звёзд) */',
             '.rate-style--val_only {',
-            '  background: rgba(18, 18, 20, 0.85);',
-            '  border-left: 3px solid var(--rate-color, #ffb300);',
-            '  border-radius: 3px; padding: 0.2em 0.45em;',
-            '  box-shadow: none;',
+            '  display: inline-flex !important; align-items: center !important;',
+            '  background: rgba(18, 18, 20, 0.85) !important;',
+            '  border-left: 3.5px solid var(--rate-color, #ffb300) !important;',
+            '  border-radius: 3px !important; padding: 0.2em 0.45em !important;',
+            '  box-shadow: none !important;',
             '}',
-            '.rate-style--val_only .ott-stars-box, .rate-style--val_only .ott-single-star { display: none !important; }',
             '.rate-style--val_only .ott-rate-val {',
-            '  background: transparent !important; border: none !important; padding: 0 !important;',
-            '  color: var(--rate-color, #ffffff) !important; font-size: 0.9em !important;',
+            '  display: inline-block !important; background: transparent !important; border: none !important; padding: 0 !important;',
+            '  color: var(--rate-color, #ffffff) !important; font-size: 0.9em !important; line-height: 1 !important;',
             '}',
             '/* 4. Только звёзды (без цифры) */',
+            '.rate-style--stars_only { display: inline-flex !important; align-items: center !important; }',
             '.rate-style--stars_only .ott-stars-box { display: inline-block !important; margin-right: 0 !important; }',
-            '.rate-style--stars_only .ott-single-star, .rate-style--stars_only .ott-rate-val { display: none !important; }',
             '/* 5. Сплит-бейдж (★ | 8.4) */',
             '.rate-style--split {',
-            '  border: 1px solid var(--rate-color, #ffb300);',
-            '  border-radius: 4px; overflow: hidden;',
-            '  box-shadow: none;',
+            '  display: inline-flex !important; align-items: center !important; padding: 0 !important;',
+            '  border: 1px solid var(--rate-color, #ffb300) !important;',
+            '  border-radius: 4px !important; overflow: hidden !important;',
+            '  box-shadow: none !important; background: transparent !important;',
             '}',
-            '.rate-style--split .ott-stars-box { display: none !important; }',
             '.rate-style--split .ott-single-star {',
-            '  display: inline-flex; align-items: center; justify-content: center;',
-            '  background: var(--rate-color, #ffb300); color: #121212;',
-            '  padding: 0.2em 0.35em; font-size: 0.75em; font-weight: 900;',
+            '  display: inline-flex !important; align-items: center !important; justify-content: center !important;',
+            '  background: var(--rate-color, #ffb300) !important; color: #121212 !important;',
+            '  padding: 0.2em 0.38em !important; font-size: 0.75em !important; font-weight: 900 !important; line-height: 1 !important;',
             '}',
             '.rate-style--split .ott-rate-val {',
-            '  display: inline-flex; align-items: center;',
-            '  background: rgba(18, 18, 20, 0.9); color: #ffffff;',
-            '  padding: 0.2em 0.45em; border: none !important; border-radius: 0 !important;',
-            '  font-size: 0.85em !important;',
+            '  display: inline-flex !important; align-items: center !important;',
+            '  background: rgba(18, 18, 20, 0.9) !important; color: #ffffff !important;',
+            '  padding: 0.2em 0.45em !important; border: none !important; border-radius: 0 !important;',
+            '  font-size: 0.85em !important; line-height: 1 !important;',
             '}',
-            '/* Бейджи качества: позиционирование */',
-            '.metadata__quality { pointer-events: none !important; z-index: 6 !important; }',
-            '.metadata__quality--top-right { position: absolute !important; top: 0.5em !important; right: 0.5em !important; }',
-            '.metadata__quality--top-left { position: absolute !important; top: 0.5em !important; left: 0.5em !important; }',
-            '.metadata__quality--bottom-left { position: absolute !important; bottom: 0.45em !important; left: 0.55em !important; }',
+            '/* Бейджи качества: позиционирование и отступ */',
+            '.metadata__quality { pointer-events: none !important; z-index: 6 !important; font-size: var(--cu-quality-size, 0.82em) !important; }',
+            '.metadata__quality--top-right { position: absolute !important; top: var(--cu-quality-offset, 0.85em) !important; right: var(--cu-quality-offset, 0.85em) !important; }',
+            '.metadata__quality--top-left { position: absolute !important; top: var(--cu-quality-offset, 0.85em) !important; left: var(--cu-quality-offset, 0.85em) !important; }',
+            '.metadata__quality--bottom-left { position: absolute !important; bottom: var(--cu-quality-offset, 0.85em) !important; left: var(--cu-quality-offset, 0.85em) !important; }',
             '.metadata__quality--bottom-right { position: static !important; }',
             '/* Базовые параметры бейджа */',
             '.badge {',
@@ -1508,14 +1514,15 @@
             '.badge--14 { color: #fff !important; background: var(--d) !important; border-radius: 10px 0 10px 0 !important; padding: 0.22em 0.6em !important; text-shadow: 0 1px 2px rgba(0,0,0,0.6) !important; }',
             '/* Классический Lampa */',
             '.badge--classic { color: var(--c) !important; border: 1px solid var(--c) !important; border-radius: 0.25em !important; background: rgba(0,0,0,0.7) !important; padding: 0.14em 0.4em !important; font-weight: 800 !important; }',
-            '/* ПОД ПОСТЕРОМ: только Название и Жанры с годом */',
+            '/* ПОД ПОСТЕРОМ: мета-строка, жанры и название */',
             C + ' .ott-info { position: static !important; box-sizing: border-box !important; width: 100% !important; padding: 0.4em 0.15em 0 !important; color: #ffffff !important; text-align: left !important; pointer-events: none !important; }',
-            C + ' .ott-meta-row { display: flex !important; align-items: center !important; min-height: 1.25em !important; margin: 0 0 0.15em !important; font-size: 0.75em !important; line-height: 1.25 !important; color: rgba(255, 255, 255, 0.6) !important; }',
-            C + ' .ott-genres { min-width: 0 !important; overflow: hidden !important; white-space: nowrap !important; text-overflow: ellipsis !important; flex: 0 1 auto !important; }',
-            C + ' .ott-year { flex: 0 0 auto !important; white-space: pre !important; }',
+            C + ' .ott-meta-row { display: flex !important; align-items: center !important; min-height: 1.35em !important; margin: 0 0 0.15em !important; font-size: 0.75em !important; line-height: 1.35 !important; color: rgba(255, 255, 255, 0.6) !important; }',
+            C + ' .ott-year { margin-left: auto !important; flex: 0 0 auto !important; white-space: pre !important; }',
+            C + ' .ott-under-rate { margin-right: 0.5em !important; }',
+            C + ' .ott-under-quality { margin-right: 0.5em !important; }',
+            C + ' .ott-genres-row { display: block !important; width: 100% !important; min-height: 1.35em !important; line-height: 1.35 !important; margin: 0 0 0.15em !important; font-size: 0.75em !important; color: rgba(255, 255, 255, 0.6) !important; overflow: hidden !important; white-space: nowrap !important; text-overflow: ellipsis !important; }',
+            C + ' .ott-genres { display: inline !important; }',
             C + ' .ott-title { position: static !important; display: -webkit-box !important; -webkit-line-clamp: 2 !important; -webkit-box-orient: vertical !important; height: 2.5em !important; overflow: hidden !important; overflow-wrap: break-word !important; white-space: normal !important; font-size: 0.95em !important; font-weight: 600 !important; line-height: 1.25 !important; margin: 0 !important; }',
-            C + ' .ott-under-rate { margin-right: 0.6em !important; }',
-            C + ' .ott-under-quality { margin-left: auto !important; }',
             C + ' .ott-footer { display: none !important; }'
         ]);
 
@@ -1749,12 +1756,20 @@
         $preview.html(p);
     }
 
+    function reapplyAllCards() {
+        var cards = document.querySelectorAll('.card.ott-card');
+        for (var i = 0; i < cards.length; i++) {
+            if (cards[i]._ottReapply) cards[i]._ottReapply();
+        }
+    }
+
     function refreshStyles() {
         var el = document.getElementById('ott-card-style');
         if (el && el.parentNode) el.parentNode.removeChild(el);
         injectStyles();
         registerCardUniverseSettings();
         applyPosterQuality();
+        reapplyAllCards();
     }
 
     var settingsRegistered = false;
@@ -1884,6 +1899,39 @@
                 }
             },
             field: { name: 'Позиция бейджа качества' },
+            onChange: refreshStyles
+        });
+
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe',
+            param: {
+                name: 'cu_quality_size',
+                type: 'select',
+                default: '0.82em',
+                values: {
+                    '0.7em': 'Компактный (0.7em)',
+                    '0.82em': 'Стандартный (0.82em) — по умолчанию',
+                    '0.95em': 'Крупный (0.95em)',
+                    '1.1em': 'Большой (1.1em)'
+                }
+            },
+            field: { name: 'Размер плашки качества' },
+            onChange: refreshStyles
+        });
+
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe',
+            param: {
+                name: 'cu_quality_offset',
+                type: 'select',
+                default: 'inset',
+                values: {
+                    'inset': 'Сместить от угла (не торчит при скруглении)',
+                    'corner': 'В самый угол (как в дефолте Lampa)',
+                    'deep': 'Глубокий отступ (для сильного скругления)'
+                }
+            },
+            field: { name: 'Отступ плашки от угла' },
             onChange: refreshStyles
         });
 
