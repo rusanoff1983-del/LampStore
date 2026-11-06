@@ -1795,9 +1795,14 @@
             C + ' .ott-meta-row { display: flex !important; align-items: center !important; min-height: 1.35em !important; margin: 0 0 0.15em !important; font-size: 0.75em !important; line-height: 1.35 !important; color: rgba(255, 255, 255, 0.6) !important; overflow: hidden !important; }',
             C + ' .ott-under-rate { margin-right: 0.5em !important; flex: 0 0 auto !important; }',
             C + ' .ott-under-quality { margin-right: 0.5em !important; flex: 0 0 auto !important; }',
-            C + ' .ott-genres { display: block !important; flex: 1 1 auto !important; min-width: 0 !important; overflow: hidden !important; white-space: nowrap !important; text-overflow: ellipsis !important; }',
             C + ' .ott-year { display: none !important; }',
-            C + ' .ott-genres-row { display: none !important; }',
+            '/* Если рейтинг на постере: жанры и год в верхней строке, нижняя строка скрыта */',
+            C + ' .ott-info.info-rate--poster .ott-meta-row .ott-genres,' + C + ' .ott-info:not(.info-rate--under) .ott-meta-row .ott-genres { display: block !important; flex: 1 1 auto !important; min-width: 0 !important; overflow: hidden !important; white-space: nowrap !important; text-overflow: ellipsis !important; }',
+            C + ' .ott-info.info-rate--poster .ott-genres-row,' + C + ' .ott-info:not(.info-rate--under) .ott-genres-row { display: none !important; }',
+            '/* Если рейтинг под постером: в верхней строке только рейтинг и качество, а жанры и год во 2-й строке ВНИЗУ на всю ширину! */',
+            C + ' .ott-info.info-rate--under .ott-meta-row .ott-genres { display: none !important; }',
+            C + ' .ott-info.info-rate--under .ott-genres-row { display: block !important; width: 100% !important; min-height: 1.35em !important; line-height: 1.35 !important; margin: 0 0 0.15em !important; font-size: 0.75em !important; color: rgba(255, 255, 255, 0.6) !important; overflow: hidden !important; white-space: nowrap !important; text-overflow: ellipsis !important; }',
+            C + ' .ott-info.info-rate--under .ott-genres-row .ott-genres-full { display: inline !important; }',
             C + ' .ott-title { position: static !important; display: -webkit-box !important; -webkit-line-clamp: 2 !important; -webkit-box-orient: vertical !important; height: 2.5em !important; overflow: hidden !important; overflow-wrap: break-word !important; white-space: normal !important; font-size: 0.95em !important; font-weight: 600 !important; line-height: 1.25 !important; margin: 0 !important; }',
             C + ' .ott-footer { display: none !important; }'
         ]);
