@@ -37,8 +37,8 @@
         {
           "name": "Card Universe",
           "author": "@rusanoff",
-          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@c3f7bd5/rusanoff/zOOM.js",
-          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@c3f7bd5/rusanoff/zOOM.js",
+          "link": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@a66f02f/rusanoff/zOOM.js",
+          "url": "https://cdn.jsdelivr.net/gh/rusanoff1983-del/LampStore@a66f02f/rusanoff/zOOM.js",
           "descr": "Эффекты карточек (Universe, зум картинки внутри постера, всплытие). Шкала звёзд с авто-цветом по рейтингу, бейджи качества видео, оптимизировано для ТВ без тяжёлых теней и лагов.",
           "instruction": "Установи плагин и выбери эффект и параметры в Настройки -> Card Universe.",
           "image": "",
