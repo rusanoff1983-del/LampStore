@@ -2131,6 +2131,11 @@
 
         if (Lampa.Template && Lampa.Template.add) {
             Lampa.Template.add('settings_card_universe', '<div></div>');
+            Lampa.Template.add('settings_card_universe_rate', '<div></div>');
+            Lampa.Template.add('settings_card_universe_quality', '<div></div>');
+            Lampa.Template.add('settings_card_universe_effects', '<div></div>');
+            Lampa.Template.add('settings_card_universe_palette', '<div></div>');
+            Lampa.Template.add('settings_card_universe_info', '<div></div>');
         }
 
         Lampa.SettingsApi.addComponent({
@@ -2139,15 +2144,87 @@
             icon: '<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polygon points="12 7 13.5 10.5 17 11 14.5 13.5 15 17 12 15.5 9 17 9.5 13.5 7 11 10.5 10.5 12 7"/></svg>'
         });
 
-        // ⭐ СЕКЦИЯ 1: ОФОРМЛЕНИЕ И ИСТОЧНИК РЕЙТИНГА
+        function openSub(id) {
+            return function () {
+                Lampa.Settings.create(id, {
+                    onBack: function () {
+                        Lampa.Settings.create('card_universe');
+                    }
+                });
+            };
+        }
+
+        // ═══════════════════════════════════════════════════════════
+        // ГЛАВНОЕ МЕНЮ CARD UNIVERSE (5 ПОДРАЗДЕЛОВ)
+        // ═══════════════════════════════════════════════════════════
         Lampa.SettingsApi.addParam({
             component: 'card_universe',
+            param: { type: 'button' },
+            field: {
+                name: '⭐ Оформление и источник рейтинга',
+                description: 'Источник (CUB / КП / IMDb / TMDB), 13 стилей, цвета'
+            },
+            onChange: openSub('card_universe_rate')
+        });
+
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe',
+            param: { type: 'button' },
+            field: {
+                name: '🎬 Плашки качества (4K / FHD / HDR)',
+                description: 'Позиция, отступ, размер, 15 стилей бейджей, цвета'
+            },
+            onChange: openSub('card_universe_quality')
+        });
+
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe',
+            param: { type: 'button' },
+            field: {
+                name: '✨ Эффекты и анимация карточек',
+                description: '8 эффектов при наведении, зум, скорость, скругление'
+            },
+            onChange: openSub('card_universe_effects')
+        });
+
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe',
+            param: { type: 'button' },
+            field: {
+                name: '🎨 Палитра и обводка карточек',
+                description: 'Цвет подсветки карточки, выключение рамки'
+            },
+            onChange: openSub('card_universe_palette')
+        });
+
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe',
+            param: { type: 'button' },
+            field: {
+                name: '📝 Строка информации и постеры',
+                description: 'Показ жанров и года, разрешение постеров TMDB'
+            },
+            onChange: openSub('card_universe_info')
+        });
+
+        // ═══════════════════════════════════════════════════════════
+        // ПОДРАЗДЕЛ 1: РЕЙТИНГ
+        // ═══════════════════════════════════════════════════════════
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe_rate',
+            param: { type: 'button' },
+            field: { name: '⬅️ Назад в меню Card Universe' },
+            onChange: function () { Lampa.Settings.create('card_universe'); }
+        });
+
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe_rate',
             param: { type: 'title' },
             field: { name: '⭐ ОФОРМЛЕНИЕ И ИСТОЧНИК РЕЙТИНГА' }
         });
 
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_rate',
             param: {
                 name: 'cu_rate_source',
                 type: 'select',
@@ -2167,7 +2244,7 @@
         });
 
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_rate',
             param: {
                 name: 'cu_rate_position',
                 type: 'select',
@@ -2183,7 +2260,7 @@
         });
 
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_rate',
             param: {
                 name: 'cu_rate_style',
                 type: 'select',
@@ -2212,7 +2289,7 @@
         });
 
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_rate',
             param: {
                 name: 'cu_stars_color',
                 type: 'select',
@@ -2234,15 +2311,24 @@
             onChange: refreshStyles
         });
 
-        // 🎬 СЕКЦИЯ 2: ПЛАШКИ КАЧЕСТВА (4K / FHD / HDR)
+        // ═══════════════════════════════════════════════════════════
+        // ПОДРАЗДЕЛ 2: ПЛАШКИ КАЧЕСТВА
+        // ═══════════════════════════════════════════════════════════
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_quality',
+            param: { type: 'button' },
+            field: { name: '⬅️ Назад в меню Card Universe' },
+            onChange: function () { Lampa.Settings.create('card_universe'); }
+        });
+
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe_quality',
             param: { type: 'title' },
             field: { name: '🎬 ПЛАШКИ КАЧЕСТВА (4K / FHD / HDR)' }
         });
 
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_quality',
             param: {
                 name: 'cu_quality_position',
                 type: 'select',
@@ -2261,7 +2347,7 @@
         });
 
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_quality',
             param: {
                 name: 'cu_quality_size',
                 type: 'select',
@@ -2278,7 +2364,7 @@
         });
 
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_quality',
             param: {
                 name: 'cu_quality_offset',
                 type: 'select',
@@ -2294,7 +2380,7 @@
         });
 
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_quality',
             param: {
                 name: 'cu_quality_color',
                 type: 'select',
@@ -2320,7 +2406,7 @@
         });
 
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_quality',
             param: {
                 name: 'cu_badge_style',
                 type: 'select',
@@ -2350,15 +2436,24 @@
             }
         });
 
-        // ✨ СЕКЦИЯ 3: ЭФФЕКТЫ И АНИМАЦИЯ КАРТОЧЕК
+        // ═══════════════════════════════════════════════════════════
+        // ПОДРАЗДЕЛ 3: ЭФФЕКТЫ И АНИМАЦИЯ
+        // ═══════════════════════════════════════════════════════════
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_effects',
+            param: { type: 'button' },
+            field: { name: '⬅️ Назад в меню Card Universe' },
+            onChange: function () { Lampa.Settings.create('card_universe'); }
+        });
+
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe_effects',
             param: { type: 'title' },
             field: { name: '✨ ЭФФЕКТЫ И АНИМАЦИЯ КАРТОЧЕК' }
         });
 
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_effects',
             param: {
                 name: 'cu_effect',
                 type: 'select',
@@ -2379,7 +2474,7 @@
         });
 
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_effects',
             param: {
                 name: 'cu_scale',
                 type: 'select',
@@ -2400,7 +2495,7 @@
         });
 
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_effects',
             param: {
                 name: 'cu_duration',
                 type: 'select',
@@ -2419,7 +2514,7 @@
         });
 
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_effects',
             param: {
                 name: 'cu_radius',
                 type: 'select',
@@ -2437,8 +2532,24 @@
             onChange: refreshStyles
         });
 
+        // ═══════════════════════════════════════════════════════════
+        // ПОДРАЗДЕЛ 4: ПАЛИТРА И ОБВОДКА
+        // ═══════════════════════════════════════════════════════════
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_palette',
+            param: { type: 'button' },
+            field: { name: '⬅️ Назад в меню Card Universe' },
+            onChange: function () { Lampa.Settings.create('card_universe'); }
+        });
+
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe_palette',
+            param: { type: 'title' },
+            field: { name: '🎨 ПАЛИТРА И ОБВОДКА КАРТОЧЕК' }
+        });
+
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe_palette',
             param: {
                 name: 'cu_border_color',
                 type: 'select',
@@ -2462,7 +2573,7 @@
         });
 
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_palette',
             param: {
                 name: 'cu_remove_border',
                 type: 'trigger',
@@ -2472,15 +2583,24 @@
             onChange: refreshStyles
         });
 
-        // 📝 СЕКЦИЯ 4: СТРОКА ИНФОРМАЦИИ И ПОСТЕРЫ
+        // ═══════════════════════════════════════════════════════════
+        // ПОДРАЗДЕЛ 5: СТРОКА ИНФОРМАЦИИ И ПОСТЕРЫ
+        // ═══════════════════════════════════════════════════════════
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_info',
+            param: { type: 'button' },
+            field: { name: '⬅️ Назад в меню Card Universe' },
+            onChange: function () { Lampa.Settings.create('card_universe'); }
+        });
+
+        Lampa.SettingsApi.addParam({
+            component: 'card_universe_info',
             param: { type: 'title' },
             field: { name: '📝 СТРОКА ИНФОРМАЦИИ И ПОСТЕРЫ' }
         });
 
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_info',
             param: {
                 name: 'cu_show_meta',
                 type: 'trigger',
@@ -2491,7 +2611,7 @@
         });
 
         Lampa.SettingsApi.addParam({
-            component: 'card_universe',
+            component: 'card_universe_info',
             param: {
                 name: 'cu_poster_quality',
                 type: 'select',
